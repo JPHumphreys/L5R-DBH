@@ -1,0 +1,52 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#primary-clan, #splash-clan, #vs-clan, #role-element{
+    width: 100%;
+    margin-top: 1em;
+    border-top: 2px solid black;
+    margin-left: 0;
+}
+
+#primary-clan .lead{
+    max-width: 12%;
+}
+
+#splash-clan .lead{
+    max-width: 12%;
+}
+
+.clan-button{
+    max-width: 12%;
+    margin-left: .4em;
+    margin-right: .4em;
+    margin-top: 1em;
+}
+
+#clan-text{
+    color: white;
+}
+
+.deck-name{
+    align-content: center;
+}
+
+#keeper-button, #seeker-button{
+    margin-top: 1em;
+}
+
+#fire-button,#water-button,#earth-button,#void-button,#air-button{
+   margin-top: 1em;
+}
+
+.role-button, .element-button{
+    margin-left: .4em;
+    margin-right: .4em;
+}
+
+#temp-button{
+    visibility: hidden;
+}
+

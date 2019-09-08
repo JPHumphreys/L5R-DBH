@@ -1,0 +1,16 @@
+
+
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+.deck{
+    background-color: rgb(233, 233, 233);
+}
+
+.deck:hover{
+    background-color: rgb(219, 219, 219);
+}
+
+
