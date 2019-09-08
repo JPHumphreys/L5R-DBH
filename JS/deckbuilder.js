@@ -395,3 +395,6 @@ function elementSelect(ele){
      }
 }
 
+function gitTest(){
+    
+}
