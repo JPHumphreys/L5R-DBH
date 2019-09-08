@@ -395,6 +395,6 @@ function elementSelect(ele){
      }
 }
 
-function gitTest(){
-    
+function gitTest(doubleTest){
+
 }
