@@ -56,6 +56,28 @@ var clan = {
     unicorn:false
 };
 
+const provinceCrab = {
+    role:'earth',
+    province:'Defend the Wall'};
+const provinceCrane = {
+    role:'air',
+    province:'The Art of Peace'};
+const provinceDragon = {
+    role:'fire',
+    province:'Restoration of Balance'};
+const provinceLion = {
+    role:'water',
+    province:'The Art of the War'};
+const provincePhoenix = {
+    role:'void',
+    province:'Kuroi Mori'};
+const provinceScorpion = {
+    role:'air',
+    province:'Secret Cache'};
+const provinceUnicorn = {
+    role:'water',
+    province:'Endless Plains'};
+
 var keeper_provinces = {
     fire:'test',
     water:'test',
