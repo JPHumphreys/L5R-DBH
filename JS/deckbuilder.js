@@ -99,6 +99,29 @@ const meditations = document.getElementById('meditations-fire');
 const nightRaid = document.getElementById('night-raid-fire');
 const otherFire = document.getElementById('other-fire');
 
+//AIRPROVICENS 
+const manicured = document.getElementById('manicured-air');
+const fertile = document.getElementById('fertile-air');
+const otherAir = document.getElementById('other-air');
+
+//WATERPROVINCES
+const rally = document.getElementById('rally-water');
+const elemental = document.getElementById('elemental-water');
+const otherWater = document.getElementById('other-water');
+
+//EARTHPROVINCES
+const entrenched = document.getElementById('entrenched-earth');
+const ancestral = document.getElementById('ancestral-earth');
+const otherEarth = document.getElementById('other-earth');
+
+//VOIDPROVINCES
+const shameful = document.getElementById('shameful-void');
+const pilgrimage = document.getElementById('pilgrimage-void');
+const otherVoid = document.getElementById('other-void');
+
+//MASSPROVINCES
+let provinces;
+
 let lastPriClan = document.getElementById('primary-crab');
 let lastSecClan = document.getElementById('splash-crab');
 let lastElement = document.getElementById('temp-button');
@@ -121,6 +144,7 @@ function mainClan(ele){
          //set new to crab 
          priCrab.classList.remove('btn-light');
          priCrab.classList.add('btn-warning');
+         clanCheck(priCrab);
          //set old to blank
          if(priCrab != lastPriClan)
          {
@@ -134,6 +158,7 @@ function mainClan(ele){
          //set new to crab 
          priCrane.classList.remove('btn-light');
          priCrane.classList.add('btn-warning');
+         clanCheck(priCrane);
          //set old to blank
          if(priCrane != lastPriClan)
          {
@@ -145,6 +170,7 @@ function mainClan(ele){
         case 'Dragon':
              priDragon.classList.remove('btn-light');
              priDragon.classList.add('btn-warning');
+             clanCheck(priDragon);
              //set old to blank
              if(priDragon != lastPriClan)
              {
@@ -156,6 +182,7 @@ function mainClan(ele){
         case 'Lion':
          priLion.classList.remove('btn-light');
          priLion.classList.add('btn-warning');
+         clanCheck(priLion);
          //set old to blank
          if(priLion != lastPriClan)
          {
@@ -167,6 +194,7 @@ function mainClan(ele){
         case 'Phoenix':
              priPhoenix.classList.remove('btn-light');
              priPhoenix.classList.add('btn-warning');
+             clanCheck(priPhoenix);
              //set old to blank
              if(priPhoenix != lastPriClan)
              {
@@ -178,6 +206,7 @@ function mainClan(ele){
         case 'Scorpion':
          priScorpion.classList.remove('btn-light');
          priScorpion.classList.add('btn-warning');
+         clanCheck(priScorpion);
          //set old to blank
          if(priScorpion != lastPriClan)
          {
@@ -189,6 +218,7 @@ function mainClan(ele){
         case 'Unicorn':
              priUnicorn.classList.remove('btn-light');
              priUnicorn.classList.add('btn-warning');
+             clanCheck(priUnicorn);
              //set old to blank
              if(priUnicorn != lastPriClan)
              {
@@ -462,8 +492,48 @@ function provinceSelect(ele){
     //selects between the province in that elemement
 }
 
-function clanCheck(){
+function clanCheck(ele){
     //checks to see which clan is the primary and load the province respectfuly.
+    provinceClear();
+
+    switch(ele){
+        case priCrab:
+            otherEarth.innerText = provinceCrab.province;
+            otherEarth.classList.remove('invisible');
+            otherEarth.classList.add('visible');
+        break;
+        case priCrane:
+            otherAir.innerText = provinceCrane.province;
+            otherAir.classList.remove('invisible');
+            otherAir.classList.add('visible');
+        break;
+        case priDragon:
+            otherFire.innerText = provinceDragon.province;
+            otherFire.classList.remove('invisible');
+            otherFire.classList.add('visible');
+        break;
+        case priLion:
+            otherWater.innerText = provinceLion.province;
+            otherWater.classList.remove('invisible');
+            otherWater.classList.add('visible');
+        break;
+        case priPhoenix:
+            otherVoid.innerText = provincePhoenix.province;
+            otherVoid.classList.remove('invisible');
+            otherVoid.classList.add('visible');
+        break;
+        case priScorpion:
+            otherAir.innerText = provinceScorpion.province;
+            otherAir.classList.remove('invisible');
+            otherAir.classList.add('visible');
+        break;
+        case priUnicorn:
+            otherWater.innerText = provinceUnicorn.province;
+            otherWater.classList.remove('invisible');
+            otherWater.classList.add('visible');
+        break;
+    }
+
 }
 
 function submitDeck(){
@@ -475,4 +545,17 @@ function strongholdSelector(primary){
     switch(primary){
 
     }
+}
+
+function provinceClear(){
+
+    for(let i = 0; i < provinces.length; i++){
+        provinces[i].innerText = "";
+        provinces[i].classList.remove('visible');
+        provinces[i].classList.add('invisible');
+    }
+}
+
+function setUp(){
+    provinces = [otherAir, otherEarth, otherFire, otherVoid, otherWater];
 }
