@@ -51,13 +51,28 @@
 }
 
 .provinces{
-    max-width: 16%;
+    min-width: 20%;
+    border-left: 2px black solid;
+    border-bottom: 2px black solid;
+}
+
+.lastele{
+    border-right: 2px black solid;
 }
 
 .provinces h4{
+    margin-top: 1em;
     font-size: 1.3em;
+    text-align: center;
+    width: 100%;
+}
+
+.provinces button{
+    margin-top: 1em;
 }
 
 .province-item{
-    margin: .5%;
+    text-align: center;
+    width: 90%;
+
 }

@@ -427,11 +427,7 @@ function elementSelect(ele){
      }
 }
 
-function gitTest(doubleTest){
-
-}
-
-function provinceSelect(this){
+function provinceSelect(ele){
     //selects between the province in that elemement
 }
 
