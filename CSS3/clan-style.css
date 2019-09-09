@@ -3,7 +3,7 @@
     margin: 0;
 }
 
-#primary-clan, #splash-clan, #vs-clan, #role-element{
+#primary-clan, #splash-clan, #vs-clan, #role-element, #provinces{
     width: 100%;
     margin-top: 1em;
     border-top: 2px solid black;
@@ -50,3 +50,14 @@
     visibility: hidden;
 }
 
+.provinces{
+    max-width: 16%;
+}
+
+.provinces h4{
+    font-size: 1.3em;
+}
+
+.province-item{
+    margin: .5%;
+}

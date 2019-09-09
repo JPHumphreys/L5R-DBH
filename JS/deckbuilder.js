@@ -36,6 +36,38 @@ const voi = document.getElementById('void-button');
 const keeper = document.getElementById('keeper-button');
 const seeker = document.getElementById('seeker-button');
 
+//PROVINCES
+var clan = {
+    crab:false,
+    crane:false,
+    dragon:false,
+    lion:false,
+    phoenix:false,
+    scorpion:false,
+    unicorn:false
+};
+
+var keeper_provinces = {
+    fire:'test',
+    water:'test',
+    void:'test',
+    earth:'test',
+    air:'test'
+};
+
+var seeker_provinces = {
+    seeker1:'test',
+    seeker2:'test',
+    prov1:'test',
+    prov2:'test',
+    prov3:'test'
+};
+
+//FIREPROVINCES
+const meditations = document.getElementById('meditations-fire');
+const nightRaid = document.getElementById('night-raid-fire');
+const otherFire = document.getElementById('other-fire');
+
 let lastPriClan = document.getElementById('primary-crab');
 let lastSecClan = document.getElementById('splash-crab');
 let lastElement = document.getElementById('temp-button');
@@ -397,4 +429,17 @@ function elementSelect(ele){
 
 function gitTest(doubleTest){
 
+}
+
+function provinceSelect(this){
+    //selects between the province in that elemement
+}
+
+function clanCheck(){
+    //checks to see which clan is the primary and load the province button respectfuly.
+}
+
+function submitDeck(){
+    //submits the deck if available
+    //need a check on whether the deck is legal or not
 }
