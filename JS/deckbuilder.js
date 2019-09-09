@@ -7,6 +7,15 @@ const priPhoenix = document.getElementById('primary-phoenix');
 const priScorpion = document.getElementById('primary-scorpion');
 const priUnicorn = document.getElementById('primary-unicorn');
 
+//STRONGHOLDS
+const strongholdCrab = 'Shiro Nishiyama';
+const strongholdCrane = 'Shizuka Toshi';
+const strongholdDragon = "Mountain's Anvil Castle";
+const strongholdLion = 'Yōjin no Shiro';
+const strongholdPhoenix = "Isawa Mori Seidō";
+const strongholdScorpion = 'City of the Open Hand';
+const strongholdUnicorn = 'Golden Plains Outpost';
+
 //SECONDARY CLANS
 const secCrab = document.getElementById('splash-crab');
 const secCrane = document.getElementById('splash-crane');
@@ -432,10 +441,16 @@ function provinceSelect(ele){
 }
 
 function clanCheck(){
-    //checks to see which clan is the primary and load the province button respectfuly.
+    //checks to see which clan is the primary and load the province respectfuly.
 }
 
 function submitDeck(){
     //submits the deck if available
     //need a check on whether the deck is legal or not
+}
+
+function strongholdSelector(primary){
+    switch(primary){
+
+    }
 }
