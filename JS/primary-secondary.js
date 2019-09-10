@@ -16,6 +16,9 @@ const secPhoenix = document.getElementById("splash-phoenix");
 const secScorpion = document.getElementById("splash-scorpion");
 const secUnicorn = document.getElementById("splash-unicorn");
 
+let lastPriClan = document.getElementById("primary-crab");
+let lastSecClan = document.getElementById("splash-crab");
+
 function mainClan(ele){
     let element = ele.innerText;
 
