@@ -322,7 +322,7 @@ function versusClan(ele){
 
     switch(element){
         case "Crab":
-            if(vs_clans.crab != true){
+            if(vs_clans.crab !== true){
                 vsCrab.classList.remove("btn-light");
                 vsCrab.classList.add("btn-danger");
                 vs_clans.crab = true;
@@ -335,7 +335,7 @@ function versusClan(ele){
             //console.log(vs_clans);
         break;
         case "Crane":
-            if(vs_clans.crane != true){
+            if(vs_clans.crane !== true){
                 vsCrane.classList.remove("btn-light");
                 vsCrane.classList.add("btn-danger");
                 vs_clans.crane = true;
@@ -348,7 +348,7 @@ function versusClan(ele){
             //console.log(vs_clans);
         break;
         case "Dragon":
-            if(vs_clans.dragon != true){
+            if(vs_clans.dragon !== true){
                 vsDragon.classList.remove("btn-light");
                 vsDragon.classList.add("btn-danger");
                 vs_clans.dragon = true;
@@ -361,7 +361,7 @@ function versusClan(ele){
             //console.log(vs_clans);
         break;
         case "Lion":
-            if(vs_clans.lion != true){
+            if(vs_clans.lion !== true){
                 vsLion.classList.remove("btn-light");
                 vsLion.classList.add("btn-danger");
                 vs_clans.lion = true;
@@ -374,7 +374,7 @@ function versusClan(ele){
             //console.log(vs_clans);
         break;
         case "Phoenix":
-            if(vs_clans.phoenix != true){
+            if(vs_clans.phoenix !== true){
                 vsPhoenix.classList.remove("btn-light");
                 vsPhoenix.classList.add("btn-danger");
                 vs_clans.phoenix = true;
@@ -387,7 +387,7 @@ function versusClan(ele){
             //console.log(vs_clans);
         break;
         case "Scorpion":
-            if(vs_clans.scorpion != true){
+            if(vs_clans.scorpion !== true){
                 vsScorpion.classList.remove("btn-light");
                 vsScorpion.classList.add("btn-danger");
                 vs_clans.scorpion = true;
@@ -400,7 +400,7 @@ function versusClan(ele){
             //console.log(vs_clans);
         break;
         case "Unicorn":
-            if(vs_clans.unicorn != true){
+            if(vs_clans.unicorn !== true){
                 vsUnicorn.classList.remove("btn-light");
                 vsUnicorn.classList.add("btn-danger");
                 vs_clans.unicorn = true;
