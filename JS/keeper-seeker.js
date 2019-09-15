@@ -8,7 +8,25 @@ const voi = document.getElementById("void-button");
 //ROLES
 const keeper = document.getElementById("keeper-button");
 const seeker = document.getElementById("seeker-button");
+
+
 let lastElement = document.getElementById("temp-button");
+let lastRole = document.getElementById("keeper-button");
+
+
+function roleCheck(ele){
+
+    let role = document.getElementById(ele.id);
+
+    role.classList.remove("btn-light");
+    role.classList.add("btn-danger");
+
+    if(role !== lastRole){
+        lastRole.classList.remove("btn-danger");
+        lastRole.classList.add("btn-light");
+        lastRole = role;
+    }
+}
 
 function roleSelect(ele){
     if(ele.innerText == "Keeper"){
