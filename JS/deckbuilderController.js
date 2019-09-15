@@ -18,22 +18,6 @@ var clan = {
     unicorn:false
 };
 
-
-
-let lastPriClan = document.getElementById("primary-crab");
-let lastSecClan = document.getElementById("splash-crab");
-let lastElement = document.getElementById("temp-button");
-
-var vs_clans = {
-    crab:false,
-    crane:false,
-    dragon:false,
-    lion:false,
-    phoenix:false,
-    scorpion:false,
-    unicorn:false
-};
-
 function provinceSelect(ele){
     //selects between the province in that elemement
     
