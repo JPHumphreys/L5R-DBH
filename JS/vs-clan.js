@@ -8,7 +8,7 @@ const vsScorpion = document.getElementById("vs-scorpion");
 const vsUnicorn = document.getElementById("vs-unicorn");
 
 
-var vs_clans = {
+var vsClans = {
     crab:false,
     crane:false,
     dragon:false,
@@ -40,25 +40,25 @@ function updateVSClans(obj){
 
     switch(clan){
         case "Crab":
-            vs_clans.crab = (vs_clans.crab === true) ? false : true;
+            vsClans.crab = (vsClans.crab === true) ? false : true;
         break;
         case "Crane":
-            vs_clans.crane = (vs_clans.crane === true) ? false : true;
+            vsClans.crane = (vsClans.crane === true) ? false : true;
         break;
         case "Dragon":
-            vs_clans.dragon = (vs_clans.dragon === true) ? false : true;
+            vsClans.dragon = (vsClans.dragon === true) ? false : true;
         break;
         case "Lion":
-            vs_clans.lion = (vs_clans.lion === true) ? false : true;
+            vsClans.lion = (vsClans.lion === true) ? false : true;
         break;
         case "Phoenix":
-            vs_clans.phoenix = (vs_clans.phoenix === true) ? false : true;
+            vsClans.phoenix = (vsClans.phoenix === true) ? false : true;
         break;
         case "Scorpion":
-            vs_clans.scorpion = (vs_clans.scorpion === true) ? false : true;
+            vsClans.scorpion = (vsClans.scorpion === true) ? false : true;
         break;
         case "Unicorn":
-            vs_clans.unicorn = (vs_clans.unicorn === true) ? false : true;
+            vsClans.unicorn = (vsClans.unicorn === true) ? false : true;
         break;
         default:
             alert("something went wrong with selecting vs clan");
