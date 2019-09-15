@@ -7,6 +7,18 @@ const vsPhoenix = document.getElementById("vs-phoenix");
 const vsScorpion = document.getElementById("vs-scorpion");
 const vsUnicorn = document.getElementById("vs-unicorn");
 
+
+var vs_clans = {
+    crab:false,
+    crane:false,
+    dragon:false,
+    lion:false,
+    phoenix:false,
+    scorpion:false,
+    unicorn:false
+};
+
+
 function versusClan(ele){
     let element = ele.innerText;
 

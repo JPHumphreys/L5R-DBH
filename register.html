@@ -38,16 +38,20 @@
                 </div>
             </nav>
 
-            <div class="d-flex row">
-                <form id="login-form">
-                    <h2 class="register">Full Name</h2>
-                    <input id="name-input" class="register" type="text">
-                    <h2 class="register">Username</h2>
-                    <input id="username-input" class="register" type="text">
-                    <h2 class="register">Password</h2>
-                    <input id="password-input" class="register" type="password">
-                </form>
+            <div class="row">
+                <div class="col-sm"></div>
+                <div class="shadow-lg p-3 mb-5 bg-white rounded">
+                    <form onsubmit="login(); return false">
+                        <h3> Username: </h3>
+                        <input type="text" class="form-control" id="username">
+                        <h3> Password: </h3>
+                        <input type="password" class="form-control" id="password">
+                        <br>
+                        <button type="submit" class="btn btn-primary"> Login </button>
+                    </form>        </div>
+                <div class="col-sm"></div>
             </div>
+
         </div>
     </body>
 

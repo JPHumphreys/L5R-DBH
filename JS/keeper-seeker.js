@@ -8,6 +8,7 @@ const voi = document.getElementById("void-button");
 //ROLES
 const keeper = document.getElementById("keeper-button");
 const seeker = document.getElementById("seeker-button");
+let lastElement = document.getElementById("temp-button");
 
 function roleSelect(ele){
     if(ele.innerText == "Keeper"){
