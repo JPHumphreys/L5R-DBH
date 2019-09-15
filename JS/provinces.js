@@ -70,7 +70,7 @@ const provinceUnicorn = {
 function provinceClear(){
 
     for(let i = 0; i < provinces.length; i++){
-        provinces[i].innerText = ";
+        provinces[i].innerText = "";
         provinces[i].classList.remove("visible");
         provinces[i].classList.add("invisible");
     }
