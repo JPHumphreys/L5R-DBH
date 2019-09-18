@@ -98,7 +98,7 @@ function renderObjects(){
         removeButton.classList.add("btn-danger")
         removeButton.classList.add("btn-md");
         removeButton.classList.add("card-buttons");
-        removeButton.innerText = "Remove";
+        removeButton.innerText = "Remove Rating";
 
         buttons.append(voteButton);
         buttons.append(updateButton);
