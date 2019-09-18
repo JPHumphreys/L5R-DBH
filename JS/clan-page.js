@@ -1,17 +1,17 @@
-let clanParent = document.getElementById("clan-main-button");
-let sideParent = document.getElementById("clan-side-button");
-let searchButton = document.getElementById("search-button");
+const clanParent = document.getElementById("clan-main-button");
+const sideParent = document.getElementById("clan-side-button");
+const searchButton = document.getElementById("search-button");
+const clanRenderLocation = document.getElementById("clan-card-images");
+const cardRenderLocation = document.getElementById("card-render-location");
 
 
 function clanSelect(ele){
     clanParent.innerText = ele.textContent;
-    test();
     buttonCheck();
 }
 
 function sideSelect(ele){
     sideParent.innerText = ele.textContent;
-    test();
     buttonCheck();
 }
 

@@ -14,3 +14,20 @@
     margin-left: .5em;
     margin-right: .5em;
 }
+
+#clan-card-images{
+    margin-top: 1em;
+}
+
+.card-buttons{
+    margin-left: .8em;
+}
+
+.cards{
+    margin-top: .5em;
+}
+
+.card{
+    margin-top: 1em;
+    background-color: aliceblue;
+}
