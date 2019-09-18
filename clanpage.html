@@ -6,9 +6,9 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Home • L5R:DBH</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="CSS3/login-register.css">
+        <link rel="stylesheet" href="CSS3/clan-page.css">
     </head>
-    <body>
+    <body onload="makeRequest()">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
                 <a class="navbar-brand" href="index.html">L5R:DBH</a>
@@ -41,8 +41,56 @@
                 </div>
             </nav>
 
-            <div class="container">
-                <div class="row">
+            <div id="clan-container" class="container">
+                <div id="clan-jumbotron" class="jumbotron">
+                    <h2 class="display-h">Clan Pages</h2>
+                    <h3 class="display-h">These votes will help generate decks to specialise against matchups</h3>
+                </div>
+                <div id="dropdown-selector" class="row">
+                    <!-- Example split secondary button -->
+                    <div class="btn-group">
+                            <button id="clan-main-button"class="btn btn-secondary btn-lg" type="button">
+                              Clan Select
+                            </button>
+                            <button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                        <div id="clan-select" class="dropdown-menu">
+                            <button class="dropdown-item" onclick="clanSelect(this)">Crab</button>
+                            <div class="dropdown-divider"></div>
+                            <button class="dropdown-item" onclick="clanSelect(this)">Crane</button>
+                            <div class="dropdown-divider"></div>
+                            <button class="dropdown-item" onclick="clanSelect(this)">Dragon</button>
+                            <div class="dropdown-divider"></div>
+                            <button class="dropdown-item" onclick="clanSelect(this)">Lion</button>
+                            <div class="dropdown-divider"></div>
+                            <button class="dropdown-item" onclick="clanSelect(this)">Phoenix</button>
+                            <div class="dropdown-divider"></div>
+                            <button class="dropdown-item" onclick="clanSelect(this)">Scorpion</button>
+                            <div class="dropdown-divider"></div>
+                            <button class="dropdown-item" onclick="clanSelect(this)">Unicorn</button>
+                        </div>
+                    </div>
+                    <div id="side-select" class="btn-group">
+                            <button id="clan-side-button" class="btn btn-secondary btn-lg" type="button">
+                              Deck Select
+                            </button>
+                            <button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <button class="dropdown-item" onclick="sideSelect(this)">Province</button>
+                                <div class="dropdown-divider"></div>
+                                <button class="dropdown-item" onclick="sideSelect(this)">Dynasty</button>
+                                <div class="dropdown-divider"></div>
+                                <button class="dropdown-item" onclick="sideSelect(this)">Conflict</button>
+                            </div>
+                    </div>
+
+                    <button id="search-button" type="button" class="btn btn-danger btn-lg">Search</button> 
+
+                </div>
+                <div id="clan-card-images" class="row">
 
                 </div>
             </div>
@@ -55,5 +103,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="JS/API_Clan.js"></script>
+        <script src="JS/clan-page.js"></script>
     </footer>
 </html>
