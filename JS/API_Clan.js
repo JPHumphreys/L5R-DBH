@@ -18,6 +18,7 @@ function makeRequest(){
 
 function handleSort(){
 
+    removeCards();
     firstPassData = [];
     sortedData = [];
     sortByCardClan(data,clanParent.innerText, sideParent.innerText);
@@ -111,23 +112,15 @@ function renderObjects(){
 
         cardRenderLocation.append(card);
     }
+}
 
+function removeCards(){
 
+    let children = document.querySelectorAll(".cards");
 
-
-    /*
-
-                        <div class="card">
-                            <img src="http://lcg-cdn.fantasyflightgames.com/l5r/L5C01_99.jpg" class="img-fluid" alt="Responsive image">
-                            <h5 class="rating">Rating : 0.0</h5>
-                            <div class="row">
-                                <button type="button" class="btn btn-primary btn-md card-buttons">Vote</button>
-                                <button type="button" class="btn btn-primary btn-md card-buttons">Update</button>
-                                <button type="button" class="btn btn-danger btn-md card-buttons">Remove</button>
-                            </div>
-                        </div>
-
-
-    */
-
+    for(let i = 0; i < children.length; i++){
+        children[i].remove();
+    }
+    
+    //cardRenderLocation.removeChild(children);
 }
