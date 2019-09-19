@@ -10,7 +10,7 @@
     margin-bottom: 2em;
 }
 
-#clan-select, #side-select{
+#clan-select, #side-select, #vs-button{
     margin-left: .5em;
     margin-right: .5em;
 }
@@ -30,4 +30,28 @@
 .card{
     margin-top: 1em;
     background-color: aliceblue;
+    text-align: center;
+}
+
+#vs-main-button{
+    margin-left: .5em;
+}
+
+#vs-clan-display{
+
+    width: 75%;
+    display: inline-flex;
+    align-content: center;
+    
+}
+
+#crab-display, #crane-display, #dragon-display, #lion-display, #phoenix-display, #scorpion-display, #unicorn-display{
+    display: inline;
+    margin-left: .5em;
+    margin-right: .5em;
+}
+
+#vs-clan-display{
+    margin-top: 1.5em;
+
 }

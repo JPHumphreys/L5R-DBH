@@ -89,6 +89,51 @@
 
                     <button id="search-button" type="button" class="btn btn-danger btn-lg " onclick="handleSort()">Search</button> 
 
+                    <div class="btn-group">
+                        <button id="vs-main-button"class="btn btn-secondary btn-lg" type="button">
+                          Matchup Select
+                        </button>
+                        <button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                    <div id="vs-select" class="dropdown-menu">
+                        <button class="dropdown-item" onclick="vsAdd(this)">Crab</button>
+                        <button class="dropdown-item" onclick="vsAdd(this)">Crane</button>
+                        <button class="dropdown-item" onclick="vsAdd(this)">Dragon</button>
+                        <button class="dropdown-item" onclick="vsAdd(this)">Lion</button>
+                        <button class="dropdown-item" onclick="vsAdd(this)">Phoenix</button>
+                        <button class="dropdown-item" onclick="vsAdd(this)">Scorpion</button>
+                        <button class="dropdown-item" onclick="vsAdd(this)">Unicorn</button>
+                    </div>
+
+                    <button id="vs-button" type="button" class="btn btn-danger btn-lg " onclick="vsSelector(this)">Apply</button>
+
+                </div>
+
+                <div id="vs-clan-display">
+                    <div id="crab-display" class="col-2">
+                        <button id="crab-vs-button" class="btn btn-dark btn-md" disabled>Crab</button>
+                    </div>
+                    <div id="crane-display" class="col-2">
+                        <button id="crane-vs-button" class="btn btn-dark btn-md" disabled>Crane</button>
+                    </div>
+                    <div id="dragon-display" class="col-2">
+                        <button id="dragon-vs-button" class="btn btn-dark btn-md" disabled>Dragon</button>
+                    </div>
+                    <div id="lion-display" class="col-2">
+                        <button id="lion-vs-button" class="btn btn-dark btn-md" disabled>Lion</button>
+                    </div>
+                    <div id="phoenix-display" class="col-2">
+                        <button id="phoenix-vs-button" class="btn btn-dark btn-md" disabled>Phoenix</button>
+                    </div>
+                    <div id="scorpion-display" class="col-2">
+                        <button id="scorpion-vs-button" class="btn btn-dark btn-md" disabled>Scorpion</button>
+                    </div>
+                    <div id="unicorn-display" class="col-2">
+                        <button id="unicorn-vs-button" class="btn btn-dark btn-md" disabled>Unicorn</button>
+                    </div>
+                </div>
+
                 </div>
                 <div id="card-render-location" class="row">
                     

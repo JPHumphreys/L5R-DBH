@@ -67,7 +67,7 @@ function renderObjects(){
         let image = document.createElement("img");
         image.src = sortedData[i].imglocation;
         image.classList.add("img-fluid");
-        image.alt = sortedData[i].name;
+        image.alt = sortedData[i].id;
 
         let rating = document.createElement("h5");
         rating.classList.add("rating");
