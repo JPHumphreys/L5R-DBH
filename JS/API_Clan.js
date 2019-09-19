@@ -1,60 +1,58 @@
-const url = "http://34.89.95.16:9000/cards";
+const cardURL = "http://34.89.95.16:9000/cards/";
+const singleRatingURL = "http://34.89.95.16:9000/ratings/"
 const req = new XMLHttpRequest();
+const singleRatingREQ = new XMLHttpRequest();
+const idAdd = "-rating";
 
 let data;
-let firstPassData = [];
-let sortedData = [];
-
+let singleRatingData = [];
+let singleRatingDataToRender = [];
+let counter;
 
 req.onload = () => {
     data = JSON.parse(req.response);
-    console.log(data);
+    renderCards();
 };
 
-function makeRequest(){
-    req.open("GET",url);
+function makeCardRequest(clan, side){
+    req.open("GET",cardURL + clan + "/" + side);
     req.send();
+}
+
+singleRatingREQ.onload = () => {
+    console.log(singleRatingREQ.response);
+    singleRatingDataToRender.push(JSON.parse(singleRatingREQ.response));
+    counter++;
+    
+    if(singleRatingDataToRender.length === data.length){
+        renderRatings();
+    }
+    else{
+        makeSingleRatingCalls();
+    }
+};
+
+function makeRatingSingleRequest(id){
+    singleRatingREQ.open("GET",singleRatingURL + id,true);
+    singleRatingREQ.send();
 }
 
 function handleSort(){
 
     removeCards();
-    firstPassData = [];
-    sortedData = [];
-    sortByCardClan(data,clanParent.innerText, sideParent.innerText);
+    data = [];
+    counter = 0;
+
+    //push to lower case 
+    let clanToLower = clanParent.innerText.toLowerCase();
+    let typeToLower = sideParent.innerText.toLowerCase();
+
+    makeCardRequest(clanToLower, typeToLower);
 }
 
-function sortByCardClan(data, clan, type){
-
-    //push to lower case
-    let clanToLower = clan.toLowerCase();
-    let typeToLower = type.toLowerCase();
-
-    console.log(clanToLower);
-    console.log(typeToLower);
-
-    for(let i = 0; i < data.length; i++){
-        if(data[i].clan === clanToLower){
-            firstPassData.push(data[i]);
-        }
-    }
-    sortByCardType(firstPassData,typeToLower);
-}
-
-function sortByCardType(data, type){
-    for(let i = 0; i < data.length; i++){
-        if(data[i].side === type){
-            sortedData.push(data[i]);
-        }
-    }
-    renderObjects();
-}
-
-function renderObjects(){
-
-
+function renderCards(){
     //debugger;
-    for(let i = 0; i < sortedData.length; i++)
+    for(let i = 0; i < data.length; i++)
     {
         let card = document.createElement("div");
         card.classList.add("col-4");
@@ -65,13 +63,15 @@ function renderObjects(){
         container.classList.add("card");
 
         let image = document.createElement("img");
-        image.src = sortedData[i].imglocation;
+        image.src = data[i].imglocation;
         image.classList.add("img-fluid");
-        image.alt = sortedData[i].id;
-
+        image.alt = data[i].id;
+        
         let rating = document.createElement("h5");
         rating.classList.add("rating");
-        rating.innerText = "Rating : 0.0";
+        rating.innerText = "Rating : ";
+        rating.id = data[i].id + idAdd;
+        singleRatingData.push(data[i].id);
 
         let buttons = document.createElement("div");
         buttons.classList.add("row");
@@ -112,6 +112,8 @@ function renderObjects(){
 
         cardRenderLocation.append(card);
     }
+
+    makeSingleRatingCalls();
 }
 
 function removeCards(){
@@ -123,4 +125,27 @@ function removeCards(){
     }
     
     //cardRenderLocation.removeChild(children);
+}
+
+
+
+
+
+
+
+
+function makeSingleRatingCalls(){
+
+    makeRatingSingleRequest(data[counter].id);
+}
+
+function renderRatings(){
+    for(let i = 0; i < data.length; i++){
+        //console.log(data[i].id);
+        makeRatingSingleRequest(data[i].id);
+        let rating = document.querySelector("#"+data[i].id+idAdd);
+        rating.append(singleRatingDataToRender[i].overallrating);
+    }
+    
+
 }
