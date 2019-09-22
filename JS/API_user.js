@@ -10,9 +10,6 @@ const deleteUserReq = new XMLHttpRequest();
 const getUserReq = new XMLHttpRequest();
 const updateUserReq = new XMLHttpRequest();
 
-let currentUsername;
-let currentPassword;
-
 let addUserJSON = {
     "userid":"",
     "password":""
@@ -23,8 +20,11 @@ addUserReq.onload = () => {
     console.log("hits this");
 
     if (addUserReq.status == 200) {
-        localStorage.setItem("username",currentUsername);
-        localStorage.setItem("password",currentPassword);
+        localStorage.removeItem("username");
+        localStorage.removeItem("password");
+        debugger;
+        localStorage.setItem("username",addUserJSON.userid);
+        localStorage.setItem("password",addUserJSON.password);
     }
     else if(addUserReq.status > 201 && deleteUserURL.status <= 300){
         //alert issue
@@ -49,6 +49,7 @@ deleteUserReq.onload = () => {
 
 getUserReq.onload = () => {
     if (getUserReq.status == 200) {
+        onLoginSuccess();
         
     }
     else if(getUserReq.status > 201 && deleteUserURL.status <= 300){
