@@ -30,9 +30,6 @@
                         <a class="nav-link" href="clanpage.html">Clan Pages</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="login.html">Login</a>
                     </li>
                     <li class="nav-item">
@@ -221,82 +218,12 @@
 
                 </div>
 
-                <div id="provinces" class="row">
-                    <div class="col-2 provinces">
-                        <h4 id="fire-province">Fire Province</h4>
-                            <div id="fire-div">
-                                <td>
-                                    <button id="mediations-fire" class="btn btn-light btn-md province-item" onclick="provinceSelect(this)" role="button">Meditations on the Tao</button>
-                                </td>
-                                <td >
-                                    <button id="night-raid-fire"class="btn btn-light btn-md province-item" onclick="provinceSelect(this)" role="button">Night Raid</button>
-                                </td>
-                                <td >
-                                    <button id="other-fire"class="btn btn-light btn-md province-item invisible" onclick="provinceSelect(this)" role="button"></button>
-                                </td>
-                            </div>
-                    </div>
-                    <div class="col-2 provinces">
-                        <h4 id="air-province">Air Province</h4>
-                        <div id="air-div">
-                            <td >
-                                <button id="manicured-air" class="btn btn-light btn-md province-item" onclick="provinceSelect(this)" role="button">Manicured Garden</button>
-                            </td>
-                            <td >
-                                <button id="fertile-air"class="btn btn-light btn-md province-item" onclick="provinceSelect(this)" role="button">Fertile Fields</button>
-                            </td>
-                            <td >
-                                <button id="other-air"class="btn btn-light btn-md province-item invisible" onclick="provinceSelect(this)" role="button"></button>
-                            </td>
-                        </div>
-                    </div>
-                    <div class="col-2 provinces">
-                        <h4 id="water-province">Water Province</h4>
-                        <div id="water-div">
-                            <td >
-                                <button id="rally-water" class="btn btn-light btn-md province-item" onclick="provinceSelect(this)" role="button">Rally to the Cause</button>
-                            </td>
-                            <td >
-                                <button id="elemental-water"class="btn btn-light btn-md province-item" onclick="provinceSelect(this)" role="button">Elemental Fury</button>
-                            </td>
-                            <td >
-                                <button id="other-water"class="btn btn-light btn-md province-item invisible" onclick="provinceSelect(this)" role="button"></button>
-                            </td>
-                        </div>
-                    </div>
-                    <div class="col-2 provinces">
-                        <h4 id="earth-province">Earth Province</h4>
-                        <div id="earth-div">
-                            <td >
-                                <button id="entrenched-earth" class="btn btn-light btn-md province-item" onclick="provinceSelect(this)" role="button">Entrenched Position</button>
-                            </td>
-                            <td >
-                                <button id="ancestral-earth"class="btn btn-light btn-md province-item" onclick="provinceSelect(this)" role="button">Ancestral Lands</button>
-                            </td>
-                            <td >
-                                <button id="other-earth"class="btn btn-light btn-md province-item invisible" onclick="provinceSelect(this)" role="button"></button>
-                            </td>
-                        </div>
-                    </div>
-                    <div class="col-2 provinces lastele">
-                        <h4 id="void-province">Void Province</h4>
-                        <div id="void-div">
-                            <td >
-                                <button id="shameful-void" class="btn btn-light btn-md province-item" onclick="provinceSelect(this)" role="button">Shameful Display</button>
-                            </td>
-                            <td >
-                                <button id="pilgrimage-void"class="btn btn-light btn-md province-item" onclick="provinceSelect(this)" role="button">Pilgrimage</button>
-                            </td>
-                            <td >
-                                <button id="other-void"class="btn btn-light btn-md province-item invisible" onclick="provinceSelect(this)" role="button"></button>
-                            </td>
-                        </div>
-                    </div>
-
                 </div>
 
                 <div id="submit-button-row" class="row">
-                    <button id="submit-button" class="btn btn-danger" onclick="submitDeck()">Submit Deck</button>
+                    <div class="col">
+                        <button id="submit-button" class="btn btn-danger" onclick="submitDeck()">Submit Deck</button>
+                    </div>
                 </div>
     </div>
 

@@ -18,7 +18,7 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
+                    <ul id="user-add-location" class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="deckbuilder.html">Deckbuilder</a>
                         </li>
@@ -28,9 +28,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="clanpage.html">Clan Pages</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
                         <li id="nav-login-item" class="nav-item">
                             <a class="nav-link" href="login.html">Login</a>
                         </li>
@@ -38,7 +35,18 @@
                             <a class="nav-link" href="register.html">Register</a>
                         </li>
                         <li class="nav-item">
-                            
+                            <div class="btn-group">
+                                <button id="username-display"class="btn btn-primary btn-md" type="button">
+                                  username
+                                </button>
+                                <button type="button" class="btn btn-md btn-dark dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                            <div id="user-settings" class="dropdown-menu">
+                                <button class="dropdown-item" onclick="changePassword()">Change Password</button>
+                                <button class="dropdown-item" onclick="logout()">Logout</button>
+                                <button class="dropdown-item" onclick="deleteUser()">Delete User</button>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -49,9 +57,9 @@
                 <div class="shadow-lg p-3 mb-5 bg-white rounded">
                     <form onsubmit="login(this); return false">
                         <h3> Username: </h3>
-                        <input type="text" class="form-control" id="username">
+                        <input type="text" class="form-control" id="login-username">
                         <h3> Password: </h3>
-                        <input type="password" class="form-control" id="password">
+                        <input type="password" class="form-control" id="login-password">
                         <br>
                         <button type="submit" class="btn btn-primary"> Login </button>
                     </form>        </div>
@@ -65,6 +73,7 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="JS/API_user.js"> </script>
         <script src="JS/user-control.js"></script>
     </footer>
 </html>
