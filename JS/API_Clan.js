@@ -127,13 +127,6 @@ function removeCards(){
     //cardRenderLocation.removeChild(children);
 }
 
-
-
-
-
-
-
-
 function makeSingleRatingCalls(){
 
     makeRatingSingleRequest(data[counter].id);
