@@ -1,0 +1,1 @@
+let submitButtonDiv = document.getElementById("submit-button-row");
