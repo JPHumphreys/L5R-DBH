@@ -13,18 +13,25 @@ const updateUserReq = new XMLHttpRequest();
 let currentUsername;
 let currentPassword;
 
+let addUserJSON = {
+    "userid":"",
+    "password":""
+}
+
 //ONLOADS
 addUserReq.onload = () => {
+    console.log("hits this");
+
     if (addUserReq.status == 200) {
         localStorage.setItem("username",currentUsername);
         localStorage.setItem("password",currentPassword);
-        onLoginSuccess();
     }
     else if(addUserReq.status > 201 && deleteUserURL.status <= 300){
         //alert issue
+        alert("check username and password are correct lengths: 15 chats for username, 40 for password")
     }
     else if(addUserReq.status >= 400){
-        
+        alert("backend is not online");
     }
 }
 
@@ -65,10 +72,13 @@ updateUserReq.onload = () => {
 }
 
 //MAKE REQUEST FUNCTIONS
-function makeAddUserRequest(username){
-    currentUsername = username;
-    addUserReq.open("POST", addUserURL + username);
-    addUserReq.send();
+function makeAddUserRequest(username,password){
+    //debugger;
+    addUserJSON.userid = username;
+    addUserJSON.password = password;
+    addUserReq.open("POST", addUserURL);
+    addUserReq.setRequestHeader("Content-Type", "application/json");
+    addUserReq.send(JSON.stringify(addUserJSON));
 }
 
 function makeDeleteUserRequest(username){

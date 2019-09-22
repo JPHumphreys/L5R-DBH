@@ -20,12 +20,13 @@ function login(ele){
 
 function register(ele){
     console.log("beep boop");
+    let username = registerUsernameInput.value;
+    let password = registerPasswordInput.value;
+    makeAddUserRequest(username,password);
     //post call to create user
 }
 
 function onLoginSuccess(){
-    loginItem.hidden = true;
-    registerItem.hidden = true;
     usernameText.innerText = localUsername;
 
 }
@@ -48,8 +49,6 @@ function changePassword(){
 function logout(){
     //logout
     //revers the hidden
-    loginItem.hidden = false;
-    registerItem.hidden = false;
     //remove data from system
 }
 
