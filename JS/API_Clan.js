@@ -1,53 +1,58 @@
 const cardURL = "http://34.89.95.16:9000/cards/";
-const singleRatingURL = "http://34.89.95.16:9000/ratings/"
-const req = new XMLHttpRequest();
-const singleRatingREQ = new XMLHttpRequest();
+const ratingURL = "http://34.89.95.16:9000/ratings/clan/"
+const cardReq = new XMLHttpRequest();
+const ratingReq = new XMLHttpRequest();
 const idAdd = "-rating";
 
 let data;
-let singleRatingData = [];
-let singleRatingDataToRender = [];
-let counter;
 
-req.onload = () => {
-    data = JSON.parse(req.response);
+let ratingData;
+let firstPassRatingData;
+
+
+cardReq.onload = () => {
+    data = JSON.parse(cardReq.response);
     renderCards();
 };
 
 function makeCardRequest(clan, side){
-    req.open("GET",cardURL + clan + "/" + side);
-    req.send();
+    cardReq.open("GET",cardURL + clan + "/" + side);
+    cardReq.send();
 }
 
-singleRatingREQ.onload = () => {
-    console.log(singleRatingREQ.response);
-    singleRatingDataToRender.push(JSON.parse(singleRatingREQ.response));
-    counter++;
-    
-    if(singleRatingDataToRender.length === data.length){
-        renderRatings();
-    }
-    else{
-        makeSingleRatingCalls();
-    }
+ratingReq.onload = () => {
+    console.log(ratingReq.response);
+    firstPassRatingData = JSON.parse(ratingReq.response);
+    renderRatings();
 };
 
-function makeRatingSingleRequest(id){
-    singleRatingREQ.open("GET",singleRatingURL + id,true);
-    singleRatingREQ.send();
+function makeRatingRequest(clan){
+    ratingReq.open("GET", ratingURL + clan);
+    ratingReq.send();
 }
 
-function handleSort(){
+function handleCardSort(){
 
     removeCards();
     data = [];
-    counter = 0;
-
     //push to lower case 
     let clanToLower = clanParent.innerText.toLowerCase();
     let typeToLower = sideParent.innerText.toLowerCase();
 
     makeCardRequest(clanToLower, typeToLower);
+}
+
+function handleRatingSort(){
+
+//debugger;
+
+    removeRatings();
+    ratingData = [];
+    firstPassRatingData = [];
+
+    let clanToLower = clanParent.innerText.toLowerCase();
+
+    makeRatingRequest(clanToLower);
 }
 
 function renderCards(){
@@ -71,7 +76,6 @@ function renderCards(){
         rating.classList.add("rating");
         rating.innerText = "Rating : ";
         rating.id = data[i].id + idAdd;
-        singleRatingData.push(data[i].id);
 
         let buttons = document.createElement("div");
         buttons.classList.add("row");
@@ -113,7 +117,7 @@ function renderCards(){
         cardRenderLocation.append(card);
     }
 
-    makeSingleRatingCalls();
+    handleRatingSort();
 }
 
 function removeCards(){
@@ -127,17 +131,29 @@ function removeCards(){
     //cardRenderLocation.removeChild(children);
 }
 
-function makeSingleRatingCalls(){
+function removeRatings(){
 
-    makeRatingSingleRequest(data[counter].id);
+    for(let i = 0; i < data.length; i++){
+        let ratingText = document.getElementById(data[i].id + idAdd);
+        ratingText.innerText = "Rating : ";
+    }
 }
 
 function renderRatings(){
-    for(let i = 0; i < data.length; i++){
-        //console.log(data[i].id);
-        makeRatingSingleRequest(data[i].id);
-        let rating = document.querySelector("#"+data[i].id+idAdd);
-        rating.append(singleRatingDataToRender[i].overallrating);
+
+    for(let i = 0; i < firstPassRatingData.length; i++){
+
+        for(let j = 0; j < data.length; j++){
+            if(firstPassRatingData[i].id == data[j].id){
+                ratingData.push(firstPassRatingData[i]);
+            }
+        }
+        console.log(ratingData[i]);
+    }
+
+    for(let i = 0; i < ratingData.length; i++){
+        let rating = document.querySelector("#" + ratingData[i].id + idAdd);
+        rating.append(ratingData[i].overallrating);
     }
     
 
