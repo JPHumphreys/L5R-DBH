@@ -57,15 +57,41 @@ function logout(){
     //logout
     //revers the hidden
     //remove data from system
+    userAddLocation.hidden = true;
+    loginItem.hidden = false;
+    registerItem.hidden = false;
+    localStorage.removeItem("username");
+    location.href = "login.html";
+
 }
 
 function deleteUser(){
     //post call to delete
+    let username = localStorage.getItem("username");
+    console.log(username);
+    makeDeleteUserRequest(username);
 }
 
 function pageChecker(){
-    if (location.href.endsWith("clanpage.html")|| location.href.endsWith("decklist.html") || location.href.endsWith("deckbuilder.html")){
-        usernameText.innerText = localStorage.getItem("username");
+
+
+
+    if (location.href.endsWith("clanpage.html")|| location.href.endsWith("decklist.html") || location.href.endsWith("index.html") || location.href.endsWith("deckbuilder.html")){
+        
+        
+        if(localStorage.getItem("username") === null){
+            location.href = "register.html";
+            userAddLocation.hidden = true;
+            loginItem.hidden = false;
+            registerItem.hidden = false;
+        }
+        else{
+            usernameText.innerText = localStorage.getItem("username");
+            userAddLocation.hidden = false;
+            loginItem.hidden = true;
+            registerItem.hidden = true;
+
+        }
     }
     //console.log(location.href);
     //console.log(location.href.endsWith("clanpage.html"));

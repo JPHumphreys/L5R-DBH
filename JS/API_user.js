@@ -1,7 +1,7 @@
 //USER URLS
-const addUserURL = "http://34.89.112.135:9000/add/user/";
+const addUserURL = "http://34.89.95.16:9000/add/user/";
 const deleteUserURL = "http://34.89.95.16:9000/delete/user/";
-const getUserURL = "http://34.89.112.135:9000/get/user/";
+const getUserURL = "http://34.89.95.16:9000/get/user/";
 const updateUserURL = "http://34.89.95.16:9000/update/user/";
 
 //USER XML REUQUESTS
@@ -35,6 +35,11 @@ addUserReq.onload = () => {
 
 deleteUserReq.onload = () => {
     if (deleteUserReq.status == 200) {
+
+
+        alert("the user has successfully been deleted");
+        deleteAllData();
+        location.href = "register.html";
         
     }
     else if(deleteUserReq.status > 201 && deleteUserURL.status <= 300){
@@ -43,6 +48,7 @@ deleteUserReq.onload = () => {
     else if(deleteUserURL.status >= 400){
         
     }
+    console.log(deleteUserReq.responseText);
 }
 
 getUserReq.onload = () => {
@@ -104,4 +110,8 @@ function makeGetUserRequest(username){
 function makeUpdateUserRequest(username){
     updateUserReq.open("PUT", updateUserURL + username);
     updateUserReq.send();
+}
+
+function deleteAllData(username){
+
 }
