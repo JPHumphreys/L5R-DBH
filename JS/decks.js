@@ -20,6 +20,16 @@ function handleUpdateDeck(){
     console.log("update");
 }
 
+function handleCopyDeck(){
+
+    console.log("copy");
+}
+
+function handleDeleteDeck(){
+
+    console.log("delete");
+}
+
 
 function deckBuilder(deckname,priclan, splashclan){
 
@@ -55,7 +65,9 @@ function deckBuilder(deckname,priclan, splashclan){
     updateButton.classList.add("btn-primary");
     updateButton.classList.add("deck-buttons");
     updateButton.innerText = "Update";
-    updateButton.addEventListener("click",handleUpdateDeck());
+    updateButton.addEventListener("click",function(){
+        handleUpdateDeck();
+    });
 
     let copyButton = document.createElement("button");
     copyButton.type = "button";
@@ -63,6 +75,9 @@ function deckBuilder(deckname,priclan, splashclan){
     copyButton.classList.add("btn-primary");
     copyButton.classList.add("deck-buttons");
     copyButton.innerText = "Copy";
+    copyButton.addEventListener("click", function(){
+        handleCopyDeck();
+    })
 
     let deleteButton = document.createElement("button");
     deleteButton.type = "button";
@@ -70,6 +85,9 @@ function deckBuilder(deckname,priclan, splashclan){
     deleteButton.classList.add("btn-danger");
     deleteButton.classList.add("deck-buttons");
     deleteButton.innerText = "Delete";
+    deleteButton.addEventListener("click", function(){
+        handleDeleteDeck();
+    })
 
     buttonRow.appendChild(updateButton);
     buttonRow.appendChild(copyButton);

@@ -55,6 +55,25 @@ function handleRatingSort(){
     makeRatingRequest(clanToLower);
 }
 
+function handleVote(){
+
+    console.log("vote");
+}
+
+function handleUpdateVote(){
+
+    console.log("update vote");
+}
+
+function handleRemoveVote(){
+
+    console.log("remove vote");
+}
+
+
+
+
+
 function renderCards(){
     //debugger;
     for(let i = 0; i < data.length; i++)
@@ -87,6 +106,9 @@ function renderCards(){
         voteButton.classList.add("btn-md");
         voteButton.classList.add("card-buttons");
         voteButton.innerText = "Vote";
+        voteButton.addEventListener("click", function(){
+            handleVote();
+        })
 
         let updateButton = document.createElement("button");
         updateButton.type = "button";
@@ -95,6 +117,9 @@ function renderCards(){
         updateButton.classList.add("btn-md");
         updateButton.classList.add("card-buttons");
         updateButton.innerText = "Update";
+        updateButton.addEventListener("click", function(){
+            handleUpdateVote();
+        })
 
         let removeButton = document.createElement("button");
         removeButton.type = "button";
@@ -103,6 +128,9 @@ function renderCards(){
         removeButton.classList.add("btn-md");
         removeButton.classList.add("card-buttons");
         removeButton.innerText = "Remove Rating";
+        removeButton.addEventListener("click", function(){
+            handleRemoveVote();
+        })
 
         buttons.append(voteButton);
         buttons.append(updateButton);
