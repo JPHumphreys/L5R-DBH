@@ -9,26 +9,19 @@ const loginPasswordInput = document.getElementById("login-password");
 const registerUsernameInput = document.getElementById("register-username");
 const registerPasswordInput = document.getElementById("register-password");
 
-let localUsername = localStorage.getItem("username");
-let localPassword = localStorage.getItem("password");
+let currentUsername;
+let currentPassword;
 
 pageChecker();
 
 
 function login(ele){
 
-    console.log(localUsername);
-    console.log(localPassword);
+    currentUsername = loginUsernameInput.value;
+    currentPassword = loginPasswordInput.value;
 
-    if(localUsername === "" || localUsername === null){
-        alert("please create a user");
-    }
-    else if(localUsername === loginUsernameInput.value && localPassword === loginPasswordInput.value){
-        makeGetUserRequest(localUsername);
-    }
-    else{
-        alert("username or login was incorrect");
-    }
+    makeGetUserRequest(loginUsernameInput.value);
+
 }
 
 function register(ele){
@@ -40,6 +33,7 @@ function register(ele){
 }
 
 function onLoginSuccess(){
+
     location.href = "decklist.html";
 }
 
@@ -56,6 +50,7 @@ function addUserToNav(username){
 
 function changePassword(){
     //put call to update
+
 }
 
 function logout(){
@@ -70,8 +65,8 @@ function deleteUser(){
 
 function pageChecker(){
     if (location.href.endsWith("clanpage.html")|| location.href.endsWith("decklist.html") || location.href.endsWith("deckbuilder.html")){
-        usernameText.innerText = localUsername;
+        usernameText.innerText = localStorage.getItem("username");
     }
-    console.log(location.href);
-    console.log(location.href.endsWith("clanpage.html"));
+    //console.log(location.href);
+    //console.log(location.href.endsWith("clanpage.html"));
 }

@@ -1,5 +1,5 @@
 const cardURL = "http://34.89.95.16:9000/cards/";
-const ratingURL = "http://34.89.95.16:9000/ratings/clan/"
+const ratingURL = "http://34.89.95.16:9000/ratings/clan/";
 const cardReq = new XMLHttpRequest();
 const ratingReq = new XMLHttpRequest();
 const idAdd = "-rating";
