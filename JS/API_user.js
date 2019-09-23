@@ -1,8 +1,8 @@
 //USER URLS
-const addUserURL = "http://34.89.95.16:9000/add/user/";
-const deleteUserURL = "http://34.89.95.16:9000/delete/user/";
-const getUserURL = "http://34.89.95.16:9000/get/user/";
-const updateUserURL = "http://34.89.95.16:9000/update/user/";
+const addUserURL = "http://34.89.112.135:9000/add/user/";
+const deleteUserURL = "http://34.89.112.135:9000/delete/user/";
+const getUserURL = "http://34.89.112.135:9000/get/user/";
+const updateUserURL = "http://34.89.112.135:9000/update/user/";
 
 //USER XML REUQUESTS
 const addUserReq = new XMLHttpRequest();
@@ -28,7 +28,7 @@ addUserReq.onload = () => {
         //alert issue
         alert("check username and password are correct lengths: 15 chats for username, 40 for password")
     }
-    else if(addUserReq.status >= 400){
+    else{
         alert("backend is not online");
     }
 }
@@ -45,7 +45,7 @@ deleteUserReq.onload = () => {
     else if(deleteUserReq.status > 201 && deleteUserURL.status <= 300){
         //alert issue
     }
-    else if(deleteUserURL.status >= 400){
+    else{
         
     }
     console.log(deleteUserReq.responseText);
@@ -68,7 +68,7 @@ getUserReq.onload = () => {
     else if(getUserReq.status > 201 && deleteUserURL.status <= 300){
         //alert issue
     }
-    else if(getUserReq.status >= 400){
+    else{
         
     }
     //console.log(getUserReq.responseText);
@@ -81,7 +81,7 @@ updateUserReq.onload = () => {
     else if(updateUserReq.status > 206 && deleteUserURL.status <= 300){
         //alert issue
     }
-    else if(updateUserReq.status >= 400){
+    else{
         
     }
 }
