@@ -30,7 +30,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="clanpage.html">Clan Pages</a>
                     </li>
-                    <li class="nav-item">
+                    <li id="user-add-location" class="nav-item">
                             <div class="btn-group">
                                     <button id="username-display"class="btn btn-primary btn-md" type="button">
                                       
@@ -45,6 +45,12 @@
                                 </div>
                             </div>
                     </li>
+                    <li id="nav-login-item" class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li id="nav-register-item" class="nav-item">
+                        <a class="nav-link" href="register.html">Register</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -55,36 +61,50 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-12">
+        <div id="deck-render-location" class="row">
+
+            <div class="col-sm-12 col-md-6 col-lg-4">
                 <div class="card mb-4 deck">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Deck Name</h5>
-                        <p class="card-text">sample text</p>
-                        <a href="#" class="card-link">link</a>
+                        <h4>Deck Name</h4>
+                        <h5> Primary Clan : </h5>
+                        <p> Splash Clan : </p>
+                        <div class="row">
+                            <button class="btn btn-primary deck-buttons" type="button">Update</button>
+                            <button class="btn btn-primary deck-buttons" type="button">Copy</button>
+                            <button class="btn btn-danger deck-buttons" type="button">Delete</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-12 col-md-12 col-lg-12">
-                <div class="card mb-4 deck">
-                    <!-- add color when creating objects, have them as set variables-->
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Deck Name</h5>
-                        <p class="card-text">sample text</p>
-                        <a href="#" class="card-link">link</a>
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="card mb-4 deck">
+                        <div class="card-body text-center">
+                            <h4>Deck Name</h4>
+                            <h5> Primary Clan : </h5>
+                            <p> Splash Clan : </p>
+                            <div class="row">
+                                <button class="btn btn-primary deck-buttons" type="button">Update</button>
+                                <button class="btn btn-primary deck-buttons" type="button">Copy</button>
+                                <button class="btn btn-danger deck-buttons" type="button">Delete</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-12">
-                <div class="card mb-4 deck">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Deck Name</h5>
-                        <p class="card-text">sample text</p>
-                        <a href="#" class="card-link">link</a>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card mb-4 deck">
+                            <div class="card-body text-center">
+                                <h4>Deck Name</h4>
+                                <h5> Primary Clan : </h5>
+                                <p> Splash Clan : </p>
+                                <div class="row">
+                                    <button class="btn btn-primary deck-buttons" type="button">Update</button>
+                                    <button class="btn btn-primary deck-buttons" type="button">Copy</button>
+                                    <button class="btn btn-danger deck-buttons" type="button">Delete</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
     </div>
 </body>
 <footer>
@@ -92,7 +112,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="JS/user-control.js"></script>
+    <script src="JS/API_user.js"></script>
     <script src="JS/modules/clan_details.js" type="module"></script>
-    <script src="JS/decks.js" type="module"></script>
+    <script src="JS/decks.js"></script>
 </footer>
 </html>
