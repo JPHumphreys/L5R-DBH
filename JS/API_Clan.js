@@ -21,7 +21,7 @@ function makeCardRequest(clan, side){
 }
 
 ratingReq.onload = () => {
-    console.log(ratingReq.response);
+    //console.log(ratingReq.response);
     firstPassRatingData = JSON.parse(ratingReq.response);
     renderRatings();
 };
@@ -124,7 +124,7 @@ function renderCards(){
         let removeButton = document.createElement("button");
         removeButton.type = "button";
         removeButton.classList.add("btn");
-        removeButton.classList.add("btn-danger")
+        removeButton.classList.add("btn-danger");
         removeButton.classList.add("btn-md");
         removeButton.classList.add("card-buttons");
         removeButton.innerText = "Remove Rating";
