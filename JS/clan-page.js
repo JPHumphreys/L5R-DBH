@@ -37,6 +37,18 @@ function buttonCheck(){
     }
 }
 
+function changeButtonStyle(obj){
+
+    if(obj.classList.contains("btn-dark")){
+        obj.classList.remove("btn-dark");
+        obj.classList.add("btn-success");
+    }
+    else{
+        obj.classList.remove("btn-success");
+        obj.classList.add("btn-dark");
+    }
+}
+
 function vsAdd(ele){
     //collect textcontent
    switch(ele.innerText){
@@ -65,14 +77,3 @@ function vsAdd(ele){
     
 }
 
-function changeButtonStyle(obj){
-
-    if(obj.classList.contains("btn-dark")){
-        obj.classList.remove("btn-dark");
-        obj.classList.add("btn-success");
-    }
-    else{
-        obj.classList.remove("btn-success");
-        obj.classList.add("btn-dark");
-    }
-}
