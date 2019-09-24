@@ -4,6 +4,8 @@ const deleteUserURL = "http://34.89.112.135:9000/delete/user/";
 const getUserURL = "http://34.89.112.135:9000/get/user/";
 const updateUserURL = "http://34.89.112.135:9000/update/user/";
 
+const passwordInput = document.getElementById("input-user-text");
+
 //USER XML REUQUESTS
 const addUserReq = new XMLHttpRequest();
 const deleteUserReq = new XMLHttpRequest();
@@ -12,6 +14,12 @@ const updateUserReq = new XMLHttpRequest();
 
 let getUserData;
 
+let newPassword;
+
+let addPassJSON = {
+    "password":""
+};
+
 let addUserJSON = {
     "userid":"",
     "password":""
@@ -19,6 +27,19 @@ let addUserJSON = {
 
 function deleteAllData(username){
 
+}
+
+function callPasswordModal(){
+    debugger;
+    $("#update-user-modal").modal('toggle');
+}
+
+function handleUpdatePassword(){
+    newPassword = passwordInput.value;
+    console.log(newPassword);
+    addPassJSON.password = newPassword;
+    let name = localStorage.getItem("username");
+    makeUpdateUserRequest(name);
 }
 
 //ONLOADS
@@ -81,8 +102,10 @@ getUserReq.onload = () => {
 }
 
 updateUserReq.onload = () => {
+
     if (updateUserReq.status === 200) {
-        
+        alert("password changed successfully");
+        location.reload();
     }
     else if(updateUserReq.status > 206 && deleteUserURL.status <= 300){
         //alert issue
@@ -116,6 +139,7 @@ function makeGetUserRequest(username){
 
 function makeUpdateUserRequest(username){
     updateUserReq.open("PUT", updateUserURL + username);
-    updateUserReq.send();
+    updateUserReq.setRequestHeader("Content-Type","application/json");
+    updateUserReq.send(JSON.stringify(addPassJSON));
 }
 
