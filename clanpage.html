@@ -37,7 +37,7 @@
                                           <span class="sr-only">Toggle Dropdown</span>
                                         </button>
                                     <div id="user-settings" class="dropdown-menu">
-                                        <button class="dropdown-item" onclick="changePassword()">Change Password</button>
+                                        <button class="dropdown-item" onclick="callPasswordModal()">Change Password</button>
                                         <button class="dropdown-item" onclick="logout()">Logout</button>
                                         <button class="dropdown-item" onclick="deleteUser()">Delete User</button>
                                     </div>
@@ -75,6 +75,8 @@
                             <button class="dropdown-item" onclick="clanSelect(this)">Scorpion</button>
                             <div class="dropdown-divider"></div>
                             <button class="dropdown-item" onclick="clanSelect(this)">Unicorn</button>
+                            <div class="dropdown-divider"></div>
+                            <button class="dropdown-item" onclick="clanSelect(this)">Neutral</button>
                         </div>
                     </div>
                     <div id="side-select" class="btn-group">
@@ -111,8 +113,6 @@
                         <button class="dropdown-item" onclick="vsAdd(this)">Scorpion</button>
                         <button class="dropdown-item" onclick="vsAdd(this)">Unicorn</button>
                     </div>
-
-                    <button id="vs-button" type="button" class="btn btn-danger btn-lg " onclick="vsSelector(this)">Apply</button>
 
                 </div>
 
@@ -194,6 +194,31 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-primary" onclick="handleRatingUpdate()">Save changes</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="update-user-modal" class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Update Password</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group input-group-lg">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="inputGroup-sizing-lg">New Password : </span>
+                        </div>
+                        <input id="input-user-text" type="password" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+                      </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" onclick="handleUpdatePassword()">Save changes</button>
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
               </div>

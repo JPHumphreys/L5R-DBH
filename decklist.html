@@ -106,6 +106,33 @@
                         </div>
                     </div>
     </div>
+
+    <div id="update-user-modal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Update Password</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group input-group-lg">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-lg">New Password : </span>
+                    </div>
+                    <input id="input-user-text" type="password" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+                  </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" onclick="handleUpdatePassword()">Save changes</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
 </body>
 <footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
