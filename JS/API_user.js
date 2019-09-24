@@ -23,7 +23,7 @@ function deleteAllData(username){
 
 //ONLOADS
 addUserReq.onload = () => {
-    console.log("hits this");
+    //console.log("hits this");
 
     if (addUserReq.status === 200) {
         localStorage.setItem("username",addUserJSON.userid);
@@ -48,9 +48,10 @@ deleteUserReq.onload = () => {
     }
     else if(deleteUserReq.status > 201 && deleteUserURL.status <= 300){
         //alert issue
+        alert("error in the input");
     }
     else{
-        
+        alert("error in the backend");
     }
     //console.log(deleteUserReq.responseText);
 }
@@ -71,9 +72,10 @@ getUserReq.onload = () => {
     }
     else if(getUserReq.status > 201 && deleteUserURL.status <= 300){
         //alert issue
+        alert("error in the input");
     }
     else{
-        
+        alert("error in the backend");
     }
     //console.log(getUserReq.responseText);
 }
@@ -84,9 +86,10 @@ updateUserReq.onload = () => {
     }
     else if(updateUserReq.status > 206 && deleteUserURL.status <= 300){
         //alert issue
+        alert("error in the input");
     }
     else{
-        
+        alert("error in the backend");
     }
 }
 

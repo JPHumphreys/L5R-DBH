@@ -44,6 +44,21 @@ function getOBJID(obj, i){
     return obj[i].id;
 }
 
+function handleVote(){
+
+    console.log("vote");
+}
+
+function handleUpdateVote(){
+
+    console.log("update vote");
+}
+
+function handleRemoveVote(){
+
+    console.log("remove vote");
+}
+
 function renderCards(){
     //debugger;
     for(let i = 0; i < data.length; i++)
@@ -78,7 +93,7 @@ function renderCards(){
         voteButton.innerText = "Vote";
         voteButton.addEventListener("click", function(){
             handleVote();
-        })
+        });
 
         let updateButton = document.createElement("button");
         updateButton.type = "button";
@@ -89,7 +104,7 @@ function renderCards(){
         updateButton.innerText = "Update";
         updateButton.addEventListener("click", function(){
             handleUpdateVote();
-        })
+        });
 
         let removeButton = document.createElement("button");
         removeButton.type = "button";
@@ -100,7 +115,7 @@ function renderCards(){
         removeButton.innerText = "Remove Rating";
         removeButton.addEventListener("click", function(){
             handleRemoveVote();
-        })
+        });
 
         buttons.append(voteButton);
         buttons.append(updateButton);
@@ -130,6 +145,25 @@ function makeCardRequest(clan, side){
     cardReq.send();
 }
 
+function renderRatings(){
+
+    for(let i = 0; i < firstPassRatingData.length; i++){
+
+        for(let j = 0; j < data.length; j++){
+            if(getOBJID(firstPassRatingData,i) === getOBJID(data,j)){
+                ratingData.push(firstPassRatingData[i]);
+            }
+        }
+        //console.log(ratingData[i]);
+    }
+
+    for(let i = 0; i < ratingData.length; i++){
+        let rating = document.querySelector("#" + getOBJID(ratingData,i) + idAdd);
+        rating.append(ratingData[i].overallrating);
+    }
+    
+}
+
 ratingReq.onload = () => {
     //console.log(ratingReq.response);
     firstPassRatingData = JSON.parse(ratingReq.response);
@@ -150,20 +184,6 @@ function handleCardSort(){
 
 
 
-function handleVote(){
-
-    console.log("vote");
-}
-
-function handleUpdateVote(){
-
-    console.log("update vote");
-}
-
-function handleRemoveVote(){
-
-    console.log("remove vote");
-}
 
 function removeCards(){
 
@@ -178,22 +198,3 @@ function removeCards(){
 
 
 
-function renderRatings(){
-
-    for(let i = 0; i < firstPassRatingData.length; i++){
-
-        for(let j = 0; j < data.length; j++){
-            if(getOBJID(firstPassRatingData,i) == getOBJID(data,j)){
-                ratingData.push(firstPassRatingData[i]);
-            }
-        }
-        console.log(ratingData[i]);
-    }
-
-    for(let i = 0; i < ratingData.length; i++){
-        let rating = document.querySelector("#" + getOBJID(ratingData,i) + idAdd);
-        rating.append(ratingData[i].overallrating);
-    }
-    
-
-}

@@ -22,7 +22,7 @@ addDeckReq.onload = () => {
         alert("something is incorrect in the input");
     }
     else{
-
+        alert("error in the backend");
     }
 }
 
@@ -32,10 +32,10 @@ deleteDeckReq.onload = () => {
 
     }
     else if(deleteDeckReq.status >= 201 || deleteDeckReq.status < 301){
-
+        alert("error in the input");
     }
     else{
-        
+        alert("error in the backend");
     }
 }
 
@@ -45,10 +45,10 @@ getDeckReq.onload = () => {
 
     }
     else if(getDeckReq.status >= 201 || getDeckReq.status < 301){
-
+        alert("error in the input");
     }
     else{
-        
+        alert("error in the backend");
     }
 }
 
@@ -58,10 +58,10 @@ updateDeckReq.onload = () => {
 
     }
     else if(updateDeckReq.status >= 201 || updateDeckReq.status < 301){
-
+        alert("error in the input");
     }
     else{
-        
+        alert("error in the backend");
     }
 }
 
