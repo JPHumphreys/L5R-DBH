@@ -30,7 +30,6 @@ function deleteAllData(username){
 }
 
 function callPasswordModal(){
-    debugger;
     $("#update-user-modal").modal('toggle');
 }
 
