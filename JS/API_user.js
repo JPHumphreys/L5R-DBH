@@ -17,16 +17,20 @@ let addUserJSON = {
     "password":""
 }
 
+function deleteAllData(username){
+
+}
+
 //ONLOADS
 addUserReq.onload = () => {
     console.log("hits this");
 
-    if (addUserReq.status == 200) {
+    if (addUserReq.status === 200) {
         localStorage.setItem("username",addUserJSON.userid);
     }
     else if(addUserReq.status > 201 && deleteUserURL.status <= 300){
         //alert issue
-        alert("check username and password are correct lengths: 15 chats for username, 40 for password")
+        alert("check username and password are correct lengths: 15 chats for username, 40 for password");
     }
     else{
         alert("backend is not online");
@@ -34,7 +38,7 @@ addUserReq.onload = () => {
 }
 
 deleteUserReq.onload = () => {
-    if (deleteUserReq.status == 200) {
+    if (deleteUserReq.status === 200) {
 
 
         alert("the user has successfully been deleted");
@@ -48,11 +52,11 @@ deleteUserReq.onload = () => {
     else{
         
     }
-    console.log(deleteUserReq.responseText);
+    //console.log(deleteUserReq.responseText);
 }
 
 getUserReq.onload = () => {
-    if (getUserReq.status == 200) {
+    if (getUserReq.status === 200) {
 
         getUserData = JSON.parse(getUserReq.responseText);
 
@@ -75,7 +79,7 @@ getUserReq.onload = () => {
 }
 
 updateUserReq.onload = () => {
-    if (updateUserReq.status == 200) {
+    if (updateUserReq.status === 200) {
         
     }
     else if(updateUserReq.status > 206 && deleteUserURL.status <= 300){
@@ -112,6 +116,3 @@ function makeUpdateUserRequest(username){
     updateUserReq.send();
 }
 
-function deleteAllData(username){
-
-}

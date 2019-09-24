@@ -10,69 +10,39 @@ let ratingData;
 let firstPassRatingData;
 
 
-cardReq.onload = () => {
-    data = JSON.parse(cardReq.response);
-    renderCards();
-};
-
-function makeCardRequest(clan, side){
-    cardReq.open("GET",cardURL + clan + "/" + side);
-    cardReq.send();
-}
-
-ratingReq.onload = () => {
-    console.log(ratingReq.response);
-    firstPassRatingData = JSON.parse(ratingReq.response);
-    renderRatings();
-};
-
 function makeRatingRequest(clan){
     ratingReq.open("GET", ratingURL + clan);
     ratingReq.send();
 }
 
-function handleCardSort(){
+function removeRatings(){
 
-    removeCards();
-    data = [];
-    //push to lower case 
-    let clanToLower = clanParent.innerText.toLowerCase();
-    let typeToLower = sideParent.innerText.toLowerCase();
-
-    makeCardRequest(clanToLower, typeToLower);
+    for(let i = 0; i < data.length; i++){
+        let ratingText = document.getElementById(data[i].id + idAdd);
+        ratingText.innerText = "Rating : ";
+    }
 }
 
 function handleRatingSort(){
 
-//debugger;
+    //debugger;
+    
+        removeRatings();
+        ratingData = [];
+        firstPassRatingData = [];
+    
+        let clanToLower = clanParent.innerText.toLowerCase();
+    
+        makeRatingRequest(clanToLower);
+    }
 
-    removeRatings();
-    ratingData = [];
-    firstPassRatingData = [];
-
-    let clanToLower = clanParent.innerText.toLowerCase();
-
-    makeRatingRequest(clanToLower);
+function getIMGLocation(obj, i){
+    return obj[i].imglocation;
 }
 
-function handleVote(){
-
-    console.log("vote");
+function getOBJID(obj, i){
+    return obj[i].id;
 }
-
-function handleUpdateVote(){
-
-    console.log("update vote");
-}
-
-function handleRemoveVote(){
-
-    console.log("remove vote");
-}
-
-
-
-
 
 function renderCards(){
     //debugger;
@@ -87,14 +57,14 @@ function renderCards(){
         container.classList.add("card");
 
         let image = document.createElement("img");
-        image.src = data[i].imglocation;
+        image.src = getIMGLocation(data,i);
         image.classList.add("img-fluid");
-        image.alt = data[i].id;
+        image.alt = getOBJID(data,i);
         
         let rating = document.createElement("h5");
         rating.classList.add("rating");
         rating.innerText = "Rating : ";
-        rating.id = data[i].id + idAdd;
+        rating.id = getOBJID(data,i) + idAdd;
 
         let buttons = document.createElement("div");
         buttons.classList.add("row");
@@ -102,7 +72,7 @@ function renderCards(){
         let voteButton = document.createElement("button");
         voteButton.type = "button";
         voteButton.classList.add("btn");
-        voteButton.classList.add("btn-primary")
+        voteButton.classList.add("btn-primary");
         voteButton.classList.add("btn-md");
         voteButton.classList.add("card-buttons");
         voteButton.innerText = "Vote";
@@ -113,7 +83,7 @@ function renderCards(){
         let updateButton = document.createElement("button");
         updateButton.type = "button";
         updateButton.classList.add("btn");
-        updateButton.classList.add("btn-primary")
+        updateButton.classList.add("btn-primary");
         updateButton.classList.add("btn-md");
         updateButton.classList.add("card-buttons");
         updateButton.innerText = "Update";
@@ -124,7 +94,7 @@ function renderCards(){
         let removeButton = document.createElement("button");
         removeButton.type = "button";
         removeButton.classList.add("btn");
-        removeButton.classList.add("btn-danger")
+        removeButton.classList.add("btn-danger");
         removeButton.classList.add("btn-md");
         removeButton.classList.add("card-buttons");
         removeButton.innerText = "Remove Rating";
@@ -148,6 +118,53 @@ function renderCards(){
     handleRatingSort();
 }
 
+
+
+cardReq.onload = () => {
+    data = JSON.parse(cardReq.response);
+    renderCards();
+};
+
+function makeCardRequest(clan, side){
+    cardReq.open("GET",cardURL + clan + "/" + side);
+    cardReq.send();
+}
+
+ratingReq.onload = () => {
+    //console.log(ratingReq.response);
+    firstPassRatingData = JSON.parse(ratingReq.response);
+    renderRatings();
+};
+
+
+function handleCardSort(){
+
+    removeCards();
+    data = [];
+    //push to lower case 
+    let clanToLower = clanParent.innerText.toLowerCase();
+    let typeToLower = sideParent.innerText.toLowerCase();
+
+    makeCardRequest(clanToLower, typeToLower);
+}
+
+
+
+function handleVote(){
+
+    console.log("vote");
+}
+
+function handleUpdateVote(){
+
+    console.log("update vote");
+}
+
+function handleRemoveVote(){
+
+    console.log("remove vote");
+}
+
 function removeCards(){
 
     let children = document.querySelectorAll(".cards");
@@ -159,20 +176,14 @@ function removeCards(){
     //cardRenderLocation.removeChild(children);
 }
 
-function removeRatings(){
 
-    for(let i = 0; i < data.length; i++){
-        let ratingText = document.getElementById(data[i].id + idAdd);
-        ratingText.innerText = "Rating : ";
-    }
-}
 
 function renderRatings(){
 
     for(let i = 0; i < firstPassRatingData.length; i++){
 
         for(let j = 0; j < data.length; j++){
-            if(firstPassRatingData[i].id == data[j].id){
+            if(getOBJID(firstPassRatingData,i) == getOBJID(data,j)){
                 ratingData.push(firstPassRatingData[i]);
             }
         }
@@ -180,7 +191,7 @@ function renderRatings(){
     }
 
     for(let i = 0; i < ratingData.length; i++){
-        let rating = document.querySelector("#" + ratingData[i].id + idAdd);
+        let rating = document.querySelector("#" + getOBJID(ratingData,i) + idAdd);
         rating.append(ratingData[i].overallrating);
     }
     
