@@ -60,7 +60,7 @@ function changeButtonStyle(obj){
     }
 }
 
-function vsClanChecker(obj, clanName){
+function vsClanChecker(clanName){
 
     switch(clanName){
         case "crab":
@@ -97,31 +97,31 @@ function vsAdd(ele){
    switch(ele.innerText){
        case "Crab":
             changeButtonStyle(crabVs);
-            vsClanChecker(vsClansList,"crab");
+            vsClanChecker("crab");
        break;
        case "Crane":
             changeButtonStyle(craneVs);
-            vsClanChecker(vsClansList,"crane");
+            vsClanChecker("crane");
        break;
         case "Dragon":
             changeButtonStyle(dragonVs);
-            vsClanChecker(vsClansList,"dragon");
+            vsClanChecker("dragon");
         break;
         case "Lion":
             changeButtonStyle(lionVs);
-            vsClanChecker(vsClansList,"lion");
+            vsClanChecker("lion");
         break;
         case "Phoenix":
             changeButtonStyle(phoenixVs);
-            vsClanChecker(vsClansList,"phoenix");
+            vsClanChecker("phoenix");
         break;
         case "Scorpion":
             changeButtonStyle(scorpionVs);
-            vsClanChecker(vsClansList,"scorpion");
+            vsClanChecker("scorpion");
         break;
         case "Unicorn":
             changeButtonStyle(unicornVs);
-            vsClanChecker(vsClansList,"unicorn");
+            vsClanChecker("unicorn");
         break;
    }
     
