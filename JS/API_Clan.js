@@ -4,16 +4,6 @@ const cardReq = new XMLHttpRequest();
 const ratingReq = new XMLHttpRequest();
 const idAdd = "-rating";
 
-let vsClans = {
-    "crab":false,
-    "crane":false,
-    "dragon":false,
-    "lion":false,
-    "phoenix":false,
-    "scorpion":false,
-    "unicorn":false
-};
-
 const addRatingValue = document.getElementById("update-rating-slider");
 
 let data;
