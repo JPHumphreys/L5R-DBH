@@ -4,11 +4,22 @@ const cardReq = new XMLHttpRequest();
 const ratingReq = new XMLHttpRequest();
 const idAdd = "-rating";
 
+let vsClans = {
+    "crab":false,
+    "crane":false,
+    "dragon":false,
+    "lion":false,
+    "phoenix":false,
+    "scorpion":false,
+    "unicorn":false
+};
+
+const addRatingValue = document.getElementById("update-rating-slider");
+
 let data;
 
 let ratingData;
 let firstPassRatingData;
-
 
 function makeRatingRequest(clan){
     ratingReq.open("GET", ratingURL + clan);
@@ -45,13 +56,20 @@ function getOBJID(obj, i){
 }
 
 function handleVote(){
+   console.log(addRatingValue.value);
+}
+
+function displayVoteModal(){
 
     console.log("vote");
+    $("#update-vote-modal").modal('toggle');
+    
 }
 
 function handleUpdateVote(){
 
     console.log("update vote");
+
 }
 
 function handleRemoveVote(){
@@ -92,7 +110,7 @@ function renderCards(){
         voteButton.classList.add("card-buttons");
         voteButton.innerText = "Vote";
         voteButton.addEventListener("click", function(){
-            handleVote();
+            displayVoteModal();
         });
 
         let updateButton = document.createElement("button");

@@ -14,6 +14,7 @@ const phoenixVs = document.getElementById("phoenix-vs-button");
 const scorpionVs = document.getElementById("scorpion-vs-button");
 const unicornVs = document.getElementById("unicorn-vs-button");
 
+let updateSliderValue;
 
 function clanSelect(ele){
     clanParent.innerText = ele.textContent;
