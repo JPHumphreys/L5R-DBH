@@ -87,7 +87,7 @@ function deckBuilder(deckname,priclan, splashclan){
     deleteButton.innerText = "Delete";
     deleteButton.addEventListener("click", function(){
         handleDeleteDeck();
-    })
+    });
 
     buttonRow.appendChild(updateButton);
     buttonRow.appendChild(copyButton);
