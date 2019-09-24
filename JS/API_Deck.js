@@ -19,7 +19,7 @@ addDeckReq.onload = () => {
 
     }
     else if(addDeckReq.status >= 201 || addDeckReq.status < 301){
-
+        alert("something is incorrect in the input");
     }
     else{
 
