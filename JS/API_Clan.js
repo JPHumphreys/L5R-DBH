@@ -4,7 +4,8 @@ const cardReq = new XMLHttpRequest();
 const ratingReq = new XMLHttpRequest();
 const idAdd = "-rating";
 
-const addRatingValue = document.getElementById("update-rating-slider");
+const addRatingValue = document.getElementById("add-rating-text");
+const updateRatingValue = document.getElementById("update-rating-text");
 
 let data;
 
@@ -25,8 +26,6 @@ function removeRatings(){
 }
 
 function handleRatingSort(){
-
-    //debugger;
     
         removeRatings();
         ratingData = [];
@@ -45,20 +44,24 @@ function getOBJID(obj, i){
     return obj[i].id;
 }
 
-function handleVote(){
+function handleRatingVote(){
    console.log(addRatingValue.value);
 }
 
 function displayVoteModal(){
 
-    console.log("vote");
-    $("#update-vote-modal").modal('toggle');
+    $("#vote-modal").modal('toggle');
     
 }
 
-function handleUpdateVote(){
+function displayUpdateModal(){
 
-    console.log("update vote");
+    $("#update-modal").modal('toggle');
+}
+
+function handleRatingUpdate(){
+
+    console.log(updateRatingValue.value);
 
 }
 
@@ -111,7 +114,7 @@ function renderCards(){
         updateButton.classList.add("card-buttons");
         updateButton.innerText = "Update";
         updateButton.addEventListener("click", function(){
-            handleUpdateVote();
+            displayUpdateModal();
         });
 
         let removeButton = document.createElement("button");
@@ -122,7 +125,7 @@ function renderCards(){
         removeButton.classList.add("card-buttons");
         removeButton.innerText = "Remove Rating";
         removeButton.addEventListener("click", function(){
-            handleRemoveVote();
+            alert("rating removed");
         });
 
         buttons.append(voteButton);
@@ -140,8 +143,6 @@ function renderCards(){
 
     handleRatingSort();
 }
-
-
 
 cardReq.onload = () => {
     data = JSON.parse(cardReq.response);
@@ -190,9 +191,6 @@ function handleCardSort(){
     makeCardRequest(clanToLower, typeToLower);
 }
 
-
-
-
 function removeCards(){
 
     let children = document.querySelectorAll(".cards");
@@ -201,8 +199,6 @@ function removeCards(){
         children[i].remove();
     }
     
-    //cardRenderLocation.removeChild(children);
 }
-
 
 
