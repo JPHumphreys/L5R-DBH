@@ -1,8 +1,11 @@
 const cardURL = "http://34.89.112.135:9000/cards/";
 const ratingURL = "http://34.89.112.135:9000/ratings/clan/";
+const addRatingURL = "http://34.89.112.135:9000/add/ratings/";
 const cardReq = new XMLHttpRequest();
 const ratingReq = new XMLHttpRequest();
-const idAdd = "-rating";
+const ratingAddReq = new XMLHttpRequest();
+const ratingAdd = "-rating";
+const voteButtonAdd = "-add";
 
 const addRatingValue = document.getElementById("add-rating-text");
 const updateRatingValue = document.getElementById("update-rating-text");
@@ -12,6 +15,24 @@ let data;
 let ratingData;
 let firstPassRatingData;
 
+let instanceVotes = [];
+
+let ratingVariableNames = {
+    "ratingcrab":0.0,
+    "ratingcrane":0.0,
+    "ratingdragon":0.0,
+    "ratinglion":0.0,
+    "ratingphoenix":0.0,
+    "ratingscorpion":0.0,
+    "ratingunicorn":0.0
+};
+
+let currentCardSelected;
+let currentRating;
+let counter = 0;
+let noOfVsClans = 0;
+
+
 function makeRatingRequest(clan){
     ratingReq.open("GET", ratingURL + clan);
     ratingReq.send();
@@ -20,7 +41,7 @@ function makeRatingRequest(clan){
 function removeRatings(){
 
     for(let i = 0; i < data.length; i++){
-        let ratingText = document.getElementById(data[i].id + idAdd);
+        let ratingText = document.getElementById(data[i].id + ratingAdd);
         ratingText.innerText = "Rating : ";
     }
 }
@@ -45,16 +66,189 @@ function getOBJID(obj, i){
 }
 
 function handleRatingVote(){
-   console.log(addRatingValue.value);
+    debugger;
+   currentRating = addRatingValue.value;
+   handleRatingAddRequest(currentCardSelected);
+   $("#vote-modal").modal('toggle');
 }
 
-function displayVoteModal(){
+ratingAddReq.onload = () => {
+    debugger;
+    
+    if(ratingReq.status === 200){
+        counter++;
+        console.log(instanceVotes);
+        instanceVotes.shift();
+        console.log(instanceVotes);
+        
+        if(counter === noOfVsClans){
+            alert("added votes successfully");
+            location.reload();
+        }
+        else{
+            makeAddRatingRequest(currentCardSelected, instanceVotes[0]);
+        }
+    }
+    else if(ratingReq.status >= 201 || ratingReq.status < 301){
+        alert("something is incorrect in the input");
+    }
+    else{
+        alert("error in the backend");
+    }
+}
+
+function makeAddRatingRequest(id, i){
+
+    let obj;
+    switch(i){
+        case 0:
+                ratingAddReq.open("PUT", addRatingURL + "crab" + "/" + id);
+                ratingAddReq.setRequestHeader("Content-Type", "application/json");
+
+           obj = {
+                "ratingcrab":ratingVariableNames[i],
+            };
+
+            ratingAddReq.send(JSON.stringify(obj));
+        break;
+        case 1:
+                ratingAddReq.open("PUT", addRatingURL + "crane" + "/" + id);
+                ratingAddReq.setRequestHeader("Content-Type", "application/json");
+                obj = {
+                    "ratingcrane":ratingVariableNames[i],
+                };
+                ratingAddReq.send(JSON.stringify(obj));
+        break;
+        case 2:
+                ratingAddReq.open("PUT", addRatingURL + "dragon" + "/" + id);
+                ratingAddReq.setRequestHeader("Content-Type", "application/json");
+                obj = {
+                    "ratingdragon":ratingVariableNames[i],
+                };
+                ratingAddReq.send(JSON.stringify(obj));
+        break;
+        case 3:
+                ratingAddReq.open("PUT", addRatingURL + "lion" + "/" + id);
+                ratingAddReq.setRequestHeader("Content-Type", "application/json");
+                obj = {
+                    "ratinglion":ratingVariableNames[i],
+                };
+                ratingAddReq.send(JSON.stringify(obj));
+        break;
+        case 4:
+                ratingAddReq.open("PUT", addRatingURL + "phoenix" + "/" + id);
+                ratingAddReq.setRequestHeader("Content-Type", "application/json");
+                obj = {
+                    "ratingphoenix":ratingVariableNames[i],
+                };
+                ratingAddReq.send(JSON.stringify(obj));
+        break;
+        case 5:
+                ratingAddReq.open("PUT", addRatingURL + "scorpion" + "/" + id);
+                ratingAddReq.setRequestHeader("Content-Type", "application/json");
+                obj = {
+                    "ratingscorpion":ratingVariableNames[i],
+                };
+                ratingAddReq.send(JSON.stringify(obj));
+        break;
+        case 6:
+                ratingAddReq.open("PUT", addRatingURL + "unicorn" + "/" + id);
+                ratingAddReq.setRequestHeader("Content-Type", "application/json");
+                obj = {
+                    "ratingunicorn":ratingVariableNames[i],
+                };
+                ratingAddReq.send(JSON.stringify(obj));
+        break;
+    }
+
+}
+
+function handleRatingAddRequest(id){
+
+    console.log(vsClansList);
+    let temp = 0;
+
+    if(vsClansList.crab == true){
+        noOfVsClans++;
+        instanceVotes.push(temp);
+        ratingVariableNames[temp] = currentRating;
+    }
+
+    temp++;
+
+    if(vsClansList.crane == true){
+        noOfVsClans++;
+        instanceVotes.push(temp);
+        ratingVariableNames[temp] = currentRating;
+    }
+
+    temp++;
+
+    if(vsClansList.dragon == true){
+        noOfVsClans++;
+        instanceVotes.push(temp);
+        ratingVariableNames[temp] = currentRating;
+    }
+
+    temp++;
+
+    if(vsClansList.lion == true){
+        noOfVsClans++;
+        instanceVotes.push(temp);
+        ratingVariableNames[temp] = currentRating;
+    }
+
+    temp++;
+
+    if(vsClansList.phoenix == true){
+        noOfVsClans++;
+        instanceVotes.push(temp);
+        ratingVariableNames[temp] = currentRating;
+    }
+
+    temp++;
+
+    if(vsClansList.scorpion == true){
+        noOfVsClans++;
+        instanceVotes.push(temp);
+        ratingVariableNames[temp] = currentRating;
+    }
+
+    temp++;
+
+    if(vsClansList.unicron == true){
+        noOfVsClans++;
+        instanceVotes.push(temp);
+        ratingVariableNames[temp] = currentRating;
+    }
+
+    if(noOfVsClans == 0){
+        //do it for al
+        for(let i = 0; i < 7; i++){
+            noOfVsClans++;
+            instanceVotes.push(i);
+            ratingVariableNames[i] = currentRating;
+        }
+    }
+    debugger;
+
+    makeAddRatingRequest(currentCardSelected, instanceVotes[0]);
+
+
+}
+
+function displayVoteModal(ele){
+
+    currentCardSelected = ele.id;
+    console.log(currentCardSelected);
 
     $("#vote-modal").modal('toggle');
     
 }
 
-function displayUpdateModal(){
+function displayUpdateModal(ele){
+
+    currentCardSelected = ele.id;
 
     $("#update-modal").modal('toggle');
 }
@@ -65,7 +259,9 @@ function handleRatingUpdate(){
 
 }
 
-function handleRemoveVote(){
+function handleRemoveVote(ele){
+
+    currentCardSelected = ele.id;
 
     console.log("remove vote");
 }
@@ -90,7 +286,7 @@ function renderCards(){
         let rating = document.createElement("h5");
         rating.classList.add("rating");
         rating.innerText = "Rating : ";
-        rating.id = getOBJID(data,i) + idAdd;
+        rating.id = getOBJID(data,i) + ratingAdd;
 
         let buttons = document.createElement("div");
         buttons.classList.add("row");
@@ -101,9 +297,10 @@ function renderCards(){
         voteButton.classList.add("btn-primary");
         voteButton.classList.add("btn-md");
         voteButton.classList.add("card-buttons");
+        voteButton.id = getOBJID(data,i);
         voteButton.innerText = "Vote";
         voteButton.addEventListener("click", function(){
-            displayVoteModal();
+            displayVoteModal(this);
         });
 
         let updateButton = document.createElement("button");
@@ -112,6 +309,8 @@ function renderCards(){
         updateButton.classList.add("btn-primary");
         updateButton.classList.add("btn-md");
         updateButton.classList.add("card-buttons");
+        updateButton.hidden = true;
+        updateButton.id = getOBJID(data,i);
         updateButton.innerText = "Update";
         updateButton.addEventListener("click", function(){
             displayUpdateModal();
@@ -123,6 +322,8 @@ function renderCards(){
         removeButton.classList.add("btn-danger");
         removeButton.classList.add("btn-md");
         removeButton.classList.add("card-buttons");
+        removeButton.id = getOBJID(data,i);
+        removeButton.hidden = true;
         removeButton.innerText = "Remove Rating";
         removeButton.addEventListener("click", function(){
             alert("rating removed");
@@ -167,7 +368,7 @@ function renderRatings(){
     }
 
     for(let i = 0; i < ratingData.length; i++){
-        let rating = document.querySelector("#" + getOBJID(ratingData,i) + idAdd);
+        let rating = document.querySelector("#" + getOBJID(ratingData,i) + ratingAdd);
         rating.append(ratingData[i].overallrating);
     }
     
@@ -200,5 +401,6 @@ function removeCards(){
     }
     
 }
+
 
 
