@@ -91,5 +91,6 @@ function deleteUser(){
     let username = localStorage.getItem("username");
     //console.log(username);
     makeDeleteUserRequest(username);
+    //
 }
 
