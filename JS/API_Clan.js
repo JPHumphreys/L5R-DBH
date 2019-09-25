@@ -65,21 +65,95 @@ function getOBJID(obj, i){
     return obj[i].id;
 }
 
+function handleRatingAddRequest(id){
+
+    console.log(vsClansList);
+    let temp = 0;
+
+    if(vsClansList.crab === true){
+        noOfVsClans++;
+        instanceVotes.push(temp);
+        ratingVariableNames[temp] = currentRating;
+    }
+
+    temp++;
+
+    if(vsClansList.crane === true){
+        noOfVsClans++;
+        instanceVotes.push(temp);
+        ratingVariableNames[temp] = currentRating;
+    }
+
+    temp++;
+
+    if(vsClansList.dragon === true){
+        noOfVsClans++;
+        instanceVotes.push(temp);
+        ratingVariableNames[temp] = currentRating;
+    }
+
+    temp++;
+
+    if(vsClansList.lion === true){
+        noOfVsClans++;
+        instanceVotes.push(temp);
+        ratingVariableNames[temp] = currentRating;
+    }
+
+    temp++;
+
+    if(vsClansList.phoenix === true){
+        noOfVsClans++;
+        instanceVotes.push(temp);
+        ratingVariableNames[temp] = currentRating;
+    }
+
+    temp++;
+
+    if(vsClansList.scorpion === true){
+        noOfVsClans++;
+        instanceVotes.push(temp);
+        ratingVariableNames[temp] = currentRating;
+    }
+
+    temp++;
+
+    if(vsClansList.unicron === true){
+        noOfVsClans++;
+        instanceVotes.push(temp);
+        ratingVariableNames[temp] = currentRating;
+    }
+
+    if(noOfVsClans === 0){
+        //do it for al
+        for(let i = 0; i < 7; i++){
+            noOfVsClans++;
+            instanceVotes.push(i);
+            ratingVariableNames[i] = currentRating;
+        }
+    }
+    //debugger;
+
+    makeAddRatingRequest(currentCardSelected, instanceVotes[0]);
+
+
+}
+
 function handleRatingVote(){
-    debugger;
+    //debugger;
    currentRating = addRatingValue.value;
    handleRatingAddRequest(currentCardSelected);
    $("#vote-modal").modal('toggle');
 }
 
 ratingAddReq.onload = () => {
-    debugger;
+    //debugger;
     
     if(ratingReq.status === 200){
         counter++;
-        console.log(instanceVotes);
+        //console.log(instanceVotes);
         instanceVotes.shift();
-        console.log(instanceVotes);
+        //console.log(instanceVotes);
         
         if(counter === noOfVsClans){
             alert("added votes successfully");
@@ -102,9 +176,8 @@ function makeAddRatingRequest(id, i){
     let obj;
     switch(i){
         case 0:
-                ratingAddReq.open("PUT", addRatingURL + "crab" + "/" + id);
-                ratingAddReq.setRequestHeader("Content-Type", "application/json");
-
+            ratingAddReq.open("PUT", addRatingURL + "crab" + "/" + id);
+            ratingAddReq.setRequestHeader("Content-Type", "application/json");
            obj = {
                 "ratingcrab":ratingVariableNames[i],
             };
@@ -163,85 +236,12 @@ function makeAddRatingRequest(id, i){
 
 }
 
-function handleRatingAddRequest(id){
 
-    console.log(vsClansList);
-    let temp = 0;
-
-    if(vsClansList.crab == true){
-        noOfVsClans++;
-        instanceVotes.push(temp);
-        ratingVariableNames[temp] = currentRating;
-    }
-
-    temp++;
-
-    if(vsClansList.crane == true){
-        noOfVsClans++;
-        instanceVotes.push(temp);
-        ratingVariableNames[temp] = currentRating;
-    }
-
-    temp++;
-
-    if(vsClansList.dragon == true){
-        noOfVsClans++;
-        instanceVotes.push(temp);
-        ratingVariableNames[temp] = currentRating;
-    }
-
-    temp++;
-
-    if(vsClansList.lion == true){
-        noOfVsClans++;
-        instanceVotes.push(temp);
-        ratingVariableNames[temp] = currentRating;
-    }
-
-    temp++;
-
-    if(vsClansList.phoenix == true){
-        noOfVsClans++;
-        instanceVotes.push(temp);
-        ratingVariableNames[temp] = currentRating;
-    }
-
-    temp++;
-
-    if(vsClansList.scorpion == true){
-        noOfVsClans++;
-        instanceVotes.push(temp);
-        ratingVariableNames[temp] = currentRating;
-    }
-
-    temp++;
-
-    if(vsClansList.unicron == true){
-        noOfVsClans++;
-        instanceVotes.push(temp);
-        ratingVariableNames[temp] = currentRating;
-    }
-
-    if(noOfVsClans == 0){
-        //do it for al
-        for(let i = 0; i < 7; i++){
-            noOfVsClans++;
-            instanceVotes.push(i);
-            ratingVariableNames[i] = currentRating;
-        }
-    }
-    debugger;
-
-    makeAddRatingRequest(currentCardSelected, instanceVotes[0]);
-
-
-}
 
 function displayVoteModal(ele){
 
     currentCardSelected = ele.id;
-    console.log(currentCardSelected);
-
+    //console.log(currentCardSelected);
     $("#vote-modal").modal('toggle');
     
 }
@@ -249,7 +249,6 @@ function displayVoteModal(ele){
 function displayUpdateModal(ele){
 
     currentCardSelected = ele.id;
-
     $("#update-modal").modal('toggle');
 }
 
