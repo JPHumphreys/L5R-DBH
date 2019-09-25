@@ -266,6 +266,14 @@ function handleRemoveVote(ele){
     console.log("remove vote");
 }
 
+function dynamicButton(obj,buttontype){
+    obj.type = "button";
+    obj.classList.add("btn");
+    obj.classList.add("btn-" +buttontype);
+    obj.classList.add("btn-md");
+    obj.classList.add("card-buttons");
+}
+
 function renderCards(){
     //debugger;
     for(let i = 0; i < data.length; i++)
@@ -292,11 +300,7 @@ function renderCards(){
         buttons.classList.add("row");
 
         let voteButton = document.createElement("button");
-        voteButton.type = "button";
-        voteButton.classList.add("btn");
-        voteButton.classList.add("btn-primary");
-        voteButton.classList.add("btn-md");
-        voteButton.classList.add("card-buttons");
+        dynamicButton(voteButton, "primary");
         voteButton.id = getOBJID(data,i);
         voteButton.innerText = "Vote";
         voteButton.addEventListener("click", function(){
@@ -304,11 +308,7 @@ function renderCards(){
         });
 
         let updateButton = document.createElement("button");
-        updateButton.type = "button";
-        updateButton.classList.add("btn");
-        updateButton.classList.add("btn-primary");
-        updateButton.classList.add("btn-md");
-        updateButton.classList.add("card-buttons");
+        dynamicButton(updateButton, "primary");
         updateButton.hidden = true;
         updateButton.id = getOBJID(data,i);
         updateButton.innerText = "Update";
@@ -317,11 +317,7 @@ function renderCards(){
         });
 
         let removeButton = document.createElement("button");
-        removeButton.type = "button";
-        removeButton.classList.add("btn");
-        removeButton.classList.add("btn-danger");
-        removeButton.classList.add("btn-md");
-        removeButton.classList.add("card-buttons");
+        dynamicButton(removeButton, "danger");
         removeButton.id = getOBJID(data,i);
         removeButton.hidden = true;
         removeButton.innerText = "Remove Rating";
