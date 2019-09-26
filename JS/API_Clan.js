@@ -1,11 +1,16 @@
 const cardURL = "http://34.89.112.135:9000/cards/";
 const ratingURL = "http://34.89.112.135:9000/ratings/clan/";
 const addRatingURL = "http://34.89.112.135:9000/add/ratings/";
+const removeRatingURL = "http://34.89.112.135:9000/remove/ratings/";
+
 const cardReq = new XMLHttpRequest();
 const ratingReq = new XMLHttpRequest();
 const ratingAddReq = new XMLHttpRequest();
+const ratingRemoveReq = new XMLHttpRequest();
+
 const ratingAdd = "-rating";
 const voteButtonAdd = "-add";
+const updateButtonAdd = "-update";
 
 const addRatingValue = document.getElementById("add-rating-text");
 const updateRatingValue = document.getElementById("update-rating-text");
@@ -31,6 +36,7 @@ let currentCardSelected;
 let currentRating;
 let counter = 0;
 let noOfVsClans = 0;
+let continueToAdd = false;
 
 
 function makeRatingRequest(clan){
@@ -65,15 +71,197 @@ function getOBJID(obj, i){
     return obj[i].id;
 }
 
+function saveRating(cardid, cardrating, cardclan){
+    let rating = {
+        "id":cardid,
+        "rating":cardrating,
+        "clan":cardclan
+    };
+
+    let ratingString = JSON.stringify(rating);
+
+    sessionStorage.setItem(cardid + "-" + cardclan, ratingString);
+    console.log(rating);
+    console.log(sessionStorage.getItem(cardid, + "-" + cardclan));
+
+}
+
+function removeRating(cardid, cardclan){
+    sessionStorage.removeItem(cardid + "-" + cardclan);
+}
+
+function getRating(cardid,cardclan){
+
+    let ratingObject = JSON.parse(sessionStorage.getItem(cardid + "-" + cardclan));
+
+    return parseInt(ratingObject.rating);//returns number value
+
+}
+
+function handleRatingRemoveRequest(id){
+    let temp = 0;
+    counter = 0;
+    debugger;
+    noOfVsClans = 0;
+    id = id.substring(0, id.length - 7);//-update
+
+    if(vsClansList.crab === true){
+        if(sessionStorage.getItem(id + "-" + "crab") !== null){
+        noOfVsClans++;
+        instanceVotes.push(temp);
+    }
+        
+    }
+    temp++;
+    if(vsClansList.crane === true){
+        if(sessionStorage.getItem(id + "-" + "crane") !== null){
+        noOfVsClans++;
+        instanceVotes.push(temp);
+        }
+    }
+    temp++;
+    if(vsClansList.dragon === true){
+        if(sessionStorage.getItem(id + "-" + "dragon") !== null){
+        noOfVsClans++;
+        instanceVotes.push(temp);
+        }
+    }
+    temp++;
+    if(vsClansList.lion === true){
+        if(sessionStorage.getItem(id + "-" + "lion") !== null){
+        noOfVsClans++;
+        instanceVotes.push(temp);
+        }
+    }
+    temp++;
+    if(vsClansList.phoenix === true){
+        if(sessionStorage.getItem(id + "-" + "phoenix") !== null){
+        noOfVsClans++;
+        instanceVotes.push(temp);
+        }
+    }
+    temp++;
+    if(vsClansList.scorpion === true){
+        if(sessionStorage.getItem(id + "-" + "scorpion") !== null){
+        noOfVsClans++;
+        instanceVotes.push(temp);
+        }
+    }
+    temp++;
+    if(vsClansList.unicorn === true){
+        if(sessionStorage.getItem(id + "-" + "unicorn") !== null){
+        noOfVsClans++;
+        instanceVotes.push(temp);
+        }
+    }
+
+    debugger;
+
+    if(instanceVotes[0]>= 0){
+        makeRemoveRatingRequest(id,instanceVotes[0]);
+        continueToAdd = true;
+    }
+    else{
+        alert("please select clans to update");
+        continueToAdd = false;
+    }
+
+}
+
+function makeRemoveRatingRequest(id , i){
+
+    let obj;
+    debugger;
+
+    switch(i){
+        case 0:
+                console.log("REMOVING CRAB");
+            ratingRemoveReq.open("PUT", removeRatingURL + "crab" + "/" + id);
+            ratingRemoveReq.setRequestHeader("Content-Type", "application/json");
+            obj = {
+                "ratingcrab":getRating(id,"crab"),
+            };
+            removeRating(id,"crab");
+            ratingRemoveReq.send(JSON.stringify(obj));
+        break;
+        case 1:
+                console.log("REMOVING CRANE");
+            ratingRemoveReq.open("PUT", removeRatingURL + "crane" + "/" + id);
+            ratingRemoveReq.setRequestHeader("Content-Type", "application/json");
+            obj = {
+                "ratingcrane":getRating(id,"crane"),
+            };
+            removeRating(id,"crane");
+            ratingRemoveReq.send(JSON.stringify(obj));
+        break;
+        case 2:
+                console.log("REMOVING DRAGON");
+            ratingRemoveReq.open("PUT", removeRatingURL + "dragon" + "/" + id);
+            ratingRemoveReq.setRequestHeader("Content-Type", "application/json");
+            obj = {
+                "ratingdragon":getRating(id,"dragon"),
+            };
+            removeRating(id,"dragon");
+            ratingRemoveReq.send(JSON.stringify(obj));
+        break;
+        case 3:
+                console.log("REMOVING LION");
+            ratingRemoveReq.open("PUT", removeRatingURL + "lion" + "/" + id);
+            ratingRemoveReq.setRequestHeader("Content-Type", "application/json");
+            obj = {
+                "ratinglion":getRating(id,"lion"),
+            };
+            removeRating(id,"lion");
+            ratingRemoveReq.send(JSON.stringify(obj));
+        break;
+        case 4:
+                console.log("REMOVING PHOENIX");
+            ratingRemoveReq.open("PUT", removeRatingURL + "phoenix" + "/" + id);
+            ratingRemoveReq.setRequestHeader("Content-Type", "application/json");
+            obj = {
+                "ratingphoenix":getRating(id,"phoenix"),
+            };
+            removeRating(id,"phoenix");
+            ratingRemoveReq.send(JSON.stringify(obj));
+        break;
+        case 5:
+                console.log("REMOVING SCORPION");
+            ratingRemoveReq.open("PUT", removeRatingURL + "scorpion" + "/" + id);
+            ratingRemoveReq.setRequestHeader("Content-Type", "application/json");
+            obj = {
+                "ratingscorpion":getRating(id,"scorpion"),
+            };
+            removeRating(id,"scorpion");
+            ratingRemoveReq.send(JSON.stringify(obj));
+        break;
+        case 6:
+                console.log("REMOVING UNICORN");
+            ratingRemoveReq.open("PUT", removeRatingURL + "unicorn" + "/" + id);
+            ratingRemoveReq.setRequestHeader("Content-Type", "application/json");
+            obj = {
+                "ratingunicorn":getRating(id,"unicorn"),
+            };
+            removeRating(id,"unicorn");
+            ratingRemoveReq.send(JSON.stringify(obj));
+        break;
+    }
+
+}
+
 function handleRatingAddRequest(id){
 
+    counter = 0;
     console.log(vsClansList);
+    debugger;
+    if(id.includes("-update")){
+        id = id.substring(0, id.length - 7);//-update
+    }
+
     let temp = 0;
 
     if(vsClansList.crab === true){
         noOfVsClans++;
         instanceVotes.push(temp);
-        ratingVariableNames[temp] = currentRating;
     }
 
     temp++;
@@ -118,7 +306,7 @@ function handleRatingAddRequest(id){
 
     temp++;
 
-    if(vsClansList.unicron === true){
+    if(vsClansList.unicorn === true){
         noOfVsClans++;
         instanceVotes.push(temp);
         ratingVariableNames[temp] = currentRating;
@@ -149,7 +337,7 @@ function handleRatingVote(){
 ratingAddReq.onload = () => {
     //debugger;
     
-    if(ratingReq.status === 200){
+    if(ratingAddReq.status === 200){
         counter++;
         //console.log(instanceVotes);
         instanceVotes.shift();
@@ -163,16 +351,37 @@ ratingAddReq.onload = () => {
             makeAddRatingRequest(currentCardSelected, instanceVotes[0]);
         }
     }
-    else if(ratingReq.status >= 201 || ratingReq.status < 301){
-        alert("something is incorrect in the input");
+    else{
+        alert("error in the backend");
+    }
+}
+
+ratingRemoveReq.onload = () => {
+    debugger;
+    if(ratingRemoveReq.status === 200){
+        counter++;
+        instanceVotes.shift();
+
+        if(counter === noOfVsClans){
+            
+
+        }else{
+            makeAddRatingRequest(currentCardSelected, instanceVotes[0]);
+        }
     }
     else{
         alert("error in the backend");
     }
 }
 
-function makeAddRatingRequest(id, i){
 
+
+function makeAddRatingRequest(id, i){
+    debugger;
+
+    if(id.includes("-update")){
+        id = id.substring(0, id.length - 7);//-update
+    }
     let obj;
     switch(i){
         case 0:
@@ -181,7 +390,7 @@ function makeAddRatingRequest(id, i){
            obj = {
                 "ratingcrab":ratingVariableNames[i],
             };
-
+            saveRating(id, currentRating, "crab");
             ratingAddReq.send(JSON.stringify(obj));
         break;
         case 1:
@@ -190,6 +399,7 @@ function makeAddRatingRequest(id, i){
                 obj = {
                     "ratingcrane":ratingVariableNames[i],
                 };
+                saveRating(id, currentRating, "crane");
                 ratingAddReq.send(JSON.stringify(obj));
         break;
         case 2:
@@ -198,6 +408,7 @@ function makeAddRatingRequest(id, i){
                 obj = {
                     "ratingdragon":ratingVariableNames[i],
                 };
+                saveRating(id, currentRating, "dragon");
                 ratingAddReq.send(JSON.stringify(obj));
         break;
         case 3:
@@ -206,6 +417,7 @@ function makeAddRatingRequest(id, i){
                 obj = {
                     "ratinglion":ratingVariableNames[i],
                 };
+                saveRating(id, currentRating, "lion");
                 ratingAddReq.send(JSON.stringify(obj));
         break;
         case 4:
@@ -214,6 +426,7 @@ function makeAddRatingRequest(id, i){
                 obj = {
                     "ratingphoenix":ratingVariableNames[i],
                 };
+                saveRating(id, currentRating, "phoenix");
                 ratingAddReq.send(JSON.stringify(obj));
         break;
         case 5:
@@ -222,6 +435,7 @@ function makeAddRatingRequest(id, i){
                 obj = {
                     "ratingscorpion":ratingVariableNames[i],
                 };
+                saveRating(id, currentRating, "scorpion");
                 ratingAddReq.send(JSON.stringify(obj));
         break;
         case 6:
@@ -230,6 +444,7 @@ function makeAddRatingRequest(id, i){
                 obj = {
                     "ratingunicorn":ratingVariableNames[i],
                 };
+                saveRating(id, currentRating, "unicorn");
                 ratingAddReq.send(JSON.stringify(obj));
         break;
     }
@@ -254,7 +469,11 @@ function displayUpdateModal(ele){
 
 function handleRatingUpdate(){
 
-    console.log(updateRatingValue.value);
+    handleRatingRemoveRequest(currentCardSelected);
+    currentRating = updateRatingValue.value;
+    if(continueToAdd === true){
+        handleRatingAddRequest(currentCardSelected);
+    }
 
 }
 
@@ -308,17 +527,17 @@ function renderCards(){
 
         let updateButton = document.createElement("button");
         dynamicButton(updateButton, "primary");
-        updateButton.hidden = true;
-        updateButton.id = getOBJID(data,i);
+        //updateButton.hidden = true;
+        updateButton.id = getOBJID(data,i) + updateButtonAdd;
         updateButton.innerText = "Update";
         updateButton.addEventListener("click", function(){
-            displayUpdateModal();
+            displayUpdateModal(this);
         });
 
         let removeButton = document.createElement("button");
         dynamicButton(removeButton, "danger");
         removeButton.id = getOBJID(data,i);
-        removeButton.hidden = true;
+        //removeButton.hidden = true;
         removeButton.innerText = "Remove Rating";
         removeButton.addEventListener("click", function(){
             alert("rating removed");
@@ -396,6 +615,8 @@ function removeCards(){
     }
     
 }
+
+
 
 
 
