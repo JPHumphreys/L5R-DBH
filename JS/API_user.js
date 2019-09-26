@@ -47,6 +47,7 @@ addUserReq.onload = () => {
 
     if (addUserReq.status === 200) {
         localStorage.setItem("username",addUserJSON.userid);
+        alert("added user successfully");
     }
     else if(addUserReq.status > 201 && deleteUserURL.status <= 300){
         //alert issue
