@@ -1,9 +1,15 @@
 const deckSpawnLocation = document.getElementById("deck-render-location");
 
+const updateDecknameValue = document.getElementById("input-deckname-text");
+const oldDecknameValue = document.getElementById("old-input-deckname-text");
+
 let deckData = {
     "deckName":"",
     "deckCopy":""
 }
+
+let idToDelete = [];
+let idToUpdate = [];
 
 /*
 1 Mountain's Anvil Castle (Core Set)
@@ -48,8 +54,21 @@ let deckData = {
 1 Upholding Authority (Tainted Lands)
 */
 
+function callDecknameUpdateModal(){
+    $("#update-deck-modal").modal('toggle');
+}
+
 
 function handleUpdateDeck(){
+
+    let val = document.querySelectorAll("h3");
+
+    for(let i = 0; i < idToUpdate.length; i++){
+        if(oldDecknameValue.value === val[i].innerText){
+            let set = document.getElementById(idToUpdate[i]);
+            set.innerText = updateDecknameValue.value;
+        }
+    }
     
     console.log("update");
 }
@@ -59,18 +78,43 @@ function handleCopyDeck(){
     console.log("copy");
 }
 
-function handleDeleteDeck(){
+function handleDeleteDeck(ele){
 
-    console.log("delete");
+    let objs = document.querySelectorAll(".filter");
+
+    for(let i = 0; i < objs.length; i++){
+            if(objs[i].classList.contains(ele.id)){
+                objs[i].remove();
+            }
+    }
+
+}
+
+function randomString(length) {
+    var chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghiklmnopqrstuvwxyz'.split('');
+
+    if (! length) {
+        length = Math.floor(Math.random() * chars.length);
+    }
+
+    var str = '';
+    for (var i = 0; i < length; i++) {
+        str += chars[Math.floor(Math.random() * chars.length)];
+    }
+    return str;
 }
 
 
 function deckBuilder(deckname,priclan, splashclan){
 
+    let randomId = randomString(16);//16 to ensure the unlikeliness of same delete
+
     let deck = document.createElement("div");
     deck.classList.add("col-sm-12");
     deck.classList.add("col-md-6");
     deck.classList.add("col-lg-4");
+    deck.classList.add(randomId);
+    deck.classList.add("filter");
 
     let deckChild = document.createElement("div");
     deckChild.classList.add("card");
@@ -83,6 +127,7 @@ function deckBuilder(deckname,priclan, splashclan){
 
     let deckName = document.createElement("h3");
     deckName.innerText = deckname;
+    deckName.id = randomId + "-update";
 
     let priElement = document.createElement("h5");
     priElement.innerText = "Primary Clan : " + priclan;
@@ -99,8 +144,9 @@ function deckBuilder(deckname,priclan, splashclan){
     updateButton.classList.add("btn-primary");
     updateButton.classList.add("deck-buttons");
     updateButton.innerText = "Update";
+    idToUpdate.push(randomId + "-update");
     updateButton.addEventListener("click",function(){
-        handleUpdateDeck();
+        callDecknameUpdateModal();
     });
 
     let copyButton = document.createElement("button");
@@ -119,8 +165,10 @@ function deckBuilder(deckname,priclan, splashclan){
     deleteButton.classList.add("btn-danger");
     deleteButton.classList.add("deck-buttons");
     deleteButton.innerText = "Delete";
+    deleteButton.id = randomId;
+    idToDelete.push(randomId);
     deleteButton.addEventListener("click", function(){
-        handleDeleteDeck();
+        handleDeleteDeck(this);
     });
 
     buttonRow.appendChild(updateButton);

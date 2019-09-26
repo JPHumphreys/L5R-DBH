@@ -478,12 +478,11 @@ function displayUpdateModal(ele){
 
 function handleRatingUpdate(){
 
-    if(updateRatingValue.value >= 1.0 && updateRatingValue.value <= 10.0)
-    {
+    if(updateRatingValue.value >= 1.0 && updateRatingValue.value <= 10.0){
         currentRating = updateRatingValue.value;
         handleRatingRemoveRequest(currentCardSelected);
     }else{
-        alert("please type a rating that is between 1.0 and 10.0")
+        alert("please type a rating that is between 1.0 and 10.0");
     }
 }
 
