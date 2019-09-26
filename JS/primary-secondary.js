@@ -19,6 +19,9 @@ const secUnicorn = document.getElementById("splash-unicorn");
 let lastPriClan = document.getElementById("primary-crab");
 let lastSecClan = document.getElementById("splash-crab");
 
+let primaryValue;
+let secondaryValue;
+
 function primaryClan(ele){
 
     let mainClan = document.getElementById(ele.id);
@@ -30,6 +33,7 @@ function primaryClan(ele){
         lastPriClan.classList.remove("btn-warning");
         lastPriClan.classList.add("btn-light");
         lastPriClan = mainClan;
+        primaryValue = lastPriClan.getAttribute("value");
     }
 }
 
@@ -44,5 +48,6 @@ function splashClan(ele){
         lastSecClan.classList.remove("btn-warning");
         lastSecClan.classList.add("btn-light");
         lastSecClan = secondaryClan;
+        secondaryValue = lastSecClan.getAttribute("value");
     }
 }
