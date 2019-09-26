@@ -17,11 +17,63 @@ const earthProvince = "1 Entrenched Position";
 const fireProvince = "1 Meditations on the Tao";
 const waterProvince = "1 Rally to the Cause";
 
+const dynastyMusts = {
+    0:"3 Favorable Ground",
+    1:"3 Imperial Storehouse",
+    2:"3 Miya Mystic"
+};
+
+const conflictMusts = {
+    0:"3 banzai!",
+    1:"3 Court Games",
+    2:"3 Fine Katana",
+    3:"3 Ornate Fan",
+    4:"2 Assassination"
+};
+
+const splashes = {
+    crab:{
+        0:"3 Reprieve",
+        1:"2 Jade Tetsubō"
+    },
+    crane:{
+        0:"3 Political Rival",
+        1:"2 Admit Defeat"
+    },
+    dragon:{
+        0:"3 Let Go",
+        1:"2 Tattooed Wanderer"
+    },
+    lion:{
+        0:"2 Ready for Battle",
+        1:"3 Strength in Numbers"
+    },
+    phoenix:{
+        0:"3 Against the Waves",
+        1:"2 Seeker of Knowledge"
+    },
+    scorpion:{
+        0:"2 Calling in Favors",
+        1:"3 Court Mask"
+    },
+    unicorn:{
+        0:"3 Iuchi Wayfinder",
+        1:"2 Favored Mount"
+    }
+};
+
 let decks = [];
 let currentStronghold;
+let dynastyCount;
+let conflictCount;
 
 function returnRoleAndElement(role, element){
     return "1 "+ role + " of " + element;
+}
+
+function deckbuilderOnload(){
+    dynastyCount = 9;//9 neutral
+    conflictCount = 19;//14 neutral + 5 splash
 }
 
 function createDeck(){
@@ -32,6 +84,7 @@ function createDeck(){
         text:"text",
         cards:[]
     };
+
 
 
 
