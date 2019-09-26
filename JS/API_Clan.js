@@ -37,6 +37,7 @@ let currentRating;
 let counter = 0;
 let noOfVsClans = 0;
 let continueToAdd = false;
+let currentClan;
 
 
 function makeRatingRequest(clan){
@@ -181,7 +182,7 @@ function makeRemoveRatingRequest(id , i){
             obj = {
                 "ratingcrab":getRating(id,"crab"),
             };
-            removeRating(id,"crab");
+            currentClan = "crab";
             ratingRemoveReq.send(JSON.stringify(obj));
         break;
         case 1:
@@ -191,7 +192,7 @@ function makeRemoveRatingRequest(id , i){
             obj = {
                 "ratingcrane":getRating(id,"crane"),
             };
-            removeRating(id,"crane");
+            currentClan = "crane";
             ratingRemoveReq.send(JSON.stringify(obj));
         break;
         case 2:
@@ -201,7 +202,7 @@ function makeRemoveRatingRequest(id , i){
             obj = {
                 "ratingdragon":getRating(id,"dragon"),
             };
-            removeRating(id,"dragon");
+            currentClan = "dragon";
             ratingRemoveReq.send(JSON.stringify(obj));
         break;
         case 3:
@@ -211,7 +212,7 @@ function makeRemoveRatingRequest(id , i){
             obj = {
                 "ratinglion":getRating(id,"lion"),
             };
-            removeRating(id,"lion");
+            currentClan = "lion";
             ratingRemoveReq.send(JSON.stringify(obj));
         break;
         case 4:
@@ -221,7 +222,7 @@ function makeRemoveRatingRequest(id , i){
             obj = {
                 "ratingphoenix":getRating(id,"phoenix"),
             };
-            removeRating(id,"phoenix");
+            currentClan = "phoenix";
             ratingRemoveReq.send(JSON.stringify(obj));
         break;
         case 5:
@@ -231,7 +232,7 @@ function makeRemoveRatingRequest(id , i){
             obj = {
                 "ratingscorpion":getRating(id,"scorpion"),
             };
-            removeRating(id,"scorpion");
+            currentClan = "scorpion";
             ratingRemoveReq.send(JSON.stringify(obj));
         break;
         case 6:
@@ -241,7 +242,7 @@ function makeRemoveRatingRequest(id , i){
             obj = {
                 "ratingunicorn":getRating(id,"unicorn"),
             };
-            removeRating(id,"unicorn");
+            currentClan = "unicorn";
             ratingRemoveReq.send(JSON.stringify(obj));
         break;
     }
@@ -358,12 +359,15 @@ ratingAddReq.onload = () => {
 
 ratingRemoveReq.onload = () => {
     debugger;
+    if(currentCardSelected.includes("-update")){
+        currentCardSelected = currentCardSelected.substring(0, currentCardSelected.length - 7);//-update
+    }
     if(ratingRemoveReq.status === 200){
         counter++;
         instanceVotes.shift();
-
+        removeRating(currentCardSelected, currentClan);
         if(counter === noOfVsClans){
-            
+            handleRatingAddRequest(currentCardSelected);
 
         }else{
             makeAddRatingRequest(currentCardSelected, instanceVotes[0]);
@@ -471,9 +475,6 @@ function handleRatingUpdate(){
 
     handleRatingRemoveRequest(currentCardSelected);
     currentRating = updateRatingValue.value;
-    if(continueToAdd === true){
-        handleRatingAddRequest(currentCardSelected);
-    }
 
 }
 
