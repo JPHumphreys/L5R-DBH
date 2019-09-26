@@ -330,9 +330,14 @@ function handleRatingAddRequest(id){
 
 function handleRatingVote(){
     //debugger;
-   currentRating = addRatingValue.value;
-   handleRatingAddRequest(currentCardSelected);
-   $("#vote-modal").modal('toggle');
+    if(addRatingValue.value >= 1.0 && addRatingValue.value <= 10.0){
+        currentRating = addRatingValue.value;
+        handleRatingAddRequest(currentCardSelected);
+        $("#vote-modal").modal('toggle');
+    }
+    else{
+        alert("please type a rating that is between 1.0 and 10.0");
+    }
 }
 
 ratingAddReq.onload = () => {
@@ -473,16 +478,13 @@ function displayUpdateModal(ele){
 
 function handleRatingUpdate(){
 
-    handleRatingRemoveRequest(currentCardSelected);
-    currentRating = updateRatingValue.value;
-
-}
-
-function handleRemoveVote(ele){
-
-    currentCardSelected = ele.id;
-
-    console.log("remove vote");
+    if(updateRatingValue.value >= 1.0 && updateRatingValue.value <= 10.0)
+    {
+        currentRating = updateRatingValue.value;
+        handleRatingRemoveRequest(currentCardSelected);
+    }else{
+        alert("please type a rating that is between 1.0 and 10.0")
+    }
 }
 
 function dynamicButton(obj,buttontype){
@@ -535,18 +537,8 @@ function renderCards(){
             displayUpdateModal(this);
         });
 
-        let removeButton = document.createElement("button");
-        dynamicButton(removeButton, "danger");
-        removeButton.id = getOBJID(data,i);
-        //removeButton.hidden = true;
-        removeButton.innerText = "Remove Rating";
-        removeButton.addEventListener("click", function(){
-            alert("rating removed");
-        });
-
         buttons.append(voteButton);
         buttons.append(updateButton);
-        buttons.append(removeButton);
 
         container.append(image);
         container.append(rating);
