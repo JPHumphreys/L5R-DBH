@@ -67,6 +67,9 @@ let currentStronghold;
 let dynastyCount;
 let conflictCount;
 
+let firstPass;
+let secondPass;
+
 function returnRoleAndElement(role, element){
     return "1 "+ role + " of " + element;
 }
@@ -77,10 +80,35 @@ function deckbuilderOnload(){
 }
 
 function createDeck(){
+
+    deckCardSort(primaryValue, "dynasty");
+
+}
+
+function secondPassCreateDeck(){
+
+    firstPass = data;
+
+    deckCardSort(primaryValue, "conflict");
+}
+
+function getRatingPasses(){
+
+    secondPass = data;
+    debugger;
+
+
+
+}
+
+function finaliseDeck(){
+
+    console.log(data);
+
     let obj = {
         name:decknameValue.value,
-        primary:priclan,
-        secondary:splashclan,
+        primary:primaryValue,
+        secondary:secondaryValue,
         text:"text",
         cards:[]
     };
@@ -90,10 +118,7 @@ function createDeck(){
 
 
 
-
-
     decks.push(obj);
-
 }
 
 function submitDeck(){
