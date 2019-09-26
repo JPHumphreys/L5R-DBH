@@ -62,49 +62,7 @@
         </div>
 
         <div id="deck-render-location" class="row">
-
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="card mb-4 deck">
-                    <div class="card-body text-center">
-                        <h4>Deck Name</h4>
-                        <h5> Primary Clan : </h5>
-                        <p> Splash Clan : </p>
-                        <div class="row">
-                            <button class="btn btn-primary deck-buttons" type="button">Update</button>
-                            <button class="btn btn-primary deck-buttons" type="button">Copy</button>
-                            <button class="btn btn-danger deck-buttons" type="button">Delete</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="card mb-4 deck">
-                        <div class="card-body text-center">
-                            <h4>Deck Name</h4>
-                            <h5> Primary Clan : </h5>
-                            <p> Splash Clan : </p>
-                            <div class="row">
-                                <button class="btn btn-primary deck-buttons" type="button">Update</button>
-                                <button class="btn btn-primary deck-buttons" type="button">Copy</button>
-                                <button class="btn btn-danger deck-buttons" type="button">Delete</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                        <div class="card mb-4 deck">
-                            <div class="card-body text-center">
-                                <h4>Deck Name</h4>
-                                <h5> Primary Clan : </h5>
-                                <p> Splash Clan : </p>
-                                <div class="row">
-                                    <button class="btn btn-primary deck-buttons" type="button">Update</button>
-                                    <button class="btn btn-primary deck-buttons" type="button">Copy</button>
-                                    <button class="btn btn-danger deck-buttons" type="button">Delete</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <!-- This is where the decks are spawned-->
         </div>
     </div>
 
@@ -127,6 +85,38 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-primary" onclick="handleUpdatePassword()">Save changes</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="update-deck-modal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Update Deckname</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                    <div class="input-group input-group-lg">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="inputGroup-sizing-lg">Old Deckname : </span>
+                            </div>
+                            <input id="old-input-deckname-text" type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+                          </div>
+                          <br>
+                <div class="input-group input-group-lg">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-lg">New Deckname : </span>
+                    </div>
+                    <input id="input-deckname-text" type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+                  </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" onclick="handleUpdateDeck()">Save changes</button>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
           </div>
