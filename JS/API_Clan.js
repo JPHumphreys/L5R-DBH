@@ -24,6 +24,7 @@ let instanceVotes = [];
 
 let isRenerable;
 let isFirstPass;
+let isGettingRatingForDeck;
 
 let ratingVariableNames = {
     "ratingcrab":0.0,
@@ -65,7 +66,17 @@ function handleRatingSort(){
         let clanToLower = clanParent.innerText.toLowerCase();
     
         makeRatingRequest(clanToLower);
-    }
+}
+
+function getDeckRatings(clan){
+
+    ratingData = [];
+    isGettingRatingForDeck = true;
+
+    makeRatingRequest(clan);
+}
+
+
 
 function getIMGLocation(obj, i){
     return obj[i].imglocation;
@@ -600,8 +611,14 @@ function renderRatings(){
 
 ratingReq.onload = () => {
     //console.log(ratingReq.response);
-    firstPassRatingData = JSON.parse(ratingReq.response);
-    renderRatings();
+    if(isGettingRatingForDeck !== true){
+        firstPassRatingData = JSON.parse(ratingReq.response);
+        renderRatings();
+    }
+    else{
+        ratingData = JSON.parse(ratingReq.response);
+        finaliseDeck();
+    }
 };
 
 

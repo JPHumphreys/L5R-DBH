@@ -18,57 +18,68 @@ const fireProvince = "1 Meditations on the Tao";
 const waterProvince = "1 Rally to the Cause";
 
 const dynastyMusts = {
-    0:"3 Favorable Ground",
-    1:"3 Imperial Storehouse",
-    2:"3 Miya Mystic"
+    one:"3 Favorable Ground",
+    two:"3 Imperial Storehouse",
+    three:"3 Miya Mystic"
 };
 
 const conflictMusts = {
-    0:"3 banzai!",
-    1:"3 Court Games",
-    2:"3 Fine Katana",
-    3:"3 Ornate Fan",
-    4:"2 Assassination"
+    one:"3 banzai!",
+    two:"3 Court Games",
+    three:"3 Fine Katana",
+    four:"3 Ornate Fan",
+    five:"2 Assassination"
 };
 
 const splashes = {
     crab:{
-        0:"3 Reprieve",
-        1:"2 Jade Tetsubō"
+        one:"3 Reprieve",
+        two:"2 Jade Tetsubō"
     },
     crane:{
-        0:"3 Political Rival",
-        1:"2 Admit Defeat"
+        one:"3 Political Rival",
+        two:"2 Admit Defeat"
     },
     dragon:{
-        0:"3 Let Go",
-        1:"2 Tattooed Wanderer"
+        one:"3 Let Go",
+        two:"2 Tattooed Wanderer"
     },
     lion:{
-        0:"2 Ready for Battle",
-        1:"3 Strength in Numbers"
+        one:"2 Ready for Battle",
+        two:"3 Strength in Numbers"
     },
     phoenix:{
-        0:"3 Against the Waves",
-        1:"2 Seeker of Knowledge"
+        one:"3 Against the Waves",
+        two:"2 Seeker of Knowledge"
     },
     scorpion:{
-        0:"2 Calling in Favors",
-        1:"3 Court Mask"
+        one:"2 Calling in Favors",
+        two:"3 Court Mask"
     },
     unicorn:{
-        0:"3 Iuchi Wayfinder",
-        1:"2 Favored Mount"
+        one:"3 Iuchi Wayfinder",
+        two:"2 Favored Mount"
     }
 };
 
 let decks = [];
 let currentStronghold;
+
+
 let dynastyCount;
 let conflictCount;
 
+let finalDynastyOrder = [];
+let finalConflictOrder = [];
+
 let firstPass;
 let secondPass;
+
+let aboveSeven = [];
+let aboveFive = [];
+let aboveThree = [];
+let aboveNothing = [];
+
 
 function returnRoleAndElement(role, element){
     return "1 "+ role + " of " + element;
@@ -95,15 +106,121 @@ function secondPassCreateDeck(){
 function getRatingPasses(){
 
     secondPass = data;
-    debugger;
-
-
+    getDeckRatings(primaryValue);
 
 }
 
 function finaliseDeck(){
 
-    console.log(data);
+
+    for(let i = 0; i < ratingData.length; i++){
+        if(i < 2){
+
+        }
+        else{
+            if(ratingData[i].overallrating >= 7){
+                aboveSeven.push(ratingData[i].id);
+            }
+            else if(ratingData[i].overallrating >= 5){
+                aboveFive.push(ratingData[i].id);
+    
+            }else if(ratingData[i].overallrating >= 3){
+                aboveThree.push(ratingData[i].id);
+            }
+            else{
+                aboveNothing.push(ratingData[i].id);
+            }
+        }
+    }
+
+    //filter by side;
+
+    //dynasty
+
+
+    for(let i = 0; i < firstPass.length; i++){
+        for(let j = 0; j < aboveSeven.length; j++){
+            if(firstPass[i].id === aboveSeven[j]){
+                finalDynastyOrder.push(firstPass[i].name);
+            }
+        }
+    }
+
+    for(let i = 0; i < firstPass.length; i++){
+        for(let j = 0; j < aboveFive.length; j++){
+            if(firstPass[i].id === aboveFive[j]){
+                finalDynastyOrder.push(firstPass[i].name);
+            }
+        }
+    }
+
+    for(let i = 0; i < firstPass.length; i++){
+        for(let j = 0; j < aboveThree.length; j++){
+            if(firstPass[i].id === aboveThree[j]){
+                finalDynastyOrder.push(firstPass[i].name);
+            }
+        }
+    }
+
+    for(let i = 0; i < firstPass.length; i++){
+        for(let j = 0; j < aboveNothing.length; j++){
+            if(firstPass[i].id === aboveNothing[j]){
+                finalDynastyOrder.push(firstPass[i].name);
+            }
+        }
+    }
+
+    //conflict
+
+    for(let i = 0; i < secondPass.length; i++){
+        for(let j = 0; j < aboveSeven.length; j++){
+            if(secondPass[i].id === aboveSeven[j]){
+                finalConflictOrder.push(secondPass[i].name);
+            }
+        }
+    }
+
+    for(let i = 0; i < secondPass.length; i++){
+        for(let j = 0; j < aboveFive.length; j++){
+            if(secondPass[i].id === aboveFive[j]){
+                finalConflictOrder.push(secondPass[i].name);
+            }
+        }
+    }
+
+    for(let i = 0; i < secondPass.length; i++){
+        for(let j = 0; j < aboveThree.length; j++){
+            if(secondPass[i].id === aboveThree[j]){
+                finalConflictOrder.push(secondPass[i].name);
+            }
+        }
+    }
+
+    for(let i = 0; i < secondPass.length; i++){
+        for(let j = 0; j < aboveNothing.length; j++){
+            if(secondPass[i].id === aboveNothing[j]){
+                finalConflictOrder.push(secondPass[i].name);
+            }
+        }
+    }
+
+    let i = 0;
+
+    while(dynastyCount <= 40){
+        i++;
+        dynastyCount += 3;
+    }
+
+    finalDynastyOrder.splice(i, finalDynastyOrder.length);
+
+    i = 0;
+
+    while(conflictCount <= 40){
+        i++;
+        conflictCount += 3;
+    }
+
+    finalConflictOrder.splice(i,finalConflictOrder.length);
 
     let obj = {
         name:decknameValue.value,
@@ -113,12 +230,87 @@ function finaliseDeck(){
         cards:[]
     };
 
+    
+    for(let i = 0; i < finalDynastyOrder.length; i++){
+        obj.cards.push("3 " + finalDynastyOrder[i]);
+    }
+    for(let i = 0; i < finalConflictOrder.length; i++){
+        obj.cards.push("3 " + finalConflictOrder[i]);
+    }
+    obj.cards.push(dynastyMusts.one);
+    obj.cards.push(dynastyMusts.two);
+    obj.cards.push(dynastyMusts.three);
 
+    obj.cards.push(conflictMusts.one);
+    obj.cards.push(conflictMusts.two);
+    obj.cards.push(conflictMusts.three);
+    obj.cards.push(conflictMusts.four);
+    obj.cards.push(conflictMusts.five);
 
+    obj.cards.push(airProvince);
+    obj.cards.push(fireProvince);
+    obj.cards.push(voidProvince);
+    obj.cards.push(earthProvince);
+    obj.cards.push(waterProvince);
 
+    switch(primaryValue){
+        case "crab":
+            obj.cards.push(strongholds.crab);
+        break;
+        case "crane":
+            obj.cards.push(strongholds.crane);
+        break;
+        case "dragon":
+            obj.cards.push(strongholds.dragon);
+        break;
+        case "lion":
+            obj.cards.push(strongholds.lion);
+        break;
+        case "phoenix":
+            obj.cards.push(strongholds.phoenix);
+        break;
+        case "scorpion":
+            obj.cards.push(strongholds.scorpion);
+        break;
+        case "unicorn":
+            obj.cards.push(strongholds.unicron);
+        break;
+    }
 
+    switch(secondaryValue){
+        case "crab":
+                obj.cards.push(splashes.crab.one);
+                obj.cards.push(splashes.crab.two);
+        break;
+        case "crane":
+                obj.cards.push(splashes.crane.one);
+                obj.cards.push(splashes.crane.two);
+            break;
+            case "dragon":
+                    obj.cards.push(splashes.dragon.one);
+                    obj.cards.push(splashes.dragon.two);
+                break;
+                case "lion":
+                        obj.cards.push(splashes.lion.one);
+                        obj.cards.push(splashes.lion.two);
+                    break;
+                    case "phoenix":
+                            obj.cards.push(splashes.phoenix.one);
+                            obj.cards.push(splashes.phoenix.two);
+                        break;
+                        case "scorpion":
+                                obj.cards.push(splashes.scorpion.one);
+                                obj.cards.push(splashes.scorpion.two);
+                            break;
+                            case "unicorn":
+                                    obj.cards.push(splashes.unicorn.one);
+                                    obj.cards.push(splashes.unicorn.two);
+                                break;
+    }
 
     decks.push(obj);
+
+    console.log(decks);
 }
 
 function submitDeck(){
