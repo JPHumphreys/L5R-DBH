@@ -1,5 +1,7 @@
 const decknameValue = document.getElementById("deck-name");
 
+let decks = [];
+
 //STRONGHOLDS
 const strongholds = {
     crab:"1 Shiro Nishiyama",
@@ -62,7 +64,6 @@ const splashes = {
     }
 };
 
-let decks = [];
 let currentStronghold;
 
 
@@ -253,6 +254,11 @@ function finaliseDeck(){
     obj.cards.push(earthProvince);
     obj.cards.push(waterProvince);
 
+    console.log(roleValue);
+    console.log(elementValue);
+
+    obj.cards.push(returnRoleAndElement(roleValue, elementValue));
+
     switch(primaryValue){
         case "crab":
             obj.cards.push(strongholds.crab);
@@ -308,9 +314,11 @@ function finaliseDeck(){
                                 break;
     }
 
+    console.log(obj);
+    debugger;
     decks.push(obj);
-
-    console.log(decks);
+    location.href = "decklist.html";
+    
 }
 
 function submitDeck(){

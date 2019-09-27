@@ -105,7 +105,7 @@ function randomString(length) {
 }
 
 
-function deckBuilder(deckname,priclan, splashclan){
+function deckBuilder(deckname,priclan, splashclan, text){
 
     let randomId = randomString(16);//16 to ensure the unlikeliness of same delete
 
@@ -189,4 +189,9 @@ function deckBuilder(deckname,priclan, splashclan){
     deckData.deckName = deckname;
     deckData.deckCopy = "";
 
+}
+
+function loadDecks(){
+    let deck = decks[0];
+    console.log(deck);
 }

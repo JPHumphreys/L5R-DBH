@@ -13,6 +13,9 @@ const seeker = document.getElementById("seeker-button");
 let lastElement = document.getElementById("temp-button");
 let lastRole = document.getElementById("keeper-button");
 
+let roleValue;
+let elementValue;
+
 
 function roleCheck(ele){
 
@@ -25,6 +28,7 @@ function roleCheck(ele){
         lastRole.classList.remove("btn-danger");
         lastRole.classList.add("btn-light");
         lastRole = role;
+        roleValue = lastRole.innerText;
     }
 }
 
@@ -39,5 +43,6 @@ function elementCheck(ele){
     lastElement.classList.remove("btn-danger");
     lastElement.classList.add("btn-light");
     lastElement = element;
+    elementValue = lastElement.innerText;
 }
 
