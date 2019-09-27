@@ -79,7 +79,14 @@ function handleUpdateDeck(){
 
 function handleCopyDeck(){
 
-    console.log("copy");
+    let getText = document.getElementById("textChunk");
+
+    if(getText.hidden === true){
+        getText.hidden = false;
+    }
+    else{
+        getText.hidden = true;
+    }
 }
 
 function handleDeleteDeck(ele){
@@ -176,6 +183,8 @@ function deckBuilder(deckname,priclan, splashclan, textObj){
     });
 
     let textChunk = document.createElement("div");
+    textChunk.id = "textChunk";
+    textChunk.hidden = true;
     let space = document.createElement("br");
     textChunk.appendChild(space);
 
