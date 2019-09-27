@@ -35,7 +35,6 @@ function callPasswordModal(){
 
 function handleUpdatePassword(){
     newPassword = passwordInput.value;
-    console.log(newPassword);
     addPassJSON.password = newPassword;
     let name = localStorage.getItem("username");
     makeUpdateUserRequest(name);

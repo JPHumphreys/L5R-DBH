@@ -334,9 +334,6 @@ function finaliseDeck(){
        currentDeck.text += currentDeck.cards[i] + " ";
    }
 
-
-    console.log(currentDeck);
-
     localStorage.setItem("deck", JSON.stringify(currentDeck));
 
     location.href = "decklist.html";
