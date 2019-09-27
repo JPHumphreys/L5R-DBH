@@ -218,9 +218,12 @@ function deckBuilder(deckname,priclan, splashclan, textObj){
 }
 
 function loadDecks(){
-    decks.push(JSON.parse(localStorage.getItem("deck")));
-    console.log(decks);
-    debugger;
 
+    if(localStorage.getItem("deck") == null){
+
+    }else{
+    decks.push(JSON.parse(localStorage.getItem("deck")));
     deckBuilder(decks[0].name, decks[0].primary, decks[0].secondary, decks[0].cards);
+    }
+    
 }
