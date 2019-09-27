@@ -11,6 +11,10 @@ let deckData = {
 let idToDelete = [];
 let idToUpdate = [];
 
+
+let decks = [];
+
+
 /*
 1 Mountain's Anvil Castle (Core Set)
 1 Keeper of Water (Core Set)
@@ -105,7 +109,7 @@ function randomString(length) {
 }
 
 
-function deckBuilder(deckname,priclan, splashclan, text){
+function deckBuilder(deckname,priclan, splashclan, textObj){
 
     let randomId = randomString(16);//16 to ensure the unlikeliness of same delete
 
@@ -171,6 +175,18 @@ function deckBuilder(deckname,priclan, splashclan, text){
         handleDeleteDeck(this);
     });
 
+    let textChunk = document.createElement("div");
+    let space = document.createElement("br");
+    textChunk.appendChild(space);
+
+    for(let i = 0; i < textObj.length; i++){
+        let text = document.createElement("p");
+        text.innerText = textObj[i];
+        textChunk.append(text);
+    }
+
+
+
     buttonRow.appendChild(updateButton);
     buttonRow.appendChild(copyButton);
     buttonRow.appendChild(deleteButton);
@@ -179,6 +195,7 @@ function deckBuilder(deckname,priclan, splashclan, text){
     deckBody.appendChild(priElement);
     deckBody.appendChild(splashElement);
     deckBody.appendChild(buttonRow);
+    deckBody.appendChild(textChunk);
 
     deckChild.appendChild(deckBody);
 
@@ -192,6 +209,9 @@ function deckBuilder(deckname,priclan, splashclan, text){
 }
 
 function loadDecks(){
-    let deck = decks[0];
-    console.log(deck);
+    decks.push(JSON.parse(localStorage.getItem("deck")));
+    console.log(decks);
+    debugger;
+
+    deckBuilder(decks[0].name, decks[0].primary, decks[0].secondary, decks[0].cards);
 }

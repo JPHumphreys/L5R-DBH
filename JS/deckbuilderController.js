@@ -1,6 +1,19 @@
 const decknameValue = document.getElementById("deck-name");
 
-let decks = [];
+
+function getDecks(){
+    return decks;
+}
+
+  
+let currentDeck = {
+    name:"",
+    primary:"",
+    secondary:"",
+    text:"",
+    cards:[]
+};
+
 
 //STRONGHOLDS
 const strongholds = {
@@ -94,6 +107,9 @@ function deckbuilderOnload(){
 function createDeck(){
 
     deckCardSort(primaryValue, "dynasty");
+    currentDeck.name = decknameValue.value;
+    currentDeck.primary = primaryValue;
+    currentDeck.secondary = secondaryValue;
 
 }
 
@@ -111,9 +127,7 @@ function getRatingPasses(){
 
 }
 
-function finaliseDeck(){
-
-
+function calculateRatings(){
     for(let i = 0; i < ratingData.length; i++){
         if(i < 2){
 
@@ -133,8 +147,10 @@ function finaliseDeck(){
             }
         }
     }
+}
 
-    //filter by side;
+function filterBySides(){
+ //filter by side;
 
     //dynasty
 
@@ -222,103 +238,109 @@ function finaliseDeck(){
     }
 
     finalConflictOrder.splice(i,finalConflictOrder.length);
+}
 
-    let obj = {
-        name:decknameValue.value,
-        primary:primaryValue,
-        secondary:secondaryValue,
-        text:"text",
-        cards:[]
-    };
-
-    
+function pushCardsIntoDeck(){
     for(let i = 0; i < finalDynastyOrder.length; i++){
-        obj.cards.push("3 " + finalDynastyOrder[i]);
+        currentDeck.cards.push("3 " + finalDynastyOrder[i]);
     }
     for(let i = 0; i < finalConflictOrder.length; i++){
-        obj.cards.push("3 " + finalConflictOrder[i]);
+        currentDeck.cards.push("3 " + finalConflictOrder[i]);
     }
-    obj.cards.push(dynastyMusts.one);
-    obj.cards.push(dynastyMusts.two);
-    obj.cards.push(dynastyMusts.three);
+    currentDeck.cards.push(dynastyMusts.one);
+    currentDeck.cards.push(dynastyMusts.two);
+    currentDeck.cards.push(dynastyMusts.three);
 
-    obj.cards.push(conflictMusts.one);
-    obj.cards.push(conflictMusts.two);
-    obj.cards.push(conflictMusts.three);
-    obj.cards.push(conflictMusts.four);
-    obj.cards.push(conflictMusts.five);
+    currentDeck.cards.push(conflictMusts.one);
+    currentDeck.cards.push(conflictMusts.two);
+    currentDeck.cards.push(conflictMusts.three);
+    currentDeck.cards.push(conflictMusts.four);
+    currentDeck.cards.push(conflictMusts.five);
 
-    obj.cards.push(airProvince);
-    obj.cards.push(fireProvince);
-    obj.cards.push(voidProvince);
-    obj.cards.push(earthProvince);
-    obj.cards.push(waterProvince);
+    currentDeck.cards.push(airProvince);
+    currentDeck.cards.push(fireProvince);
+    currentDeck.cards.push(voidProvince);
+    currentDeck.cards.push(earthProvince);
+    currentDeck.cards.push(waterProvince);
 
-    console.log(roleValue);
-    console.log(elementValue);
-
-    obj.cards.push(returnRoleAndElement(roleValue, elementValue));
+    currentDeck.cards.push(returnRoleAndElement(roleValue, elementValue));
 
     switch(primaryValue){
         case "crab":
-            obj.cards.push(strongholds.crab);
+            currentDeck.cards.push(strongholds.crab);
         break;
         case "crane":
-            obj.cards.push(strongholds.crane);
+            currentDeck.cards.push(strongholds.crane);
         break;
         case "dragon":
-            obj.cards.push(strongholds.dragon);
+            currentDeck.cards.push(strongholds.dragon);
         break;
         case "lion":
-            obj.cards.push(strongholds.lion);
+            currentDeck.cards.push(strongholds.lion);
         break;
         case "phoenix":
-            obj.cards.push(strongholds.phoenix);
+            currentDeck.cards.push(strongholds.phoenix);
         break;
         case "scorpion":
-            obj.cards.push(strongholds.scorpion);
+            currentDeck.cards.push(strongholds.scorpion);
         break;
         case "unicorn":
-            obj.cards.push(strongholds.unicron);
+            currentDeck.cards.push(strongholds.unicron);
         break;
     }
 
     switch(secondaryValue){
         case "crab":
-                obj.cards.push(splashes.crab.one);
-                obj.cards.push(splashes.crab.two);
+                currentDeck.cards.push(splashes.crab.one);
+                currentDeck.cards.push(splashes.crab.two);
         break;
         case "crane":
-                obj.cards.push(splashes.crane.one);
-                obj.cards.push(splashes.crane.two);
+                currentDeck.cards.push(splashes.crane.one);
+                currentDeck.cards.push(splashes.crane.two);
             break;
             case "dragon":
-                    obj.cards.push(splashes.dragon.one);
-                    obj.cards.push(splashes.dragon.two);
+                    currentDeck.cards.push(splashes.dragon.one);
+                    currentDeck.cards.push(splashes.dragon.two);
                 break;
                 case "lion":
-                        obj.cards.push(splashes.lion.one);
-                        obj.cards.push(splashes.lion.two);
+                        currentDeck.cards.push(splashes.lion.one);
+                        currentDeck.cards.push(splashes.lion.two);
                     break;
                     case "phoenix":
-                            obj.cards.push(splashes.phoenix.one);
-                            obj.cards.push(splashes.phoenix.two);
+                            currentDeck.cards.push(splashes.phoenix.one);
+                            currentDeck.cards.push(splashes.phoenix.two);
                         break;
                         case "scorpion":
-                                obj.cards.push(splashes.scorpion.one);
-                                obj.cards.push(splashes.scorpion.two);
+                                currentDeck.cards.push(splashes.scorpion.one);
+                                currentDeck.cards.push(splashes.scorpion.two);
                             break;
                             case "unicorn":
-                                    obj.cards.push(splashes.unicorn.one);
-                                    obj.cards.push(splashes.unicorn.two);
+                                    currentDeck.cards.push(splashes.unicorn.one);
+                                    currentDeck.cards.push(splashes.unicorn.two);
                                 break;
     }
+}
 
-    console.log(obj);
-    debugger;
-    decks.push(obj);
+function finaliseDeck(){
+
+
+   calculateRatings();
+
+   filterBySides();
+
+   pushCardsIntoDeck();
+
+   for(let i = 0; i < currentDeck.cards.length; i++){
+       currentDeck.text += currentDeck.cards[i] + " ";
+   }
+
+
+    console.log(currentDeck);
+
+    localStorage.setItem("deck", JSON.stringify(currentDeck));
+
     location.href = "decklist.html";
-    
+
 }
 
 function submitDeck(){
