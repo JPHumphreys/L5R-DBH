@@ -74,7 +74,6 @@ function handleUpdateDeck(){
         }
     }
     
-    console.log("update");
 }
 
 function handleCopyDeck(){
