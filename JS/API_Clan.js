@@ -96,8 +96,6 @@ function saveRating(cardid, cardrating, cardclan){
     let ratingString = JSON.stringify(rating);
 
     sessionStorage.setItem(cardid + "-" + cardclan, ratingString);
-    console.log(rating);
-    console.log(sessionStorage.getItem(cardid, + "-" + cardclan));
 
 }
 
@@ -116,7 +114,6 @@ function getRating(cardid,cardclan){
 function handleRatingRemoveRequest(id){
     let temp = 0;
     counter = 0;
-    debugger;
     noOfVsClans = 0;
     id = id.substring(0, id.length - 7);//-update
 
@@ -170,8 +167,6 @@ function handleRatingRemoveRequest(id){
         }
     }
 
-    debugger;
-
     if(instanceVotes[0]>= 0){
         makeRemoveRatingRequest(id,instanceVotes[0]);
         continueToAdd = true;
@@ -186,7 +181,6 @@ function handleRatingRemoveRequest(id){
 function makeRemoveRatingRequest(id , i){
 
     let obj;
-    debugger;
 
     switch(i){
         case 0:
@@ -266,8 +260,6 @@ function makeRemoveRatingRequest(id , i){
 function handleRatingAddRequest(id){
 
     counter = 0;
-    console.log(vsClansList);
-    debugger;
     if(id.includes("-update")){
         id = id.substring(0, id.length - 7);//-update
     }
@@ -377,7 +369,6 @@ ratingAddReq.onload = () => {
 }
 
 ratingRemoveReq.onload = () => {
-    debugger;
     if(currentCardSelected.includes("-update")){
         currentCardSelected = currentCardSelected.substring(0, currentCardSelected.length - 7);//-update
     }
@@ -400,7 +391,6 @@ ratingRemoveReq.onload = () => {
 
 
 function makeAddRatingRequest(id, i){
-    debugger;
 
     if(id.includes("-update")){
         id = id.substring(0, id.length - 7);//-update
