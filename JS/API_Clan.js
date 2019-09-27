@@ -22,6 +22,10 @@ let firstPassRatingData;
 
 let instanceVotes = [];
 
+let isRenerable;
+let isFirstPass;
+let isGettingRatingForDeck;
+
 let ratingVariableNames = {
     "ratingcrab":0.0,
     "ratingcrane":0.0,
@@ -62,7 +66,17 @@ function handleRatingSort(){
         let clanToLower = clanParent.innerText.toLowerCase();
     
         makeRatingRequest(clanToLower);
-    }
+}
+
+function getDeckRatings(clan){
+
+    ratingData = [];
+    isGettingRatingForDeck = true;
+
+    makeRatingRequest(clan);
+}
+
+
 
 function getIMGLocation(obj, i){
     return obj[i].imglocation;
@@ -552,8 +566,23 @@ function renderCards(){
 }
 
 cardReq.onload = () => {
-    data = JSON.parse(cardReq.response);
-    renderCards();
+    if(cardReq.status === 200){
+        data = JSON.parse(cardReq.response);
+        if(isRenerable === true){
+            renderCards();
+        }
+        else{
+            if(isFirstPass === true){
+                secondPassCreateDeck();
+            }
+            else{
+                getRatingPasses();
+            }
+        }
+    }
+    else{
+        alert("error in the backend");
+    }
 };
 
 function makeCardRequest(clan, side){
@@ -582,8 +611,14 @@ function renderRatings(){
 
 ratingReq.onload = () => {
     //console.log(ratingReq.response);
-    firstPassRatingData = JSON.parse(ratingReq.response);
-    renderRatings();
+    if(isGettingRatingForDeck !== true){
+        firstPassRatingData = JSON.parse(ratingReq.response);
+        renderRatings();
+    }
+    else{
+        ratingData = JSON.parse(ratingReq.response);
+        finaliseDeck();
+    }
 };
 
 
@@ -591,11 +626,25 @@ function handleCardSort(){
 
     removeCards();
     data = [];
+    isRenerable = true;
     //push to lower case 
     let clanToLower = clanParent.innerText.toLowerCase();
     let typeToLower = sideParent.innerText.toLowerCase();
 
     makeCardRequest(clanToLower, typeToLower);
+}
+
+function deckCardSort(clan, side){
+    data = [];
+    isRenerable = false;
+    if(isFirstPass == null){
+        isFirstPass = true;
+    }
+    else{
+        isFirstPass = false;
+    }
+
+    makeCardRequest(clan, side);
 }
 
 function removeCards(){
