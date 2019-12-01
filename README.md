@@ -2,20 +2,20 @@
 
 ### This is a website that generates a legal L5R deck using card ratings and filters.
 
-### The deckbuilding process in L5R is arduous. This website aims to alleviate the problem by allowing users to quickly generate decks without knowing too much/any about the deckbuilding process. It will allow users to quickly generate viable decks to play online or build to take into local play.
+The deckbuilding process in L5R is arduous. This website aims to alleviate the problem by allowing users to quickly generate decks without knowing too much/any about the deckbuilding process. It will allow users to quickly generate viable decks to play online or build to take into local play.
 
 ## Website Features
 
 ---
 
 ### **Card Rating Page** - A space that allows users to see the current ratings and vote on cards.
-### The votes indicate the strength of the card - this can be filtered to see for against ALL CLANS, or any specific one.
+ The votes indicate the strength of the card - this can be filtered to see for against ALL CLANS, or any specific one.
 
 ---
 
 ### **Deckbuilder Page** - A space where the users will be able generate quick decks.
 
-### The goal for this to ensure that the users is able to generate a deck from scratch within a minute. 
+ The goal for this to ensure that the users is able to generate a deck from scratch within a minute. 
 
 ---
 
