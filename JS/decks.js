@@ -193,7 +193,7 @@ function deckBuilder(deckname,priclan, splashclan, textObj){
         textChunk.append(text);
     }
 
-
+    // create the deck
 
     buttonRow.appendChild(updateButton);
     buttonRow.appendChild(copyButton);
