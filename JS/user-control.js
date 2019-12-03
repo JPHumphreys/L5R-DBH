@@ -15,8 +15,6 @@ let currentPassword;
 function pageChecker(){
     
     if (location.href.endsWith("clanpage.html")|| location.href.endsWith("decklist.html") || location.href.endsWith("index.html") || location.href.endsWith("deckbuilder.html")){
-        
-        
         if(localStorage.getItem("username") === null){
             location.href = "register.html";
             userAddLocation.hidden = true;
@@ -34,7 +32,8 @@ function pageChecker(){
     
 }
 
-pageChecker();
+// TODO : REDO THIS
+// pageChecker();
 
 function login(ele){
 
