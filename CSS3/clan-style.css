@@ -1,21 +1,47 @@
 *{
     padding: 0;
     margin: 0;
+    text-align: center;
 }
 
-#primary-clan, #splash-clan, #vs-clan, #role-element, #provinces{
+#primary-clan, #splash-clan, #vs-clan, #role-element{
     width: 100%;
     margin-top: 1em;
-    border-top: 2px solid black;
     margin-left: 0;
 }
-
-#primary-clan .lead{
-    max-width: 12%;
+.primary-clan{
+    text-decoration: none;
 }
 
-#splash-clan .lead{
-    max-width: 12%;
+.primary-clan ul{
+    border: 2px solid black;
+}
+
+.primary-clan a{
+}
+
+.splash-clan{
+    text-decoration: none;
+}
+
+.splash-clan ul{
+    border: 2px black solid;
+}
+
+.role-element{
+    text-decoration: none;
+}
+
+.role-element ul{
+    border: 2px solid black;
+}
+
+.vs-clan{
+    text-decoration: none;
+}
+
+.vs-clan ul{
+    border: 2px solid black;
 }
 
 .clan-button{
@@ -48,16 +74,6 @@
 
 #temp-button{
     visibility: hidden;
-}
-
-.provinces{
-    min-width: 20%;
-    border-left: 2px black solid;
-    border-bottom: 2px black solid;
-}
-
-.lastele{
-    border-right: 2px black solid;
 }
 
 .provinces h4{
