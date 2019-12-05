@@ -29,6 +29,7 @@
 .primary-clan ul, .splash-clan ul, .role-element ul, .vs-clan ul{
     border: 2px solid black;
     background-color: rgb(214, 214, 214);
+    box-shadow: 0 10px 10px -5px;
 }
 
 .primary-clan h4, .splash-clan h4, .role-element h4, .vs-clan h4{
@@ -38,6 +39,7 @@
 #primary-text, #splash-text, #role-element-text, #vs-text{
     border: none;
     background-color: white;
+    box-shadow: none;
 }
 
 #primary-crab:hover, #splash-crab:hover, #vs-crab:hover,
@@ -55,30 +57,44 @@
 
 #primary-crab:hover, #splash-crab:hover, #vs-crab:hover{
     background-image: url(/media/crab_colour.png);
+    border-color: var(--crab-colour);
+    box-shadow: 0 0 5px 5px var(--crab-colour);
 }
 
 #primary-crane:hover, #splash-crane:hover, #vs-crane:hover{
     background-image: url(/media/crane_colour.png);
+    border-color: var(--crane-colour);
+    box-shadow: 0 0 5px 5px var(--crane-colour);
 }
 
 #primary-dragon:hover, #splash-dragon:hover, #vs-dragon:hover{
     background-image: url(/media/dragon_colour.png);
+    border-color: var(--dragon-colour);
+    box-shadow: 0 0 5px 5px var(--dragon-colour);
 }
 
 #primary-lion:hover, #splash-lion:hover, #vs-lion:hover{
     background-image: url(/media/lion_colour.png);
+    border-color: var(--lion-colour);
+    box-shadow: 0 0 5px 5px var(--lion-colour);
 }
 
 #primary-phoenix:hover, #splash-phoenix:hover, #vs-phoenix:hover{
     background-image: url(/media/phoenix_colour.png);
+    border-color: var(--phoenix-colour);
+    box-shadow: 0 0 5px 5px var(--phoenix-colour);
 }
 
 #primary-scorpion:hover, #splash-scorpion:hover, #vs-scorpion:hover{
     background-image: url(/media/scorpion_colour.png);
+    border-color: var(--scorpion-colour);
+    box-shadow: 0 0 5px 5px var(--scorpion-colour);
 }
 
 #primary-unicorn:hover, #splash-unicorn:hover, #vs-unicorn:hover{
     background-image: url(/media/unicorn_colour.png);
+    border-color: var(--unicorn-colour);
+    box-shadow: 0 0 5px 5px var(--unicorn-colour);
 }
 
 .clan-button{
