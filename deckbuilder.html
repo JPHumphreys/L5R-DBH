@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Deckbuilder • DBH</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="CSS3/clan-style.css">
+    <link rel="stylesheet" href="CSS3/deckbuilder.css">
 </head>
 <body onload="deckbuilderOnload()">
     
@@ -67,179 +67,133 @@
                     <input id="deck-name" type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
                   </div>
 
-            <div id="primary-clan" class="row">
+            <div class="row">
 
-                <div class="col-sm-12 col-md-6 col-lg-1 clan-button clan-text">
-                    <p class="lead">
-                        <button id="clan-text" class="btn btn btn-primary btn-lg" disabled>Primary:</button>
-                    </p>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-1 clan-button">
-                    <p class="lead">
-                        <a id="primary-crab" value="crab" class="btn btn btn-light btn-lg" onclick="primaryClan(this)" role="button">Crab</a>
-                    </p>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-1 clan-button">
-                    <p class="lead">
-                        <a id="primary-crane" value="crane" class="btn btn btn-light btn-lg" onclick="primaryClan(this)" role="button">Crane</a>
-                    </p>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-1 clan-button">
-                    <p class="lead">
-                        <a id="primary-dragon" value="dragon" class="btn btn btn-light btn-lg" onclick="primaryClan(this)" role="button">Dragon</a>
-                    </p>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-1 clan-button">
-                    <p class="lead">
-                        <a id="primary-lion" value="lion" class="btn btn btn-light btn-lg" onclick="primaryClan(this)" role="button">Lion</a>
-                    </p>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-1 clan-button">
-                    <p class="lead">
-                        <a id="primary-phoenix" value="phoenix" class="btn btn btn-light btn-lg" onclick="primaryClan(this)" role="button">Phoenix</a>
-                    </p>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-1 clan-button">
-                    <p class="lead">
-                        <a id="primary-scorpion" value="scorpion" class="btn btn btn-light btn-lg" onclick="primaryClan(this)" role="button">Scorpion</a>
-                    </p>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-1 clan-button">
-                    <p class="lead">
-                        <a id="primary-unicorn" value="unicorn" class="btn btn btn-light btn-lg" onclick="primaryClan(this)" role="button">Unicorn</a>
-                    </p>
-                </div>
+            <div id="primary-clan" class="col-sm-12 col-md-6 col-lg-3 primary-clan">
+
+                <ul id="primary-text">
+                    <h3>Primary Clan</h3>
+                </ul>
+                <ul id="primary-crab">
+                    <h4><a href="">Crab</a></h4>
+                </ul>
+                <ul id="primary-crane">
+                    <h4>Crane</h4>
+                </ul>
+                <ul id="primary-dragon">
+                    <h4>Dragon</h4>
+                </ul>
+                <ul id="primary-lion"> 
+                    <h4>Lion</h4>
+                </ul>
+                <ul id="primary-phoenix">
+                    <h4>Phoenix</h4>
+                </ul>
+                <ul id="primary-scorpion">
+                    <h4>Scorpion</h4>
+                </ul>
+                <ul id="primary-unicorn">
+                    <h4>Unicorn</h4>
+                </ul>
+
             </div>
 
-            <div id="splash-clan" class="row">
+            <div id="splash-clan" class="col-sm-12 col-md-6 col-lg-3 splash-clan">
 
-                    <div class="col-1 clan-button clan-text">
-                        <p class="lead">
-                                <button id="clan-text" class="btn btn btn-primary btn-lg" disabled>-Splash:</button>
-                        </p>
-                    </div>
-                    <div class="col-1 clan-button">
-                        <p class="lead">
-                            <a id="splash-crab" value="crab" class="btn btn btn-light btn-lg" onclick="splashClan(this)" role="button">Crab</a>
-                        </p>
-                    </div>
-                    <div class="col-1 clan-button">
-                        <p class="lead">
-                            <a id="splash-crane" value="crane" class="btn btn btn-light btn-lg" onclick="splashClan(this)" role="button">Crane</a>
-                        </p>
-                    </div>
-                    <div class="col-1 clan-button">
-                        <p class="lead">
-                            <a id="splash-dragon" value="dragon" class="btn btn btn-light btn-lg" onclick="splashClan(this)" role="button">Dragon</a>
-                        </p>
-                    </div>
-                    <div class="col-1 clan-button">
-                        <p class="lead">
-                            <a id="splash-lion" value="lion" class="btn btn btn-light btn-lg" onclick="splashClan(this)" role="button">Lion</a>
-                        </p>
-                    </div>
-                    <div class="col-1 clan-button">
-                        <p class="lead">
-                            <a id="splash-phoenix" value="phoenix" class="btn btn btn-light btn-lg" onclick="splashClan(this)" role="button">Phoenix</a>
-                        </p>
-                    </div>
-                    <div class="col-1 clan-button">
-                        <p class="lead">
-                            <a id="splash-scorpion" value="scorpion" class="btn btn btn-light btn-lg" onclick="splashClan(this)" role="button">Scorpion</a>
-                        </p>
-                    </div>
-                    <div class="col-1 clan-button">
-                        <p class="lead">
-                            <a id="splash-unicorn" value="unicorn" class="btn btn btn-light btn-lg" onclick="splashClan(this)" role="button">Unicorn</a>
-                        </p>
-                    </div>
+                <ul id="splash-text">
+                    <h3>Secondary Clan</h3>
+                </ul>
+                <ul id="splash-crab">
+                    <h4>Crab</h4>
+                </ul>
+                <ul id="splash-crane">
+                    <h4>Crane</h4>
+                </ul>
+                <ul id="splash-dragon">
+                    <h4>Dragon</h4>
+                </ul>
+                <ul id="splash-lion"> 
+                    <h4>Lion</h4>
+                </ul>
+                <ul id="splash-phoenix">
+                    <h4>Phoenix</h4>
+                </ul>
+                <ul id="splash-scorpion">
+                    <h4>Scorpion</h4>
+                </ul>
+                <ul id="splash-unicorn">
+                    <h4>Unicorn</h4>
+                </ul>
+
+            </div>
+
+            <div id="role-element" class="col-sm-12 col-md-6 col-lg-3 role-element">
+
+                <ul id="role-element-text">
+                    <h3>Role & Element</a>
+                </ul>
+                    <ul id="keeper-button">
+                        <h4>Keeper</h4>
+                    </ul>
+                    <ul id="seeker-button">
+                        <h4>Seeker</h4>
+                    </ul>
+                    <ul id="air-button">
+                        <h4>Air</h4>
+                    </ul>
+                    <ul id="earth-button"> 
+                        <h4>Earth</h4>
+                    </ul>
+                    <ul id="fire-button">
+                        <h4>Fire</h4>
+                    </ul>
+                    <ul id="void-button">
+                        <h4>Void</h4>
+                    </ul>
+                    <ul id="water-button">
+                        <h4>Water</h4>
+                    </ul>
+
+            </div>
+
+                <div id="vs-clan" class="col-sm-12 col-md-6 col-lg-3 vs-clan">
+
+                    <ul id="vs-text">
+                        <h3>Versus Clan</h3>
+                    </ul>
+                    <ul id="vs-crab">
+                        <h4>Crab</h4>
+                    </ul>
+                    <ul id="vs-crane">
+                        <h4>Crane</h4>
+                    </ul>
+                    <ul id="vs-dragon">
+                        <h4>Dragon</h4>
+                    </ul>
+                    <ul id="vs-lion"> 
+                        <h4>Lion</h4>
+                    </ul>
+                    <ul id="vs-phoenix">
+                        <h4>Phoenix</h4>
+                    </ul>
+                    <ul id="vs-scorpion">
+                        <h4>Scorpion</h4>
+                    </ul>
+                    <ul id="vs-unicorn">
+                        <h4>Unicorn</h4>
+                    </ul>
+                    
                 </div>
 
-                <div id="vs-clan" class="row">
-
-                    <div class="col-1 clan-button clan-text">
-                        <p class="lead">
-                            <button id="clan-text" class="btn btn btn-primary btn-lg" disabled>-Versus:</button>
-                        </p>
-                    </div>
-                    <div class="col-1 clan-button">                            
-                        <p class="lead">
-                            <a id="vs-crab" class="btn btn btn-light btn-lg" onclick="versusClan(this)" role="button">Crab</a>
-                        </p>
-                    </div>
-                    <div class="col-1 clan-button">
-                        <p class="lead">
-                            <a id="vs-crane" class="btn btn btn-light btn-lg" onclick="versusClan(this)" role="button">Crane</a>
-                        </p>
-                    </div>
-                    <div class="col-1 clan-button">
-                        <p class="lead">
-                            <a id="vs-dragon" class="btn btn btn-light btn-lg" onclick="versusClan(this)" role="button">Dragon</a>
-                        </p>
-                    </div>
-                    <div class="col-1 clan-button">
-                        <p class="lead">
-                            <a id="vs-lion" class="btn btn btn-light btn-lg" onclick="versusClan(this)" role="button">Lion</a>
-                        </p>
-                    </div>
-                    <div class="col-1 clan-button">
-                        <p class="lead">
-                            <a id="vs-phoenix" class="btn btn btn-light btn-lg" onclick="versusClan(this)" role="button">Phoenix</a>
-                        </p>
-                    </div>
-                    <div class="col-1 clan-button">
-                        <p class="lead">
-                            <a id="vs-scorpion" class="btn btn-light btn-lg" onclick="versusClan(this)" role="button">Scorpion</a>
-                        </p>
-                    </div>
-                    <div class="col-1 clan-button">
-                        <p class="lead">
-                            <a id="vs-unicorn" class="btn btn-light btn-lg" onclick="versusClan(this)" role="button">Unicorn</a>
-                        </p>
-                    </div>
-                </div>
-
-                <div id="role-element" class="row">
-                    <div class="col-1 role-button">
-                        <button id="keeper-button" class="btn btn-light btn-lg" onclick="roleCheck(this)" role="button">Keeper</button>
-                    </div>
-                    <div class="col-1 role-button">
-                        <button id="seeker-button" class="btn btn-light btn-lg" onclick="roleCheck(this)" role="button">Seeker</button>
-                    </div>
-                    <div class="col-1 element-button">
-                        
-                    </div>
-                    <div class="col-1 element-button">
-                        
-                    </div>
-                    <div class="col-1 element-button">
-                        <button id="temp-button" class="btn btn-light btn-lg" role="button"></button>
-                    </div>
-                    <div class="col-1 element-button">
-                        <button id="fire-button" class="btn btn-light btn-lg" onclick="elementCheck(this)" role="button">Fire</button>
-                    </div>
-                    <div class="col-1 element-button">
-                        <button id="earth-button" class="btn btn-light btn-lg" onclick="elementCheck(this)" role="button">Earth</button>
-                    </div>
-                    <div class="col-1 element-button">
-                        <button id="air-button" class="btn btn-light btn-lg" onclick="elementCheck(this)" role="button">Air</button>
-                    </div>
-                    <div class="col-1 element-button">
-                        <button id="water-button" class="btn btn-light btn-lg" onclick="elementCheck(this)" role="button">Water</button>
-                    </div>
-                    <div class="col-1 element-button">
-                        <button id="void-button" class="btn btn-light btn-lg" onclick="elementCheck(this)" role="button">Void</button>
-                    </div>
-
-                </div>
-
-                </div>
+            </div>
 
                 <div id="submit-button-row" class="row">
-                    <div class="col">
-                        <button id="submit-button" class="btn btn-danger" onclick="createDeck()">Submit Deck</button>
-                    </div>
+                        <div class="col">
+                            <button id="submit-button" class="btn btn-danger" onclick="createDeck()">Submit Deck</button>
+                        </div>
                 </div>
+    </div>
+        </div>
     </div>
 
     <div id="update-user-modal" class="modal" tabindex="-1" role="dialog">
