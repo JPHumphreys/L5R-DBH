@@ -1,3 +1,13 @@
+:root{
+    --crab-colour: #83929b;
+    --crane-colour:#9cb7bb;
+    --dragon-colour:#5d8a71;
+    --lion-colour:#d8bb6c;
+    --phoenix-colour:#ca8b58;
+    --scorpion-colour:#964538;
+    --unicorn-colour:#795f8d;
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -9,20 +19,66 @@
     margin-top: 2em;
     margin-left: 0;
 }
-.primary-clan, .splash-clan, .role-element, .vs-clan{
+
+.primary-clan a, .splash-clan a, .role-element a, .vs-clan a{
     text-decoration: none;
+    color: black;
+    display: inline-block;
 }
 
 .primary-clan ul, .splash-clan ul, .role-element ul, .vs-clan ul{
     border: 2px solid black;
+    background-color: rgb(214, 214, 214);
 }
 
-.primary-clan a, .splash-clan a, .role-element a, .vs-clan a{
+.primary-clan h4, .splash-clan h4, .role-element h4, .vs-clan h4{
     font-size: 1.5em;
 }
 
 #primary-text, #splash-text, #role-element-text, #vs-text{
     border: none;
+    background-color: white;
+}
+
+#primary-crab:hover, #splash-crab:hover, #vs-crab:hover,
+#primary-crane:hover, #splash-crane:hover, #vs-crane:hover,
+#primary-dragon:hover, #splash-dragon:hover, #vs-dragon:hover,
+#primary-lion:hover, #splash-lion:hover, #vs-lion:hover,
+#primary-phoenix:hover, #splash-phoenix:hover, #vs-phoenix:hover,
+#primary-scorpion:hover, #splash-scorpion:hover, #vs-scorpion:hover,
+#primary-unicorn:hover, #splash-unicorn:hover, #vs-unicorn:hover{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+    border-color: white;
+}
+
+#primary-crab:hover, #splash-crab:hover, #vs-crab:hover{
+    background-image: url(/media/crab_colour.png);
+}
+
+#primary-crane:hover, #splash-crane:hover, #vs-crane:hover{
+    background-image: url(/media/crane_colour.png);
+}
+
+#primary-dragon:hover, #splash-dragon:hover, #vs-dragon:hover{
+    background-image: url(/media/dragon_colour.png);
+}
+
+#primary-lion:hover, #splash-lion:hover, #vs-lion:hover{
+    background-image: url(/media/lion_colour.png);
+}
+
+#primary-phoenix:hover, #splash-phoenix:hover, #vs-phoenix:hover{
+    background-image: url(/media/phoenix_colour.png);
+}
+
+#primary-scorpion:hover, #splash-scorpion:hover, #vs-scorpion:hover{
+    background-image: url(/media/scorpion_colour.png);
+}
+
+#primary-unicorn:hover, #splash-unicorn:hover, #vs-unicorn:hover{
+    background-image: url(/media/unicorn_colour.png);
 }
 
 .clan-button{
@@ -53,33 +109,11 @@
     margin-right: .4em;
 }
 
-#temp-button{
-    visibility: hidden;
-}
-
-.provinces h4{
-    margin-top: .5em;
-    font-size: 1.3em;
-    text-align: center;
-    width: 100%;
-}
-
-.provinces button{
-    margin-top: .5em;
-}
-
-.province-item{
-    text-align: center;
-    width: 90%;
-
-}
-
 #submit-button-row{
     width: 100%;
     margin-top: 2em;
     margin-left: 0;
     text-align: center;
-    align-content: center;
 }
 
 #submit-button{
