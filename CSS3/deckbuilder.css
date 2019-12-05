@@ -59,6 +59,7 @@
     background-position: center;
     background-color: white;
     border-color: white;
+    color: transparent;
 }
 
 #primary-crab:hover, #splash-crab:hover, #vs-crab:hover{
@@ -103,13 +104,26 @@
     box-shadow: 0 0 5px 5px var(--unicorn-colour);
 }
 
-#air-button:hover, #earth-button:hover, #fire-button:hover, #void-button:hover, #water-button:hover{
+#air-button:hover, #earth-button:hover, #fire-button:hover, #void-button:hover, #water-button:hover,
+#keeper-button:hover, #seeker-button:hover{
     background-repeat: no-repeat;
     background-position: center;
     background-color: white;
     border-color: white;
+    color: transparent;
 }
 
+#keeper-button:hover{
+    background-image: url(/media/keeper_colour.png);
+    border-color: var(--void-colour);
+    box-shadow: 0 0 5px 5px var(--void-colour);
+}
+
+#seeker-button:hover{
+    background-image: url(/media/seeker_colour.png);
+    border-color: var(--void-colour);
+    box-shadow: 0 0 5px 5px var(--void-colour);
+}
 
 #air-button:hover{
     background-image: url(/media/air_colour.png);
@@ -140,6 +154,8 @@
     border-color: var(--water-colour);
     box-shadow: 0 0 5px 5px var(--water-colour);
 }
+
+
 
 
 .clan-button{
