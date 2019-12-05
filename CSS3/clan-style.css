@@ -6,42 +6,23 @@
 
 #primary-clan, #splash-clan, #vs-clan, #role-element{
     width: 100%;
-    margin-top: 1em;
+    margin-top: 2em;
     margin-left: 0;
 }
-.primary-clan{
+.primary-clan, .splash-clan, .role-element, .vs-clan{
     text-decoration: none;
 }
 
-.primary-clan ul{
+.primary-clan ul, .splash-clan ul, .role-element ul, .vs-clan ul{
     border: 2px solid black;
 }
 
-.primary-clan a{
+.primary-clan a, .splash-clan a, .role-element a, .vs-clan a{
+    font-size: 1.5em;
 }
 
-.splash-clan{
-    text-decoration: none;
-}
-
-.splash-clan ul{
-    border: 2px black solid;
-}
-
-.role-element{
-    text-decoration: none;
-}
-
-.role-element ul{
-    border: 2px solid black;
-}
-
-.vs-clan{
-    text-decoration: none;
-}
-
-.vs-clan ul{
-    border: 2px solid black;
+#primary-text, #splash-text, #role-element-text, #vs-text{
+    border: none;
 }
 
 .clan-button{
