@@ -51,3 +51,7 @@ function splashClan(ele){
         secondaryValue = lastSecClan.getAttribute("value");
     }
 }
+
+function tester(ele){
+    console.log("beep boop");
+}
