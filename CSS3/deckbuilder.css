@@ -6,6 +6,12 @@
     --phoenix-colour:#ca8b58;
     --scorpion-colour:#964538;
     --unicorn-colour:#795f8d;
+
+    --air-colour:#e77f1e;
+    --earth-colour:#4b8765;
+    --fire-colour:#d33729;
+    --void-colour:#363636;
+    --water-colour:#56598e;
 }
 
 *{
@@ -96,6 +102,45 @@
     border-color: var(--unicorn-colour);
     box-shadow: 0 0 5px 5px var(--unicorn-colour);
 }
+
+#air-button:hover, #earth-button:hover, #fire-button:hover, #void-button:hover, #water-button:hover{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+    border-color: white;
+}
+
+
+#air-button:hover{
+    background-image: url(/media/air_colour.png);
+    border-color: var(--air-colour);
+    box-shadow: 0 0 5px 5px var(--air-colour);
+}
+
+#earth-button:hover{
+    background-image: url(/media/earth_colour.png);
+    border-color: var(--earth-colour);
+    box-shadow: 0 0 5px 5px var(--earth-colour);
+}
+
+#fire-button:hover{
+    background-image: url(/media/fire_colour.png);
+    border-color: var(--fire-colour);
+    box-shadow: 0 0 5px 5px var(--fire-colour);
+}
+
+#void-button:hover{
+    background-image: url(/media/void_colour.png);
+    border-color: var(--void-colour);
+    box-shadow: 0 0 5px 5px var(--void-colour);
+}
+
+#water-button:hover{
+    background-image: url(/media/water_colour.png);
+    border-color: var(--water-colour);
+    box-shadow: 0 0 5px 5px var(--water-colour);
+}
+
 
 .clan-button{
     max-width: 12%;
