@@ -53,5 +53,5 @@ function splashClan(ele){
 }
 
 function tester(ele){
-    console.log("beep boop");
+    console.log(ele.innerText);
 }

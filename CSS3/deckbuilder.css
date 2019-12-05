@@ -38,8 +38,9 @@
     box-shadow: 0 10px 10px -5px;
 }
 
-.primary-clan h4, .splash-clan h4, .role-element h4, .vs-clan h4{
+.primary-clan a, .splash-clan a, .role-element a, .vs-clan a{
     font-size: 1.5em;
+    cursor: pointer;
 }
 
 #primary-text, #splash-text, #role-element-text, #vs-text{
