@@ -1,0 +1,10 @@
+#footer-icons{
+    margin-top: 2em;
+}
+
+
+#footer-icons img{
+    max-height: 1%;
+    max-width: 1%;
+    margin: .2em;
+}
