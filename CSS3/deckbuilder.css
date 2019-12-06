@@ -1,4 +1,4 @@
-:root{
+:root{/*? L5R Official Colours for the Clans ?*/
     --crab-colour: #83929b;
     --crane-colour:#9cb7bb;
     --dragon-colour:#5d8a71;
@@ -14,11 +14,16 @@
     --water-colour:#56598e;
 }
 
+/** Globals **/
+
 *{
     padding: 0;
     margin: 0;
     text-align: center;
 }
+
+/**--------------------**/
+/** Grid Styles **/
 
 #primary-clan, #splash-clan, #vs-clan, #role-element{
     width: 100%;
@@ -30,6 +35,9 @@
     text-decoration: none;
     color: black;
     display: inline-block;
+    font-size: 1.5em;
+    cursor: pointer;
+    opacity: .9;
 }
 
 .primary-clan ul, .splash-clan ul, .role-element ul, .vs-clan ul{
@@ -38,23 +46,16 @@
     box-shadow: 0 10px 10px -5px;
 }
 
-.primary-clan h4, .splash-clan h4, .role-element h4, .vs-clan h4{
-    font-size: 1.5em;
-}
-
 #primary-text, #splash-text, #role-element-text, #vs-text{
     border: none;
     background-color: white;
     box-shadow: none;
 }
 
-#primary-crab:hover, #splash-crab:hover, #vs-crab:hover,
-#primary-crane:hover, #splash-crane:hover, #vs-crane:hover,
-#primary-dragon:hover, #splash-dragon:hover, #vs-dragon:hover,
-#primary-lion:hover, #splash-lion:hover, #vs-lion:hover,
-#primary-phoenix:hover, #splash-phoenix:hover, #vs-phoenix:hover,
-#primary-scorpion:hover, #splash-scorpion:hover, #vs-scorpion:hover,
-#primary-unicorn:hover, #splash-unicorn:hover, #vs-unicorn:hover{
+/** ----------------------------**/
+/** Hover Effects for the grids **/
+
+.deckbuilder-grid:hover{
     background-repeat: no-repeat;
     background-position: center;
     background-color: white;
@@ -104,15 +105,6 @@
     box-shadow: 0 0 5px 5px var(--unicorn-colour);
 }
 
-#air-button:hover, #earth-button:hover, #fire-button:hover, #void-button:hover, #water-button:hover,
-#keeper-button:hover, #seeker-button:hover{
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: white;
-    border-color: white;
-    color: transparent;
-}
-
 #keeper-button:hover{
     background-image: url(/media/keeper_colour.png);
     border-color: var(--void-colour);
@@ -155,35 +147,11 @@
     box-shadow: 0 0 5px 5px var(--water-colour);
 }
 
-
-
-
-.clan-button{
-    max-width: 12%;
-    margin-left: .4em;
-    margin-right: .4em;
-    margin-top: 1em;
-}
-
-#clan-text{
-    color: white;
-}
+/**----------------------------**/
+/** Deckname and Submit Button **/
 
 .deck-name{
     align-content: center;
-}
-
-#keeper-button, #seeker-button{
-    margin-top: 1em;
-}
-
-#fire-button,#water-button,#earth-button,#void-button,#air-button{
-   margin-top: 1em;
-}
-
-.role-button, .element-button{
-    margin-left: .4em;
-    margin-right: .4em;
 }
 
 #submit-button-row{
