@@ -7,11 +7,12 @@
     <title>Deckbuilder • DBH</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS3/deckbuilder.css">
+    <link rel="stylesheet" href="CSS3/footer.css">
 </head>
 <body onload="deckbuilderOnload()">
     
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="index.html">L5R:DBH</a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
@@ -31,7 +32,7 @@
                     </li>
                     <li id="user-add-location" class="nav-item">
                             <div class="btn-group">
-                                    <button id="username-display"class="btn btn-primary btn-md" type="button">
+                                    <button id="username-display"class="btn btn-dark btn-md" type="button">
                                       
                                     </button>
                                     <button type="button" class="btn btn-md btn-dark dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -74,25 +75,25 @@
                 <ul id="primary-text">
                     <h3>Primary Clan</h3>
                 </ul>
-                <ul id="primary-crab">
+                <ul id="primary-crab" class="deckbuilder-grid">
                     <h4><a onclick="tester(this)">Crab</a></h4>
                 </ul>
-                <ul id="primary-crane">
+                <ul id="primary-crane" class="deckbuilder-grid">
                     <h4><a onclick="tester(this)">Crane</a></h4>
                 </ul>
-                <ul id="primary-dragon">
+                <ul id="primary-dragon" class="deckbuilder-grid">
                     <h4><a onclick="tester(this)">Dragon</a></h4>
                 </ul>
-                <ul id="primary-lion"> 
+                <ul id="primary-lion" class="deckbuilder-grid"> 
                     <h4><a onclick="tester(this)">Lion</a></h4>
                 </ul>
-                <ul id="primary-phoenix">
+                <ul id="primary-phoenix" class="deckbuilder-grid">
                     <h4><a onclick="tester(this)">Phoenix</a></h4>
                 </ul>
-                <ul id="primary-scorpion">
+                <ul id="primary-scorpion" class="deckbuilder-grid">
                     <h4><a onclick="tester(this)">Scorpion</a></h4>
                 </ul>
-                <ul id="primary-unicorn">
+                <ul id="primary-unicorn" class="deckbuilder-grid">
                     <h4><a onclick="tester(this)">Unicorn</a></h4>
                 </ul>
 
@@ -103,25 +104,25 @@
                 <ul id="splash-text">
                     <h3>Secondary Clan</h3>
                 </ul>
-                <ul id="splash-crab">
+                <ul id="splash-crab" class="deckbuilder-grid">
                     <h4><a onclick="tester(this)">Crab</a></h4>
                 </ul>
-                <ul id="splash-crane">
+                <ul id="splash-crane" class="deckbuilder-grid">
                     <h4><a onclick="tester(this)">Crane</a></h4>
                 </ul>
-                <ul id="splash-dragon">
+                <ul id="splash-dragon" class="deckbuilder-grid">
                     <h4><a onclick="tester(this)">Dragon</a></h4>
                 </ul>
-                <ul id="splash-lion"> 
+                <ul id="splash-lion" class="deckbuilder-grid"> 
                     <h4><a onclick="tester(this)">Lion</a></h4>
                 </ul>
-                <ul id="splash-phoenix">
+                <ul id="splash-phoenix" class="deckbuilder-grid">
                     <h4><a onclick="tester(this)">Phoenix</a></h4>
                 </ul>
-                <ul id="splash-scorpion">
+                <ul id="splash-scorpion" class="deckbuilder-grid">
                     <h4><a onclick="tester(this)">Scorpion</a></h4>
                 </ul>
-                <ul id="splash-unicorn">
+                <ul id="splash-unicorn" class="deckbuilder-grid">
                     <h4><a onclick="tester(this)">Unicorn</a></h4>
                 </ul>
 
@@ -132,25 +133,25 @@
                 <ul id="role-element-text">
                     <h3>Role & Element</a>
                 </ul>
-                    <ul id="keeper-button">
+                    <ul id="keeper-button" class="deckbuilder-grid">
                         <h4><a onclick="tester(this)">Keeper</a></h4>
                     </ul>
-                    <ul id="seeker-button">
+                    <ul id="seeker-button" class="deckbuilder-grid">
                         <h4><a onclick="tester(this)">Seeker</a></h4>
                     </ul>
-                    <ul id="air-button">
+                    <ul id="air-button" class="deckbuilder-grid">
                         <h4><a onclick="tester(this)">Air</a></h4>
                     </ul>
-                    <ul id="earth-button"> 
+                    <ul id="earth-button" class="deckbuilder-grid"> 
                         <h4><a onclick="tester(this)">Earth</a></h4>
                     </ul>
-                    <ul id="fire-button">
+                    <ul id="fire-button" class="deckbuilder-grid">
                         <h4><a onclick="tester(this)">Fire</a></h4>
                     </ul>
-                    <ul id="void-button">
+                    <ul id="void-button" class="deckbuilder-grid">
                         <h4><a onclick="tester(this)">Void</a></h4>
                     </ul>
-                    <ul id="water-button">
+                    <ul id="water-button" class="deckbuilder-grid">
                         <h4><a onclick="tester(this)">Water</a></h4>
                     </ul>
 
@@ -158,28 +159,28 @@
 
                 <div id="vs-clan" class="col-sm-12 col-md-6 col-lg-3 vs-clan">
 
-                    <ul id="vs-text">
+                    <ul id="vs-text" class="deckbuilder-grid">
                         <h3>Versus Clan</h3>
                     </ul>
-                    <ul id="vs-crab">
+                    <ul id="vs-crab" class="deckbuilder-grid">
                         <h4><a onclick="tester(this)">Crab</a></h4>
                     </ul>
-                    <ul id="vs-crane">
+                    <ul id="vs-crane" class="deckbuilder-grid">
                         <h4><a onclick="tester(this)">Crane</a></h4>
                     </ul>
-                    <ul id="vs-dragon">
+                    <ul id="vs-dragon" class="deckbuilder-grid">
                         <h4><a onclick="tester(this)">Dragon</a></h4>
                     </ul>
-                    <ul id="vs-lion"> 
+                    <ul id="vs-lion" class="deckbuilder-grid"> 
                         <h4><a onclick="tester(this)">Lion</a></h4>
                     </ul>
-                    <ul id="vs-phoenix">
+                    <ul id="vs-phoenix" class="deckbuilder-grid">
                         <h4><a onclick="tester(this)">Phoenix</a></h4>
                     </ul>
-                    <ul id="vs-scorpion">
+                    <ul id="vs-scorpion" class="deckbuilder-grid">
                         <h4><a onclick="tester(this)">Scorpion</a></h4>
                     </ul>
-                    <ul id="vs-unicorn">
+                    <ul id="vs-unicorn" class="deckbuilder-grid">
                         <h4><a onclick="tester(this)">Unicorn</a></h4>
                     </ul>
                     
@@ -223,6 +224,13 @@
 
 </body>
 <footer>
+
+    <div id="footer-icons">
+        <a href="mailto:JPHCode@gmail.com? subject=subject text"><img src="https://image.flaticon.com/icons/svg/281/281769.svg"></a>
+        <a href="https://github.com/JPHumphreys"><img src="https://image.flaticon.com/icons/svg/2111/2111432.svg"></a>
+        <a href="https://jphcode.wordpress.com/"><img src="https://image.flaticon.com/icons/svg/2111/2111777.svg"></a>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
