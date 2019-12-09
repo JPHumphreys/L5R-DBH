@@ -64,7 +64,7 @@
 }
 
 #primary-crab:hover, #splash-crab:hover, #vs-crab:hover{
-    background-image: url(/media/crab_colour.png);
+    background-image: url(/media/crab_colour.jpg);
     border-color: var(--crab-colour);
     box-shadow: 0 0 5px 5px var(--crab-colour);
 }
