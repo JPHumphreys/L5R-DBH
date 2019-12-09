@@ -16,25 +16,30 @@ const secPhoenix = document.getElementById("splash-phoenix");
 const secScorpion = document.getElementById("splash-scorpion");
 const secUnicorn = document.getElementById("splash-unicorn");
 
-let lastPriClan = document.getElementById("primary-crab");
-let lastSecClan = document.getElementById("splash-crab");
+const deckbuilder = "deckbuilder-grid";
+
+let currentSelectedPrimaryClan;
+let currentSelectedSecondaryClan;
 
 let primaryValue;
 let secondaryValue;
 
 function primaryClan(ele){
 
-    let mainClan = document.getElementById(ele.id);
-
-    mainClan.classList.remove("btn-light");
-    mainClan.classList.add("btn-warning");
-
-    if(mainClan !== lastPriClan){
-        lastPriClan.classList.remove("btn-warning");
-        lastPriClan.classList.add("btn-light");
-        lastPriClan = mainClan;
-        primaryValue = lastPriClan.getAttribute("value");
+    let design = ele.attributes.name.value;
+    if(currentSelectedPrimaryClan === undefined){
+        currentSelectedPrimaryClan = ele;
+        ele.classList.add(design);
     }
+    else if(ele !== currentSelectedPrimaryClan){
+        //* spread operator *//
+        currentSelectedPrimaryClan.classList.remove(...currentSelectedPrimaryClan.classList);
+        //* add deckbuilder back and add the new design onto the new current*//
+        currentSelectedPrimaryClan.classList.add(deckbuilder);
+        ele.classList.add(design);
+        currentSelectedPrimaryClan = ele;
+    }
+
 }
 
 function splashClan(ele){

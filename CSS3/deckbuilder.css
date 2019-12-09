@@ -1,17 +1,32 @@
 :root{/*? L5R Official Colours for the Clans ?*/
     --crab-colour: #83929b;
+    --crab-image: url(/media/crab_colour.jpg);
     --crane-colour:#9cb7bb;
+    --crane-image: url(/media/crane_colour.jpg);
     --dragon-colour:#5d8a71;
+    --dragon-image: url(/media/dragon_colour.jpg);
     --lion-colour:#d8bb6c;
+    --lion-image: url(/media/lion_colour.jpg);
     --phoenix-colour:#ca8b58;
+    --phoenix-image: url(/media/phoenix_colour.jpg);
     --scorpion-colour:#964538;
+    --scorpion-image: url(/media/scorpion_colour.jpg);
     --unicorn-colour:#795f8d;
+    --unicorn-image: url(/media/unicorn_colour.jpg);
+
+    --keeper-image: url(/media/keeper_colour.jpg);
+    --seeker-image: url(/media/seeker_colour.jpg);
 
     --air-colour:#e77f1e;
+    --air-image: url(/media/air_colour.jpg);
     --earth-colour:#4b8765;
+    --earth-image: url(/media/earth_colour.jpg);
     --fire-colour:#d33729;
+    --fire-image: url(/media/fire_colour.jpg);
     --void-colour:#363636;
+    --void-image: url(/media/void_colour.jpg);
     --water-colour:#56598e;
+    --water-image: url(/media/water_colour.jpg);
 }
 
 /** Globals **/
@@ -25,7 +40,7 @@
 /**--------------------**/
 /** Grid Styles **/
 
-#primary-clan, #splash-clan, #vs-clan, #role-element{
+.primary-clan, .splash-clan, .vs-clan, .role-element{
     width: 100%;
     margin-top: 2em;
     margin-left: 0;
@@ -36,14 +51,14 @@
     color: black;
     display: inline-block;
     font-size: 1.5em;
-    cursor: pointer;
     opacity: .9;
 }
 
-.primary-clan ul, .splash-clan ul, .role-element ul, .vs-clan ul{
+.deckbuilder-grid{
     border: 2px solid black;
     background-color: rgb(214, 214, 214);
     box-shadow: 0 10px 10px -5px;
+    cursor: pointer;
 }
 
 #primary-text, #splash-text, #role-element-text, #vs-text{
@@ -52,97 +67,103 @@
     box-shadow: none;
 }
 
-/** ----------------------------**/
+/** Specificity boost to overide for the selected **/
+/** ----           +               ----**/
 /** Hover Effects for the grids **/
 
-.deckbuilder-grid:hover{
+.crab-design.deckbuilder-grid, .crane-design.deckbuilder-grid, .dragon-design.deckbuilder-grid,
+.lion-design.deckbuilder-grid, .phoenix-design.deckbuilder-grid, .scorpion-design.deckbuilder-grid,
+.unicorn-design.deckbuilder-grid, .keeper-design.deckbuilder-grid, .seeker-design.deckbuilder-grid,
+.air-design.deckbuilder-grid, .earth-design.deckbuilder-grid, .fire-design.deckbuilder-grid,
+.void-design.deckbuilder-grid, .water-design.deckbuilder-grid, .deckbuilder-grid:hover{
     background-repeat: no-repeat;
     background-position: center;
     background-color: white;
     border-color: white;
     color: transparent;
+    cursor: pointer;
 }
 
-#primary-crab:hover, #splash-crab:hover, #vs-crab:hover{
-    background-image: url(/media/crab_colour.jpg);
+.crab-design.deckbuilder-grid, #primary-crab:hover, #splash-crab:hover, #vs-crab:hover{
+    background-image: var(--crab-image);
     border-color: var(--crab-colour);
     box-shadow: 0 0 5px 5px var(--crab-colour);
 }
 
-#primary-crane:hover, #splash-crane:hover, #vs-crane:hover{
-    background-image: url(/media/crane_colour.jpg);
+.crane-design.deckbuilder-grid, #primary-crane:hover, #splash-crane:hover, #vs-crane:hover{
+    background-image: var(--crane-image);
     border-color: var(--crane-colour);
     box-shadow: 0 0 5px 5px var(--crane-colour);
 }
 
-#primary-dragon:hover, #splash-dragon:hover, #vs-dragon:hover{
-    background-image: url(/media/dragon_colour.jpg);
+.dragon-design.deckbuilder-grid, #primary-dragon:hover, #splash-dragon:hover, #vs-dragon:hover{
+    background-image: var(--dragon-image);
     border-color: var(--dragon-colour);
     box-shadow: 0 0 5px 5px var(--dragon-colour);
 }
 
-#primary-lion:hover, #splash-lion:hover, #vs-lion:hover{
-    background-image: url(/media/lion_colour.jpg);
+.lion-design.deckbuilder-grid, #primary-lion:hover, #splash-lion:hover, #vs-lion:hover{
+    background-image: var(--lion-image);
     border-color: var(--lion-colour);
     box-shadow: 0 0 5px 5px var(--lion-colour);
 }
 
-#primary-phoenix:hover, #splash-phoenix:hover, #vs-phoenix:hover{
-    background-image: url(/media/phoenix_colour.jpg);
+.phoenix-design.deckbuilder-grid, #primary-phoenix:hover, #splash-phoenix:hover, #vs-phoenix:hover{
+    background-image: var(--phoenix-image);
     border-color: var(--phoenix-colour);
     box-shadow: 0 0 5px 5px var(--phoenix-colour);
 }
 
-#primary-scorpion:hover, #splash-scorpion:hover, #vs-scorpion:hover{
-    background-image: url(/media/scorpion_colour.jpg);
+.scorpion-design.deckbuilder-grid, #primary-scorpion:hover, #splash-scorpion:hover, #vs-scorpion:hover{
+    background-image: var(--scorpion-image);
     border-color: var(--scorpion-colour);
     box-shadow: 0 0 5px 5px var(--scorpion-colour);
 }
 
-#primary-unicorn:hover, #splash-unicorn:hover, #vs-unicorn:hover{
-    background-image: url(/media/unicorn_colour.jpg);
+.unicorn-design.deckbuilder-grid, #primary-unicorn:hover, #splash-unicorn:hover, #vs-unicorn:hover{
+    background-image: var(--unicorn-image);
     border-color: var(--unicorn-colour);
     box-shadow: 0 0 5px 5px var(--unicorn-colour);
 }
 
-#keeper-button:hover{
-    background-image: url(/media/keeper_colour.jpg);
+.keeper-design.deckbuilder-grid, #keeper-button:hover{
+    background-image: var(--keeper-image);
     border-color: var(--void-colour);
     box-shadow: 0 0 5px 5px var(--void-colour);
 }
 
-#seeker-button:hover{
-    background-image: url(/media/seeker_colour.jpg);
+.seeker-design.deckbuilder-grid, #seeker-button:hover{
+    background-image: var(--seeker-image);
     border-color: var(--void-colour);
     box-shadow: 0 0 5px 5px var(--void-colour);
 }
 
-#air-button:hover{
-    background-image: url(/media/air_colour.jpg);
+.air-design.deckbuilder-grid, #air-button:hover{
+    background-image: var(--air-image);
     border-color: var(--air-colour);
     box-shadow: 0 0 5px 5px var(--air-colour);
 }
 
-#earth-button:hover{
-    background-image: url(/media/earth_colour.jpg);
+.earth-design.deckbuilder-grid, #earth-button:hover{
+    background-image: var(--earth-image);
     border-color: var(--earth-colour);
     box-shadow: 0 0 5px 5px var(--earth-colour);
 }
 
-#fire-button:hover{
-    background-image: url(/media/fire_colour.jpg);
+.fire-design.deckbuilder-grid, #fire-button:hover{
+    background-image: var(--fire-image);
     border-color: var(--fire-colour);
     box-shadow: 0 0 5px 5px var(--fire-colour);
 }
 
-#void-button:hover{
-    background-image: url(/media/void_colour.jpg);
+.void-design.deckbuilder-grid, #void-button:hover{
+    background-image: var(--void-image);
     border-color: var(--void-colour);
     box-shadow: 0 0 5px 5px var(--void-colour);
 }
 
-#water-button:hover{
-    background-image: url(/media/water_colour.jpg);
+.water-design.deckbuilder-grid, #water-button:hover{
+    background-image: var(--water-image);
     border-color: var(--water-colour);
     box-shadow: 0 0 5px 5px var(--water-colour);
 }
