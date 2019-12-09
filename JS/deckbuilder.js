@@ -1,4 +1,6 @@
 const deckbuilderClass = "deckbuilder-grid";
+const vsIDText = "vs-";
+const vsClansContainer = document.getElementById("vs-clan");
 
 let deckResult = {
     primary:"",
@@ -18,6 +20,8 @@ let deckResult = {
 
 let currentSelectedPrimaryClan;
 let currentSelectedSecondaryClan;
+let currentSelectedRole;
+let currentSelectedElement;
 
 function primaryClan(element){
 
@@ -74,42 +78,111 @@ function splashClan(element){
 
 }
 
-function tester(ele){
-    console.log(ele.innerText);
+function roleSelector(element){
+
+    let design = element.attributes.name.value; //* uses the name attribute to set the style *//
+
+    if(currentSelectedRole === undefined){
+
+        currentSelectedRole = element;
+        deckResult.role = getClanName(element);
+        element.classList.add(design);
+    }
+    else if(element !== currentSelectedRole){
+
+        //* spread operator *//
+        currentSelectedRole.classList.remove(...currentSelectedRole.classList);
+
+        //* add deckbuilder back and add the new design onto the new current *//
+        currentSelectedRole.classList.add(deckbuilderClass);
+        element.classList.add(design);
+        currentSelectedRole = element;
+
+        //* set the primary result of the deck to the deckresult object *//
+        deckResult.role = getClanName(element);
+    }
 }
 
-/*
-function updateVSClans(obj){
+function elementSelector(element){
 
-    let clan = obj.innerText;
+    let design = element.attributes.name.value; //* uses the name attribute to set the style *//
+
+    if(currentSelectedElement === undefined){
+
+        currentSelectedElement = element;
+        deckResult.element = getClanName(element);
+        element.classList.add(design);
+    }
+    else if(element !== currentSelectedElement){
+
+        //* spread operator *//
+        currentSelectedElement.classList.remove(...currentSelectedElement.classList);
+
+        //* add deckbuilder back and add the new design onto the new current *//
+        currentSelectedElement.classList.add(deckbuilderClass);
+        element.classList.add(design);
+        currentSelectedElement = element;
+
+        //* set the primary result of the deck to the deckresult object *//
+        deckResult.element = getClanName(element);
+    }
+}
+
+function vsClans(element){
+
+    let design = element.attributes.name.value;
+
+    let clan = element.innerText;
 
     switch(clan){
         case "Crab":
-            vsClans.crab = (vsClans.crab === true) ? false : true;
+            deckResult.vsclans.crab = (deckResult.vsclans.crab === true) ? false : true;
         break;
         case "Crane":
-            vsClans.crane = (vsClans.crane === true) ? false : true;
+            deckResult.vsclans.crane = (deckResult.vsclans.crane === true) ? false : true;
         break;
         case "Dragon":
-            vsClans.dragon = (vsClans.dragon === true) ? false : true;
+            deckResult.vsclans.dragon = (deckResult.vsclans.dragon === true) ? false : true;
         break;
         case "Lion":
-            vsClans.lion = (vsClans.lion === true) ? false : true;
+            deckResult.vsclans.lion = (deckResult.vsclans.lion === true) ? false : true;
         break;
         case "Phoenix":
-            vsClans.phoenix = (vsClans.phoenix === true) ? false : true;
+            deckResult.vsclans.phoenix = (deckResult.vsclans.phoenix === true) ? false : true;
         break;
         case "Scorpion":
-            vsClans.scorpion = (vsClans.scorpion === true) ? false : true;
+            deckResult.vsclans.scorpion = (deckResult.vsclans.scorpion === true) ? false : true;
         break;
         case "Unicorn":
-            vsClans.unicorn = (vsClans.unicorn === true) ? false : true;
+            deckResult.vsclans.unicorn = (deckResult.vsclans.unicorn === true) ? false : true;
         break;
         default:
             alert("something went wrong with selecting vs clan");
         break;
     }
+
+    console.log(deckResult.vsclans);
+    vsClanDisplayer();
 }
 
-*/
+function vsClanDisplayer(){
+    for(let i in deckResult.vsclans){
 
+        let currentClan = document.getElementById(vsIDText + i);
+        let design = currentClan.attributes.name.value;
+
+        if(deckResult.vsclans[i] === true){
+            //* display the design *//
+            currentClan.classList.add(design);
+        }
+        else{
+            //* spread operator *//
+            currentClan.classList.remove(...currentClan.classList);
+
+            //* add deckbuilder back and add the new design onto the new current *//
+            currentClan.classList.add(deckbuilderClass);
+            //* remove the design *//
+
+        }
+    }
+}
