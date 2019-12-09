@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="CSS3/deckbuilder.css">
     <link rel="stylesheet" href="CSS3/footer.css">
 </head>
-<body onload="deckbuilderOnload()">
+<body> <!--  onload="deckbuilderOnload()"-->
     
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -104,26 +104,26 @@
                 <ul id="splash-text">
                     <h3>Secondary Clan</h3>
                 </ul>
-                <ul id="splash-crab" class="deckbuilder-grid">
-                    <h4><a onclick="tester(this)">Crab</a></h4>
+                <ul id="splash-crab" class="deckbuilder-grid" name="crab-design"onclick="splashClan(this)">
+                    <h4><a>Crab</a></h4>
                 </ul>
-                <ul id="splash-crane" class="deckbuilder-grid">
-                    <h4><a onclick="tester(this)">Crane</a></h4>
+                <ul id="splash-crane" class="deckbuilder-grid" name="crane-design"onclick="splashClan(this)">
+                    <h4><a>Crane</a></h4>
                 </ul>
-                <ul id="splash-dragon" class="deckbuilder-grid">
-                    <h4><a onclick="tester(this)">Dragon</a></h4>
+                <ul id="splash-dragon" class="deckbuilder-grid" name="dragon-design"onclick="splashClan(this)">
+                    <h4><a>Dragon</a></h4>
                 </ul>
-                <ul id="splash-lion" class="deckbuilder-grid"> 
-                    <h4><a onclick="tester(this)">Lion</a></h4>
+                <ul id="splash-lion" class="deckbuilder-grid" name="lion-design"onclick="splashClan(this)"> 
+                    <h4><a>Lion</a></h4>
                 </ul>
-                <ul id="splash-phoenix" class="deckbuilder-grid">
-                    <h4><a onclick="tester(this)">Phoenix</a></h4>
+                <ul id="splash-phoenix" class="deckbuilder-grid" name="phoenix-design"onclick="splashClan(this)">
+                    <h4><a>Phoenix</a></h4>
                 </ul>
-                <ul id="splash-scorpion" class="deckbuilder-grid">
-                    <h4><a onclick="tester(this)">Scorpion</a></h4>
+                <ul id="splash-scorpion" class="deckbuilder-grid" name="scorpion-design"onclick="splashClan(this)">
+                    <h4><a>Scorpion</a></h4>
                 </ul>
-                <ul id="splash-unicorn" class="deckbuilder-grid">
-                    <h4><a onclick="tester(this)">Unicorn</a></h4>
+                <ul id="splash-unicorn" class="deckbuilder-grid" name="unicorn-design"onclick="splashClan(this)">
+                    <h4><a>Unicorn</a></h4>
                 </ul>
 
             </div>
@@ -133,26 +133,26 @@
                 <ul id="role-element-text">
                     <h3>Role & Element</a>
                 </ul>
-                    <ul id="keeper-button" class="deckbuilder-grid">
-                        <h4><a onclick="tester(this)">Keeper</a></h4>
+                    <ul id="keeper-button" class="deckbuilder-grid" name="keeper-design"onclick="roleSelector(this)">
+                        <h4><a>Keeper</a></h4>
                     </ul>
-                    <ul id="seeker-button" class="deckbuilder-grid">
-                        <h4><a onclick="tester(this)">Seeker</a></h4>
+                    <ul id="seeker-button" class="deckbuilder-grid" name="seeker-design"onclick="roleSelector(this)">
+                        <h4><a>Seeker</a></h4>
                     </ul>
-                    <ul id="air-button" class="deckbuilder-grid">
-                        <h4><a onclick="tester(this)">Air</a></h4>
+                    <ul id="air-button" class="deckbuilder-grid" name="air-design"onclick="elementSelector(this)">
+                        <h4><a>Air</a></h4>
                     </ul>
-                    <ul id="earth-button" class="deckbuilder-grid"> 
-                        <h4><a onclick="tester(this)">Earth</a></h4>
+                    <ul id="earth-button" class="deckbuilder-grid" name="earth-design"onclick="elementSelector(this)"> 
+                        <h4><a>Earth</a></h4>
                     </ul>
-                    <ul id="fire-button" class="deckbuilder-grid">
-                        <h4><a onclick="tester(this)">Fire</a></h4>
+                    <ul id="fire-button" class="deckbuilder-grid" name="fire-design"onclick="elementSelector(this)">
+                        <h4><a>Fire</a></h4>
                     </ul>
-                    <ul id="void-button" class="deckbuilder-grid">
-                        <h4><a onclick="tester(this)">Void</a></h4>
+                    <ul id="void-button" class="deckbuilder-grid" name="void-design"onclick="elementSelector(this)">
+                        <h4><a>Void</a></h4>
                     </ul>
-                    <ul id="water-button" class="deckbuilder-grid">
-                        <h4><a onclick="tester(this)">Water</a></h4>
+                    <ul id="water-button" class="deckbuilder-grid" name="water-design"onclick="elementSelector(this)">
+                        <h4><a>Water</a></h4>
                     </ul>
 
             </div>
@@ -162,26 +162,26 @@
                     <ul id="vs-text" class="deckbuilder-grid">
                         <h3>Versus Clan</h3>
                     </ul>
-                    <ul id="vs-crab" class="deckbuilder-grid">
-                        <h4><a onclick="tester(this)">Crab</a></h4>
+                    <ul id="vs-crab" class="deckbuilder-grid" name="crab-design"onclick="vsClans(this)">
+                        <h4><a>Crab</a></h4>
                     </ul>
-                    <ul id="vs-crane" class="deckbuilder-grid">
-                        <h4><a onclick="tester(this)">Crane</a></h4>
+                    <ul id="vs-crane" class="deckbuilder-grid" name="crane-design"onclick="vsClans(this)">
+                        <h4><a>Crane</a></h4>
                     </ul>
-                    <ul id="vs-dragon" class="deckbuilder-grid">
-                        <h4><a onclick="tester(this)">Dragon</a></h4>
+                    <ul id="vs-dragon" class="deckbuilder-grid" name="dragon-design"onclick="vsClans(this)">
+                        <h4><a>Dragon</a></h4>
                     </ul>
-                    <ul id="vs-lion" class="deckbuilder-grid"> 
-                        <h4><a onclick="tester(this)">Lion</a></h4>
+                    <ul id="vs-lion" class="deckbuilder-grid" name="lion-design"onclick="vsClans(this)"> 
+                        <h4><a>Lion</a></h4>
                     </ul>
-                    <ul id="vs-phoenix" class="deckbuilder-grid">
-                        <h4><a onclick="tester(this)">Phoenix</a></h4>
+                    <ul id="vs-phoenix" class="deckbuilder-grid" name="phoenix-design"onclick="vsClans(this)">
+                        <h4><a>Phoenix</a></h4>
                     </ul>
-                    <ul id="vs-scorpion" class="deckbuilder-grid">
-                        <h4><a onclick="tester(this)">Scorpion</a></h4>
+                    <ul id="vs-scorpion" class="deckbuilder-grid" name="scorpion-design"onclick="vsClans(this)">
+                        <h4><a>Scorpion</a></h4>
                     </ul>
-                    <ul id="vs-unicorn" class="deckbuilder-grid">
-                        <h4><a onclick="tester(this)">Unicorn</a></h4>
+                    <ul id="vs-unicorn" class="deckbuilder-grid" name="unicorn-design"onclick="vsClans(this)">
+                        <h4><a>Unicorn</a></h4>
                     </ul>
                     
                 </div>
@@ -237,9 +237,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="JS/user-control.js"></script>
     <script src="JS/API_user.js"></script>
-    <script src="JS/primary-secondary.js"></script>
-    <script src="JS/keeper-seeker.js"></script>
-    <script src="JS/vs-clan.js"></script>
+    <script src="JS/deckbuilder.js"></script>
     <script src="JS/submit-deck.js"></script>
     <script src="JS/API_Clan.js"></script>
     <script src="JS/API_Deck.js"></script>
