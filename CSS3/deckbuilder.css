@@ -67,7 +67,7 @@
     box-shadow: none;
 }
 
-/** Specificity boost to overide for the selected **/
+/** Specificity boost to overide for the 'deckbuilder-grid' + .class a attributes **/
 /** ----           +               ----**/
 /** Hover Effects for the grids **/
 
