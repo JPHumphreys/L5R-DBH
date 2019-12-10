@@ -1,6 +1,8 @@
 const deckbuilderClass = "deckbuilder-grid";
 const vsIDText = "vs-";
+
 const vsClansContainer = document.getElementById("vs-clan");
+const submitButton = document.getElementById("submit-button");
 
 let deckResult = {
     primary:"",
@@ -18,6 +20,9 @@ let deckResult = {
     }
 };
 
+//* deck boolean *//
+let isDeckReady = false;
+//* current selected clans *//
 let currentSelectedPrimaryClan;
 let currentSelectedSecondaryClan;
 let currentSelectedRole;
@@ -46,6 +51,7 @@ function primaryClan(element){
         //* set the primary result of the deck to the deckresult object *//
         deckResult.primary = getClanName(element);
     }
+    isDeckFinished();
 }
 
 function getClanName(element){
@@ -75,7 +81,7 @@ function splashClan(element){
         //* set the primary result of the deck to the deckresult object *//
         deckResult.secondary = getClanName(element);
     }
-
+    isDeckFinished();
 }
 
 function roleSelector(element){
@@ -101,6 +107,7 @@ function roleSelector(element){
         //* set the primary result of the deck to the deckresult object *//
         deckResult.role = getClanName(element);
     }
+    isDeckFinished();
 }
 
 function elementSelector(element){
@@ -126,11 +133,10 @@ function elementSelector(element){
         //* set the primary result of the deck to the deckresult object *//
         deckResult.element = getClanName(element);
     }
+    isDeckFinished();
 }
 
 function vsClans(element){
-
-    let design = element.attributes.name.value;
 
     let clan = element.innerText;
 
@@ -161,8 +167,8 @@ function vsClans(element){
         break;
     }
 
-    console.log(deckResult.vsclans);
     vsClanDisplayer();
+    isDeckFinished();
 }
 
 function vsClanDisplayer(){
@@ -184,5 +190,25 @@ function vsClanDisplayer(){
             //* remove the design *//
 
         }
+    }
+}
+
+function getDeck(){
+    return deckResult;
+}
+
+function isDeckFinished(){
+
+    let counter = 0;
+
+    for(let i in deckResult){
+        if(deckResult[i] !== ""){
+            counter++;
+        }
+    }
+    if(counter >= 5){//! 5 becuase vsclans always is not !== "" //
+        submitButton.classList.remove("btn-danger");
+        submitButton.classList.add("btn-primary");
+        isDeckReady = true;
     }
 }
