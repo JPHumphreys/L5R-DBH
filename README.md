@@ -19,18 +19,18 @@ The deckbuilding process in L5R is arduous. This website aims to alleviate the p
 
 The user will select options from four columns:
 
-Primary Clan : This is where most of the cards that you will play in the deck will be from.
+**Primary Clan** : This is where most of the cards that you will play in the deck will be from.
 
-Secondary Clan : This is where you will be able to add other cards from a different clan into the deck, the amount of this is decided through the influence value on the card.
+**Secondary Clan** : This is where you will be able to add other cards from a different clan into the deck, the amount of this is decided through the influence value on the card.
 
-Role : There are two options for this :- 
+**Role** : There are two options for this :- 
 
-Keeper which allows you to increase your influence limit by 3 (up to 13 total) and access any cards that are **keeper only**
-Seeker which allows you to add an additional province of that type to your deck. It also gives you 1 fate anytime a province of that type is revealed that round (that you own). It also provides access to cards that are **seeker only**
+*Keeper* which allows you to increase your influence limit by 3 (up to 13 total) and access any cards that are **keeper only**
+*Seeker* which allows you to add an additional province of that type to your deck. It also gives you 1 fate anytime a province of that type is revealed that round (that you own). It also provides access to cards that are **seeker only**
 
-Element : This allows you to access cards that are of that element only, eg. **water role only**.
+**Element** : This allows you to access cards that are of that element only, eg. **water role only**.
 
-VS Clans : This is where the user is able to select the clans that the deck will cater against and improve the matchup by adding cards that work well against them.
+**VS Clans** : This is where the user is able to select the clans that the deck will cater against and improve the matchup by adding cards that work well against them.
 
  The goal for this to ensure that the users is able to generate a deck from scratch within a minute. 
 
