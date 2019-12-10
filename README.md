@@ -32,7 +32,7 @@ The user will select options from four columns:
 
 **VS Clans** : This is where the user is able to select the clans that the deck will cater against and improve the matchup by adding cards that work well against them.
 
- The goal for this to ensure that the users is able to generate a deck from scratch within a minute. 
+ **The goal for this to ensure that the users is able to generate a deck from scratch within a minute.**
 
 ---
 
