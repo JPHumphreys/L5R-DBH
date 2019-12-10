@@ -61,10 +61,35 @@
     cursor: pointer;
 }
 
+/** Text styling and tooltips **/
+
 #primary-text, #splash-text, #role-element-text, #vs-text{
     border: none;
     background-color: white;
     box-shadow: none;
+}
+
+[data-tooltip]{
+    position: relative;
+    cursor: default;
+}
+
+[data-tooltip]::after{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: attr(data-tooltip);
+    background-color: var(--void-colour);
+    border-radius: 5px;
+    color: white;
+    transform: scale(0);
+    transition: 
+    transform ease-out 200ms;
+}
+
+[data-tooltip]:hover::after{
+    transform: scale(1);
+    bottom: -40%;
 }
 
 /** Specificity boost to overide for the 'deckbuilder-grid' + .class a attributes **/
