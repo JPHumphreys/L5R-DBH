@@ -15,7 +15,7 @@ The deckbuilding process in L5R is arduous. This website aims to alleviate the p
 
 ### **Deckbuilder Page** - A space where the users will be able generate quick decks.
 
-![Image of the Deckbuilder Page] (https://i.ibb.co/58sP2nQ/deckbuilder-Page.png)
+![Image of the Deckbuilder Page](https://i.ibb.co/58sP2nQ/deckbuilder-Page.png)
 
 The user will select options from four columns:
 
