@@ -130,8 +130,6 @@ function elementSelector(element){
 
 function vsClans(element){
 
-    let design = element.attributes.name.value;
-
     let clan = element.innerText;
 
     switch(clan){
@@ -161,7 +159,6 @@ function vsClans(element){
         break;
     }
 
-    console.log(deckResult.vsclans);
     vsClanDisplayer();
 }
 
@@ -185,4 +182,8 @@ function vsClanDisplayer(){
 
         }
     }
+}
+
+function getDeck(){
+    return deckResult;
 }
