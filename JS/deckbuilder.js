@@ -4,82 +4,108 @@ const vsIDText = "vs-";
 const vsClansContainer = document.getElementById("vs-clan");
 const submitButton = document.getElementById("submit-button");
 
-let deckResult = {
-    primary:"",
-    secondary:"",
-    role:"",
-    element:"",
-    vsclans : {
-        crab:false,
-        crane:false,
-        dragon:false,
-        lion:false,
-        phoenix:false,
-        scorpion:false,
-        unicorn:false
-    }
+function Deck(){
+
+    //* private variables *//
+    let primary = undefined;
+    let secondary = undefined;
+    let role = undefined;
+    let element = undefined;
+    //*-------------------*//
+
+    Object.defineProperty(this, "primary", {
+        get: function(){
+            return primary;
+        },
+        set: function(value){
+            primary = value;
+            this.sectionCounter
+        }
+    });
+    
+    Object.defineProperty(this, "secondary", {
+        get: function(){
+            return secondary;
+        },
+        set: function(value){
+            secondary = value;
+        }
+    });
+
+    Object.defineProperty(this, "role", {
+        get: function(){
+            return role;
+        },
+        set: function(value){
+            role = value;
+        }
+    });
+
+    Object.defineProperty(this, "element",{
+        get: function(){
+            return element;
+        },
+        set: function(value){
+            element = value;
+        }
+    });
+
 };
 
-//* deck boolean *//
-let isDeckReady = false;
-//* current selected clans *//
-let currentSelectedPrimaryClan;
-let currentSelectedSecondaryClan;
-let currentSelectedRole;
-let currentSelectedElement;
+let ui = new Deck();
+addReadyReturner(ui);
+let deck = new Deck();
+addVSClans(deck);
 
 function primaryClan(element){
 
     let design = element.attributes.name.value; //* uses the name attribute to set the style *//
 
-    if(currentSelectedPrimaryClan === undefined){
+    if(ui.primary === undefined){
 
-        currentSelectedPrimaryClan = element;
-        deckResult.primary = getClanName(element);
+        ui.primary = element;
+        deck.primary = getClanName(element);
         element.classList.add(design);
+        
     }
-    else if(element !== currentSelectedPrimaryClan){
+    else if(element !== ui.primary){
 
         //* spread operator *//
-        currentSelectedPrimaryClan.classList.remove(...currentSelectedPrimaryClan.classList);
+        ui.primary.classList.remove(...ui.primary.classList);
 
         //* add deckbuilder back and add the new design onto the new current *//
-        currentSelectedPrimaryClan.classList.add(deckbuilderClass);
+        ui.primary.classList.add(deckbuilderClass);
         element.classList.add(design);
-        currentSelectedPrimaryClan = element;
+        ui.primary = element;
 
         //* set the primary result of the deck to the deckresult object *//
-        deckResult.primary = getClanName(element);
+        deck.primary = getClanName(element);
     }
     isDeckFinished();
-}
-
-function getClanName(element){
-    return element.innerText;
 }
 
 function splashClan(element){
 
     let design = element.attributes.name.value; //* uses the name attribute to set the style *//
 
-    if(currentSelectedSecondaryClan === undefined){
+    if(ui.secondary === undefined){
 
-        currentSelectedSecondaryClan = element;
-        deckResult.secondary = getClanName(element);
+        ui.secondary = element;
+        deck.secondary = getClanName(element);
         element.classList.add(design);
     }
-    else if(element !== currentSelectedSecondaryClan){
+    else if(element !== ui.secondary){
 
         //* spread operator *//
-        currentSelectedSecondaryClan.classList.remove(...currentSelectedSecondaryClan.classList);
+        ui.secondary.classList.remove(...ui.secondary.classList);
 
         //* add deckbuilder back and add the new design onto the new current *//
-        currentSelectedSecondaryClan.classList.add(deckbuilderClass);
+        ui.secondary.classList.add(deckbuilderClass);
         element.classList.add(design);
-        currentSelectedSecondaryClan = element;
+        ui.secondary = element;
 
         //* set the primary result of the deck to the deckresult object *//
-        deckResult.secondary = getClanName(element);
+        deck.secondary = getClanName(element);
     }
     isDeckFinished();
 }
@@ -88,24 +114,24 @@ function roleSelector(element){
 
     let design = element.attributes.name.value; //* uses the name attribute to set the style *//
 
-    if(currentSelectedRole === undefined){
+    if(ui.role === undefined){
 
-        currentSelectedRole = element;
-        deckResult.role = getClanName(element);
+        ui.role = element;
+        deck.role = getClanName(element);
         element.classList.add(design);
     }
-    else if(element !== currentSelectedRole){
+    else if(element !== ui.role){
 
         //* spread operator *//
-        currentSelectedRole.classList.remove(...currentSelectedRole.classList);
+        ui.role.classList.remove(...ui.role.classList);
 
         //* add deckbuilder back and add the new design onto the new current *//
-        currentSelectedRole.classList.add(deckbuilderClass);
+        ui.role.classList.add(deckbuilderClass);
         element.classList.add(design);
-        currentSelectedRole = element;
+        ui.role = element;
 
         //* set the primary result of the deck to the deckresult object *//
-        deckResult.role = getClanName(element);
+        deck.role = getClanName(element);
     }
     isDeckFinished();
 }
@@ -114,24 +140,24 @@ function elementSelector(element){
 
     let design = element.attributes.name.value; //* uses the name attribute to set the style *//
 
-    if(currentSelectedElement === undefined){
+    if(ui.element === undefined){
 
-        currentSelectedElement = element;
-        deckResult.element = getClanName(element);
+        ui.element = element;
+        deck.element = getClanName(element);
         element.classList.add(design);
     }
-    else if(element !== currentSelectedElement){
+    else if(element !== ui.element){
 
         //* spread operator *//
-        currentSelectedElement.classList.remove(...currentSelectedElement.classList);
+        ui.element.classList.remove(...ui.element.classList);
 
         //* add deckbuilder back and add the new design onto the new current *//
-        currentSelectedElement.classList.add(deckbuilderClass);
+        ui.element.classList.add(deckbuilderClass);
         element.classList.add(design);
-        currentSelectedElement = element;
+        ui.element = element;
 
         //* set the primary result of the deck to the deckresult object *//
-        deckResult.element = getClanName(element);
+        deck.element = getClanName(element);
     }
     isDeckFinished();
 }
@@ -142,25 +168,25 @@ function vsClans(element){
 
     switch(clan){
         case "Crab":
-            deckResult.vsclans.crab = (deckResult.vsclans.crab === true) ? false : true;
+            deck.vsClans.crab = (deck.vsClans.crab === true) ? false : true;
         break;
         case "Crane":
-            deckResult.vsclans.crane = (deckResult.vsclans.crane === true) ? false : true;
+            deck.vsClans.crane = (deck.vsClans.crane === true) ? false : true;
         break;
         case "Dragon":
-            deckResult.vsclans.dragon = (deckResult.vsclans.dragon === true) ? false : true;
+            deck.vsClans.dragon = (deck.vsClans.dragon === true) ? false : true;
         break;
         case "Lion":
-            deckResult.vsclans.lion = (deckResult.vsclans.lion === true) ? false : true;
+            deck.vsClans.lion = (deck.vsClans.lion === true) ? false : true;
         break;
         case "Phoenix":
-            deckResult.vsclans.phoenix = (deckResult.vsclans.phoenix === true) ? false : true;
+            deck.vsClans.phoenix = (deck.vsClans.phoenix === true) ? false : true;
         break;
         case "Scorpion":
-            deckResult.vsclans.scorpion = (deckResult.vsclans.scorpion === true) ? false : true;
+            deck.vsClans.scorpion = (deck.vsClans.scorpion === true) ? false : true;
         break;
         case "Unicorn":
-            deckResult.vsclans.unicorn = (deckResult.vsclans.unicorn === true) ? false : true;
+            deck.vsClans.unicorn = (deck.vsClans.unicorn === true) ? false : true;
         break;
         default:
             alert("something went wrong with selecting vs clan");
@@ -172,12 +198,12 @@ function vsClans(element){
 }
 
 function vsClanDisplayer(){
-    for(let i in deckResult.vsclans){
+    for(let i in deck.vsClans){
 
         let currentClan = document.getElementById(vsIDText + i);
         let design = currentClan.attributes.name.value;
 
-        if(deckResult.vsclans[i] === true){
+        if(deck.vsClans[i] === true){
             //* display the design *//
             currentClan.classList.add(design);
         }
@@ -193,22 +219,47 @@ function vsClanDisplayer(){
     }
 }
 
+
+function getClanName(element){
+    return element.innerText;
+}
+
 function getDeck(){
-    return deckResult;
+    return deck;
 }
 
 function isDeckFinished(){
 
-    let counter = 0;
-
-    for(let i in deckResult){
-        if(deckResult[i] !== ""){
-            counter++;
-        }
-    }
-    if(counter >= 5){//! 5 becuase vsclans always is not !== "" //
+    if(ui.deckValue() >= 4){ //* primary + secondary + role + element
         submitButton.classList.remove("btn-danger");
         submitButton.classList.add("btn-primary");
-        isDeckReady = true;
+        ui.isDeckReady = true;
     }
+    console.log(ui.deckValue());
+}
+
+function addVSClans(obj){
+    obj.vsClans = {
+        crab:false,
+        crane:false,
+        dragon:false,
+        lion:false,
+        phoenix:false,
+        scorpion:false,
+        unicorn:false
+    };
+}
+
+function addReadyReturner(obj){
+    obj.deckValue = function (){
+        let value = 0;
+
+        if(this.primary !== undefined) value++;
+        if(this.secondary !== undefined) value++;
+        if(this.role !== undefined) value++;
+        if(this.element !== undefined) value++;
+        
+        return value;
+    };
+    obj.isDeckReady = false;
 }
