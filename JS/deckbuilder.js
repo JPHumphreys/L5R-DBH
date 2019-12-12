@@ -235,7 +235,7 @@ function isDeckFinished(){
         submitButton.classList.add("btn-primary");
         ui.isDeckReady = true;
     }
-    console.log(ui.deckValue());
+    //console.log(ui.deckValue());
 }
 
 function addVSClans(obj){
