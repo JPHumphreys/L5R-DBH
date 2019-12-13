@@ -84,7 +84,7 @@
     color: white;
     transform: scale(0);
     transition: 
-    transform ease-out 200ms;
+    transform ease-out 350ms;
 }
 
 [data-tooltip]:hover::after{
