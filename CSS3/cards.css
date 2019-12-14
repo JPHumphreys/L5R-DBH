@@ -12,7 +12,7 @@
 }
 
 .cards{
-    margin-top: .5em;
+    margin-top: .2em;
 }
 
 .card{
@@ -33,7 +33,7 @@
 }
 
 .card-button{
-    margin-top: 1em;
+    margin-top: .5em;
 }
 
 .card.hover-row{

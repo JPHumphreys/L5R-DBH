@@ -1,5 +1,5 @@
 function tester(){
-    console.log("beep boop");
+    
 }
 
 function overHoverBlurr(element){
