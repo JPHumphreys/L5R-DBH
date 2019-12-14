@@ -11,9 +11,15 @@
     margin-bottom: 2em;
 }
 
-.cards{
-    margin-top: .5em;
+/** Clan selecting Effects **/
+
+.clan-selector{
+    margin-top: 1em;
 }
+
+/** ----------------- **/
+
+/** Card Hover Effects **/
 
 .card{
     margin-top: 1em;
@@ -33,7 +39,7 @@
 }
 
 .card-button{
-    margin-top: 1em;
+    margin-top: .5em;
 }
 
 .card.hover-row{
@@ -42,4 +48,11 @@
 
 .card.hover-row:hover{
     opacity: 1;
+}
+
+/** ----------------- **/
+/** Card Buttons **/
+
+.card-buttons{
+    margin-top: .5em;
 }
