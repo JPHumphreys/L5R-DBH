@@ -13,6 +13,11 @@ function overHoverBlurr(element){
 }
 
 function leaveHoverBlurr(element){
-    console.log("beep boop");
+    let parent = element.parentElement;
+    
+    for(let i = 0; i < parent.children.length; i++){
+        //console.log(parent.children[i]);
+        parent.children[i].classList.remove("hover-row");
+    }
 }
 
