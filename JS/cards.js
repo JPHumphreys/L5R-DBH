@@ -1,3 +1,5 @@
+const cardRenderLocation = document.getElementById("card-render-location");
+
 function tester(){
     
 }
