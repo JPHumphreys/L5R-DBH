@@ -22,13 +22,11 @@
 /** Card Hover Effects **/
 
 .card{
-    margin-top: 1em;
     text-align: center;
-    padding: .2em;
-    border: none;
+    border: 1px solid black;
     transition: 200ms;
     opacity: 1;
-    background-color: lightgray;
+    padding: 1%;
 }
 
 @media only screen and (max-width: 600px) {
@@ -45,11 +43,6 @@
     box-shadow: 0 0 10px 10px white;
     opacity: 1;
 }
-
-.card-button{
-    margin-top: .5em;
-}
-
 .card.hover-row{
     opacity: 0.7;
 }
@@ -59,9 +52,17 @@
 }
 
 /** ----------------- **/
-/** Card Buttons **/
+/** Card Details **/
 
 .card-buttons{
-    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+.card-rating{
+    background-color: rgb(225, 225, 225);
+    border: 1px solid black;
+    margin-top: .2em;
+    margin-bottom: .2em;
     padding: 1%;
+    border-radius: 10px;
 }

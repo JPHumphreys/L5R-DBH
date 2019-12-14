@@ -1,9 +1,5 @@
 const cardRenderLocation = document.getElementById("card-render-location");
 
-function tester(){
-    
-}
-
 function overHoverBlurr(element){
     let parent = element.parentElement;
     
@@ -15,7 +11,7 @@ function overHoverBlurr(element){
 
     let buttonDiv = element.querySelectorAll(".card-buttons");
     //console.log(buttonDiv[0].hidden);
-    buttonDiv[0].hidden = false;
+    //buttonDiv[0].hidden = false;
    
 }
 
@@ -29,6 +25,6 @@ function leaveHoverBlurr(element){
 
     let buttonDiv = element.querySelectorAll(".card-buttons");
     //console.log(buttonDiv[0].hidden);
-    buttonDiv[0].hidden = true;
+    //buttonDiv[0].hidden = true;
 }
 
