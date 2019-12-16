@@ -15,7 +15,7 @@ The deckbuilding process in L5R is arduous. This website aims to alleviate the p
 
 ### **Deckbuilder Page** - A space where the users will be able generate quick decks.
 
-![Image of the Deckbuilder Page](https://i.ibb.co/58sP2nQ/deckbuilder-Page.png)
+<img src="https://i.ibb.co/58sP2nQ/deckbuilder-Page.png" width="100%">
 
 The user will select options from four columns:
 
@@ -64,8 +64,8 @@ The user will select options from four columns:
     * [] Childred of the Empire.
     * [] Clan War.
     
-
-
+## Database :
+<img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/62/MySQL.svg/1920px-MySQL.svg.png" width="120" height="50">
 
 ## Hosted on :
 [![Netlify Status](https://api.netlify.com/api/v1/badges/21649784-f6cf-431e-b3cd-1cf250574c6c/deploy-status)](https://app.netlify.com/sites/relaxed-fermi-dc9578/deploys)
