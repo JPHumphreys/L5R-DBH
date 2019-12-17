@@ -6,15 +6,13 @@
 
 #cards-jumbotron{
     margin: 0;
-    padding: 1em;
     text-align: center;
-    margin-bottom: 2em;
 }
 
 /** Clan selecting Effects **/
 
 .clan-selector{
-    margin-top: 1em;
+    margin-bottom: 3rem;
 }
 
 /** ----------------- **/
@@ -47,12 +45,12 @@
     opacity: 1;
 }
 
+#card-render-location{
+    border-top: 2px black solid;
+}
+
 /** ----------------- **/
 /** Card Details **/
-
-.card-buttons{
-    margin-bottom: .5em;
-}
 
 .card-rating{
     background-color: rgb(225, 225, 225);

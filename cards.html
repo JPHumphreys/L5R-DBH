@@ -6,6 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title> Cards • L5R:DBH</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="CSS3/deckbuilder.css">
         <link rel="stylesheet" href="CSS3/cards.css">
         <link rel="stylesheet" href="CSS3/footer.css">
     </head>
@@ -62,14 +63,42 @@
                 </div>
                 
                 <div id="clan-selector">
-                    
 
+                        <div id="primary-clan" class="col-sm-12 col-md-6 col-lg-3 primary-clan">
+            
+                            <ul id="primary-text">
+                                <h3>Clan</h3>
+                            </ul>
+                            <ul id="primary-crab" class="deckbuilder-grid" name="crab-design" onclick="clanSelect(this)">
+                                <h4><a>Crab</a></h4>
+                            </ul>
+                            <ul id="primary-crane" class="deckbuilder-grid" name="crane-design" onclick="clanSelect(this)">
+                                <h4><a>Crane</a></h4>
+                            </ul>
+                            <ul id="primary-dragon" class="deckbuilder-grid" name="dragon-design" onclick="clanSelect(this)">
+                                <h4><a>Dragon</a></h4>
+                            </ul>
+                            <ul id="primary-lion" class="deckbuilder-grid" name="lion-design" onclick="clanSelect(this)"> 
+                                <h4><a>Lion</a></h4>
+                            </ul>
+                            <ul id="primary-phoenix" class="deckbuilder-grid" name="phoenix-design" onclick="clanSelect(this)">
+                                <h4><a>Phoenix</a></h4>
+                            </ul>
+                            <ul id="primary-scorpion" class="deckbuilder-grid" name="scorpion-design" onclick="clanSelect(this)">
+                                <h4><a>Scorpion</a></h4>
+                            </ul>
+                            <ul id="primary-unicorn" class="deckbuilder-grid" name="unicorn-design" onclick="clanSelect(this)">
+                                <h4><a>Unicorn</a></h4>
+                            </ul>
+            
+                        </div>
                     
                 </div>
 
-                <div id="card-render-location" class="row">
+                <div id="section-parter" class="row">
 
-                  <div class="row">
+                  <div id="card-render-location" class="row">
+
                     <div class="col-sm-12 col-md-6 col-lg-3 card" onclick="cardClick(this)" onmouseleave="hoverBlurr(this, 'leave')" onmouseover="hoverBlurr(this, 'enter')">
                         <img src="https://gamepedia.cursecdn.com/l5r_gamepedia_en/6/6c/Shrewd_Yasuki.png?version=52fa901f0d3c41c924603c6d4161dfce">
                         <h3 class="card-rating">Rating: 4</h3>
@@ -90,7 +119,7 @@
 
                 </div>
                     
-                </div>
+              </div>
           </div>
 
         </div>
