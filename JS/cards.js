@@ -6,7 +6,7 @@ function overHoverBlurr(element){
     for(let i = 0; i < parent.children.length; i++){
         //console.log(parent.children[i]);
         parent.children[i].classList.add("hover-row");
-        console.log(element.children);
+        //console.log(element.children);
     }
 
     let buttonDiv = element.querySelectorAll(".card-buttons");
