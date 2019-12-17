@@ -73,7 +73,7 @@
 
     }
     .row .card{
-        max-height: 100%;
+        max-height: 23%;
         max-width: 100%;
     }
  }
@@ -82,8 +82,12 @@
  @media only screen and (min-width: 600px) {
     .card{
         background-color: rgb(94, 255, 0);
-        margin-right: 30%;
+        margin-left: 10%;
     } 
+    .row .card{
+        max-height: 23%;
+        max-width: 80%;
+    }
     
  }
  
@@ -95,7 +99,7 @@
         margin-right: 5%;
     }
     .row .card{
-        max-height: 100%;
+        max-height: 43%;
         max-width: 40%;
     }
  }
@@ -104,12 +108,12 @@
  @media only screen and (min-width: 992px) {
     .card{
         background-color: rgb(255, 102, 0);
-        margin-left: 3%;
-        margin-right: 5%;
+        margin-left: 2%;
+        margin-right: 3%;
     }
     .row .card{
-        max-height: 80%;
-        max-width: 40%;
+        max-height: 60%;
+        max-width: 20%;
     }
  }
  
