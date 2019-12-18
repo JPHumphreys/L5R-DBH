@@ -1,3 +1,10 @@
+:root{
+    --holding-image: url(/media/holding_colour.jpg);
+    --character-image: url(/media/character_colour.jpg);
+    --event-image: url(/media/event_colour.jpg);
+    --attachment-image: url(/media/attachment_colour.jpg);
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -49,9 +56,14 @@
     transform: scale(1.1);
 }
 
-.stronghold-design.deckbuilder-grid, #deck-type-stronghold:hover, #card-type-stronghold:hover{
+.stronghold-design.deckbuilder-grid, #deck-type-stronghold:hover{
     border-color: red;
     box-shadow: 0 0 5px 5px red;
+}
+
+.province-design.deckbuilder-grid, #deck-type-province:hover{
+    border-color: var(--crab-colour);
+    box-shadow: 0 0 5px 5px var(--crab-colour);
 }
 
 .dynasty-design.deckbuilder-grid, #deck-type-dynasty:hover{
@@ -64,27 +76,26 @@
     box-shadow: 0 0 5px 5px var(--crab-colour);
 }
 
-.province-design.deckbuilder-grid, #card-type-province:hover{
-    border-color: var(--crab-colour);
-    box-shadow: 0 0 5px 5px var(--crab-colour);
-}
-
 .holding-design.deckbuilder-grid, #card-type-holding:hover{
+    background-image: var(--holding-image);
     border-color: var(--crab-colour);
     box-shadow: 0 0 5px 5px var(--crab-colour);
 }
 
 .character-design.deckbuilder-grid, #card-type-character:hover{
+    background-image: var(--character-image);
     border-color: var(--crab-colour);
     box-shadow: 0 0 5px 5px var(--crab-colour);
 }
 
 .event-design.deckbuilder-grid, #card-type-event:hover{
+    background-image: var(--event-image);
     border-color: var(--crab-colour);
     box-shadow: 0 0 5px 5px var(--crab-colour);
 }
 
 .attachment-design.deckbuilder-grid, #card-type-attachment:hover{
+    background-image: var(--attachment-image);
     border-color: var(--crab-colour);
     box-shadow: 0 0 5px 5px var(--crab-colour);
 }
