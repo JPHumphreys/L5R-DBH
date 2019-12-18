@@ -1,3 +1,10 @@
+:root{
+    --holding-image: url(/media/holding_colour.jpg);
+    --character-image: url(/media/character_colour.jpg);
+    --event-image: url(/media/event_colour.jpg);
+    --attachment-image: url(/media/attachment_colour.jpg);
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -9,10 +16,88 @@
     text-align: center;
 }
 
+/** Deck Type Text/Grid **/
+
+.deck-type, .card-type{
+    width: 100%;
+    margin-top: 1rem;
+    margin-left: 0;
+}
+
+.deck-type a, .card-type a{
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    font-size: 1.5em;
+    opacity: .9;
+}
+
+#deck-type, #card-type{
+    border: none;
+    background-color: white;
+    box-shadow: none;
+}
+
 /** Clan selecting Effects **/
 
 .clan-selector{
     margin-bottom: 3rem;
+}
+
+.stronghold-design.deckbuilder-grid, .dynasty-design.deckbuilder-grid, .conflict-design.deckbuilder-grid,
+.province-design.deckbuilder-grid, .holding-design.deckbuilder-grid, .character-design.deckbuider-grid,
+.event-design.deckbuilder-grid, .attachment-design.deckbuilder-grid {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+    border-color: white;
+    color: transparent;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.stronghold-design.deckbuilder-grid, #deck-type-stronghold:hover{
+    border-color: red;
+    box-shadow: 0 0 5px 5px red;
+}
+
+.province-design.deckbuilder-grid, #deck-type-province:hover{
+    border-color: var(--crab-colour);
+    box-shadow: 0 0 5px 5px var(--crab-colour);
+}
+
+.dynasty-design.deckbuilder-grid, #deck-type-dynasty:hover{
+    border-color: var(--crab-colour);
+    box-shadow: 0 0 5px 5px var(--crab-colour);
+}
+
+.conflict-design.deckbuilder-grid, #deck-type-conflict:hover{
+    border-color: var(--crab-colour);
+    box-shadow: 0 0 5px 5px var(--crab-colour);
+}
+
+.holding-design.deckbuilder-grid, #card-type-holding:hover{
+    background-image: var(--holding-image);
+    border-color: var(--crab-colour);
+    box-shadow: 0 0 5px 5px var(--crab-colour);
+}
+
+.character-design.deckbuilder-grid, #card-type-character:hover{
+    background-image: var(--character-image);
+    border-color: var(--crab-colour);
+    box-shadow: 0 0 5px 5px var(--crab-colour);
+}
+
+.event-design.deckbuilder-grid, #card-type-event:hover{
+    background-image: var(--event-image);
+    border-color: var(--crab-colour);
+    box-shadow: 0 0 5px 5px var(--crab-colour);
+}
+
+.attachment-design.deckbuilder-grid, #card-type-attachment:hover{
+    background-image: var(--attachment-image);
+    border-color: var(--crab-colour);
+    box-shadow: 0 0 5px 5px var(--crab-colour);
 }
 
 /** ----------------- **/

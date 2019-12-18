@@ -62,9 +62,9 @@
                     <h3 class="display-h">These votes will help generate decks to specialise against matchups</h3>
                 </div>
                 
-                <div id="clan-selector">
+                <div id="clan-selector" class="row">
 
-                        <div id="primary-clan" class="col-sm-12 col-md-6 col-lg-3 primary-clan">
+                        <div id="primary-clan" class="col-sm-12 col-md-6 col-lg-4 primary-clan">
             
                             <ul id="primary-text">
                                 <h3>Clan</h3>
@@ -89,6 +89,46 @@
                             </ul>
                             <ul id="primary-unicorn" class="deckbuilder-grid" name="unicorn-design" onclick="clanSelect(this)">
                                 <h4><a>Unicorn</a></h4>
+                            </ul>
+            
+                        </div>
+
+                        <div id="deck-type-container" class="col-sm-12 col-md-6 col-lg-4 deck-type">
+            
+                            <ul id="deck-type-text">
+                                <h3>Decks</h3>
+                            </ul>
+                            <ul id="deck-type-stronghold" class="deckbuilder-grid" name="stronghold-design" onclick="deckTypeSelect(this)">
+                                <h4><a>Strongholds</a></h4>
+                            </ul>
+                            <ul id="deck-type-province" class="deckbuilder-grid" name="province-design" onclick="cardTypeSelect(this)">
+                                <h4><a>Provinces</a></h4>
+                            </ul>
+                            <ul id="deck-type-dynasty" class="deckbuilder-grid" name="dynasty-design" onclick="deckTypeSelect(this)">
+                                <h4><a>Dynasty</a></h4>
+                            </ul>
+                            <ul id="deck-type-conflict" class="deckbuilder-grid" name="conflict-design" onclick="deckTypeSelect(this)">
+                                <h4><a>Conflict</a></h4>
+                            </ul>
+            
+                        </div>
+
+                        <div id="card-type-container" class="col-sm-12 col-md-6 col-lg-4 card-type">
+            
+                            <ul id="card-type-text">
+                                <h3>Card Type</h3>
+                            </ul>
+                            <ul id="card-type-holding" class="deckbuilder-grid" name="holding-design" onclick="cardTypeSelect(this)">
+                                <h4><a>Holdings</a></h4>
+                            </ul>
+                            <ul id="card-type-character" class="deckbuilder-grid" name="character-design" onclick="cardTypeSelect(this)"> 
+                                <h4><a>Characters</a></h4>
+                            </ul>
+                            <ul id="card-type-event" class="deckbuilder-grid" name="event-design" onclick="cardTypeSelect(this)">
+                                <h4><a>Events</a></h4>
+                            </ul>
+                            <ul id="card-type-attachment" class="deckbuilder-grid" name="attachment-design" onclick="cardTypeSelect(this)">
+                                <h4><a>Attachments</a></h4>
                             </ul>
             
                         </div>
