@@ -27,3 +27,11 @@ function clanSelect(element){
 
 }
 
+function deckTypeSelect(element){
+
+}
+
+function cardTypeSelect(element){
+
+}
+
