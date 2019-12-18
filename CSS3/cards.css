@@ -64,7 +64,7 @@
 .stronghold-design.deckbuilder-grid, #deck-type-stronghold:hover{
     background-image: var(--stronghold-image);
     border-color: var(--void-colour);
-    box-shadow: 0 0 5px 5px var(--void-colour);
+    box-shadow: 0 0 5px 5px var(--void-colour); 
 }
 
 .province-design.deckbuilder-grid, #deck-type-province:hover{
