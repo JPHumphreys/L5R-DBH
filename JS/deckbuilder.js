@@ -19,7 +19,7 @@ function Deck(){
         },
         set: function(value){
             primary = value;
-            this.sectionCounter
+            this.sectionCounter;
         }
     });
     
