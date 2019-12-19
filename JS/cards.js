@@ -1,4 +1,41 @@
 const cardRenderLocation = document.getElementById("card-render-location");
+const deckTypeContainer = document.getElementById("deck-type-container");
+
+function Card(){
+
+    let primary = undefined;
+    let deck = undefined;
+    let type = undefined;
+
+    Object.defineProperty(this, "primary", {
+        get: function(){
+            return primary;
+        },
+        set: function(value){
+            primary = value;
+        }
+    });
+
+    Object.defineProperty(this, "deck", {
+        get: function(){
+            return deck;
+        },
+        set: function(value){
+            deck = value;
+        }
+    });
+
+    Object.defineProperty(this, "type", {
+        get: function(){
+            return type;
+        },
+        set: function(value){
+            type = value;
+        }
+    });
+}
+
+
 
 function hoverBlurr(element, type){
     
@@ -24,7 +61,8 @@ function cardClick(element){
 }
 
 function clanSelect(element){
-
+    console.log("setting visible");
+    deckTypeContainer.hidden = false;
 }
 
 function deckTypeSelect(element){
