@@ -1,21 +1,133 @@
+:root{
+    --dark-colour:#343a40;
+}
+
 *{
     padding: 0;
     margin: 0;
     text-align: center;
 }
 
+/** deck styling **/
+
 .deck{
-    background-color: rgb(233, 233, 233);
+    border: 2px solid var(--dark-colour);
+    border-radius: 7px;
+    padding: 0;
+    margin: .1rem;
 }
 
-.deck:hover{
-    background-color: rgb(219, 219, 219);
+.deckname{
+    margin-bottom: 0;
+    color: #fff;
+    padding-bottom: 1rem;
+    padding-top: .5rem;
+    background-color: var(--dark-colour);
 }
 
-.deck-buttons{
-    margin-left: 1em;
-    margin-left: 1em;
-    display: inline-block;
+.deck img{
+    width: 80%;
+    height: 80%;
 }
 
+.deck-primary, .deck-role{
+    margin-top: 1rem;
+}
 
+.primary-role, .secondary-element{
+    margin: 0 .5rem .5rem .5rem;
+}
+
+/** -------------- **/
+
+/** data tool-tips **/
+
+[data-tooltip]{
+    position: relative;
+    cursor: default;
+}
+
+[data-tooltip]::after{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: attr(data-tooltip);
+    background-color: var(--dark-colour);
+    border-radius: 5px;
+    color: #fff;
+    transform: scale(0);
+    transition: 
+    transform ease-out 350ms;
+}
+
+[data-tooltip]:hover::after{
+    transform: scale(1);
+}
+
+/** button styling **/
+
+.button-row{
+    margin: .5rem;
+}
+
+.btn-outline-dark.delete-button:hover{
+    background-color: red;
+}
+
+.btn-outline-dark.copy-button:hover{
+    background-color: green;
+}
+
+.btn-outline-dark.rename-button:hover{
+    background-color: blue;
+}
+
+/** media queries **/
+
+ /*? Extra small devices (phones, 600px and down) */
+ @media only screen and (max-width: 600px) {
+    .deck{
+        /*background-color: tomato;*/
+        max-width: 100%;
+        margin: 0 10% 5% 10%;
+    }
+ }
+
+ /*? Small devices (portrait tablets and large phones, 600px and up) */
+ @media only screen and (min-width: 600px) {
+    .deck{
+        /*background-color: rgb(255, 169, 71);*/
+        max-width: 49.4%;
+    }
+    .deck img{
+        width: 120%;
+    }
+    
+ }
+ 
+ /*? Medium devices (landscape tablets, 768px and up) */
+ @media only screen and (min-width: 768px) {
+    .deck{
+        /*background-color: rgb(255, 221, 71);*/
+        max-width: 49.5%;
+    }
+ }
+ 
+ /*? Large devices (laptops/desktops, 992px and up) */
+ @media only screen and (min-width: 992px) {
+    .deck{
+        /*background-color: rgb(191, 255, 71);*/
+        max-width: 24.6%;
+    }
+    .deck img{
+        width: 120%;
+    }
+ }
+ 
+ /*? Extra large devices (large laptops and desktops, 1200px and up) */
+ @media only screen and (min-width: 1200px) {
+    .deck{
+        /* background-color: rgb(99, 71, 255);*/
+        max-width: 24.7%;
+    }
+ } 
