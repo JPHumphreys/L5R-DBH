@@ -107,7 +107,7 @@ function deckBuilder(deckname,priclan, splashclan, textObj){
     updateButton.classList.add("btn");
     updateButton.classList.add("btn-primary");
     updateButton.classList.add("deck-buttons");
-    updateButton.innerText = "Update";
+    updateButton.innerText = "Rename";
     idToUpdate.push(randomId + "-update");
     updateButton.addEventListener("click",function(){
         callDecknameUpdateModal();
