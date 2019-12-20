@@ -120,7 +120,7 @@
     opacity: 1;
     padding: .2rem;
     margin: .2rem;
-    background-color: rgb(136, 171, 240);
+    background-color: #343a40;
 }
 
 .card:hover{
@@ -175,7 +175,7 @@
     .card{
         margin-left: 10%;
         margin-right: 10%;
-        background-color: rgb(0, 60, 255);
+        /*background-color: rgb(0, 60, 255);*/
 
     }
     .row .card{
@@ -187,8 +187,8 @@
  /*? Small devices (portrait tablets and large phones, 600px and up) */
  @media only screen and (min-width: 600px) {
     .card{
-        background-color: rgb(94, 255, 0);
         margin-left: 10%;
+        /*background-color: rgb(94, 255, 0);*/
     } 
     .row .card{
         max-height: 23%;
@@ -200,9 +200,9 @@
  /*? Medium devices (landscape tablets, 768px and up) */
  @media only screen and (min-width: 768px) {
     .card{
-        background-color: rgb(255, 217, 0);
         margin-left: 5%;
         margin-right: 5%;
+        /*background-color: rgb(255, 217, 0);*/
     }
     .row .card{
         max-height: 43%;
@@ -213,9 +213,9 @@
  /*? Large devices (laptops/desktops, 992px and up) */
  @media only screen and (min-width: 992px) {
     .card{
-        background-color: rgb(255, 102, 0);
         margin-left: 2%;
         margin-right: 3%;
+        /*background-color: rgb(255, 102, 0);*/
     }
     .row .card{
         max-height: 60%;
@@ -226,9 +226,9 @@
  /*? Extra large devices (large laptops and desktops, 1200px and up) */
  @media only screen and (min-width: 1200px) {
     .card{
-        background-color: red;
         margin-left: 1%;
         margin-right: 1%;
+        /*background-color: red;*/
     }
     .row .card{
         max-height: 80%;

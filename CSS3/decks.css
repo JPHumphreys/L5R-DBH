@@ -15,7 +15,6 @@
     border-radius: 7px;
     padding: 0;
     margin: .1rem;
-    max-width: 24.7%;
 }
 
 .deckname{
@@ -87,26 +86,48 @@
 
  /*? Extra small devices (phones, 600px and down) */
  @media only screen and (max-width: 600px) {
-    
+    .deck{
+        /*background-color: tomato;*/
+        max-width: 100%;
+        margin: 0 10% 5% 10%;
+    }
  }
 
  /*? Small devices (portrait tablets and large phones, 600px and up) */
  @media only screen and (min-width: 600px) {
-   
+    .deck{
+        /*background-color: rgb(255, 169, 71);*/
+        max-width: 49.4%;
+    }
+    .deck img{
+        width: 120%;
+    }
     
  }
  
  /*? Medium devices (landscape tablets, 768px and up) */
  @media only screen and (min-width: 768px) {
-    
+    .deck{
+        /*background-color: rgb(255, 221, 71);*/
+        max-width: 49.5%;
+    }
  }
  
  /*? Large devices (laptops/desktops, 992px and up) */
  @media only screen and (min-width: 992px) {
-    
+    .deck{
+        /*background-color: rgb(191, 255, 71);*/
+        max-width: 24.6%;
+    }
+    .deck img{
+        width: 120%;
+    }
  }
  
  /*? Extra large devices (large laptops and desktops, 1200px and up) */
  @media only screen and (min-width: 1200px) {
-   
+    .deck{
+        /* background-color: rgb(99, 71, 255);*/
+        max-width: 24.7%;
+    }
  } 
