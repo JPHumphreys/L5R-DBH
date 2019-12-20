@@ -1,14 +1,3 @@
-:root{
-    --holding-image: url(/media/holding_colour.jpg);
-    --character-image: url(/media/character_colour.jpg);
-    --event-image: url(/media/event_colour.jpg);
-    --attachment-image: url(/media/attachment_colour.jpg);
-
-    --stronghold-image: url(/media/stronghold_colour.jpg);
-    --province-image: url(/media/province_colour.jpg);
-    --dynasty-image: url(/media/dynasty_colour.jpg);
-    --conflict-image: url(/media/conflict_colour.jpg);
-}
 
 *{
     padding: 0;
