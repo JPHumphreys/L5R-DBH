@@ -7,7 +7,7 @@
     <title>Decks • DBH</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS3/footer.css">
-    <link rel="stylesheet" href="CSS3/deck-style.css">
+    <link rel="stylesheet" href="CSS3/decks.css">
 </head>
 <body onload="loadDecks()">
     
@@ -63,6 +63,36 @@
 
         <div id="deck-render-location" class="row">
             <!-- This is where the decks are spawned-->
+
+          <div class="col-sm-12 col-md-6 col-lg-4 deck">
+
+            <h3>Deckname</h3>
+
+            <div class="row primary-role">
+              <div class="col-9 deck-primary">
+                <h4>Crab</h4>
+              </div>
+              <div class="col-3 deck-role">
+                <img src="/media/keeper_colour.jpg" alt="">
+              </div>
+              
+            </div>
+            <div class="row secondary-element">
+                <div class="col-9 deck-secondary">
+                  <h5>Phoenix</h5>
+                </div>
+                <div class="col-3 deck-element">
+                  <img src="/media/fire_colour.jpg" alt="">
+                </div>
+                
+            </div>
+
+            <div class="row btn-group button-row">
+              <button class="btn btn-md btn-outline-dark rename-button">Rename</button>
+              <button class="btn btn-md btn-outline-dark copy-button">Copy</button>
+              <button class="btn btn-md btn-outline-dark delete-button">Delete</button>
+            </div>
+
         </div>
     </div>
 

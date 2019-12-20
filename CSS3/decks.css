@@ -5,17 +5,49 @@
 }
 
 .deck{
-    background-color: rgb(233, 233, 233);
+    border: 2px solid black;
+    border-radius: 7px;
+    padding: 0;
+    margin: 0;
 }
 
 .deck:hover{
-    background-color: rgb(219, 219, 219);
+
 }
 
-.deck-buttons{
-    margin-left: 1em;
-    margin-left: 1em;
-    display: inline-block;
+.deck img{
+    width: 80%;
+    height: 80%;
+}
+
+.primary-role{
+    border-top: 1px solid black;
+}
+
+.deck-primary, .deck-role{
+    margin-top: 1rem;
+}
+
+.primary-role, .secondary-element{
+    margin: .5rem;
+}
+
+/** button styling **/
+
+.button-row{
+    margin: .5rem;
+}
+
+.btn-outline-dark.delete-button:hover{
+    background-color: red;
+}
+
+.btn-outline-dark.copy-button:hover{
+    background-color: green;
+}
+
+.btn-outline-dark.rename-button:hover{
+    background-color: blue;
 }
 
 
