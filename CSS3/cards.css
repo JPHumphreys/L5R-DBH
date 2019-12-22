@@ -107,7 +107,7 @@
     border: none;
     transition: 200ms;
     opacity: 1;
-    padding: .2rem;
+    padding: .2rem .2rem 1.7rem .2rem;
     margin: .2rem;
     background-color: #343a40;
 }
@@ -136,12 +136,10 @@
 /** Card Details **/
 
 .card-rating{
-    background-color: rgb(225, 225, 225);
-    border: 1px solid black;
-    margin-top: .2em;
-    margin-bottom: .2em;
+    background-color: var(--dark-colour);
+    margin-bottom: .4em;
     padding: 1%;
-    border-radius: 10px;
+    color: #fff;
 }
 
 /** keyframes **/
