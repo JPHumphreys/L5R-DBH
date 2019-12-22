@@ -147,8 +147,34 @@
 /** ---------------- **/
 /** Modal details **/
 
+#vote-modal-header{
+    background-color: var(--dark-colour);
+    color: #fff;
+}
+
+.close{
+    color: #fff;
+}
+
+.close:hover{
+    color: #ffeeff;
+}
+
+#inputGroup-sizing-lg{
+    background-color: var(--dark-colour);
+    color: #fff;
+}
+
+#add-rating-text{
+    border: 1px solid var(--dark-colour);
+}
+
 #vote-modal-image{
     padding: 2%;
+}
+
+.btn-outline-dark.vote-button:hover{
+    background-color: darkslategray;
 }
 
 

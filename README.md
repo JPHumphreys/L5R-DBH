@@ -9,6 +9,9 @@ The deckbuilding process in L5R is arduous. This website aims to alleviate the p
 ---
 
 ### **Card Rating Page** - A space that allows users to see the current ratings and vote on cards.
+
+<img src="https://i.ibb.co/HxwWgZL/Screenshot-2019-12-22-Cards-L5-R-DBH.png">
+
  The votes indicate the strength of the card - this can be filtered to see for against ALL CLANS, or any specific one.
 
 ---
