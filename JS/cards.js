@@ -1,5 +1,6 @@
 const cardRenderLocation = document.getElementById("card-render-location");
 const deckTypeContainer = document.getElementById("deck-type-container");
+const voteModalImageLocation = document.getElementById("vote-modal-image");
 
 function Card(){
 
@@ -56,8 +57,16 @@ function hoverBlurr(element, type){
         } 
 }
 
+function getImageOfCard(card){
+    return card.firstElementChild.currentSrc;
+}
+
 function cardClick(element){
-    console.log("beep boop", element);
+
+    voteModalImageLocation.attributes.src.value = getImageOfCard(element);
+
+    $("#vote-modal").modal('toggle');
+
 }
 
 function clanSelect(element){
