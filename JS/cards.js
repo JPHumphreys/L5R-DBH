@@ -28,22 +28,22 @@ function Card(){
         }
     });
 
-    this.addDeckElement = function (newElement){
-        let counter = 0 ;
-        for(let value in deck){
-            if(newElement != deck[value]){
-                counter++;
-            }
-        }
-        //* if counter does not equal length - then 1 element matched *//
-        if(counter === deck.length){
-            deck.push(newElement);
-        }
-    }
-
 }
 
 let card = new Card();
+
+function addElement(deckProperty, newElement){
+    let counter = 0 ;
+    for(let value in deckProperty){
+        if(newElement != deckProperty[value]){
+            counter++;
+        }
+    }
+    //* if counter does not equal length - then 1 element matched *//
+    if(counter === deckProperty.length){
+        deckProperty.push(newElement);
+    }
+}
 
 function hoverBlurr(element, type){
     
