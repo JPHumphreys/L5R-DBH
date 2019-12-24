@@ -110,6 +110,7 @@
     padding: .2rem .2rem 1.7rem .2rem;
     margin: .2rem;
     background-color: #343a40;
+    border-radius: 10px;
 }
 
 .card:hover{
