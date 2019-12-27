@@ -7,6 +7,7 @@
         <title>Login • L5R:DBH</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="CSS3/design.css">
+        <link rel="stylesheet" href="CSS3/login-register.css">
         
     </head>
     <body>
@@ -39,19 +40,19 @@
                 </div>
             </nav>
 
-            <h2 id="login-text">LOGIN</h2>
+            <h2 id="login-text" >Login</h2>
             <br>
 
             <div class="row">
                 <div class="col-sm"></div>
-                <div class="shadow-lg p-3 mb-5 bg-white rounded">
+                <div id="login-form" class="shadow-lg p-3 mb-5 rounded">
                     <form onsubmit="login(this); return false">
                         <h3> Username: </h3>
                         <input type="text" class="form-control" id="login-username">
                         <h3> Password: </h3>
                         <input type="password" class="form-control" id="login-password">
                         <br>
-                        <button id="login-button" type="submit" class="btn btn-dark"> Login </button>
+                        <button id="login-button" type="submit" class="btn btn-outline-light"> Login </button>
                     </form>        </div>
                 <div class="col-sm"></div>
             </div>
