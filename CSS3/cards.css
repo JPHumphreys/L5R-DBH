@@ -50,6 +50,17 @@
     transform: scale(1.1);
 }
 
+#primary-crab{
+    background-image: var(--crab-image);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 0%;
+}
+
+.deckbuilder-grid:hover{
+    background-size: 30%;
+}
+
 .stronghold-design.deckbuilder-grid, #deck-type-stronghold:hover{
     background-image: var(--stronghold-image);
     border-color: var(--void-colour);
