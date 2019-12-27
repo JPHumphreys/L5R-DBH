@@ -3,10 +3,31 @@
     margin: 0;
 }
 
-#login-form{
-    margin-top: 2em;
+#login-form, #register-form{
+    margin-top: 1rem;
 }
 
 #nav-login-item, #nav-register-item{
     display: block;
+}
+
+#login-text, #register-text{
+    text-align: center;
+    margin-top: 1rem;
+}
+
+#login-form, #register-form{
+    background-color: var(--dark-colour);
+}
+
+#login-form h3, #register-form h3{
+    color: #fff;
+}
+
+#login-button, #register-button{
+    color: #fff;
+}
+
+#login-button:hover, #register-button:hover{
+    color: var(--dark-colour);
 }
