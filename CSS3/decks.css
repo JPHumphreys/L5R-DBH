@@ -65,18 +65,19 @@
 
 .button-row{
     margin: .5rem;
+    
 }
 
-.btn-outline-dark.delete-button:hover{
-    background-color: red;
+.button-row button{
+    border-color: #fff;
 }
 
-.btn-outline-dark.copy-button:hover{
-    background-color: green;
-}
-
-.btn-outline-dark.rename-button:hover{
-    background-color: blue;
+.button-row button:hover{
+    background-color: var(--medium-colour);
+    color: var(--dark-colour);
+    transform: scale(1.05);
+    transition: 
+    transform ease-out 100ms;
 }
 
 /** media queries **/
