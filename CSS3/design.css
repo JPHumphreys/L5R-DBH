@@ -2,6 +2,7 @@
 
     /** Site Colours **/
     --dark-colour:#343a40;
+    --medium-colour:rgb(214, 214, 214);
 
     /** Clan Colours and Images **/
 
@@ -58,7 +59,7 @@
 
 .on-grid{
     border: 2px solid var(--dark-colour);
-    background-color: rgb(214, 214, 214);
+    background-color: var(--medium-colour);
     box-shadow: 0 10px 10px -5px;
     cursor: pointer;
     background-repeat: no-repeat;
