@@ -68,10 +68,145 @@ function randomString(length) {
     return str;
 }
 
+function createPrimaryAndRole(primary,role){
+
+    let primaryAndRole = document.createElement("div");
+    primaryAndRole.classList.add("row", "primary-role");
+    
+    let deckPrimary = document.createElement("div");
+    deckPrimary.classList.add("col-8", "deck-primary");
+    deckPrimary.setAttribute("data-tooltip","The Primary Clan of this deck is " + primary);
+    let primaryText = document.createElement("h4");
+    primaryText.innerText = primary;
+    deckPrimary.appendChild(primaryText);
+    primaryAndRole.appendChild(deckPrimary);
+
+    let deckRole = document.createElement("div");
+    deckRole.classList.add("col-3", "deck-role");
+    deckRole.setAttribute("data-tooltip","Role is " + role);
+    let roleImage = document.createElement("img");
+    roleImage.setAttribute("src","/media/" + role + "_colour.jpg");
+    roleImage.setAttribute("alt",role);
+    deckRole.appendChild(roleImage);
+    primaryAndRole.appendChild(deckRole)
+
+    /*
+
+            <div class="row primary-role">
+                <div class="col-8 deck-primary" data-tooltip="The Primary Clan of this deck is Crab.">
+                  <h4>Crab</h4>
+                </div>
+                <div class="col-3 deck-role" data-tooltip="Role is Keeper">
+                  <img src="/media/keeper_colour.jpg" alt="">
+                </div>
+            </div>
+
+    */
+
+    return primaryAndRole;
+}
+
+function createSecondaryandElement(secondary, element){
+
+    let secondaryAndElement = document.createElement("div");
+    secondaryAndElement.classList.add("row", "secondary-element");
+
+    let deckSecondary = document.createElement("div");
+    deckSecondary.classList.add("col-8", "deck-secondary");
+    deckSecondary.setAttribute("data-tooltip", "The Secondary Clan is " + secondary);
+    let secondaryText = document.createElement("h5");
+    secondaryText.innerText = secondary;
+    deckSecondary.appendChild(secondaryText);
+    secondaryAndElement.appendChild(deckSecondary);
+
+    let deckElement = document.createElement("div");
+    deckElement.classList.add("col-3", "deck-element");
+    deckElement.setAttribute("data-tooltip", "Element is " + element);
+    let elementImage = document.createElement("img");
+    elementImage.setAttribute("src","/media/" + element + "_colour.jpg");
+    elementImage.setAttribute("alt",element);
+    deckElement.appendChild(elementImage);
+    secondaryAndElement.appendChild(deckElement);
+
+    return secondaryAndElement;
+
+    /*
+            <div class="row secondary-element">
+                  <div class="col-8 deck-secondary"  data-tooltip="The Secondary Clan is Phoenix.">
+                    <h5>Phoenix</h5>
+                  </div>
+                  <div class="col-3 deck-element" data-tooltip="Element is Fire">
+                    <img src="/media/fire_colour.jpg" alt="">
+                  </div>
+                  
+              </div>
+
+    */
+}
+
+function createDeckButtons(){
+
+    let buttonRow = document.createElement("div");
+    buttonRow.classList.add("row", "btn-group", "button-row");
+
+    let rename = document.createElement("button");
+    rename.classList.add("btn","btn-md", "btn-outline-dark", "rename-button");
+    rename.innerText = "Rename";
+    let copy = document.createElement("button");
+    copy.classList.add("btn","btn-md", "btn-outline-dark", "copy-button");
+    copy.innerText = "Copy";
+    let remove = document.createElement("button");
+    remove.classList.add("btn","btn-md", "btn-outline-dark", "delete-button");
+    remove.innerText = "Delete";
+
+    buttonRow.appendChild(rename);
+    buttonRow.appendChild(copy);
+    buttonRow.appendChild(remove);
+    return buttonRow;
+    /*
+            <div class="row btn-group button-row">
+                <button class="btn btn-md btn-outline-dark rename-button">Rename</button>
+                <button class="btn btn-md btn-outline-dark copy-button">Copy</button>
+                <button class="btn btn-md btn-outline-dark delete-button">Delete</button>
+            </div>
+    */
+
+}
+
+function buildDeck(deckname, primary, secondary, role, element){
+
+    let randomId = randomString(16);
+    let deck = document.createElement("div");
+    deck.id = randomId;
+    deck.classList.add("col-sm-12","col-md-6", "col-lg-3", "deck");
+    /*deck.id = randomId;*/
+    let name = document.createElement("h3");
+    name.classList.add("deckname");
+    name.innerText = deckname;
+    deck.appendChild(name);
+    deck.appendChild(createPrimaryAndRole(primary,role));
+    deck.appendChild(createSecondaryandElement(secondary, element));
+    deck.appendChild(createDeckButtons());
+    deckSpawnLocation.append(deck);
+
+    /*
+
+        <div class="col-sm-12 col-md-6 col-lg-3 deck">
+
+              <h3 class="deckname">Deckname</h3>
+  
+              
+  
+        </div>
+
+
+    */
+
+}
 
 function deckBuilder(deckname,priclan, splashclan, textObj){
 
-    let randomId = randomString(16);//16 to ensure the unlikeliness of same deckname
+    let randomId = randomString(16);//16 random characters - unlikeliness of same deckname
 
     let deck = document.createElement("div");
     deck.classList.add("col-sm-12");
