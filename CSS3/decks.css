@@ -75,6 +75,9 @@
 .button-row button:hover{
     background-color: var(--medium-colour);
     color: var(--dark-colour);
+    transform: scale(1.05);
+    transition: 
+    transform ease-out 100ms;
 }
 
 /** media queries **/
