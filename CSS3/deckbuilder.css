@@ -25,7 +25,7 @@
 }
 
 .on-grid{
-    border: 2px solid black;
+    border: 2px solid var(--dark-colour);
     background-color: rgb(214, 214, 214);
     box-shadow: 0 10px 10px -5px;
     cursor: pointer;
@@ -227,8 +227,14 @@
 /**----------------------------**/
 /** Deckname and Submit Button **/
 
-#deck-name{
+#deckname{
     align-content: center;
+    background-color: var(--dark-colour);
+    color: #fff;
+}
+
+#deckname-text{
+    border-block-color: var(--dark-colour);
 }
 
 #submit-button-row{
