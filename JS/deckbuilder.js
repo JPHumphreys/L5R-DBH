@@ -1,4 +1,4 @@
-const deckbuilderClass = "deckbuilder-grid";
+const onGridClass = "on-grid";
 const vsIDText = "vs-";
 
 const vsClansContainer = document.getElementById("vs-clan");
@@ -74,7 +74,7 @@ function primaryClan(element){
         ui.primary.classList.remove(...ui.primary.classList);
 
         //* add deckbuilder back and add the new design onto the new current *//
-        ui.primary.classList.add(deckbuilderClass);
+        ui.primary.classList.add(onGridClass);
         element.classList.add(design);
         ui.primary = element;
 
@@ -100,7 +100,7 @@ function splashClan(element){
         ui.secondary.classList.remove(...ui.secondary.classList);
 
         //* add deckbuilder back and add the new design onto the new current *//
-        ui.secondary.classList.add(deckbuilderClass);
+        ui.secondary.classList.add(onGridClass);
         element.classList.add(design);
         ui.secondary = element;
 
@@ -126,7 +126,7 @@ function roleSelector(element){
         ui.role.classList.remove(...ui.role.classList);
 
         //* add deckbuilder back and add the new design onto the new current *//
-        ui.role.classList.add(deckbuilderClass);
+        ui.role.classList.add(onGridClass);
         element.classList.add(design);
         ui.role = element;
 
@@ -152,7 +152,7 @@ function elementSelector(element){
         ui.element.classList.remove(...ui.element.classList);
 
         //* add deckbuilder back and add the new design onto the new current *//
-        ui.element.classList.add(deckbuilderClass);
+        ui.element.classList.add(onGridClass);
         element.classList.add(design);
         ui.element = element;
 
@@ -212,7 +212,7 @@ function vsClanDisplayer(){
             currentClan.classList.remove(...currentClan.classList);
 
             //* add deckbuilder back and add the new design onto the new current *//
-            currentClan.classList.add(deckbuilderClass);
+            currentClan.classList.add(onGridClass);
             //* remove the design *//
 
         }
@@ -231,8 +231,8 @@ function getDeck(){
 function isDeckFinished(){
 
     if(ui.deckValue() >= 4){ //* primary + secondary + role + element
-        submitButton.classList.remove("btn-danger");
-        submitButton.classList.add("btn-primary");
+        submitButton.classList.remove("btn-outline-danger");
+        submitButton.classList.add("btn-outline-primary");
         ui.isDeckReady = true;
     }
     //console.log(ui.deckValue());
