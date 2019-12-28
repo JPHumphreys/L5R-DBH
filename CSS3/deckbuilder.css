@@ -24,7 +24,7 @@
     opacity: .9;
 }
 
-.deckbuilder-grid{
+.on-grid{
     border: 2px solid black;
     background-color: rgb(214, 214, 214);
     box-shadow: 0 10px 10px -5px;
@@ -72,11 +72,11 @@
 /** ----           +               ----**/
 /** Hover Effects for the grids **/
 
-.crab-design.deckbuilder-grid, .crane-design.deckbuilder-grid, .dragon-design.deckbuilder-grid,
-.lion-design.deckbuilder-grid, .phoenix-design.deckbuilder-grid, .scorpion-design.deckbuilder-grid,
-.unicorn-design.deckbuilder-grid, .keeper-design.deckbuilder-grid, .seeker-design.deckbuilder-grid,
-.air-design.deckbuilder-grid, .earth-design.deckbuilder-grid, .fire-design.deckbuilder-grid,
-.void-design.deckbuilder-grid, .water-design.deckbuilder-grid, .deckbuilder-grid:hover{
+.crab-design.on-grid, .crane-design.on-grid, .dragon-design.on-grid,
+.lion-design.on-grid, .phoenix-design.on-grid, .scorpion-design.on-grid,
+.unicorn-design.on-grid, .keeper-design.on-grid, .seeker-design.on-grid,
+.air-design.on-grid, .earth-design.on-grid, .fire-design.on-grid,
+.void-design.on-grid, .water-design.on-grid, .on-grid:hover{
     background-color: white;
     border-color: white;
     color: transparent;
@@ -140,85 +140,85 @@
     background-image: var(--water-image);
 }
 
-.crab-design.deckbuilder-grid, #primary-crab:hover, #splash-crab:hover, #vs-crab:hover{
+.crab-design.on-grid, #primary-crab:hover, #splash-crab:hover, #vs-crab:hover{
     border-color: var(--crab-colour);
     box-shadow: 0 0 5px 5px var(--crab-colour);
     background-size: 40%;
 }
 
-.crane-design.deckbuilder-grid, #primary-crane:hover, #splash-crane:hover, #vs-crane:hover{
+.crane-design.on-grid, #primary-crane:hover, #splash-crane:hover, #vs-crane:hover{
     border-color: var(--crane-colour);
     box-shadow: 0 0 5px 5px var(--crane-colour);
     background-size: 40%;
 }
 
-.dragon-design.deckbuilder-grid, #primary-dragon:hover, #splash-dragon:hover, #vs-dragon:hover{
+.dragon-design.on-grid, #primary-dragon:hover, #splash-dragon:hover, #vs-dragon:hover{
     border-color: var(--dragon-colour);
     box-shadow: 0 0 5px 5px var(--dragon-colour);
     background-size: 40%;
 }
 
-.lion-design.deckbuilder-grid, #primary-lion:hover, #splash-lion:hover, #vs-lion:hover{
+.lion-design.on-grid, #primary-lion:hover, #splash-lion:hover, #vs-lion:hover{
     border-color: var(--lion-colour);
     box-shadow: 0 0 5px 5px var(--lion-colour);
     background-size: 40%;
 }
 
-.phoenix-design.deckbuilder-grid, #primary-phoenix:hover, #splash-phoenix:hover, #vs-phoenix:hover{
+.phoenix-design.on-grid, #primary-phoenix:hover, #splash-phoenix:hover, #vs-phoenix:hover{
     border-color: var(--phoenix-colour);
     box-shadow: 0 0 5px 5px var(--phoenix-colour);
     background-size: 40%;
 }
 
-.scorpion-design.deckbuilder-grid, #primary-scorpion:hover, #splash-scorpion:hover, #vs-scorpion:hover{
+.scorpion-design.on-grid, #primary-scorpion:hover, #splash-scorpion:hover, #vs-scorpion:hover{
     border-color: var(--scorpion-colour);
     box-shadow: 0 0 5px 5px var(--scorpion-colour);
     background-size: 40%;
 }
 
-.unicorn-design.deckbuilder-grid, #primary-unicorn:hover, #splash-unicorn:hover, #vs-unicorn:hover{
+.unicorn-design.on-grid, #primary-unicorn:hover, #splash-unicorn:hover, #vs-unicorn:hover{
     border-color: var(--unicorn-colour);
     box-shadow: 0 0 5px 5px var(--unicorn-colour);
     background-size: 40%;
 }
 
-.keeper-design.deckbuilder-grid, #keeper-button:hover{
+.keeper-design.on-grid, #keeper-button:hover{
     border-color: var(--void-colour);
     box-shadow: 0 0 5px 5px var(--void-colour);
     background-size: 40%;
 }
 
-.seeker-design.deckbuilder-grid, #seeker-button:hover{
+.seeker-design.on-grid, #seeker-button:hover{
     border-color: var(--void-colour);
     box-shadow: 0 0 5px 5px var(--void-colour);
     background-size: 40%;
 }
 
-.air-design.deckbuilder-grid, #air-button:hover{
+.air-design.on-grid, #air-button:hover{
     border-color: var(--air-colour);
     box-shadow: 0 0 5px 5px var(--air-colour);
     background-size: 40%;
 }
 
-.earth-design.deckbuilder-grid, #earth-button:hover{
+.earth-design.on-grid, #earth-button:hover{
     border-color: var(--earth-colour);
     box-shadow: 0 0 5px 5px var(--earth-colour);
     background-size: 40%;
 }
 
-.fire-design.deckbuilder-grid, #fire-button:hover{
+.fire-design.on-grid, #fire-button:hover{
     border-color: var(--fire-colour);
     box-shadow: 0 0 5px 5px var(--fire-colour);
     background-size: 40%;
 }
 
-.void-design.deckbuilder-grid, #void-button:hover{
+.void-design.on-grid, #void-button:hover{
     border-color: var(--void-colour);
     box-shadow: 0 0 5px 5px var(--void-colour);
     background-size: 40%;
 }
 
-.water-design.deckbuilder-grid, #water-button:hover{
+.water-design.on-grid, #water-button:hover{
     border-color: var(--water-colour);
     box-shadow: 0 0 5px 5px var(--water-colour);
     background-size: 40%;

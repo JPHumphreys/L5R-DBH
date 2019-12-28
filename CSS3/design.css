@@ -7,42 +7,46 @@
 
     /*? L5R Official Colours for the Clans ?*/
     --crab-colour: #83929b;
-    --crab-image: url(/media/crab_colour.jpg);
     --crane-colour:#9cb7bb;
-    --crane-image: url(/media/crane_colour.jpg);
     --dragon-colour:#5d8a71;
-    --dragon-image: url(/media/dragon_colour.jpg);
     --lion-colour:#d8bb6c;
-    --lion-image: url(/media/lion_colour.jpg);
     --phoenix-colour:#ca8b58;
-    --phoenix-image: url(/media/phoenix_colour.jpg);
     --scorpion-colour:#964538;
-    --scorpion-image: url(/media/scorpion_colour.jpg);
     --unicorn-colour:#795f8d;
-    --unicorn-image: url(/media/unicorn_colour.jpg);
-
-    --keeper-image: url(/media/keeper_colour.jpg);
-    --seeker-image: url(/media/seeker_colour.jpg);
-
+    
     --air-colour:#e77f1e;
-    --air-image: url(/media/air_colour.jpg);
     --earth-colour:#4b8765;
-    --earth-image: url(/media/earth_colour.jpg);
     --fire-colour:#d33729;
-    --fire-image: url(/media/fire_colour.jpg);
     --void-colour:#363636;
-    --void-image: url(/media/void_colour.jpg);
     --water-colour:#56598e;
-    --water-image: url(/media/water_colour.jpg);
-
 
     /** Images **/
 
+    /*? main clan images */
+    --crab-image: url(/media/crab_colour.jpg);
+    --crane-image: url(/media/crane_colour.jpg);
+    --dragon-image: url(/media/dragon_colour.jpg);
+    --lion-image: url(/media/lion_colour.jpg);
+    --phoenix-image: url(/media/phoenix_colour.jpg);
+    --scorpion-image: url(/media/scorpion_colour.jpg);
+    --unicorn-image: url(/media/unicorn_colour.jpg);
+
+    /*? roles and elements */
+    --keeper-image: url(/media/keeper_colour.jpg);
+    --seeker-image: url(/media/seeker_colour.jpg);
+    --air-image: url(/media/air_colour.jpg);
+    --earth-image: url(/media/earth_colour.jpg);
+    --fire-image: url(/media/fire_colour.jpg);
+    --void-image: url(/media/void_colour.jpg);
+    --water-image: url(/media/water_colour.jpg);
+
+    /*? card types */
     --holding-image: url(/media/holding_colour.jpg);
     --character-image: url(/media/character_colour.jpg);
     --event-image: url(/media/event_colour.jpg);
     --attachment-image: url(/media/attachment_colour.jpg);
 
+    /*? deck types */
     --stronghold-image: url(/media/stronghold_colour.jpg);
     --province-image: url(/media/province_colour.jpg);
     --dynasty-image: url(/media/dynasty_colour.jpg);
