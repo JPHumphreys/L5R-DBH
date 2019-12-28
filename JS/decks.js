@@ -150,13 +150,13 @@ function createDeckButtons(){
     buttonRow.classList.add("row", "btn-group", "button-row");
 
     let rename = document.createElement("button");
-    rename.classList.add("btn","btn-md", "btn-outline-dark", "rename-button");
+    rename.classList.add("btn","btn-md", "btn-dark", "rename-button");
     rename.innerText = "Rename";
     let copy = document.createElement("button");
-    copy.classList.add("btn","btn-md", "btn-outline-dark", "copy-button");
+    copy.classList.add("btn","btn-md", "btn-dark", "copy-button");
     copy.innerText = "Copy";
     let remove = document.createElement("button");
-    remove.classList.add("btn","btn-md", "btn-outline-dark", "delete-button");
+    remove.classList.add("btn","btn-md", "btn-dark", "delete-button");
     remove.innerText = "Delete";
 
     buttonRow.appendChild(rename);
