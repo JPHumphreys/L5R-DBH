@@ -38,75 +38,36 @@
     margin-bottom: 3rem;
 }
 
-.stronghold-design.on-grid, .dynasty-design.on-grid, .conflict-design.on-grid,
-.province-design.on-grid, .holding-design.on-grid, .character-design.deckbuider-grid,
-.event-design.on-grid, .attachment-design.on-grid {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: white;
-    border-color: white;
-    color: transparent;
-    cursor: pointer;
-    transform: scale(1.1);
-}
-
-#primary-crab{
-    background-image: var(--crab-image);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 0%;
-}
-
-.on-grid:hover{
-    background-size: 30%;
-}
-
-.stronghold-design.on-grid, #deck-type-stronghold:hover{
+#deck-type-stronghold{
     background-image: var(--stronghold-image);
-    border-color: var(--void-colour);
-    box-shadow: 0 0 5px 5px var(--void-colour); 
 }
 
-.province-design.on-grid, #deck-type-province:hover{
+#deck-type-province{
     background-image: var(--province-image);
-    border-color: var(--void-colour);
-    box-shadow: 0 0 5px 5px var(--void-colour);
 }
 
-.dynasty-design.on-grid, #deck-type-dynasty:hover{
+#deck-type-dynasty{
     background-image: var(--dynasty-image);
-    border-color: var(--void-colour);
-    box-shadow: 0 0 5px 5px var(--void-colour);
 }
 
-.conflict-design.on-grid, #deck-type-conflict:hover{
+#deck-type-conflict{
     background-image: var(--conflict-image);
-    border-color: var(--void-colour);
-    box-shadow: 0 0 5px 5px var(--void-colour);
 }
 
-.holding-design.on-grid, #card-type-holding:hover{
+#card-type-holding{
     background-image: var(--holding-image);
-    border-color: var(--lion-colour);
-    box-shadow: 0 0 5px 5px var(--lion-colour);
 }
 
-.character-design.on-grid, #card-type-character:hover{
+#card-type-character{
     background-image: var(--character-image);
-    border-color: var(--earth-colour);
-    box-shadow: 0 0 5px 5px var(--earth-colour);
 }
 
-.event-design.on-grid, #card-type-event:hover{
+#card-type-event{
     background-image: var(--event-image);
-    border-color: var(--fire-colour);
-    box-shadow: 0 0 5px 5px var(--fire-colour);
 }
 
-.attachment-design.on-grid, #card-type-attachment:hover{
+#card-type-attachment{
     background-image: var(--attachment-image);
-    border-color: var(--phoenix-colour);
-    box-shadow: 0 0 5px 5px var(--phoenix-colour);
 }
 
 /** ----------------- **/

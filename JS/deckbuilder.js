@@ -231,8 +231,8 @@ function getDeck(){
 function isDeckFinished(){
 
     if(ui.deckValue() >= 4){ //* primary + secondary + role + element
-        submitButton.classList.remove("btn-danger");
-        submitButton.classList.add("btn-primary");
+        submitButton.classList.remove("btn-outline-danger");
+        submitButton.classList.add("btn-outline-primary");
         ui.isDeckReady = true;
     }
     //console.log(ui.deckValue());
