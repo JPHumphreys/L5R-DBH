@@ -4,6 +4,24 @@
     text-align: center;
 }
 
-#index-jumbotron{
-    padding: 1rem;
+.section{
+    background-color: var(--dark-colour);
+    color: #fff;
+    border-radius: 10px;
+    margin: 0 .34rem .5rem .34rem;
+    max-width: 49%;
+    padding: 0%;
+}
+
+.section.step h2{
+    background-color: white;
+    color: var(--dark-colour);
+    border: 2px solid var(--dark-colour);
+    width: 100%;
+    padding-bottom: .5rem;
+}
+
+.diagram img{
+    padding: 1%;
+    border-radius: 10px;
 }
