@@ -232,7 +232,7 @@ function isDeckFinished(){
 
     if(ui.deckValue() >= 4){ //* primary + secondary + role + element
         submitButton.classList.remove("btn-outline-danger");
-        submitButton.classList.add("btn-outline-primary");
+        submitButton.classList.add("btn-success");
         ui.isDeckReady = true;
     }
     //console.log(ui.deckValue());
