@@ -34,6 +34,21 @@
     text-size-adjust: 2em;
 }
 
+.sub-header{
+    background-color: var(--dark-colour);
+    padding: 1%;
+    color: #fff;
+    margin-bottom: .5rem;
+}
+
+.sub-header li{
+    font-size: 1.2em;
+}
+
+.sub-header ul{
+    list-style: square;
+}
+
 /** media queries **/
 
  /*? Extra small devices (phones, 600px and down) */
