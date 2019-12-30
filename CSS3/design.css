@@ -55,6 +55,38 @@
 }
 
 
+*{
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+
+/**--------------------**/
+/** Grid Styles **/
+
+.primary-clan, .splash-clan, .vs-clan, .role-element{
+    width: 100%;
+    margin-top: 1rem;
+    margin-left: 0;
+}
+
+.primary-clan a, .splash-clan a, .role-element a, .vs-clan a{
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    font-size: 1.5em;
+    opacity: .9;
+}
+
+/** Text styling and tooltips **/
+
+#primary-text, #splash-text, #role-element-text, #vs-text{
+    border: none;
+    background-color: white;
+    box-shadow: none;
+}
+
 /** set the background to size 0 so that it loads in but is invisible to the user **/
 
 .on-grid{
@@ -82,7 +114,33 @@
     transform: scale(1.1);
 }
 
+#primary-crab, #splash-crab, #vs-crab{
+    background-image: var(--crab-image);
+}
 
+#primary-crane, #splash-crane, #vs-crane{
+    background-image: var(--crane-image);
+}
+
+#primary-dragon, #splash-dragon, #vs-dragon{
+    background-image: var(--dragon-image);
+}
+
+#primary-lion, #splash-lion, #vs-lion{
+    background-image: var(--lion-image);
+}
+
+#primary-phoenix, #splash-phoenix, #vs-phoenix{
+    background-image: var(--phoenix-image);
+}
+
+#primary-scorpion, #splash-scorpion, #vs-scorpion{
+    background-image: var(--scorpion-image);
+}
+
+#primary-unicorn, #splash-unicorn, #vs-unicorn{
+    background-image: var(--unicorn-image);
+}
 
 .crab-design.on-grid, #primary-crab:hover, #splash-crab:hover, #vs-crab:hover{
     border-color: var(--crab-colour);
