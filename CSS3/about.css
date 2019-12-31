@@ -49,6 +49,10 @@
     list-style: square;
 }
 
+.italic{
+    font-style: italic;
+}
+
 /** media queries **/
 
  /*? Extra small devices (phones, 600px and down) */
