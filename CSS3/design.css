@@ -14,7 +14,8 @@
     --phoenix-colour:#ca8b58;
     --scorpion-colour:#964538;
     --unicorn-colour:#795f8d;
-    
+
+    /*? Colours that match the void colours ?*/
     --air-colour:#e77f1e;
     --earth-colour:#4b8765;
     --fire-colour:#d33729;
@@ -60,7 +61,6 @@
     margin: 0;
     text-align: center;
 }
-
 
 /**--------------------**/
 /** Grid Styles **/
@@ -114,6 +114,8 @@
     transform: scale(1.1);
 }
 
+/** use both for deckbuilder and cards **/
+
 #primary-crab, #splash-crab, #vs-crab{
     background-image: var(--crab-image);
 }
@@ -141,6 +143,8 @@
 #primary-unicorn, #splash-unicorn, #vs-unicorn{
     background-image: var(--unicorn-image);
 }
+
+/** the .on-grid with the design is to increase the specificity so it overlaps the .ongrid styles. **/
 
 .crab-design.on-grid, #primary-crab:hover, #splash-crab:hover, #vs-crab:hover{
     border-color: var(--crab-colour);

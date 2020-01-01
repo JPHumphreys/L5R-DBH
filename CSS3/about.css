@@ -6,7 +6,7 @@
 }
 
 .section.step h2{
-    background-color: white;
+    background-color: #fff;
     color: var(--dark-colour);
     border: 2px solid var(--dark-colour);
     width: 100%;
