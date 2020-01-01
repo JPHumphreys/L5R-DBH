@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="CSS3/design.css">
     <link rel="stylesheet" href="CSS3/footer.css">
     <link rel="stylesheet" href="CSS3/about.css">
+    <link rel="stylesheet" href="External/fullpage.min.css">
 </head>
 <body>
     <div class="container">
@@ -62,26 +63,75 @@
 
              <div id="about-jumbotron" class="jumbotron shadow p-3 mb-3 bg-white rounded">
                 <h1 class="display-h">About</h1>
-                <h3 class="display-h">Example</h3>
             </div>
 
             <div class="container divider">
-                <h1>Purpose of the Website</h1>
+                
 
-                <div class="sub-header container">
-                    <h4>
-                        TL;DR 
-                    </h4>
-                    <ul>
-                        <li>
-                            Simplify the deckbuilding process for beginners.
-                        </li>
-                        <li>
-                            Allow current players to quickly create a deck for testing/trying
-                         a new clan that they have no experience in playing.
-                        </li>
-                    </ul>
+                <div id="fullpage">
+
+                    <section class="section purpose">
+                        <h1>Purpose of the Website</h1>
+
+                        <div class="sub-header container">
+                            <h4>
+                                TL;DR 
+                            </h4>
+                            <ul>
+                                <li>
+                                    Simplify the deckbuilding process for beginners.
+                                </li>
+                                <li>
+                                    Allow current players to quickly create a deck for testing/trying
+                                a new clan that they have no experience in playing.
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="section slide">
+                        <h2 class="title">Card Anatomy</h2>
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet.</p>
+                        </div>
+                        <img src="/media/card_anatomy.PNG" alt="card anatomy" class="anatomy" />
+                    </section>
+
+                    <section class="section slide1">
+                        <h3 class="title">Glory</h3>
+                        <div class="description">
+                            <p>Glory Descriptor</p>
+                        </div>
+                        <img src="/media/card_anatomy.PNG" alt="card anatomy" class="anatomy" />
+                        <img src="/media/card_anatomy_glory.png" alt="card anatomy" class="anatomy" />
+                    </section>
+
+                    <section class="section slide2">
+                        <h3 class="title">Trait</h3>
+                        <div class="description">
+                            <p>Trait Descriptor</p>
+                        </div>
+                        <img src="/media/card_anatomy.PNG" alt="card anatomy" class="anatomy" />
+                        <img src="/media/card_anatomy_trait.png" alt="card anatomy" class="anatomy" />
+                        
+                    </section>
+
+                    <section class="section slide3">
+                        <h3 class="title">Ability</h3>
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet.</p>
+                        </div>
+                        <img src="/media/card_anatomy.PNG" alt="card anatomy" class="anatomy" />
+                        <img src="/media/card_anatomy_ability.png" alt="card anatomy" class="anatomy" />
+                    </section>
+
+
                 </div>
+
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
 
                 <div class="row">
 
@@ -119,109 +169,7 @@
 
             </div>
 
-            <div class="container divider">
-                <h1>How to use the Website</h1>
-            </div>
-
-            <div class="row step-row">
-
-                <div class="section col-sm-12 col-md-6 col-lg-6 step">
-                    <h2>Step 1 : Login/Register</h2>
-                </div>
-
-                <div class="section col-sm-12 col-md-6 col-lg-6 diagram">
-                    <h2>Visit the 
-                        <button class="btn btn-outline-light" 
-                        onclick="location.href='login.html'">Login</button> or 
-                        <button class="btn btn-outline-light" 
-                        onclick="location.href='register.html'">Register</button> pages.
-                    </h2>
-                </div>
-            </div>
-
-            <div class="row detail-row">
-                <div class="section col-12 detail">
-                    <h4>
-                        Logging in to this website will allow your decks to be saved so that they can be retrieved later.
-                    </h4>
-                </div>
-            </div>
-
-            <div class="row step-row">
-
-                <div class="section col-sm-12 col-md-6 col-lg-6 step">
-                    <h2>Step 2 : Vote on Cards</h2>
-                </div>
-
-                <div class="section col-sm-12 col-md-6 col-lg-6 diagram">
-                    <div class="container">
-                        <h2>Visit the 
-                            <button class="btn btn-outline-light" 
-                            onclick="location.href='cards.html'">Cards</button> page.
-                        </h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row detail-row">
-                <div class="section col-12 detail">
-                    <h4>
-                        This is an optional step that will allow to you vote on cards and their effectiveness against other clans.
-        
-                    </h4>
-                    <h4>
-                        Do not worry if you are not knowledgeable about the matchups. The L5R Community will vote on the cards.
-                    </h4>
-                </div>
-            </div>
-
-            <div class="row step-row">
-
-                <div class="section col-sm-12 col-md-6 col-lg-6 step">
-                    <h2>Step 3 : Build a Deck</h2>
-                </div>
-
-                <div class="section col-sm-12 col-md-6 col-lg-6 diagram">
-                    <h2>Visit the 
-                        <button class="btn btn-outline-light" 
-                        onclick="location.href='deckbuilder.html'">Deckbuilder</button> page.
-                    </h2>
-                </div>
-            </div>
-
-            <div class="row detail-row">
-                <div class="section col-12 detail">
-                    <h4>
-                        This page will allow users to generate legal decks in order to try new clans or get into the game 
-                        without too much thought.
-                    </h4>
-                </div>
-            </div>
-
-            <div class="row step-row">
-
-                <div class="section col-sm-12 col-md-6 col-lg-6 step">
-                    <h2>Step 4 : Copy the Deck and Play!</h2>
-                </div>
-
-                <div class="section col-sm-12 col-md-6 col-lg-6 diagram">
-                    <h2>Visit the 
-                        <button class="btn btn-outline-light" 
-                        onclick="location.href='decks.html'">Decks</button> page.
-                    </h2>
-                </div>
-            </div>
-
-            <div class="row detail-row">
-                <div class="section col-12 detail">
-                    <h4>
-                        These decks are able to be copied and pasted into the <a href="https://jigoku.online/play" target="_blank">Jigoku</a> website so that you can play them.
-                    </h4>
-                    <h4>
-                        You can also view the cards so that you can build them and play with friends or competitions.
-                    </h4>
-                </div>
-            </div>
+            
 
             
 
@@ -274,6 +222,13 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" integrity="sha256-fIkQKQryItPqpaWZbtwG25Jp2p5ujqo/NwJrfqAB+Qk=" crossorigin="anonymous"></script>
+
     <script src="JS/users.js"></script>
+    <script src="External/fullpage.min.js"></script>
+    <script src="JS/about.js"></script>
+
 </footer>
 </html>
