@@ -26,9 +26,6 @@
 
  /*? Extra small devices (phones, 600px and down) */
  @media only screen and (max-width: 600px) {
-    body{
-        background-color: yellow;
-    }
 
     .anatomy{
         position: absolute;
@@ -61,9 +58,6 @@
 
  /*? Small devices (portrait tablets and large phones, 600px and up) */
  @media only screen and (min-width: 600px) {
-    body{
-        background-color: rgb(255, 115, 0);
-    }
 
     .anatomy{
         position: absolute;
@@ -97,9 +91,6 @@
  
  /*? Medium devices (landscape tablets, 768px and up) */
  @media only screen and (min-width: 768px) {
-    body{
-        background-color: rgb(0, 247, 255);
-    }
 
     .anatomy{
         position: absolute;
@@ -132,9 +123,6 @@
  
  /*? Large devices (laptops/desktops, 992px and up) */
  @media only screen and (min-width: 992px) {
-    body{
-        background-color: rgb(0, 26, 255);
-    }
 
     .anatomy{
         position: absolute;
@@ -167,9 +155,7 @@
  
  /*? Extra large devices (large laptops and desktops, 1200px and up) */
  @media only screen and (min-width: 1200px) {
-    body{
-        background-color: rgb(255, 0, 43);
-    }
+     
     .anatomy{
         position: absolute;
         height: 60%;
