@@ -4,8 +4,8 @@ const voteModalImageLocation = document.getElementById("vote-modal-image");
 function Card(){
 
     let primary = undefined;
-    let deck = [];
-    let type = [];
+    let deck = undefined;
+    let type = undefined;
 
     Object.defineProperty(this, "primary", {
         get: function(){
@@ -19,39 +19,24 @@ function Card(){
     Object.defineProperty(this, "deck", {
         get: function(){
             return deck;
+        },
+        set: function(value){
+            deck = value;
         }
     });
 
     Object.defineProperty(this, "type", {
         get: function(){
             return type;
+        },
+        set: function(value){
+            type = value;
         }
     });
 
 }
 
 let card = new Card();
-
-function addElement(property, newElement){
-    let counter = 0 ;
-    for(let value in property){
-        if(newElement != property[value]){
-            counter++;
-        }
-    }
-    //* if counter does not equal length - then 1 element matched *//
-    if(counter === property.length){
-        property.push(newElement);
-    }
-}
-
-function removeElement(property, element){
-    for(let value in property){
-        if(element === property[value]){
-            property.splice(value, 1);
-        }
-    }
-}
 
 function hoverBlurr(element, type){
     
@@ -84,9 +69,28 @@ function cardClick(element){
 
 }
 
+function getClanName(element){
+    return element.innerText;
+}
+
 function clanSelect(element){
 
-    
+    const design = element.attributes.name.value;
+
+    if(card.primary === undefined){
+        ui.primary = element;
+        card.primary = getClanName(element);
+        element.classList.add(design);
+    }
+    else if(element !== ui.primary){
+        ui.primary.classList.remove(...ui.primary.classList);
+        ui.primary.classList.add(onGridClass);
+        element.classList.add(design);
+        ui.primary = element;
+        card.primary = getClanName(element);
+    }
+
+    console.log(design); 
 
 }
 
