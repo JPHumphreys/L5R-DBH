@@ -11,6 +11,23 @@
     transform 200ms ease-out;
 }
 
+.gmail{
+    position: relative;
+    margin: 0;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.github{
+    position: relative;
+    margin: 0;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+
 @media only screen and (max-width: 600px) {
 
     #footer-jumbotron img{

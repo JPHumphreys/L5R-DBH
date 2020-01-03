@@ -234,8 +234,14 @@
 
     <div class="container">
         <div id="footer-jumbotron" class="jumbotron p-3 mb-5 bg-white rounded">
-            <a href="mailto:JPHCode@gmail.com? subject=subject text" target="_blank"><img class="footer-icon" src="https://image.flaticon.com/icons/svg/281/281769.svg"></a>
-            <a href="https://github.com/JPHumphreys/L5R-DBH" target="_blank"><img class="footer-icon" src="https://image.flaticon.com/icons/svg/2111/2111432.svg"></a>
+            <p class="gmail">Send an Email!</p>
+            <a href="mailto:JPHCode@gmail.com? subject=subject text" target="_blank"><img class="footer-icon" 
+                src="https://image.flaticon.com/icons/svg/281/281769.svg" 
+                onmouseover="addText('gmail')" onmouseout="removeText('gmail')"></a>
+            <a href="https://github.com/JPHumphreys/L5R-DBH" target="_blank"><img class="footer-icon" 
+                src="https://image.flaticon.com/icons/svg/2111/2111432.svg" 
+                 onmouseover="addText('github')"  onmouseout="removeText('github')"></a>
+            <p class="github">Here is a link to the front-end code.</p>
         </div>
     </div>
 
@@ -243,10 +249,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="JS/users.js"></script>
-    <script src="JS/API_user.js"></script>
     <script src="JS/deckbuilder.js"></script>
-    <script src="JS/API_Clan.js"></script>
-    <script src="JS/API_Deck.js"></script>
     <script src="JS/decks.js"></script>
+    <script src="JS/footer.js"></script>
+
+
 </footer>
 </html>
