@@ -2,7 +2,7 @@
 
     /** Site Colours **/
     --dark-colour:#343a40;
-    --medium-colour:rgb(214, 214, 214);
+    --medium-colour:rgb(235, 235, 235);
 
     /** Clan Colours and Images **/
 
@@ -55,7 +55,6 @@
     --conflict-image: url(/media/conflict_colour.jpg);
 }
 
-
 *{
     padding: 0;
     margin: 0;
@@ -83,20 +82,23 @@
 
 #primary-text, #splash-text, #role-element-text, #vs-text{
     border: none;
-    background-color: white;
     box-shadow: none;
 }
 
 /** set the background to size 0 so that it loads in but is invisible to the user **/
 
 .on-grid{
-    border: 2px solid var(--dark-colour);
-    background-color: var(--medium-colour);
-    box-shadow: 0 10px 10px -5px;
+    box-shadow: -6px -6px 6px 0 rgba(255, 255, 255, 1),
+    9px 9px 9px 0 rgba(0, 0, 0, 0.3);
+    border-radius: .5rem;
     cursor: pointer;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 0%;
+}
+
+.grid-row{
+    background-color: var(--medium-colour);
 }
 
 .crab-design.on-grid, .crane-design.on-grid, .dragon-design.on-grid,
@@ -147,8 +149,8 @@
 /** the .on-grid with the design is to increase the specificity so it overlaps the .ongrid styles. **/
 
 .crab-design.on-grid, #primary-crab:hover, #splash-crab:hover, #vs-crab:hover{
-    border-color: var(--crab-colour);
     box-shadow: 0 0 5px 5px var(--crab-colour);
+    border-color: var(--crab-colour);
     background-size: 40%;
 }
 
