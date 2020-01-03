@@ -19,7 +19,6 @@ function Deck(){
         },
         set: function(value){
             primary = value;
-            this.sectionCounter;
         }
     });
     
@@ -59,7 +58,7 @@ addVSClans(deck);
 
 function primaryClan(element){
 
-    let design = element.attributes.name.value; //* uses the name attribute to set the style *//
+    const design = element.attributes.name.value; //* uses the name attribute to set the style *//
 
     if(ui.primary === undefined){
 
@@ -86,7 +85,7 @@ function primaryClan(element){
 
 function splashClan(element){
 
-    let design = element.attributes.name.value; //* uses the name attribute to set the style *//
+    const design = element.attributes.name.value; //* uses the name attribute to set the style *//
 
     if(ui.secondary === undefined){
 
@@ -112,7 +111,7 @@ function splashClan(element){
 
 function roleSelector(element){
 
-    let design = element.attributes.name.value; //* uses the name attribute to set the style *//
+    const design = element.attributes.name.value; //* uses the name attribute to set the style *//
 
     if(ui.role === undefined){
 
@@ -138,7 +137,7 @@ function roleSelector(element){
 
 function elementSelector(element){
 
-    let design = element.attributes.name.value; //* uses the name attribute to set the style *//
+    const design = element.attributes.name.value; //* uses the name attribute to set the style *//
 
     if(ui.element === undefined){
 
@@ -164,7 +163,7 @@ function elementSelector(element){
 
 function vsClans(element){
 
-    let clan = element.innerText;
+    const clan = element.innerText;
 
     switch(clan){
         case "Crab":
@@ -200,8 +199,8 @@ function vsClans(element){
 function vsClanDisplayer(){
     for(let i in deck.vsClans){
 
-        let currentClan = document.getElementById(vsIDText + i);
-        let design = currentClan.attributes.name.value;
+        const currentClan = document.getElementById(vsIDText + i);
+        const design = currentClan.attributes.name.value;
 
         if(deck.vsClans[i] === true){
             //* display the design *//
