@@ -16,33 +16,7 @@ function callDecknameUpdateModal(){
     $("#update-deck-modal").modal('toggle');
 }
 
-
-function handleUpdateDeck(){
-
-    let val = document.querySelectorAll("h3");
-
-    for(let i = 0; i < idToUpdate.length; i++){
-        if(oldDecknameValue.value === val[i].innerText){
-            let set = document.getElementById(idToUpdate[i]);
-            set.innerText = updateDecknameValue.value;
-        }
-    }
-    
-}
-
-function handleCopyDeck(){
-
-    let getText = document.getElementById("textChunk");
-
-    if(getText.hidden === true){
-        getText.hidden = false;
-    }
-    else{
-        getText.hidden = true;
-    }
-}
-
-function handleDeleteDeck(ele){
+function deleteDeck(ele){
 
     let objs = document.querySelectorAll(".filter");
 
@@ -51,6 +25,18 @@ function handleDeleteDeck(ele){
                 objs[i].remove();
             }
     }
+
+}
+
+function displayRenameModal(element){
+
+}
+
+function removeDeck(element){
+    
+}
+
+function copyDeck(){
 
 }
 
@@ -87,6 +73,7 @@ function createPrimaryAndRole(primary,role){
     let roleImage = document.createElement("img");
     roleImage.setAttribute("src","/media/" + role + "_colour.jpg");
     roleImage.setAttribute("alt",role);
+
     deckRole.appendChild(roleImage);
     primaryAndRole.appendChild(deckRole)
 
@@ -112,6 +99,7 @@ function createSecondaryandElement(secondary, element){
     let elementImage = document.createElement("img");
     elementImage.setAttribute("src","/media/" + element + "_colour.jpg");
     elementImage.setAttribute("alt",element);
+
     deckElement.appendChild(elementImage);
     secondaryAndElement.appendChild(deckElement);
 
@@ -127,12 +115,21 @@ function createDeckButtons(){
     let rename = document.createElement("button");
     rename.classList.add("btn","btn-md", "btn-dark", "rename-button");
     rename.innerText = "Rename";
+    rename.addEventListener("click", function(){
+        displayRenameModal(this);
+    });
     let copy = document.createElement("button");
     copy.classList.add("btn","btn-md", "btn-dark", "copy-button");
     copy.innerText = "Copy";
+    copy.addEventListener("click", function(){
+        copyDeck(this);
+    });
     let remove = document.createElement("button");
     remove.classList.add("btn","btn-md", "btn-dark", "delete-button");
     remove.innerText = "Delete";
+    remove.addEventListener("click", function(){
+        removeDeck(this);
+    });
 
     buttonRow.appendChild(rename);
     buttonRow.appendChild(copy);
@@ -159,13 +156,3 @@ function buildDeck(deckname, primary, secondary, role, element){
 
 }
 
-function loadDecks(){
-
-    if(localStorage.getItem("deck") == null){
-
-    }else{
-    decks.push(JSON.parse(localStorage.getItem("deck")));
-    deckBuilder(decks[0].name, decks[0].primary, decks[0].secondary, decks[0].cards);
-    }
-    
-}
