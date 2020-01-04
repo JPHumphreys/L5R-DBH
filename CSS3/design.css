@@ -107,7 +107,7 @@
 .air-design.on-grid, .earth-design.on-grid, .fire-design.on-grid,
 .void-design.on-grid, .water-design.on-grid, .stronghold-design.on-grid,
  .dynasty-design.on-grid, .conflict-design.on-grid, .province-design.on-grid,
-.holding-design.on-grid, .character-design.deckbuider-grid, .event-design.on-grid,
+.holding-design.on-grid, .character-design.on-grid, .event-design.on-grid,
  .attachment-design.on-grid, .on-grid:hover{
     background-color: white;
     border-color: white;
