@@ -1,5 +1,6 @@
 const cardRenderLocation = document.getElementById("card-render-location");
 const voteModalImageLocation = document.getElementById("vote-modal-image");
+const onGridClass = "on-grid";
 
 function Card(){
 
@@ -37,6 +38,7 @@ function Card(){
 }
 
 let card = new Card();
+let ui = new Card();
 
 function hoverBlurr(element, type){
     
@@ -96,9 +98,40 @@ function clanSelect(element){
 
 function deckTypeSelect(element){
 
+    const design = element.attributes.name.value;
+
+    if(card.deck === undefined){
+        ui.deck = element;
+        card.deck = getClanName(element);
+        element.classList.add(design);
+    }
+    else if(element !== ui.deck){
+        ui.deck.classList.remove(...ui.deck.classList);
+        ui.deck.classList.add(onGridClass);
+        ui.deck = element;
+
+        element.classList.add(design);
+        card.deck = getClanName(element);
+    }
+
 }
 
 function cardTypeSelect(element){
 
+    const design = element.attributes.name.value;
+
+    if(card.type === undefined){
+        ui.type = element;
+        card.type = getClanName(element);
+        element.classList.add(design);
+    }
+    else if(element !== ui.type){
+        ui.type.classList.remove(...ui.type.classList);
+        ui.type.classList.add(onGridClass);
+        ui.type = element;
+
+        element.classList.add(design);
+        card.type = getClanName(element);
+    }
 }
 
