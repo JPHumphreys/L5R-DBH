@@ -56,107 +56,21 @@ addReadyReturner(ui);
 let deck = new Deck();
 addVSClans(deck);
 
-function primaryClan(element){
+function deckSelect(element, item){
 
-    const design = element.attributes.name.value; //* uses the name attribute to set the style *//
+    const design = element.attributes.name.value;
 
-    if(ui.primary === undefined){
-
-        ui.primary = element;
-        deck.primary = getClanName(element);
-        element.classList.add(design);
-        
-    }
-    else if(element !== ui.primary){
-
-        //* spread operator *//
-        ui.primary.classList.remove(...ui.primary.classList);
-
-        //* add deckbuilder back and add the new design onto the new current *//
-        ui.primary.classList.add(onGridClass);
-        element.classList.add(design);
-        ui.primary = element;
-
-        //* set the primary result of the deck to the deckresult object *//
-        deck.primary = getClanName(element);
-    }
-    isDeckFinished();
-}
-
-function splashClan(element){
-
-    const design = element.attributes.name.value; //* uses the name attribute to set the style *//
-
-    if(ui.secondary === undefined){
-
-        ui.secondary = element;
-        deck.secondary = getClanName(element);
+    if(deck[item] === undefined){
+        ui[item] = element;
+        deck[item] = getName(element);
         element.classList.add(design);
     }
-    else if(element !== ui.secondary){
-
-        //* spread operator *//
-        ui.secondary.classList.remove(...ui.secondary.classList);
-
-        //* add deckbuilder back and add the new design onto the new current *//
-        ui.secondary.classList.add(onGridClass);
+    else if(element !== ui[item]){
+        ui[item].classList.remove(...ui[item].classList);
+        ui[item].classList.add(onGridClass);
         element.classList.add(design);
-        ui.secondary = element;
-
-        //* set the primary result of the deck to the deckresult object *//
-        deck.secondary = getClanName(element);
-    }
-    isDeckFinished();
-}
-
-function roleSelector(element){
-
-    const design = element.attributes.name.value; //* uses the name attribute to set the style *//
-
-    if(ui.role === undefined){
-
-        ui.role = element;
-        deck.role = getClanName(element);
-        element.classList.add(design);
-    }
-    else if(element !== ui.role){
-
-        //* spread operator *//
-        ui.role.classList.remove(...ui.role.classList);
-
-        //* add deckbuilder back and add the new design onto the new current *//
-        ui.role.classList.add(onGridClass);
-        element.classList.add(design);
-        ui.role = element;
-
-        //* set the primary result of the deck to the deckresult object *//
-        deck.role = getClanName(element);
-    }
-    isDeckFinished();
-}
-
-function elementSelector(element){
-
-    const design = element.attributes.name.value; //* uses the name attribute to set the style *//
-
-    if(ui.element === undefined){
-
-        ui.element = element;
-        deck.element = getClanName(element);
-        element.classList.add(design);
-    }
-    else if(element !== ui.element){
-
-        //* spread operator *//
-        ui.element.classList.remove(...ui.element.classList);
-
-        //* add deckbuilder back and add the new design onto the new current *//
-        ui.element.classList.add(onGridClass);
-        element.classList.add(design);
-        ui.element = element;
-
-        //* set the primary result of the deck to the deckresult object *//
-        deck.element = getClanName(element);
+        ui[item] = element;
+        deck[item] = getName(element);
     }
     isDeckFinished();
 }
@@ -219,7 +133,7 @@ function vsClanDisplayer(){
 }
 
 
-function getClanName(element){
+function getName(element){
     return element.innerText;
 }
 

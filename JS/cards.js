@@ -71,67 +71,25 @@ function cardClick(element){
 
 }
 
-function getClanName(element){
+function getName(element){
     return element.innerText;
 }
 
-function clanSelect(element){
+function cardSelect(element, item){
 
     const design = element.attributes.name.value;
 
-    if(card.primary === undefined){
-        ui.primary = element;
-        card.primary = getClanName(element);
+    if(card[item] === undefined){
+        ui[item] = element;
+        card[item] = getName(element);
         element.classList.add(design);
     }
-    else if(element !== ui.primary){
-        ui.primary.classList.remove(...ui.primary.classList);
-        ui.primary.classList.add(onGridClass);
+    else if(element !== ui[item]){
+        ui[item].classList.remove(...ui[item].classList);
+        ui[item].classList.add(onGridClass);
         element.classList.add(design);
-        ui.primary = element;
-        card.primary = getClanName(element);
-    }
-
-    console.log(design); 
-
-}
-
-function deckTypeSelect(element){
-
-    const design = element.attributes.name.value;
-
-    if(card.deck === undefined){
-        ui.deck = element;
-        card.deck = getClanName(element);
-        element.classList.add(design);
-    }
-    else if(element !== ui.deck){
-        ui.deck.classList.remove(...ui.deck.classList);
-        ui.deck.classList.add(onGridClass);
-        ui.deck = element;
-
-        element.classList.add(design);
-        card.deck = getClanName(element);
+        ui[item] = element;
+        card[item] = getName(element);
     }
 
 }
-
-function cardTypeSelect(element){
-
-    const design = element.attributes.name.value;
-
-    if(card.type === undefined){
-        ui.type = element;
-        card.type = getClanName(element);
-        element.classList.add(design);
-    }
-    else if(element !== ui.type){
-        ui.type.classList.remove(...ui.type.classList);
-        ui.type.classList.add(onGridClass);
-        ui.type = element;
-
-        element.classList.add(design);
-        card.type = getClanName(element);
-    }
-}
-
