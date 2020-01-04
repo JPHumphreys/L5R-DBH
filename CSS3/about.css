@@ -27,10 +27,14 @@
  /*? Extra small devices (phones, 600px and down) */
  @media only screen and (max-width: 600px) {
 
+    body{
+        background-color: red;
+    }
+
     .anatomy{
         position: absolute;
-        height: 40%;
-        top: 10%;
+        height: 30%;
+        top: 8%;
         left: 50%;
         transform: translate(-50%, -10%);
     }
@@ -40,6 +44,7 @@
         top: 0%;
         left: 50%;
         transform: translate(-50%, 0%);
+        width: 100%;
     }
 
     .description{

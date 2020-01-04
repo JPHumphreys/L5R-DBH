@@ -89,7 +89,7 @@
 
 .on-grid{
     box-shadow: -6px -6px 6px 0 rgba(255, 255, 255, 1),
-    9px 9px 9px 0 rgba(0, 0, 0, 0.3);
+    6px 6px 6px 0 rgba(0, 0, 0, 0.3);
     border-radius: .5rem;
     cursor: pointer;
     background-repeat: no-repeat;
@@ -113,7 +113,7 @@
     border-color: white;
     color: transparent;
     cursor: pointer;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 /** use both for deckbuilder and cards **/
