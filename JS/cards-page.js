@@ -15,7 +15,6 @@ function hoverBlurr(element, type){
                 }
                 return;
             case "leave":
-                debugger;
                 for(let i = 0; i < parent.children.length; i++){
                 parent.children[i].classList.remove("hover-row");
                 }
