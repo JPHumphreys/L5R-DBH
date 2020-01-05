@@ -2,18 +2,11 @@ new fullpage("#fullpage",{
     autoScrolling: true,
     navigation: true,
     onLeave: (origin,destination) => {
-        const section = destination.item;
+        //const section = destination.item;
         const tl = new TimelineMax();
         const anatomies = document.querySelectorAll(".anatomy");
         const descriptions = document.querySelectorAll(".description");
         const titles = document.querySelectorAll(".title");
-
-        console.log(titles);
-
-        if(destination.index === 1 | destination.index === 2 | destination.index === 3 | destination.index === 4){
-                 
-
-        }
 
         if(destination.index === 1){
 
