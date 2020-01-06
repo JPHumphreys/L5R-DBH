@@ -17,22 +17,22 @@ The user will select options from four columns:
 ### Usage
 
 **Primary Clan** : This is where most of the cards that you will play in the deck will be from.
-#### You select one from this column
+ _**You select one from this column**_
 
 **Secondary Clan** : This is where you will be able to add other cards from a different clan into the deck, the amount of this is decided through the influence value on the card.
-#### You select one from this column
+ _**You select one from this column**_
 
 **Role** : There are two options for this :- 
 
 *Keeper* which allows you to increase your influence limit by 3 (up to 13 total) and access any cards that are **keeper only**
 *Seeker* which allows you to add an additional province of that type to your deck. It also gives you 1 fate anytime a province of that type is revealed that round (that you own). It also provides access to cards that are **seeker only**
-#### You select one from this column
+ _**You select one from this column**_
 
 **Element** : This allows you to access cards that are of that element only, eg. **water role only**.
-#### You select one from this column
+ _**You select one from this column**_
 
 **VS Clans** : This is where the user is able to select the clans that the deck will cater against and improve the matchup by adding cards that work well against them.
-#### You select any amount from this column
+ _**You select any amount from this column**_
 
  **The goal for this to ensure that the users is able to generate a deck from scratch that caters towards certain matchups within a minute.**
 
