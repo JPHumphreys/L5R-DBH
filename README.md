@@ -43,6 +43,19 @@ The user will select options from four columns:
 
 ### **Card Rating Page** - A space that allows users to see the current ratings and vote on cards.
 
+<img src="https://i.ibb.co/bgzGQC6/cards-page-grid.png">
+
+**Clan** : This is where the user can select from which clan they wish to see cards from.
+
+**Decks** : This is where the user can select from which deck they wish to see. (If a clan is selected - it will filter for both the clan and deck type to provide a narrower search for a card)
+
+**Card Type** : This is where the user can select what card type they wish to see. (as previously stated, selecting other colums in this page will add that filter to their search)
+
+For example - you are able to select:
+(*Crane* + *Dynasty* + *Characters* to see all crane dynasty characters)
+(*Conflict* + *Attachments* to see all attachments in from the conflict deck type)
+(*Holdings* to see all holdings in the game)
+
 <img src="https://i.ibb.co/qYsXCt7/card-modal.jpg">
 
  The votes indicate the strength of the card - this can be filtered to see for against ALL CLANS, or any specific one.
