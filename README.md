@@ -8,36 +8,47 @@ The deckbuilding process in L5R is arduous. This website aims to alleviate the p
 
 ---
 
-### **Card Rating Page** - A space that allows users to see the current ratings and vote on cards.
-
-<img src="https://i.ibb.co/HxwWgZL/Screenshot-2019-12-22-Cards-L5-R-DBH.png">
-
- The votes indicate the strength of the card - this can be filtered to see for against ALL CLANS, or any specific one.
-
----
-
 ### **Deckbuilder Page** - A space where the users will be able generate quick decks.
 
-<img src="https://i.ibb.co/58sP2nQ/deckbuilder-Page.png" width="100%">
+<img src="https://i.ibb.co/D1NtTP9/deckbuilder-page.png" width="100%">
 
 The user will select options from four columns:
 
+### Usage
+
 **Primary Clan** : This is where most of the cards that you will play in the deck will be from.
+#### You select one from this column
 
 **Secondary Clan** : This is where you will be able to add other cards from a different clan into the deck, the amount of this is decided through the influence value on the card.
+#### You select one from this column
 
 **Role** : There are two options for this :- 
 
 *Keeper* which allows you to increase your influence limit by 3 (up to 13 total) and access any cards that are **keeper only**
 *Seeker* which allows you to add an additional province of that type to your deck. It also gives you 1 fate anytime a province of that type is revealed that round (that you own). It also provides access to cards that are **seeker only**
+#### You select one from this column
 
 **Element** : This allows you to access cards that are of that element only, eg. **water role only**.
+#### You select one from this column
 
 **VS Clans** : This is where the user is able to select the clans that the deck will cater against and improve the matchup by adding cards that work well against them.
+#### You select any amount from this column
 
  **The goal for this to ensure that the users is able to generate a deck from scratch that caters towards certain matchups within a minute.**
 
+ ---
+
+### **Card Rating Page** - A space that allows users to see the current ratings and vote on cards.
+
+<img src="https://i.ibb.co/qYsXCt7/card-modal.jpg">
+
+ The votes indicate the strength of the card - this can be filtered to see for against ALL CLANS, or any specific one.
+
 ---
+
+
+
+
 
 ### **Deck View Page** - A space where after creating a deck, the user will be able to see the cards list or be able to paste the cards into [Jigoku](https://jigoku.online/decks).
 
