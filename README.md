@@ -56,18 +56,30 @@ For example - you are able to select:
 (*Conflict* + *Attachments* to see all attachments in from the conflict deck type)
 (*Holdings* to see all holdings in the game)
 
+**Cards should then appear below the colums**
+
+Clicking on these cards will bring up a modal in which the logged in user can vote for the rating of the card 1-10 and select to which clans this vote is catering for.
+
 <img src="https://i.ibb.co/qYsXCt7/card-modal.jpg">
 
  The votes indicate the strength of the card - this can be filtered to see for against ALL CLANS, or any specific one.
+ (selecting none will mean that it will apply to all clans)
 
 ---
 
-
-
-
-
 ### **Deck View Page** - A space where after creating a deck, the user will be able to see the cards list or be able to paste the cards into [Jigoku](https://jigoku.online/decks).
 
+<img src="https://i.ibb.co/0nhf07W/decks-example.png">
+
+**Decks** : This is how the decks will be displayed once they are made - it will show all the neccessary information.
+Example:
+Deckname:"aggro mil",
+Primary:"Lion",
+Secondary:"Unicron",
+Role:"Seeker",
+"Element":Fire"
+
+**For newer users** The decks have data-tool-tips that work when hovering over each aspect of the deck incase they forget what each part represents.
 
 ---
 
