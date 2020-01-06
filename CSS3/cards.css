@@ -140,6 +140,42 @@
     background-color: darkslategray;
 }
 
+/**  This is the styling for the VS clans selector **/
+
+.button-row{
+    margin-top: .3rem;
+}
+
+.btn-outline-dark.btn-crab:hover{
+    background-color: var(--crab-colour);
+}
+
+.btn-outline-dark.btn-crane:hover{
+    background-color: var(--crane-colour);
+}
+
+.btn-outline-dark.btn-dragon:hover{
+    background-color: var(--dragon-colour);
+}
+
+.btn-outline-dark.btn-lion:hover{
+    background-color: var(--lion-colour);
+}
+
+.btn-outline-dark.btn-phoenix:hover{
+    background-color: var(--phoenix-colour);
+}
+
+.btn-outline-dark.btn-scorpion:hover{
+    background-color: var(--scorpion-colour);
+}
+
+.btn-outline-dark.btn-unicorn:hover{
+    background-color: var(--unicorn-colour);
+}
+
+
+
 
 /** ---------------- **/
 

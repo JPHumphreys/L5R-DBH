@@ -72,3 +72,7 @@ function generateCards(data){
 
     */
 }
+
+function vsClanModal(element, clan){
+    
+}

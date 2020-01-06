@@ -205,7 +205,24 @@
                           <span class="input-group-text" id="inputGroup-sizing-lg">Range of (1.0 - 10.0)</span>
                         </div>
                         <input id="add-rating-text" type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
-                      </div>
+                    </div>
+                    <!--   This is where the VS clans will be selected   -->
+                    <div class="row btn-group button-row">
+                      <button class="btn btn-md btn-outline-dark btn-crab"
+                      onclick="vsClanModal(this, 'crab')">C</button>
+                      <button class="btn btn-md btn-outline-dark btn-crane"
+                      onclick="vsClanModal(this, 'crane')">C</button>
+                      <button class="btn btn-md btn-outline-dark btn-dragon"
+                      onclick="vsClanModal(this, 'dragon')">D</button>
+                      <button class="btn btn-md btn-outline-dark btn-lion"
+                      onclick="vsClanModal(this, 'lion')">L</button>
+                      <button class="btn btn-md btn-outline-dark btn-phoenix"
+                      onclick="vsClanModal(this, 'phoenix')">P</button>
+                      <button class="btn btn-md btn-outline-dark btn-scorpion"
+                      onclick="vsClanModal(this, 'scorpion')">S</button>
+                      <button class="btn btn-md btn-outline-dark btn-unicorn"
+                      onclick="vsClanModal(this, 'unicorn')">U</button>
+                    </div>
                 </div>
                 <div id="vote-modal-footer" class="modal-footer">
                   <button type="button" class="btn btn-outline-dark vote-button" onclick="handleRatingVote()">Vote</button>
