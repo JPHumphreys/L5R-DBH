@@ -143,34 +143,41 @@
 /**  This is the styling for the VS clans selector **/
 
 .button-row{
-    margin-top: .3rem;
+    margin-top: 1rem;
 }
 
-.btn-outline-dark.btn-crab:hover{
+.btn-outline-dark.btn-crab-selected,.btn-outline-dark.btn-crane-selected,
+.btn-outline-dark.btn-dragon-selected, .btn-outline-dark.btn-lion-selected,
+.btn-outline-dark.btn-phoenix-selected, .btn-outline-dark.btn-scorpion-selected,
+.btn-outline-dark.btn-unicorn-selected{
+    color: #fff;
+}
+
+.btn-outline-dark.btn-crab:hover, .btn-outline-dark.btn-crab-selected{
     background-color: var(--crab-colour);
 }
 
-.btn-outline-dark.btn-crane:hover{
+.btn-outline-dark.btn-crane:hover, .btn-outline-dark.btn-crane-selected{
     background-color: var(--crane-colour);
 }
 
-.btn-outline-dark.btn-dragon:hover{
+.btn-outline-dark.btn-dragon:hover, .btn-outline-dark.btn-dragon-selected{
     background-color: var(--dragon-colour);
 }
 
-.btn-outline-dark.btn-lion:hover{
+.btn-outline-dark.btn-lion:hover, .btn-outline-dark.btn-lion-selected{
     background-color: var(--lion-colour);
 }
 
-.btn-outline-dark.btn-phoenix:hover{
+.btn-outline-dark.btn-phoenix:hover, .btn-outline-dark.btn-phoenix-selected{
     background-color: var(--phoenix-colour);
 }
 
-.btn-outline-dark.btn-scorpion:hover{
+.btn-outline-dark.btn-scorpion:hover, .btn-outline-dark.btn-scorpion-selected{
     background-color: var(--scorpion-colour);
 }
 
-.btn-outline-dark.btn-unicorn:hover{
+.btn-outline-dark.btn-unicorn:hover, .btn-outline-dark.btn-unicorn-selected{
     background-color: var(--unicorn-colour);
 }
 

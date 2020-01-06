@@ -74,5 +74,6 @@ function generateCards(data){
 }
 
 function vsClanModal(element, clan){
-    
+
+    element.classList.toggle("btn-" + clan + "-selected");
 }
