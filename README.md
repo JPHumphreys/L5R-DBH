@@ -34,6 +34,9 @@ The user will select options from four columns:
 **VS Clans** : This is where the user is able to select the clans that the deck will cater against and improve the matchup by adding cards that work well against them.
  _**You select any amount from this column**_
 
+ When the user has selected a primary clan, secondary clan, role and element, the submite deck button should change green to indicate that the deck is legal. 
+ (VS_Clans are not needed in deckbuilding - selecting none will cater a deck that will work generally well against all other clans)
+
  **The goal for this to ensure that the users is able to generate a deck from scratch that caters towards certain matchups within a minute.**
 
  ---
