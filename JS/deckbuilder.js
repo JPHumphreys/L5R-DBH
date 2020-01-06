@@ -64,8 +64,8 @@ function vsClans(element){
 }
 
 function vsClanDisplayer(){
-    for(let i in deck.vsClans){
 
+    for(let i in deck.vsClans){
         const currentClan = document.getElementById(vsIDText + i);
         const design = currentClan.attributes.name.value;
 
@@ -76,7 +76,6 @@ function vsClanDisplayer(){
         else{
             //* spread operator *//
             currentClan.classList.remove(...currentClan.classList);
-
             //* add deckbuilder back and add the new design onto the new current *//
             currentClan.classList.add(onGridClass);
             //* remove the design *//
