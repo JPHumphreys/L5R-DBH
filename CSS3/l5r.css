@@ -1,11 +1,5 @@
 :root{
 
-    /** Site Colours **/
-    --dark-colour:#343a40;
-    --medium-colour:rgb(235, 235, 235);
-
-    /** Clan Colours and Images **/
-
     /*? L5R Official Colours for the Clans ?*/
     --crab-colour: #83929b;
     --crane-colour:#9cb7bb;
@@ -14,6 +8,7 @@
     --phoenix-colour:#ca8b58;
     --scorpion-colour:#964538;
     --unicorn-colour:#795f8d;
+    
 
     /*? Colours that match the void colours ?*/
     --air-colour:#e77f1e;
@@ -53,12 +48,6 @@
     --province-image: url(/media/province_colour.jpg);
     --dynasty-image: url(/media/dynasty_colour.jpg);
     --conflict-image: url(/media/conflict_colour.jpg);
-}
-
-*{
-    padding: 0;
-    margin: 0;
-    text-align: center;
 }
 
 /**--------------------**/
