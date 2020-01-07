@@ -140,10 +140,36 @@
     background-color: darkslategray;
 }
 
+/** This is the tooltips for the modal buttons **/
+
+[data-tooltip]{
+    position: relative;
+    cursor: default;
+}
+
+[data-tooltip]::after{
+    position: absolute;
+    left: 0;
+    bottom: 2.3rem;
+    content: attr(data-tooltip);
+    padding-right: .2rem;
+    padding-left: .2rem;
+    background-color: var(--dark-colour);
+    border-radius: 4px;
+    color: #fff;
+    transform: scale(0);
+    transition: 
+    transform ease-out 350ms;
+}
+
+[data-tooltip]:hover::after{
+    transform: scale(1);
+}
+
 /**  This is the styling for the VS clans selector **/
 
 .button-row{
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .btn-outline-dark.btn-crab-selected,.btn-outline-dark.btn-crane-selected,
@@ -180,9 +206,6 @@
 .btn-outline-dark.btn-unicorn:hover, .btn-outline-dark.btn-unicorn-selected{
     background-color: var(--unicorn-colour);
 }
-
-
-
 
 /** ---------------- **/
 
