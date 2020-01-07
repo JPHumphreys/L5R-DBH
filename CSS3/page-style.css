@@ -1,4 +1,16 @@
-#register-text, #login-text{
-    margin-top: 1em;
+:root{
+
+    /** Site Colours **/
+    --dark-colour:#343a40;
+    --medium-colour:rgb(235, 235, 235);
+
+    /** Clan Colours and Images **/
+
+    
+}
+
+*{
+    padding: 0;
+    margin: 0;
     text-align: center;
 }
