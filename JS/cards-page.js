@@ -1,12 +1,10 @@
-
-
 const cardRenderLocation = document.getElementById("card-render-location");
 const voteModalImageLocation = document.getElementById("vote-modal-image");
 const onGridClass = "on-grid";
 
 const card = new Card();
 const ui = new Card();
-const rating = new Rating();
+const rating = new Rating(undefined, undefined, {});
 
 function hoverBlurr(element, type){
     
@@ -79,4 +77,14 @@ function generateCards(data){
 function vsClanModal(element, clan){
 
     element.classList.toggle("btn-" + clan + "-selected");
+
+    for(let i in rating.clans){
+        console.log(i);
+    }
+
+    debugger;
+
+    addElement(rating.clans, clan);
+
+    
 }
