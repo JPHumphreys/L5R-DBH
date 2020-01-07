@@ -1,9 +1,12 @@
+
+
 const cardRenderLocation = document.getElementById("card-render-location");
 const voteModalImageLocation = document.getElementById("vote-modal-image");
 const onGridClass = "on-grid";
 
-let card = new Card();
-let ui = new Card();
+const card = new Card();
+const ui = new Card();
+const rating = new Rating();
 
 function hoverBlurr(element, type){
     

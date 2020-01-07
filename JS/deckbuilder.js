@@ -4,9 +4,9 @@ const vsIDText = "vs-";
 const vsClansContainer = document.getElementById("vs-clan");
 const submitButton = document.getElementById("submit-button");
 
-let ui = new Deck();
+const ui = new Deck();
 addReadyReturner(ui);
-let deck = new Deck();
+const deck = new Deck();
 addVSClans(deck);
 
 function deckSelect(element, item){

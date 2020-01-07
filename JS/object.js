@@ -18,3 +18,5 @@ function removeElement(property, element){
         }
     }
 }
+
+//* only default export 1 thing *//
