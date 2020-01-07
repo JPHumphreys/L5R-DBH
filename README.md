@@ -60,7 +60,11 @@ For example - you are able to select:
 
 Clicking on these cards will bring up a modal in which the logged in user can vote for the rating of the card 1-10 and select to which clans this vote is catering for.
 
-<img src="https://i.ibb.co/qYsXCt7/card-modal.jpg">
+<img src="https://i.ibb.co/LtJBfdd/Screenshot-2019-12-22-Cards-L5-R-DBH.png">
+
+**[IN ORDER]** -> *Crab, Crane, Dragon, Lion, Phoenix, Scorpion, Unicorn.*
+
+Data tooltips have been added to ensure this is clear. It also puts the clans colour onto the button when selected.
 
  The votes indicate the strength of the card - this can be filtered to see for against ALL CLANS, or any specific one.
  (selecting none will mean that it will apply to all clans)

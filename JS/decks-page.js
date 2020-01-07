@@ -2,30 +2,8 @@ const deckSpawnLocation = document.getElementById("deck-render-location");
 const updateDecknameValue = document.getElementById("input-deckname-text");
 const oldDecknameValue = document.getElementById("old-input-deckname-text");
 
-let deckData = {
-    "deckName":"",
-    "deckCopy":""
-}
-
-let idToDelete = [];
-let idToUpdate = [];
-
-let decks = [];
-
 function callDecknameUpdateModal(){
     $("#update-deck-modal").modal('toggle');
-}
-
-function deleteDeck(ele){
-
-    let objs = document.querySelectorAll(".filter");
-
-    for(let i = 0; i < objs.length; i++){
-            if(objs[i].classList.contains(ele.id)){
-                objs[i].remove();
-            }
-    }
-
 }
 
 function displayRenameModal(element){
