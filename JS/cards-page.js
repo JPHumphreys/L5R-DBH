@@ -32,16 +32,17 @@ function cardSelect(element, item){
     const design = element.attributes.name.value;
 
     if(card[item] === undefined){
-        ui[item] = element;
-        card[item] = getName(element);
+        
         element.classList.add(design);
     }
     else if(element !== ui[item]){
+        
         ui[item].classList.remove(...ui[item].classList);
         ui[item].classList.add(onGridClass);
         element.classList.add(design);
-        ui[item] = element;
-        card[item] = getName(element);
     }
+
+    card[item] = getName(element);
+    ui[item] = element;
 
 }

@@ -14,17 +14,18 @@ function deckSelect(element, item){
     const design = element.attributes.name.value;
 
     if(deck[item] === undefined){
-        ui[item] = element;
-        deck[item] = getName(element);
+
         element.classList.add(design);
     }
     else if(element !== ui[item]){
+        
         ui[item].classList.remove(...ui[item].classList);
         ui[item].classList.add(onGridClass);
         element.classList.add(design);
-        ui[item] = element;
-        deck[item] = getName(element);
     }
+
+    ui[item] = element;
+    deck[item] = getName(element);
     isDeckFinished();
 }
 
