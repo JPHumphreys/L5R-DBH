@@ -72,3 +72,31 @@ function generateCards(data){
 
     */
 }
+
+function makeRatingPushRequest(id, rating, clans){
+
+
+    /*
+        ratingAddReq.open("PUT", addRatingURL + "crab" + "/" + id);
+                ratingAddReq.setRequestHeader("Content-Type", "application/json");
+            obj = {
+                    "ratingcrab":ratingVariableNames[i],
+                };
+                saveRating(id, currentRating, "crab");
+                ratingAddReq.send(JSON.stringify(obj));
+
+    */
+}
+
+getCardRequest.onload = () => {
+    //debugger;
+    
+    if(getCardRequest.status === 200){
+       
+        //* it was a success
+    }
+    else{
+        
+        //* it was not a success
+    }
+}
