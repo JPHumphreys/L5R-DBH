@@ -1,3 +1,18 @@
+//* This will be a combination of the rating api and the cards api for now *//
+
+const getCardsURL = "";
+const getCardRequest = new XMLHttpRequest();
+
+const ratingJSON = {
+    "ratingcrab":0.0,
+    "ratingcrane":0.0,
+    "ratingdragon":0.0,
+    "ratinglion":0.0,
+    "ratingphoenix":0.0,
+    "ratingscorpion":0.0,
+    "ratingunicorn":0.0
+};
+
 const addRatingValue = document.getElementById("add-rating-text");
 const cardRenderLocation = document.getElementById("card-render-location");
 const voteModalImageLocation = document.getElementById("vote-modal-image");
