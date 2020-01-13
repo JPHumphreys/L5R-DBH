@@ -3,11 +3,10 @@
 const getCardsURL = "";
 const getCardRequest = new XMLHttpRequest();
 
+let data;
+const ratingText = "Rating : ";//add this before the api reuqested value.
+const voteModalImageLocation = document.getElementById("vote-modal-image");
 const cardRenderLocation = document.getElementById("card-render-location");
-
-
-
-
 
 function vsClanModal(element, clan){
 
@@ -36,13 +35,43 @@ function cardClick(element){
 
 }
 
-function generateCards(data){
+function generateCards(){
+
+    for(let i = 0; i < data.length; i++){
+
+        let card = document.createElement("div");
+        card.classList.add("col-sm-12", "col-md-6",
+        "col-lg-3", "card");
+        card.addEventListener("mouseleave", function(){
+            hoverBlurr(this, 'leave');
+        });
+        card.addEventListener("click", function(){
+            cardClick(this);
+        });
+        card.addEventListener("mouseover", function(){
+            hoverBlurr(this, 'enter');
+        });
+
+        let image = document.createElement("img");
+        image.src = getImageLocation(data, i);
+        image.alt = getObjectID(data, i);
+
+        let rating = document.createElement("h3");
+        rating.classList.add("card-rating");
+        rating.innerText = ratingText;
+
+        card.append(image, rating);
+        cardRenderLocation.append(card);
+
+    }
 
     
 
     /*
-        <div class="col-sm-12 col-md-6 col-lg-3 card" onclick="cardClick(this)" 
-        onmouseleave="hoverBlurr(this, 'leave')" onmouseover="hoverBlurr(this, 'enter')">
+        <div class="col-sm-12 col-md-6 col-lg-3 card" 
+        onclick="cardClick(this)" 
+        onmouseleave="hoverBlurr(this, 'leave')" 
+        onmouseover="hoverBlurr(this, 'enter')">
             <img src="https://gamepedia.cursecdn.com/l5r_gamepedia_en/6/6c/Shrewd_Yasuki.png?version=52fa901f0d3c41c924603c6d4161dfce">
             <h3 class="card-rating">Rating: 4</h3>
         </div>
