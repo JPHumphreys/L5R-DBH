@@ -28,10 +28,6 @@
 
 /** Clan selecting Effects **/
 
-.clan-selector{
-    margin-bottom: 3rem;
-}
-
 #deck-type-stronghold{
     background-image: var(--stronghold-image);
 }
@@ -73,7 +69,7 @@
     border: none;
     transition: 200ms;
     opacity: 1;
-    padding: .2rem .2rem 1.7rem .2rem;
+    padding: .2rem .2rem 0rem .2rem;
     margin: .2rem;
     background-color: #343a40;
     border-radius: 10px;
@@ -242,14 +238,14 @@
  /*? Small devices (portrait tablets and large phones, 600px and up) */
  @media only screen and (min-width: 600px) {
     .card{
-        margin-top: 5%;
-        margin-left: 10%;
-        margin-right: 10%;
+        margin-top: 2%;
+        margin-left: 5%;
+        margin-right: 5%;
         /*background-color: rgb(94, 255, 0);*/
     } 
     .row .card{
-        max-height: 23%;
-        max-width: 80%;
+        max-height: 20%;
+        max-width: 90%;
     }
     
  }
@@ -257,27 +253,27 @@
  /*? Medium devices (landscape tablets, 768px and up) */
  @media only screen and (min-width: 768px) {
     .card{
-        margin-top: 3%;
-        margin-left: 5%;
-        margin-right: 5%;
+        margin-top: 0%;
+        margin-left: 4%;
+        margin-right: 4%;
         /*background-color: rgb(255, 217, 0);*/
     }
     .row .card{
-        max-height: 43%;
-        max-width: 40%;
+        max-height: 35%;
+        max-width: 42%;
     }
  }
  
  /*? Large devices (laptops/desktops, 992px and up) */
  @media only screen and (min-width: 992px) {
     .card{
-        margin-left: 2%;
-        margin-right: 3%;
+        margin-left: 1%;
+        margin-right: 1%;
         /*background-color: rgb(255, 102, 0);*/
     }
     .row .card{
-        max-height: 60%;
-        max-width: 20%;
+        max-height: 37%;
+        max-width: 23%;
     }
  }
  
@@ -289,7 +285,7 @@
         /*background-color: red;*/
     }
     .row .card{
-        max-height: 80%;
+        max-height: 43%;
         max-width: 23%;
     }
  } 
