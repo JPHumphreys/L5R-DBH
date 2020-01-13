@@ -1,5 +1,4 @@
 const addRatingValue = document.getElementById("add-rating-text");
-const voteModalImageLocation = document.getElementById("vote-modal-image");
 
 const rating = new Rating(undefined, undefined, {});
 

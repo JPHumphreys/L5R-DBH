@@ -121,7 +121,8 @@ function buildDeck(deckname, primary, secondary, role, element){
     let randomId = randomString(16);
     let deck = document.createElement("div");
     deck.id = randomId;
-    deck.classList.add("col-sm-12","col-md-6", "col-lg-3", "deck");
+    deck.classList.add("col-sm-12","col-md-6",
+     "col-lg-3", "deck");
     /*deck.id = randomId;*/
     let name = document.createElement("h3");
     name.classList.add("deckname");

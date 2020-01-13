@@ -76,16 +76,6 @@ function getDeckRatings(clan){
     makeRatingRequest(clan);
 }
 
-
-
-function getIMGLocation(obj, i){
-    return obj[i].imglocation;
-}
-
-function getOBJID(obj, i){
-    return obj[i].id;
-}
-
 function saveRating(cardid, cardrating, cardclan){
     let rating = {
         "id":cardid,

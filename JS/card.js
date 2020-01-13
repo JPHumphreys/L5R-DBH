@@ -34,3 +34,11 @@ function Card(){
     });
 
 }
+
+function getImageLocation(obj, i){
+    return obj[i].imglocation;
+}
+
+function getObjectID(obj, i){
+    return obj[i].id;
+}
