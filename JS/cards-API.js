@@ -16,8 +16,6 @@ function vsClanModal(element, clan){
         console.log(i);
     }
 
-    debugger;
-
     addElement(rating.clans, clan);
 
     

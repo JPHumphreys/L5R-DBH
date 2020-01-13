@@ -230,7 +230,7 @@
 
     }
     .row .card{
-        max-height: 23%;
+        max-height: 25%;
         max-width: 100%;
     }
  }
@@ -244,7 +244,7 @@
         /*background-color: rgb(94, 255, 0);*/
     } 
     .row .card{
-        max-height: 20%;
+        max-height: 25%;
         max-width: 90%;
     }
     
@@ -259,7 +259,7 @@
         /*background-color: rgb(255, 217, 0);*/
     }
     .row .card{
-        max-height: 35%;
+        max-height: 49%;
         max-width: 42%;
     }
  }
@@ -272,7 +272,7 @@
         /*background-color: rgb(255, 102, 0);*/
     }
     .row .card{
-        max-height: 37%;
+        max-height: 73%;
         max-width: 23%;
     }
  }
@@ -285,7 +285,7 @@
         /*background-color: red;*/
     }
     .row .card{
-        max-height: 43%;
+        max-height: 85%;
         max-width: 23%;
     }
  } 
