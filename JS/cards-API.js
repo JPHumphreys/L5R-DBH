@@ -4,6 +4,11 @@ const getCardsURL = "";
 const getCardRequest = new XMLHttpRequest();
 
 let data;
+
+const clan = "clan";
+const deck = "deck";
+const type = "type";
+
 const ratingText = "Rating : ";//add this before the api reuqested value.
 const voteModalImageLocation = document.getElementById("vote-modal-image");
 const cardRenderLocation = document.getElementById("card-render-location");
@@ -49,6 +54,13 @@ function generateCards(){
         card.addEventListener("mouseover", function(){
             hoverBlurr(this, 'enter');
         });
+
+        card.setAttribute(clan, 
+        getCardClan(data, i));
+        card.setAttribute(deck, 
+        getCardDeck(data, i));
+        card.setAttribute(type, 
+        getCardType(data, i));
 
         let image = document.createElement("img");
         image.src = getImageLocation(data, i);
