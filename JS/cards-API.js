@@ -75,17 +75,11 @@ function generateCards(){
 
     }
 
-    
-
     /*
-        <div class="col-sm-12 col-md-6 col-lg-3 card" 
-        onclick="cardClick(this)" 
-        onmouseleave="hoverBlurr(this, 'leave')" 
-        onmouseover="hoverBlurr(this, 'enter')">
-            <img src="https://gamepedia.cursecdn.com/l5r_gamepedia_en/6/6c/Shrewd_Yasuki.png?version=52fa901f0d3c41c924603c6d4161dfce">
-            <h3 class="card-rating">Rating: 4</h3>
-        </div>
+
+data = [{imglocation : "https://gamepedia.cursecdn.com/l5r_gamepedia_en/6/6c/Shrewd_Yasuki.png?version=52fa901f0d3c41c924603c6d4161dfce", id : "shrewd-yasuki", clan : "crab", side : "dynasty", typeof : "character"}, {imglocation : "https://gamepedia.cursecdn.com/l5r_gamepedia_en/6/6c/Shrewd_Yasuki.png?version=52fa901f0d3c41c924603c6d4161dfce", id : "shrewd-yasuki", clan : "crab", side : "dynasty", typeof : "character"} ];
 
     */
+
 }
 
