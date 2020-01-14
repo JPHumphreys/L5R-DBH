@@ -45,4 +45,30 @@ function cardSelect(element, item){
     card[item] = getName(element);
     ui[item] = element;
 
+    //* removes card that dont apply to that filter *//
+    cardFilter(element.innerText, item);
+
+}
+
+function cardFilter(name, item){
+
+    const cards = document.querySelectorAll(".card");
+    
+    //sets the value of the card to the aspect of the card.
+    card[item] = name;
+
+    for(let i = 0; i < cards.length; i++){
+
+        if(card[item].toUpperCase() === 
+        cards[i].attributes[item].value
+        .toUpperCase()){
+            cards[i].style.visibility = "visible";
+        }
+        else{
+            //console.log(cards[i].style.visibility);
+            cards[i].style.visibility = "hidden";
+        }
+
+    }
+
 }
