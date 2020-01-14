@@ -64,6 +64,10 @@
 
 /** Card Hover Effects **/
 
+#card-render-location{
+    width: 100%;
+}
+
 .card{
     text-align: center;
     border: none;

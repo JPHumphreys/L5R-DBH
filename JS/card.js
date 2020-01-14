@@ -2,16 +2,16 @@
 
 function Card(){
 
-    let primary = undefined;
+    let clan = undefined;
     let deck = undefined;
     let type = undefined;
 
-    Object.defineProperty(this, "primary", {
+    Object.defineProperty(this, "clan", {
         get: function(){
-            return primary;
+            return clan;
         },
         set: function(value){
-            primary = value;
+            clan = value;
         }
     });
 
