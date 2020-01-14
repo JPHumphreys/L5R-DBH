@@ -42,18 +42,18 @@ function getImageLocation(obj, i){
     return obj[i].imglocation;
 }
 
-function getObjectID(obj, i){
+function getID(obj, i){
     return obj[i].id;
 }
 
-function getCardClan(obj, i){
+function getClan(obj, i){
     return obj[i].clan;
 }
 
-function getCardDeck(obj, i){
+function getDeck(obj, i){
     return obj[i].side;
 }
 
-function getCardType(obj, i){
+function getType(obj, i){
     return obj[i].typeof;
 }
