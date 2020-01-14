@@ -109,9 +109,7 @@ function createDeckButtons(){
         removeDeck(this);
     });
 
-    buttonRow.appendChild(rename);
-    buttonRow.appendChild(copy);
-    buttonRow.appendChild(remove);
+    buttonRow.appendChild(rename, copy, remove);
     return buttonRow;
 
 }
@@ -128,9 +126,9 @@ function buildDeck(deckname, primary, secondary, role, element){
     name.classList.add("deckname");
     name.innerText = deckname;
     deck.appendChild(name);
-    deck.appendChild(createPrimaryAndRole(primary,role));
-    deck.appendChild(createSecondaryandElement(secondary, element));
-    deck.appendChild(createDeckButtons());
+    deck.appendChild(createPrimaryAndRole(primary,role),
+    createSecondaryandElement(secondary, element),
+    createDeckButtons());
     deckSpawnLocation.append(deck);
 
 }
