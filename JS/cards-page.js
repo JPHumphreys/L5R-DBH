@@ -54,18 +54,19 @@ function cardFilter(name, item){
 
     const cards = document.querySelectorAll(".card");
     
-    //sets the value of the card to the aspect of the card.
+    //*sets the value of the card to the aspect of the card.
     card[item] = name;
 
     for(let i = 0; i < cards.length; i++){
 
+        //* uppercase incase difference *//
         if(card[item].toUpperCase() === 
         cards[i].attributes[item].value
         .toUpperCase()){
             cards[i].hidden = false;
         }
         else{
-            //console.log(cards[i].style.visibility);
+            
             cards[i].hidden = true;
         }
 
