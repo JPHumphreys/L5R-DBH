@@ -62,11 +62,11 @@ function cardFilter(name, item){
         if(card[item].toUpperCase() === 
         cards[i].attributes[item].value
         .toUpperCase()){
-            cards[i].style.visibility = "visible";
+            cards[i].hidden = false;
         }
         else{
             //console.log(cards[i].style.visibility);
-            cards[i].style.visibility = "hidden";
+            cards[i].hidden = true;
         }
 
     }
