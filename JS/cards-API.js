@@ -45,6 +45,7 @@ function generateCards(){
         let card = document.createElement("div");
         card.classList.add("col-sm-12", "col-md-6",
         "col-lg-3", "card");
+        
         card.addEventListener("mouseleave", function(){
             hoverBlurr(this, 'leave');
         });
