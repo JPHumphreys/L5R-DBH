@@ -56,15 +56,15 @@ function generateCards(){
         });
 
         card.setAttribute(clan, 
-        getCardClan(data, i));
+        getClan(data, i));
         card.setAttribute(deck, 
-        getCardDeck(data, i));
+        getDeck(data, i));
         card.setAttribute(type, 
-        getCardType(data, i));
+        getType(data, i));
 
         let image = document.createElement("img");
         image.src = getImageLocation(data, i);
-        image.alt = getObjectID(data, i);
+        image.alt = getID(data, i);
 
         let rating = document.createElement("h3");
         rating.classList.add("card-rating");
