@@ -57,20 +57,24 @@ function cardFilter(name, item){
     //*sets the value of the card to the aspect of the card.
     card[item] = name;
 
+    const clan = setToCAPS(card.clan);
+    const deck = setToCAPS(card.deck);
+    const type = setToCAPS(card.type);
+
+    //debugger;
+
     for(let i = 0; i < cards.length; i++){
 
+        const localClan = setToCAPS(cards[i].attributes['clan'].value);
+        const localDeck = setToCAPS(cards[i].attributes['deck'].value);
+        const localType = setToCAPS(cards[i].attributes['type'].value);
+
         if(
-        (card.clan.toUpperCase() === 
-        cards[i].attributes[clan].value
-        .toUpperCase() || card.clan === undefined)
+        (clan === localClan || clan === undefined )
         &&
-        (card.deck.toUpperCase() === 
-        cards[i].attributes[deck].value
-        .toUpperCase() || card.deck === undefined)
+        (deck === localDeck || deck === undefined )
         &&
-        (card.type.toUpperCase() ===
-        cards[i].attributes[type].value
-        .toUpperCase() || card.type === undefined)){
+        (type === localType || type === undefined )){
             cards[i].hidden = false;
         }
         else{
@@ -80,4 +84,13 @@ function cardFilter(name, item){
 
     }
 
+}
+
+function setToCAPS(element){
+    if(element != undefined){
+        return element.toUpperCase();
+    }
+    else{
+        return element;
+    }
 }
