@@ -136,6 +136,10 @@
     background-color: darkslategray;
 }
 
+#vs-modal-text{
+    margin-top: .8rem;
+}
+
 /** This is the tooltips for the modal buttons **/
 
 [data-tooltip]{
@@ -165,7 +169,7 @@
 /**  This is the styling for the VS clans selector **/
 
 .button-row{
-    margin-top: 2rem;
+    margin-top: .8rem;
 }
 
 .btn-outline-dark.btn-crab-selected,.btn-outline-dark.btn-crane-selected,
