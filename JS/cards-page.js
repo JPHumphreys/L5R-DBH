@@ -59,10 +59,18 @@ function cardFilter(name, item){
 
     for(let i = 0; i < cards.length; i++){
 
-        //* uppercase incase difference *//
-        if(card[item].toUpperCase() === 
-        cards[i].attributes[item].value
-        .toUpperCase()){
+        if(
+        (card.clan.toUpperCase() === 
+        cards[i].attributes[clan].value
+        .toUpperCase() || card.clan === undefined)
+        &&
+        (card.deck.toUpperCase() === 
+        cards[i].attributes[deck].value
+        .toUpperCase() || card.deck === undefined)
+        &&
+        (card.type.toUpperCase() ===
+        cards[i].attributes[type].value
+        .toUpperCase() || card.type === undefined)){
             cards[i].hidden = false;
         }
         else{
