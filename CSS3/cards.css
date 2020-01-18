@@ -70,12 +70,11 @@
 
 .card{
     text-align: center;
-    border: none;
+    border: 2px solid var(--dark-colour);
     transition: 200ms;
     opacity: 1;
     padding: .2rem .2rem 0rem .2rem;
     margin: .2rem;
-    background-color: #343a40;
     border-radius: 10px;
 }
 
@@ -83,7 +82,7 @@
     cursor: pointer;
     transform: scale(1.1);
     z-index: 5;
-    box-shadow: 0 0 10px 10px white;
+    box-shadow: 0 0 10px 10px var(--dark-colour);
     opacity: 1;
 }
 
@@ -99,13 +98,10 @@
 /** Card Details **/
 
 .card-rating{
-    background-color: var(--dark-colour);
     margin-bottom: .4em;
     padding: 1%;
-    color: #fff;
+    color: var(--dark-colour);
 }
-
-
 
 /** ---------------- **/
 /** Modal details **/

@@ -57,6 +57,7 @@ function cardFilter(name, item){
     //*sets the value of the card to the aspect of the card.
     card[item] = name;
 
+    //* collects the card values - this is what reads on the grid *//
     const clan = setToCAPS(card.clan);
     const deck = setToCAPS(card.deck);
     const type = setToCAPS(card.type);
@@ -65,16 +66,18 @@ function cardFilter(name, item){
 
     for(let i = 0; i < cards.length; i++){
 
+        //* The current card in the loop is local *//
         const localClan = setToCAPS(cards[i].attributes['clan'].value);
         const localDeck = setToCAPS(cards[i].attributes['deck'].value);
         const localType = setToCAPS(cards[i].attributes['type'].value);
 
-        if(
+        if(//* can be undefined as some might not be selected yet - grid *//
         (clan === localClan || clan === undefined )
         &&
         (deck === localDeck || deck === undefined )
         &&
         (type === localType || type === undefined )){
+
             cards[i].hidden = false;
         }
         else{
