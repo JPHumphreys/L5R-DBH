@@ -30,7 +30,7 @@ function getImageOfCard(card){
     return card.firstElementChild.currentSrc;
 }
 
-function cardClick(element){
+function cardVote(element){
 
     voteModalImageLocation.attributes.src.value = getImageOfCard(element);
 
@@ -50,7 +50,7 @@ function generateCards(){
             hoverBlurr(this, 'leave');
         });
         card.addEventListener("click", function(){
-            cardClick(this);
+            cardVote(this);
         });
         card.addEventListener("mouseover", function(){
             hoverBlurr(this, 'enter');
