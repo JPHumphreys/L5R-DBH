@@ -29,6 +29,7 @@
     --phoenix-image: url(/media/phoenix_colour.jpg);
     --scorpion-image: url(/media/scorpion_colour.jpg);
     --unicorn-image: url(/media/unicorn_colour.jpg);
+    --neutral-image: url(/media/chrysanthemum_flower.jpg);
 
     /*? roles and elements */
     --keeper-image: url(/media/keeper_colour.jpg);
@@ -46,7 +47,7 @@
     --attachment-image: url(/media/attachment_colour.jpg);
 
     /*? deck types */
-    --stronghold-image: url(/media/stronghold_colour.jpg);
+    --role-image: url(/media/role_colour.jpg);
     --province-image: url(/media/province_colour.jpg);
     --dynasty-image: url(/media/dynasty_colour.jpg);
     --conflict-image: url(/media/conflict_colour.jpg);
@@ -94,9 +95,11 @@
 
 .crab-design.on-grid, .crane-design.on-grid, .dragon-design.on-grid,
 .lion-design.on-grid, .phoenix-design.on-grid, .scorpion-design.on-grid,
-.unicorn-design.on-grid, .keeper-design.on-grid, .seeker-design.on-grid,
+.unicorn-design.on-grid, .neutral-design.on-grid,
+.keeper-design.on-grid, .seeker-design.on-grid,
 .air-design.on-grid, .earth-design.on-grid, .fire-design.on-grid,
-.void-design.on-grid, .water-design.on-grid, .stronghold-design.on-grid,
+.void-design.on-grid, .water-design.on-grid, 
+.role-design.on-grid,
  .dynasty-design.on-grid, .conflict-design.on-grid, .province-design.on-grid,
 .holding-design.on-grid, .character-design.on-grid, .event-design.on-grid,
  .attachment-design.on-grid, .on-grid:hover{
@@ -181,6 +184,12 @@
     background-size: 40%;
 }
 
+.neutral-design.on-grid, #primary-neutral:hover{
+    border-color: black;
+    box-shadow: 0 0 5px 5px black;
+    background-size: 40%;
+}
+
 .keeper-design.on-grid, #keeper-button:hover{
     border-color: var(--void-colour);
     box-shadow: 0 0 5px 5px var(--void-colour);
@@ -223,7 +232,7 @@
     background-size: 40%;
 }
 
-.stronghold-design.on-grid, #deck-type-stronghold:hover{ 
+.role-design.on-grid, #deck-type-role:hover{ 
     border-color: var(--void-colour);
     box-shadow: 0 0 5px 5px var(--void-colour); 
     background-size: 100%;
