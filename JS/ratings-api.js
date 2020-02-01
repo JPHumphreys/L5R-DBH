@@ -40,15 +40,3 @@ function makeRatingPushRequest(id, rating, clans){
     */
 }
 
-getCardRequest.onload = () => {
-    //debugger;
-    
-    if(getCardRequest.status === 200){
-       
-        //* it was a success
-    }
-    else{
-        
-        //* it was not a success
-    }
-}

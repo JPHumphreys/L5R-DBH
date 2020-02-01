@@ -1,6 +1,6 @@
 //* This will be a combination of the rating api and the cards api for now *//
 
-const getCardsURL = "";
+const getCardsURL = "http://localhost:56390/api/card";
 const getCardRequest = new XMLHttpRequest();
 
 let data;
@@ -13,6 +13,29 @@ const ratingText = "Rating : ";//add this before the api reuqested value.
 const voteModalImageLocation = document.getElementById("vote-modal-image");
 const cardRenderLocation = document.getElementById("card-render-location");
 
+getCardsFromAPI();
+
+function getCardsFromAPI(){
+    getCardRequest.open("GET",getCardsURL, true);
+    getCardRequest.send();
+}
+
+getCardRequest.onload = () => {
+    //debugger;
+    
+    if(getCardRequest.status === 200){
+       
+        //* it was a success
+        data = JSON.parse(getCardRequest.response);
+    }
+    else{
+        
+        //* it was not a success
+    }
+}
+
+
+
 function vsClanModal(element, clan){
 
     element.classList.toggle("btn-" + clan + "-selected");
@@ -23,7 +46,6 @@ function vsClanModal(element, clan){
 
     addElement(rating.clans, clan);
 
-    
 }
 
 function getImageOfCard(card){
@@ -75,12 +97,6 @@ function generateCards(){
         cardRenderLocation.append(card);
 
     }
-
-    /*
-
-data = [{imglocation : "https://gamepedia.cursecdn.com/l5r_gamepedia_en/6/6c/Shrewd_Yasuki.png?version=52fa901f0d3c41c924603c6d4161dfce", id : "shrewd-yasuki", clan : "crab", side : "dynasty", typeof : "character"}, {imglocation : "https://gamepedia.cursecdn.com/l5r_gamepedia_en/6/6c/Shrewd_Yasuki.png?version=52fa901f0d3c41c924603c6d4161dfce", id : "shrewd-yasuki", clan : "crab", side : "dynasty", typeof : "character"} ];
-
-    */
 
 }
 

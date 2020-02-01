@@ -37,6 +37,7 @@ function Card(){
 
 //* Consult the L5R-JSON-DATA for names *//
 //* https://github.com/JPHumphreys/L5R-JSON-Data *//
+//* https://github.com/JPHumphreys/L5R-WEBAPI/blob/master/Models/Card.cs *//
 
 function getImageLocation(obj, i){
     return obj[i].imglocation;
