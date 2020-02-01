@@ -56,5 +56,5 @@ function getDeck(obj, i){
 }
 
 function getType(obj, i){
-    return obj[i].typeof;
+    return obj[i].type;
 }

@@ -2,7 +2,6 @@
 
 const getCardsURL = "http://localhost:56390/api/card";
 const getCardRequest = new XMLHttpRequest();
-
 let data;
 
 const clan = "clan";
@@ -16,17 +15,19 @@ const cardRenderLocation = document.getElementById("card-render-location");
 getCardsFromAPI();
 
 function getCardsFromAPI(){
-    getCardRequest.open("GET",getCardsURL, true);
+    //debugger;
+    getCardRequest.open("GET",getCardsURL);
     getCardRequest.send();
 }
 
 getCardRequest.onload = () => {
     //debugger;
-    
+    //debugger;
     if(getCardRequest.status === 200){
        
         //* it was a success
         data = JSON.parse(getCardRequest.response);
+        generateCards();
     }
     else{
         
