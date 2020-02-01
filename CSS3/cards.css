@@ -28,8 +28,12 @@
 
 /** Clan selecting Effects **/
 
-#deck-type-stronghold{
-    background-image: var(--stronghold-image);
+#primary-neutral{
+    background-image: var(--neutral-image);
+}
+
+#deck-type-role{
+    background-image: var(--role-image);
 }
 
 #deck-type-province{
