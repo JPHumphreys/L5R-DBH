@@ -18,7 +18,7 @@ const loginPasswordInput = document.getElementById("login-password");
 const registerUsernameInput = document.getElementById("register-username");
 const registerPasswordInput = document.getElementById("register-password");
 
-const user = new User();
+const user = new User(JSON.parse(localStorage.getItem("user")).username, JSON.parse(localStorage.getItem("user")).password);
 isLoggedIn();
 
 function getUser(){
@@ -45,9 +45,8 @@ userGETReq.onload = () => {
 userPOSTReq.onload = () => {
     if(userPOSTReq.status === 200){
         if(userPOSTReq.response === '"true"'){
-            debugger;
             storeUser();
-
+            window.alert("Created User successfully")
         }
         else{
             window.alert("POST request failed" + " " + userPOSTReq.responseText);
@@ -61,9 +60,6 @@ function storeUser(){
 }
 
 function createUser(){
-    user.setUsername(registerUsernameInput.value);
-    user.setPassword(registerPasswordInput.value);
-
     //call the POST
     userPOSTReq.open("POST", userURL);
     userPOSTReq.setRequestHeader("Content-Type", "application/json");
@@ -73,44 +69,18 @@ function createUser(){
 
 function isLoggedIn(){
     let loggedInUser = JSON.parse(localStorage.getItem("user")).username;
-    if((loggedInUser != undefined) & location.href.endsWith("cards.html")
-    || location.href.endsWith("decks.html")
-    || location.href.endsWith("index.html")
-    || location.href.endsWith("deckbuilder.html")
-    || location.href.endsWith("about.html")){
+    if( (user.loginStatus === "true") & 
+        (location.href.endsWith("cards.html")
+        || location.href.endsWith("decks.html")
+        || location.href.endsWith("index.html")
+        || location.href.endsWith("deckbuilder.html")
+        || location.href.endsWith("about.html"))){
         userAddLocation.hidden = false;
         usernameText.innerText = loggedInUser;
         loginItem.hidden = true;
         registerItem.hidden = true;
     }
 }
-
-function pageChecker(){
-    
-    if (location.href.endsWith("cards.html")||
-     location.href.endsWith("decks.html") ||
-      location.href.endsWith("index.html") ||
-       location.href.endsWith("deckbuilder.html")){
-        if(localStorage.getItem("username") === null){
-            location.href = "register.html";  
-            userAddLocation.hidden = true;
-            loginItem.hidden = false;
-            registerItem.hidden = false;
-        }
-        else{
-            usernameText.innerText = localStorage.getItem("username");
-            userAddLocation.hidden = false;
-            loginItem.hidden = true;
-            registerItem.hidden = true;
-            
-        }
-    }
-    
-}
-
-// TODO : REDO THIS
-// pageChecker();
-
 
 function onLoginSuccess(){
 
@@ -119,13 +89,8 @@ function onLoginSuccess(){
 
 function logout(){
     //logout
-    //revers the hidden
-    //remove data from system
-    userAddLocation.hidden = true;
-    loginItem.hidden = false;
-    registerItem.hidden = false;
+    user.loginStatus = "false";
     location.href = "login.html";
-
 }
 
 function deleteUser(){
@@ -135,11 +100,22 @@ function deleteUser(){
 }
 
 function login(){
+    //GET CALL
 
+    //check if username and password match in the DB
+
+    //if yes login - then change the page to index
+    user.loginStatus = "true";
+    //if no tell user that there is no match
+
+    //
 }
 
 function register(){
+    user.setUsername(registerUsernameInput.value);
+    user.setPassword(registerPasswordInput.value);
 
+    createUser();
 }
 
 function callPasswordModal(){
