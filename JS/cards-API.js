@@ -8,7 +8,7 @@ const clan = "clan";
 const deck = "deck";
 const type = "type";
 
-const ratingText = "Rating : ";//add this before the api reuqested value.
+const ratingText = "Rating: ";//add this before the api reuqested value.
 const voteModalImageLocation = document.getElementById("vote-modal-image");
 const cardRenderLocation = document.getElementById("card-render-location");
 
@@ -92,7 +92,7 @@ function generateCards(){
 
         let rating = document.createElement("h3");
         rating.classList.add("card-rating");
-        rating.innerText = ratingText;
+        rating.innerText = ratingText + getOverallRating(data, i);
 
         card.append(image, rating);
         cardRenderLocation.append(card);
