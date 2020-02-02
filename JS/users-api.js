@@ -19,6 +19,8 @@ const registerUsernameInput = document.getElementById("register-username");
 const registerPasswordInput = document.getElementById("register-password");
 
 const user = new User(JSON.parse(localStorage.getItem("user")).username, JSON.parse(localStorage.getItem("user")).password);
+
+//* check if user is logged in on each page *//
 isLoggedIn();
 
 function getUser(){
@@ -46,10 +48,10 @@ userPOSTReq.onload = () => {
     if(userPOSTReq.status === 200){
         if(userPOSTReq.response === '"true"'){
             storeUser();
-            window.alert("Created User successfully")
+            callAlert("register","success");
         }
         else{
-            window.alert("POST request failed" + " " + userPOSTReq.responseText);
+            callAlert("register","success");
         }
     }
 }
@@ -120,4 +122,9 @@ function register(){
 
 function callPasswordModal(){
     $("#update-user-modal").modal('toggle');
+}
+
+function callAlert(page, status){
+    document.getElementById(page + '-' + status).style.display = 'block';
+    setTimeout(function(){document.getElementById(page + '-' + status).style.display = 'none'}, 1700);
 }

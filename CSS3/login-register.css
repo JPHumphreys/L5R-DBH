@@ -30,7 +30,8 @@
 
 /** Alerts **/
 
-.login-success, .login-fail{
+#login-success, #login-fail,
+#register-success, #register-fail{
     position: absolute;
     left: 80%;
     top: 10%;
