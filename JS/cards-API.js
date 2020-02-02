@@ -22,7 +22,6 @@ function getCardsFromAPI(){
 
 getCardRequest.onload = () => {
     //debugger;
-    //debugger;
     if(getCardRequest.status === 200){
        
         //* it was a success

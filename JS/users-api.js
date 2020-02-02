@@ -18,29 +18,36 @@ const loginPasswordInput = document.getElementById("login-password");
 const registerUsernameInput = document.getElementById("register-username");
 const registerPasswordInput = document.getElementById("register-password");
 
-const user = new User(JSON.parse(localStorage.getItem("user")).username, JSON.parse(localStorage.getItem("user")).password);
+let userData;
+
+const user = new User();
+//const user = new User(JSON.parse(localStorage.getItem("user")).username, JSON.parse(localStorage.getItem("user")).password);
 
 //* check if user is logged in on each page *//
 isLoggedIn();
 
-function getUser(){
-    //debugger;
-    userGETReq.open("GET",userURL);
+function getUser(username){
+    userGETReq.open("GET", userURL + "/" + username);
     userGETReq.send();
+    callAlert("login","success");
 }
 
 userGETReq.onload = () => {
-    //debugger;
-    //debugger;
+    debugger;
+    console.log(userGETReq.responseText);
+    console.log(userGETReq.status);
     if(userGETReq.status === 200){
-       
+       debugger;
         //* it was a success
-        data = JSON.parse(userGETReq.response);
-        generateCards();
+        userData = JSON.parse(userGETReq.response);
+        //handleLogin();
     }
     else{
-        
+        callAlert("login","danger");
         //* it was not a success
+        if(userGETReq.status > 200){
+            debugger;
+        }
     }
 }
 
@@ -49,6 +56,7 @@ userPOSTReq.onload = () => {
         if(userPOSTReq.response === '"true"'){
             storeUser();
             callAlert("register","success");
+            location.href = "index.html";
         }
         else{
             callAlert("register","success");
@@ -63,6 +71,7 @@ function storeUser(){
 
 function createUser(){
     //call the POST
+    debugger;
     userPOSTReq.open("POST", userURL);
     userPOSTReq.setRequestHeader("Content-Type", "application/json");
     userPOSTReq.send(JSON.stringify(user));
@@ -101,16 +110,21 @@ function deleteUser(){
     //
 }
 
-function login(){
-    //GET CALL
-
+function handleLogin(){
     //check if username and password match in the DB
-
+    console.log(userData.username);
+    console.log(userData.password);
+    console.log(userData);
     //if yes login - then change the page to index
     user.loginStatus = "true";
     //if no tell user that there is no match
 
     //
+}
+
+function login(){
+    //GET CALL
+    getUser(loginUsernameInput.value);
 }
 
 function register(){
