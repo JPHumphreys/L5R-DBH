@@ -60,8 +60,29 @@
 
         <div class="container">
 
-             <div id="about-jumbotron" class="jumbotron shadow p-3 mb-3 bg-white rounded">
+            <div id="about-jumbotron" class="jumbotron shadow p-3 mb-3 bg-white rounded">
                 <h1 class="display-h">About</h1>
+            </div>
+
+            <div id="delete-success" class="alert alert-info alert-dismissible fade show" role="alert" style="display: none;">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <h6>Deleted the User</h6> 
+            </div>
+
+            <div id="delete-fail" class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <h6>Did not delete the user</h6> 
+            </div>
+
+            <div id="logout-success" class="alert alert-info alert-dismissible fade show" role="alert" style="display: none;">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <h6>Successfully logged out</h6> 
             </div>
 
             <div class="container divider">
@@ -231,7 +252,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" integrity="sha256-fIkQKQryItPqpaWZbtwG25Jp2p5ujqo/NwJrfqAB+Qk=" crossorigin="anonymous"></script>
 
-    <script src="JS/users.js"></script>
+    <script src="JS/user.js"></script>
+    <script src="JS/users-api.js"></script>
     <script src="External/fullpage.min.js"></script>
     <script src="JS/about.js"></script>
 

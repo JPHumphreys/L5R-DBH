@@ -58,3 +58,7 @@ function getDeck(obj, i){
 function getType(obj, i){
     return obj[i].type;
 }
+
+function getOverallRating(obj, i){
+    return obj[i].overallrating;
+}
