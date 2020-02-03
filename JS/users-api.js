@@ -36,7 +36,7 @@ function getUser(username){
 
 userGETReq.onload = () => {
     if(userGETReq.status === 200){
-       debugger;
+       //debugger;
         //* it was a success
         userData = JSON.parse(userGETReq.response);
         handleLogin();
@@ -45,7 +45,7 @@ userGETReq.onload = () => {
         callAlert("login","danger");
         //* it was not a success
         if(userGETReq.status > 200){
-            debugger;
+            //debugger;
         }
     }
 }
@@ -63,13 +63,15 @@ userPOSTReq.onload = () => {
     }
 }
 
-
-function freeUser(){
-    window.localStorage.removeItem('user');
-}
-
-function storeUser(){
-    window.localStorage.setItem('user',JSON.stringify(user));
+userDELETEReq.onload = () => {
+    if(userDELETEReq.status === 200){
+        if(userDELETEReq.responseText === "true"){
+            callAlert("delete","success");
+            freeUser();
+            onLoginSuccess();
+        }
+            callAlert("delete","fail");
+    }
 }
 
 function createUser(){
@@ -78,6 +80,22 @@ function createUser(){
     userPOSTReq.open("POST", userURL);
     userPOSTReq.setRequestHeader("Content-Type", "application/json");
     userPOSTReq.send(JSON.stringify(user));
+}
+
+function deleteUser(){
+
+    userDELETEReq.open("DELETE", userURL + "/" + usernameText.innerText);
+    userDELETEReq.send();
+    //
+    
+}
+
+function freeUser(){
+    window.localStorage.removeItem('user');
+}
+
+function storeUser(){
+    window.localStorage.setItem('user',JSON.stringify(user));
 }
 
 
@@ -113,12 +131,6 @@ function logout(){
     location.href = "login.html";
 }
 
-function deleteUser(){
-    //DELETE call to delete
-    makeDeleteUserRequest();
-    //
-}
-
 function handleLogin(){
     //check if username and password match in the DB
     if(userData[0].username === loginUsernameInput.value && userData[0].password === loginPasswordInput.value)
@@ -137,9 +149,6 @@ function handleLogin(){
         callAlert("login","danger");
     }
 
-    
-
-    //
 }
 
 function login(){
@@ -161,8 +170,4 @@ function callPasswordModal(){
 function callAlert(page, status){
     document.getElementById(page + '-' + status).style.display = 'block';
     setTimeout(function(){document.getElementById(page + '-' + status).style.display = 'none'}, 1700);
-}
-
-function makeDeleteUserRequest(){
-    callAlert("delete","success");
 }

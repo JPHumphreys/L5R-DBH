@@ -13,7 +13,7 @@
     text-align: center;
 }
 
-#delete-success, #logout-success{
+#delete-success, #logout-success, #delete-fail{
     position: absolute;
     left: 80%;
     top: 10%;
