@@ -51,11 +51,12 @@ userGETReq.onload = () => {
 }
 
 userPOSTReq.onload = () => {
+    //debugger;
     if(userPOSTReq.status === 200){
         if(userPOSTReq.response === '"true"'){
             storeUser();
             callAlert("register","success");
-            location.href = "index.html";
+            location.href = "login.html";
         }
         else{
             callAlert("register","success");
@@ -64,13 +65,15 @@ userPOSTReq.onload = () => {
 }
 
 userDELETEReq.onload = () => {
+    //debugger;
     if(userDELETEReq.status === 200){
-        if(userDELETEReq.responseText === "true"){
+        if(userDELETEReq.responseText === "false"){
+            callAlert("delete","fail");
+        }else{
             callAlert("delete","success");
             freeUser();
-            onLoginSuccess();
+            location.href = "login.html";
         }
-            callAlert("delete","fail");
     }
 }
 
@@ -83,7 +86,7 @@ function createUser(){
 }
 
 function deleteUser(){
-
+    //debugger;
     userDELETEReq.open("DELETE", userURL + "/" + usernameText.innerText);
     userDELETEReq.send();
 }
@@ -98,17 +101,18 @@ function storeUser(){
 
 
 function isLoggedIn(){
+    //debugger;
     if(localStorage.getItem("user") === undefined){
         userAddLocation.hidden = true;
         loginItem.hidden = false;
         registerItem.hidden = false
     }else{
-        let loggedInUser = JSON.parse(localStorage.getItem("user")).username;
         if( (location.href.endsWith("cards.html")
             || location.href.endsWith("decks.html")
             || location.href.endsWith("index.html")
             || location.href.endsWith("deckbuilder.html")
             || location.href.endsWith("about.html"))){
+            let loggedInUser = JSON.parse(localStorage.getItem("user")).username;
             userAddLocation.hidden = false;
             usernameText.innerText = loggedInUser;
             loginItem.hidden = true;
@@ -119,7 +123,7 @@ function isLoggedIn(){
 
 function onLoginSuccess(){
 
-    location.href = "decklist.html";
+    location.href = "decks.html";
 }
 
 function logout(){
@@ -130,10 +134,11 @@ function logout(){
 }
 
 function handleLogin(){
+    //debugger;
     //check if username and password match in the DB
     if(userData[0].username === loginUsernameInput.value && userData[0].password === loginPasswordInput.value)
     {
-        debugger;
+        //debugger;
         callAlert("login","success");
         //if yes login - then change the page to index
         user.setUsername(loginUsernameInput.value);
@@ -153,8 +158,6 @@ function handleUpdatePassword(){
     userPUTReq.open("PUT",userURL + "/" + user.getUsername());
     userPUTReq.setRequestHeader("Content-Type", "application/json");
     user.setPassword(passwordText.value);
-    console.log(user);
-    debugger;
     userPUTReq.send(JSON.stringify(user));
 }
 
