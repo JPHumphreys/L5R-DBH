@@ -2,16 +2,6 @@ const addRatingValue = document.getElementById("add-rating-text");
 
 const rating = new Rating(undefined, undefined, {});
 
-const ratingJSON = {
-    "ratingcrab":0.0,
-    "ratingcrane":0.0,
-    "ratingdragon":0.0,
-    "ratinglion":0.0,
-    "ratingphoenix":0.0,
-    "ratingscorpion":0.0,
-    "ratingunicorn":0.0
-};
-
 function handleRatingVote(){
 
     if(addRatingValue.value >= 1.0 && addRatingValue.value <= 10.0){

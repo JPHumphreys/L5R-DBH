@@ -1,7 +1,7 @@
 //* User URL *//
 const userURL = "http://localhost:56390/api/user";
 
-const passwordInput = document.getElementById("input-user-text");
+
 
 const userGETReq = new XMLHttpRequest();
 const userPOSTReq = new XMLHttpRequest();
@@ -13,7 +13,7 @@ const registerItem = document.getElementById("nav-register-item");
 const userAddLocation = document.getElementById("user-add-location");
 
 const usernameText = document.getElementById("username-display");
-
+const passwordText = document.getElementById("input-user-text");
 //USER INPUT LOCATIONS
 const loginUsernameInput = document.getElementById("login-username");
 const loginPasswordInput = document.getElementById("login-password");
@@ -76,7 +76,7 @@ userDELETEReq.onload = () => {
 
 function createUser(){
     //call the POST
-    debugger;
+    //debugger;
     userPOSTReq.open("POST", userURL);
     userPOSTReq.setRequestHeader("Content-Type", "application/json");
     userPOSTReq.send(JSON.stringify(user));
@@ -86,8 +86,6 @@ function deleteUser(){
 
     userDELETEReq.open("DELETE", userURL + "/" + usernameText.innerText);
     userDELETEReq.send();
-    //
-    
 }
 
 function freeUser(){
@@ -151,6 +149,13 @@ function handleLogin(){
 
 }
 
+function handleUpdatePassword(){
+    userPUTReq.open("PUT",userURL + "/" + user.getUsername);
+    userPOSTReq.setRequestHeader("Content-Type", "application/json");
+    user.setPassword(passwordText.value);
+    userPUTReq.send(JSON.stringify(user));
+}
+
 function login(){
     //GET CALL
     getUser(loginUsernameInput.value);
@@ -164,6 +169,7 @@ function register(){
 }
 
 function callPasswordModal(){
+    user.setUsername = usernameText.innerText;
     $("#update-user-modal").modal('toggle');
 }
 

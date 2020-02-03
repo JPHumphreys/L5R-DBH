@@ -34,8 +34,6 @@ getCardRequest.onload = () => {
     }
 }
 
-
-
 function vsClanModal(element, clan){
 
     element.classList.toggle("btn-" + clan + "-selected");
@@ -52,10 +50,15 @@ function getImageOfCard(card){
     return card.firstElementChild.currentSrc;
 }
 
+function getIdOfCard(card){
+    return card.firstElementChild.alt;
+}
+
 function cardVote(element){
 
     voteModalImageLocation.attributes.src.value = getImageOfCard(element);
-
+    voteModalImageLocation.attributes.alt.value = getIdOfCard(element);
+    //debugger;
     $("#vote-modal").modal('toggle');
 
 }
