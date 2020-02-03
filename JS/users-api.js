@@ -5,6 +5,8 @@ const passwordInput = document.getElementById("input-user-text");
 
 const userGETReq = new XMLHttpRequest();
 const userPOSTReq = new XMLHttpRequest();
+const userDELETEReq = new XMLHttpRequest();
+const userPUTReq = new XMLHttpRequest();
 
 const loginItem = document.getElementById("nav-login-item");
 const registerItem = document.getElementById("nav-register-item");
@@ -62,6 +64,10 @@ userPOSTReq.onload = () => {
 }
 
 
+function freeUser(){
+    window.localStorage.removeItem('user');
+}
+
 function storeUser(){
     window.localStorage.setItem('user',JSON.stringify(user));
 }
@@ -102,13 +108,14 @@ function onLoginSuccess(){
 
 function logout(){
     //logout
-    user.loginStatus = "false";
+    freeUser();
+    callAlert("logout","success");
     location.href = "login.html";
 }
 
 function deleteUser(){
-    //post call to delete
-    makeDeleteUserRequest(username);
+    //DELETE call to delete
+    makeDeleteUserRequest();
     //
 }
 
@@ -123,7 +130,7 @@ function handleLogin(){
         user.setPassword(loginPasswordInput.value);
         storeUser();
         user.loginStatus = "true";
-        location.href = "index.html";
+        onLoginSuccess();
     }
     else{
         //if no tell user that there is no match
@@ -154,4 +161,8 @@ function callPasswordModal(){
 function callAlert(page, status){
     document.getElementById(page + '-' + status).style.display = 'block';
     setTimeout(function(){document.getElementById(page + '-' + status).style.display = 'none'}, 1700);
+}
+
+function makeDeleteUserRequest(){
+    callAlert("delete","success");
 }
