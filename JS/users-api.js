@@ -24,10 +24,11 @@ const user = new User();
 //const user = new User(JSON.parse(localStorage.getItem("user")).username, JSON.parse(localStorage.getItem("user")).password);
 
 //* check if user is logged in on each page *//
-isLoggedIn();
+//isLoggedIn();
 
 function getUser(username){
     userGETReq.open("GET", userURL + "/" + username);
+    //userGETReq.setRequestHeader("Content-Type", "application/json");
     userGETReq.send();
     callAlert("login","success");
 }
