@@ -150,9 +150,11 @@ function handleLogin(){
 }
 
 function handleUpdatePassword(){
-    userPUTReq.open("PUT",userURL + "/" + user.getUsername);
-    userPOSTReq.setRequestHeader("Content-Type", "application/json");
+    userPUTReq.open("PUT",userURL + "/" + user.getUsername());
+    userPUTReq.setRequestHeader("Content-Type", "application/json");
     user.setPassword(passwordText.value);
+    console.log(user);
+    debugger;
     userPUTReq.send(JSON.stringify(user));
 }
 
@@ -169,7 +171,7 @@ function register(){
 }
 
 function callPasswordModal(){
-    user.setUsername = usernameText.innerText;
+    user.setUsername(usernameText.innerText);
     $("#update-user-modal").modal('toggle');
 }
 
