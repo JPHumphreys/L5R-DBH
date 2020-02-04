@@ -11,10 +11,12 @@ addVSClans(deck);
 
 function deckSelect(element, item){
 
+    //update item to keeper or seeker of something
+    
     const design = element.attributes.name.value;
-
+    
     if(deck[item] === undefined){
-
+        
         element.classList.add(design);
     }
     else if(element !== ui[item]){
@@ -23,9 +25,10 @@ function deckSelect(element, item){
         ui[item].classList.add(onGridClass);
         element.classList.add(design);
     }
-
+    
     ui[item] = element;
     deck[item] = getName(element);
+    console.log(deck.getRoleAndElement());
     isDeckFinished();
 }
 

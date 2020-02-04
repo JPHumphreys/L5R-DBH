@@ -1,42 +1,70 @@
 const addRatingValue = document.getElementById("add-rating-text");
 
-const rating = new Rating(undefined, undefined, {});
+const userRatingURL = "http://localhost:56390/api/userRating";
 
-const ratingJSON = {
-    "ratingcrab":0.0,
-    "ratingcrane":0.0,
-    "ratingdragon":0.0,
-    "ratinglion":0.0,
-    "ratingphoenix":0.0,
-    "ratingscorpion":0.0,
-    "ratingunicorn":0.0
-};
+const userRatingPOSTReq = new XMLHttpRequest();
 
-function handleRatingVote(){
-
-    if(addRatingValue.value >= 1.0 && addRatingValue.value <= 10.0){
+const rating = new Rating();
 
 
-        
-        //* push to API **/
-
-    }else{
-        alert("please type a rating that is between 1.0 and 10.0");
+userRatingPOSTReq.onload = () =>{
+    if(userRatingPOSTReq.status === 200){
+        //debugger;
+        getNextClan();
+        $("#vote-modal").modal('hide');
+        getSpecificCardFromAPI(rating.getID());
+        callAlert("rating","success");
+    }
+    else{
+        callAlert("rating","fail");
     }
 }
 
-function makeRatingPushRequest(id, rating, clans){
+function handleRatingVote(element){
+    //debugger;
+    if(addRatingValue.value >= 1.0 && addRatingValue.value <= 10.0){
+        //console.log(JSON.parse(localStorage.getItem("user")).username);
+        if(JSON.parse(localStorage.getItem("user")).username !== undefined){
+            //* push to API **/
+            //debugger;
+            rating.setUsername(JSON.parse(localStorage.getItem("user")).username);
+            rating.setId(element.offsetParent.children[1].childNodes[1].alt);
+            rating.setRating(addRatingValue.value);
+            //LOOP through the clans
+            getNextClan();
+            
+        }else{
+            callAlert("rating","fail");
+        }
 
 
-    /*
-        ratingAddReq.open("PUT", addRatingURL + "crab" + "/" + id);
-                ratingAddReq.setRequestHeader("Content-Type", "application/json");
-            obj = {
-                    "ratingcrab":ratingVariableNames[i],
-                };
-                saveRating(id, currentRating, "crab");
-                ratingAddReq.send(JSON.stringify(obj));
 
-    */
+    }else{
+        callAlert("rating","fail");
+    }
 }
 
+function getNextClan(){
+    const values = Object.values(clans);//*get the tur and false
+    for(let i = 0; i < 7; i++){
+        //console.log(values[i]);
+        if(values[i] === true){
+            setClanToFalse(i);
+            makeRatingPostRequest(i);
+            break;
+        }
+    }
+}
+
+function makeRatingPostRequest(counter){
+    //debugger;
+    const values = Object.keys(clans);//* get the clans via the keys
+    rating.setClan(values[counter]);
+    userRatingPOSTReq.open("POST",userRatingURL);
+    userRatingPOSTReq.setRequestHeader("Content-Type", "application/json");
+    userRatingPOSTReq.send(JSON.stringify(rating));
+}
+
+function renewRating(){
+    
+}
