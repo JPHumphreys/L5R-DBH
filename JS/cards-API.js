@@ -38,11 +38,9 @@ function vsClanModal(element, clan){
 
     element.classList.toggle("btn-" + clan + "-selected");
 
-    for(let i in rating.clans){
-        console.log(i);
-    }
+    clans[clan] = (clans[clan]) ? false : true;
 
-    addElement(rating.clans, clan);
+    //addElement(rating.clans, clan);
 
 }
 
@@ -87,6 +85,7 @@ function generateCards(){
         getDeck(data, i));
         card.setAttribute(type, 
         getType(data, i));
+        card.id = getID(data,i);
 
         let image = document.createElement("img");
         image.src = getImageLocation(data, i);

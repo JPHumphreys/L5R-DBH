@@ -2,15 +2,41 @@
 
 class Rating{
 
-    constructor(id, value, clans){
+    constructor(username, id, rating, clan){
+        this.username = username;
         this.id = id;
-        this.value = value;
-        this.clans = clans;
+        this.rating = rating;
+        this.clan = clan;
     }
 
-    get(){
-        const data = {id, value, clans};
-        return data;
+    setUsername(username){
+        this.username = username;
+    }
+
+    setId(id){
+        this.id = id;
+    }
+
+    setRating(value){
+        this.rating = value;
+    }
+
+    setClan(clan){
+        this.clan = clan;
+    }
+
+    getClan(){
+        return this.clan;
     }
 
 }
+
+const clans = {
+    crab:false,
+    crane:false,
+    dragon:false,
+    lion:false,
+    phoenix:false,
+    scorpion:false,
+    unicorn:false
+    };

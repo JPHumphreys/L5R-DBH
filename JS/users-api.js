@@ -106,20 +106,26 @@ function isLoggedIn(){
         userAddLocation.hidden = true;
         loginItem.hidden = false;
         registerItem.hidden = false
-    }else{
-        if( (location.href.endsWith("cards.html")
+    }
+    else{
+        if(   (location.href.endsWith("cards.html")
             || location.href.endsWith("decks.html")
             || location.href.endsWith("index.html")
             || location.href.endsWith("deckbuilder.html")
             || location.href.endsWith("about.html"))){
-            let loggedInUser = JSON.parse(localStorage.getItem("user")).username;
-            userAddLocation.hidden = false;
-            usernameText.innerText = loggedInUser;
-            loginItem.hidden = true;
-            registerItem.hidden = true;
+                try {
+                    let loggedInUser = JSON.parse(localStorage.getItem("user")).username;
+                    userAddLocation.hidden = false;
+                    usernameText.innerText = loggedInUser;
+                    loginItem.hidden = true;
+                    registerItem.hidden = true;
+                } catch (e) {
+                    userAddLocation.hidden = true;
+                }
+            }
+            
         }
-    }   
-}
+}   
 
 function onLoginSuccess(){
 

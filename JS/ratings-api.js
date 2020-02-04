@@ -1,14 +1,21 @@
 const addRatingValue = document.getElementById("add-rating-text");
 
-const rating = new Rating(undefined, undefined, {});
+const userRatingURL = "http://localhost:56390/api/userRating";
+
+const rating = new Rating();
 
 function handleRatingVote(){
 
     if(addRatingValue.value >= 1.0 && addRatingValue.value <= 10.0){
 
+        if(user.username !== undefined){
+            //* push to API **/
 
-        
-        //* push to API **/
+        }else{
+            
+        }
+
+
 
     }else{
         alert("please type a rating that is between 1.0 and 10.0");
@@ -18,15 +25,12 @@ function handleRatingVote(){
 function makeRatingPushRequest(id, rating, clans){
 
 
-    /*
-        ratingAddReq.open("PUT", addRatingURL + "crab" + "/" + id);
-                ratingAddReq.setRequestHeader("Content-Type", "application/json");
-            obj = {
-                    "ratingcrab":ratingVariableNames[i],
-                };
-                saveRating(id, currentRating, "crab");
-                ratingAddReq.send(JSON.stringify(obj));
-
-    */
 }
 
+function resetClans(){
+
+}
+
+function renewRating(){
+    
+}
