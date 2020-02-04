@@ -46,3 +46,7 @@ function Deck(){
     });
 
 };
+
+function getRoleAndElement(role, element){
+    return role + "-of-" + element;
+}
