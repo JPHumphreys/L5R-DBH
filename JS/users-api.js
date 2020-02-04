@@ -1,7 +1,7 @@
 //* User URL *//
 const userURL = "http://localhost:56390/api/user";
 
-const passwordInput = document.getElementById("input-user-text");
+
 
 const userGETReq = new XMLHttpRequest();
 const userPOSTReq = new XMLHttpRequest();
@@ -13,7 +13,7 @@ const registerItem = document.getElementById("nav-register-item");
 const userAddLocation = document.getElementById("user-add-location");
 
 const usernameText = document.getElementById("username-display");
-
+const passwordText = document.getElementById("input-user-text");
 //USER INPUT LOCATIONS
 const loginUsernameInput = document.getElementById("login-username");
 const loginPasswordInput = document.getElementById("login-password");
@@ -51,11 +51,12 @@ userGETReq.onload = () => {
 }
 
 userPOSTReq.onload = () => {
+    //debugger;
     if(userPOSTReq.status === 200){
         if(userPOSTReq.response === '"true"'){
             storeUser();
             callAlert("register","success");
-            location.href = "index.html";
+            location.href = "login.html";
         }
         else{
             callAlert("register","success");
@@ -64,30 +65,30 @@ userPOSTReq.onload = () => {
 }
 
 userDELETEReq.onload = () => {
+    //debugger;
     if(userDELETEReq.status === 200){
-        if(userDELETEReq.responseText === "true"){
+        if(userDELETEReq.responseText === "false"){
+            callAlert("delete","fail");
+        }else{
             callAlert("delete","success");
             freeUser();
-            onLoginSuccess();
+            location.href = "login.html";
         }
-            callAlert("delete","fail");
     }
 }
 
 function createUser(){
     //call the POST
-    debugger;
+    //debugger;
     userPOSTReq.open("POST", userURL);
     userPOSTReq.setRequestHeader("Content-Type", "application/json");
     userPOSTReq.send(JSON.stringify(user));
 }
 
 function deleteUser(){
-
+    //debugger;
     userDELETEReq.open("DELETE", userURL + "/" + usernameText.innerText);
     userDELETEReq.send();
-    //
-    
 }
 
 function freeUser(){
@@ -100,28 +101,35 @@ function storeUser(){
 
 
 function isLoggedIn(){
+    //debugger;
     if(localStorage.getItem("user") === undefined){
         userAddLocation.hidden = true;
         loginItem.hidden = false;
         registerItem.hidden = false
-    }else{
-        let loggedInUser = JSON.parse(localStorage.getItem("user")).username;
-        if( (location.href.endsWith("cards.html")
+    }
+    else{
+        if(   (location.href.endsWith("cards.html")
             || location.href.endsWith("decks.html")
             || location.href.endsWith("index.html")
             || location.href.endsWith("deckbuilder.html")
             || location.href.endsWith("about.html"))){
-            userAddLocation.hidden = false;
-            usernameText.innerText = loggedInUser;
-            loginItem.hidden = true;
-            registerItem.hidden = true;
+                try {
+                    let loggedInUser = JSON.parse(localStorage.getItem("user")).username;
+                    userAddLocation.hidden = false;
+                    usernameText.innerText = loggedInUser;
+                    loginItem.hidden = true;
+                    registerItem.hidden = true;
+                } catch (e) {
+                    userAddLocation.hidden = true;
+                }
+            }
+            
         }
-    }   
-}
+}   
 
 function onLoginSuccess(){
 
-    location.href = "decklist.html";
+    location.href = "decks.html";
 }
 
 function logout(){
@@ -132,10 +140,11 @@ function logout(){
 }
 
 function handleLogin(){
+    //debugger;
     //check if username and password match in the DB
     if(userData[0].username === loginUsernameInput.value && userData[0].password === loginPasswordInput.value)
     {
-        debugger;
+        //debugger;
         callAlert("login","success");
         //if yes login - then change the page to index
         user.setUsername(loginUsernameInput.value);
@@ -151,6 +160,13 @@ function handleLogin(){
 
 }
 
+function handleUpdatePassword(){
+    userPUTReq.open("PUT",userURL + "/" + user.getUsername());
+    userPUTReq.setRequestHeader("Content-Type", "application/json");
+    user.setPassword(passwordText.value);
+    userPUTReq.send(JSON.stringify(user));
+}
+
 function login(){
     //GET CALL
     getUser(loginUsernameInput.value);
@@ -164,6 +180,7 @@ function register(){
 }
 
 function callPasswordModal(){
+    user.setUsername(usernameText.innerText);
     $("#update-user-modal").modal('toggle');
 }
 

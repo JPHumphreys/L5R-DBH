@@ -86,6 +86,20 @@
                     </button>
                     <h6>Successfully logged out</h6> 
                   </div>
+
+                  <div id="rating-success" class="alert alert-info alert-dismissible fade show" role="alert" style="display: none;">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      <h6>Successfully created rating</h6> 
+                    </div>
+
+                    <div id="rating-fail" class="alert alert-info alert-dismissible fade show" role="alert" style="display: none;">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h6>Did not create a new rating</h6> 
+                      </div>
                 
                 <div id="clan-selector" class="row grid-row">
 
@@ -240,8 +254,8 @@
                     </div>
                 </div>
                 <div id="vote-modal-footer" class="modal-footer">
-                  <button type="button" class="btn btn-outline-dark vote-button" onclick="handleRatingVote()">Vote</button>
-                  <button type="button" class="btn btn-outline-dark close-button" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-outline-dark vote-button" onclick="handleRatingVote(this)">Vote</button>
+                  <button type="button" class="btn btn-outline-dark close-button" data-dismiss="modal" onclick="resetClans()">Close</button>
                 </div>
               </div>
             </div>
@@ -296,6 +310,7 @@
         <script src="JS/users-api.js"></script>
         <script src="JS/card.js"></script>
         <script src="JS/rating.js"></script>
+        <script src="JS/ratings-api.js"></script>
         <script src="JS/object.js"></script>
         <script src="JS/cards-page.js"></script>
         <script src="JS/cards-API.js"></script>

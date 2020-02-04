@@ -2,6 +2,9 @@
 
 const getCardsURL = "http://localhost:56390/api/card";
 const getCardRequest = new XMLHttpRequest();
+
+const getSpecificCardRequest = new XMLHttpRequest();
+
 let data;
 
 const clan = "clan";
@@ -13,6 +16,11 @@ const voteModalImageLocation = document.getElementById("vote-modal-image");
 const cardRenderLocation = document.getElementById("card-render-location");
 
 getCardsFromAPI();
+
+function getSpecificCardFromAPI(id){
+    getSpecificCardRequest.open("GET",getCardsURL + "/" + id);
+    getSpecificCardRequest.send();
+}
 
 function getCardsFromAPI(){
     //debugger;
@@ -34,17 +42,22 @@ getCardRequest.onload = () => {
     }
 }
 
-
+getSpecificCardRequest.onload = () => {
+    if(getSpecificCardRequest.status === 200){
+        data = JSON.parse(getSpecificCardRequest.response);
+        let updateCard = document.getElementById(data[0].id);
+        updateCard.lastChild.innerText = "Rating: " + data[0].overallrating;
+        //debugger;
+    }
+}
 
 function vsClanModal(element, clan){
 
     element.classList.toggle("btn-" + clan + "-selected");
 
-    for(let i in rating.clans){
-        console.log(i);
-    }
+    clans[clan] = (clans[clan]) ? false : true;
 
-    addElement(rating.clans, clan);
+    //addElement(rating.clans, clan);
 
 }
 
@@ -52,10 +65,15 @@ function getImageOfCard(card){
     return card.firstElementChild.currentSrc;
 }
 
+function getIdOfCard(card){
+    return card.firstElementChild.alt;
+}
+
 function cardVote(element){
 
     voteModalImageLocation.attributes.src.value = getImageOfCard(element);
-
+    voteModalImageLocation.attributes.alt.value = getIdOfCard(element);
+    //debugger;
     $("#vote-modal").modal('toggle');
 
 }
@@ -84,6 +102,7 @@ function generateCards(){
         getDeck(data, i));
         card.setAttribute(type, 
         getType(data, i));
+        card.id = getID(data,i);
 
         let image = document.createElement("img");
         image.src = getImageLocation(data, i);
