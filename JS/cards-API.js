@@ -2,6 +2,9 @@
 
 const getCardsURL = "http://localhost:56390/api/card";
 const getCardRequest = new XMLHttpRequest();
+
+const getSpecificCardRequest = new XMLHttpRequest();
+
 let data;
 
 const clan = "clan";
@@ -13,6 +16,11 @@ const voteModalImageLocation = document.getElementById("vote-modal-image");
 const cardRenderLocation = document.getElementById("card-render-location");
 
 getCardsFromAPI();
+
+function getSpecificCardFromAPI(id){
+    getSpecificCardRequest.open("GET",getCardsURL + "/" + id);
+    getSpecificCardRequest.send();
+}
 
 function getCardsFromAPI(){
     //debugger;
@@ -31,6 +39,15 @@ getCardRequest.onload = () => {
     else{
         
         //* it was not a success
+    }
+}
+
+getSpecificCardRequest.onload = () => {
+    if(getSpecificCardRequest.status === 200){
+        data = JSON.parse(getSpecificCardRequest.response);
+        let updateCard = document.getElementById(data[0].id);
+        updateCard.lastChild.innerText = "Rating: " + data[0].overallrating;
+        //debugger;
     }
 }
 

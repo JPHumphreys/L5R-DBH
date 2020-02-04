@@ -18,3 +18,9 @@
     left: 80%;
     top: 10%;
 }
+
+#rating-success, #rating-fail{
+    position: fixed;
+    left: 80%;
+    top: 10%;
+}
