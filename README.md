@@ -72,7 +72,7 @@ Clicking on these cards will bring up a modal in which the logged in user can vo
 
 **[IN ORDER]** -> *Crab, Crane, Dragon, Lion, Phoenix, Scorpion, Unicorn.*
 
-![recordit GIF](http://g.recordit.co/BqLaY34ofE.gif)
+![recordit GIF](http://g.recordit.co/buiBcxiRnC.gif)
 
 Data tooltips have been added to ensure this is clear. It also puts the clans colour onto the button when selected.
 
