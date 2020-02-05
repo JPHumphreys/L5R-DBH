@@ -18,6 +18,8 @@ The deckbuilding process in L5R is arduous. This website aims to alleviate the p
 
 <img src="https://i.ibb.co/D1NtTP9/deckbuilder-page.png" width="100%">
 
+![recordit GIF](http://g.recordit.co/F9zcfXX2Yv.gif)
+
 The user will select options from four columns:
 
 ### Usage
