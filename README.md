@@ -18,6 +18,8 @@ The deckbuilding process in L5R is arduous. This website aims to alleviate the p
 
 <img src="https://i.ibb.co/D1NtTP9/deckbuilder-page.png" width="100%">
 
+![recordit GIF](http://g.recordit.co/F9zcfXX2Yv.gif)
+
 The user will select options from four columns:
 
 ### Usage
@@ -72,7 +74,11 @@ Clicking on these cards will bring up a modal in which the logged in user can vo
 
 **[IN ORDER]** -> *Crab, Crane, Dragon, Lion, Phoenix, Scorpion, Unicorn.*
 
-![recordit GIF](http://g.recordit.co/BqLaY34ofE.gif)
+![recordit GIF](http://g.recordit.co/cy175JDCNw.gif)
+
+### The more users rate the cards, the more accurate the ratings will be
+
+![recordit GIF](http://g.recordit.co/PrqoYKciyy.gif)
 
 Data tooltips have been added to ensure this is clear. It also puts the clans colour onto the button when selected.
 
