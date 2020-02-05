@@ -8,6 +8,12 @@ The deckbuilding process in L5R is arduous. This website aims to alleviate the p
 
 ---
 
+### **Registering and Logging in** - This will allow users to save their decks and ratings.
+
+![recordit GIF](http://g.recordit.co/H3urVS4R94.gif)
+
+![recordit GIF](http://g.recordit.co/4pv9pqhvqF.gif)
+
 ### **Deckbuilder Page** - A space where the users will be able generate quick decks.
 
 <img src="https://i.ibb.co/D1NtTP9/deckbuilder-page.png" width="100%">
@@ -43,7 +49,7 @@ The user will select options from four columns:
 
 ### **Card Rating Page** - A space that allows users to see the current ratings and vote on cards.
 
-<img src="https://i.ibb.co/bgzGQC6/cards-page-grid.png">
+<img src="https://i.ibb.co/N6zjhHM/Cards-Page-Filter.png">
 
 **Clan** : This is where the user can select from which clan they wish to see cards from.
 
@@ -60,7 +66,7 @@ For example - you are able to select:
 
 Clicking on these cards will bring up a modal in which the logged in user can vote for the rating of the card 1-10 and select to which clans this vote is catering for.
 
-<img src="https://i.ibb.co/LtJBfdd/Screenshot-2019-12-22-Cards-L5-R-DBH.png">
+<img src="https://i.ibb.co/9T5G44t/Cards-Modal.png">
 
 **[IN ORDER]** -> *Crab, Crane, Dragon, Lion, Phoenix, Scorpion, Unicorn.*
 
@@ -111,7 +117,11 @@ Role:"Seeker",
     * [] Clan War.
     
 ## Database :
-<img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/62/MySQL.svg/1920px-MySQL.svg.png" width="120" height="50">
+<img src="https://cdn.worldvectorlogo.com/logos/microsoft-sql-server.svg" width="120" height="80">
+
+## API : 
+
+<img src="https://lh3.googleusercontent.com/proxy/mEaYzHMdMkW0JcvMWdus9HmsmmF5UdMlHisr5JppfX0khtsuQWJh_yClswdaqagSyCuoYxVDrHhhaR7CGMnodlU7Gc3sKGLHpAVA3VG2uviMblhVIT0" width="120">
 
 ## Hosted on :
 [![Netlify Status](https://api.netlify.com/api/v1/badges/21649784-f6cf-431e-b3cd-1cf250574c6c/deploy-status)](https://app.netlify.com/sites/relaxed-fermi-dc9578/deploys)
