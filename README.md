@@ -62,6 +62,8 @@ For example - you are able to select:
 (*Conflict* + *Attachments* to see all attachments in from the conflict deck type)
 (*Holdings* to see all holdings in the game)
 
+![recordit GIF](http://g.recordit.co/FrATLMeHLs.gif)
+
 **Cards should then appear below the colums**
 
 Clicking on these cards will bring up a modal in which the logged in user can vote for the rating of the card 1-10 and select to which clans this vote is catering for.
@@ -69,6 +71,8 @@ Clicking on these cards will bring up a modal in which the logged in user can vo
 <img src="https://i.ibb.co/9T5G44t/Cards-Modal.png">
 
 **[IN ORDER]** -> *Crab, Crane, Dragon, Lion, Phoenix, Scorpion, Unicorn.*
+
+![recordit GIF](http://g.recordit.co/BqLaY34ofE.gif)
 
 Data tooltips have been added to ensure this is clear. It also puts the clans colour onto the button when selected.
 
@@ -93,7 +97,11 @@ Role:"Seeker",
 
 ---
 
+### **ABOUT** - This page explains why the website is created and why it is useful.
 
+#### It goes into small depth about the card anatomy and how as a new or existing player it can be hard to keep up with.
+
+![recordit GIF](http://g.recordit.co/X6suXGjf6F.gif)
 
 <!-- Task List-->
 ---
