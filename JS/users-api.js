@@ -101,7 +101,7 @@ function storeUser(){
 
 
 function isLoggedIn(){
-    debugger;
+    //debugger;
     if(localStorage.getItem("user") === undefined){
         userAddLocation.hidden = true;
         loginItem.hidden = false;
