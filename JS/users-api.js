@@ -101,7 +101,7 @@ function storeUser(){
 
 
 function isLoggedIn(){
-    //debugger;
+    debugger;
     if(localStorage.getItem("user") === undefined){
         userAddLocation.hidden = true;
         loginItem.hidden = false;
@@ -111,6 +111,7 @@ function isLoggedIn(){
         if(   (location.href.endsWith("cards.html")
             || location.href.endsWith("decks.html")
             || location.href.endsWith("index.html")
+            || location.href.endsWith("www.l5rdeckbuilderhelp.com")
             || location.href.endsWith("deckbuilder.html")
             || location.href.endsWith("about.html"))){
                 try {
