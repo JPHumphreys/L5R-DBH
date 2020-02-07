@@ -76,7 +76,13 @@ Clicking on these cards will bring up a modal in which the logged in user can vo
 
 ![recordit GIF](http://g.recordit.co/cy175JDCNw.gif)
 
-### The more users rate the cards, the more accurate the ratings will be
+### As we can see from the previous GIF - the user rated 'crab' and 'dragon' to be a rating of 9.1 
+### The user then rates the card a 7.8 for the clans of 'crab','phoenix' and 'scorpion'. 
+### What happends next is that the old rating of 9.1 for crab will be replaced for the new rating, it will then add the other ratings that the user does not have on that card into the overall of the card.
+### This results in a value of 8.125 via:
+### ( (9.1 * 1) + (7.8 * 1) + (7.8 * 1) + (7.8 * 1) / 4)
+#### *where 1 is the number of users who have rated the card
+The more users rate the cards, the more accurate the ratings will be
 
 ![recordit GIF](http://g.recordit.co/PrqoYKciyy.gif)
 
