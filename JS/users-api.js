@@ -111,7 +111,7 @@ function isLoggedIn(){
         if(   (location.href.endsWith("cards.html")
             || location.href.endsWith("decks.html")
             || location.href.endsWith("index.html")
-            || location.href.endsWith("www.l5rdeckbuilderhelp.com")
+            || location.href.endsWith("")
             || location.href.endsWith("deckbuilder.html")
             || location.href.endsWith("about.html"))){
                 try {
