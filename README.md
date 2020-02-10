@@ -74,7 +74,7 @@ Clicking on these cards will bring up a modal in which the logged in user can vo
 
 **[IN ORDER]** -> *Crab, Crane, Dragon, Lion, Phoenix, Scorpion, Unicorn.*
 
-![recordit GIF](http://g.recordit.co/ApanYqWr92.gif)
+![recordit GIF](http://g.recordit.co/cy175JDCNw.gif)
 
 ### As we can see from the previous GIF - the user rated 'crab' and 'dragon' to be a rating of 9.1 
 ### The user then rates the card a 7.8 for the clans of 'crab','phoenix' and 'scorpion'. 
@@ -141,7 +141,7 @@ Role:"Seeker",
 
 ## API : 
 
-<img src="https://lh3.googleusercontent.com/proxy/mEaYzHMdMkW0JcvMWdus9HmsmmF5UdMlHisr5JppfX0khtsuQWJh_yClswdaqagSyCuoYxVDrHhhaR7CGMnodlU7Gc3sKGLHpAVA3VG2uviMblhVIT0" width="120">
+<img src="https://maxtrain.com/wp-content/uploads/2019/02/ASP-MVC-WEB-API-COURSEWARE-IMAGE.jpg" width="120">
 
 ## Hosted on :
 [![Netlify Status](https://api.netlify.com/api/v1/badges/21649784-f6cf-431e-b3cd-1cf250574c6c/deploy-status)](https://app.netlify.com/sites/relaxed-fermi-dc9578/deploys)
