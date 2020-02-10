@@ -74,7 +74,7 @@ Clicking on these cards will bring up a modal in which the logged in user can vo
 
 **[IN ORDER]** -> *Crab, Crane, Dragon, Lion, Phoenix, Scorpion, Unicorn.*
 
-![recordit GIF](http://g.recordit.co/ApanYqWr92.gif)
+![recordit GIF](http://g.recordit.co/cy175JDCNw.gif)
 
 ### As we can see from the previous GIF - the user rated 'crab' and 'dragon' to be a rating of 9.1 
 ### The user then rates the card a 7.8 for the clans of 'crab','phoenix' and 'scorpion'. 
