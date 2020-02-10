@@ -64,7 +64,7 @@ For example - you are able to select:
 (*Conflict* + *Attachments* to see all attachments in from the conflict deck type)
 (*Holdings* to see all holdings in the game)
 
-![recordit GIF](http://g.recordit.co/FrATLMeHLs.gif)
+![recordit GIF](http://g.recordit.co/ApanYqWr92.gif)
 
 **Cards should then appear below the colums**
 
@@ -74,7 +74,7 @@ Clicking on these cards will bring up a modal in which the logged in user can vo
 
 **[IN ORDER]** -> *Crab, Crane, Dragon, Lion, Phoenix, Scorpion, Unicorn.*
 
-![recordit GIF](http://g.recordit.co/cy175JDCNw.gif)
+![recordit GIF](http://g.recordit.co/ApanYqWr92.gif)
 
 ### As we can see from the previous GIF - the user rated 'crab' and 'dragon' to be a rating of 9.1 
 ### The user then rates the card a 7.8 for the clans of 'crab','phoenix' and 'scorpion'. 
