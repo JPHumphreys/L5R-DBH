@@ -64,7 +64,7 @@ For example - you are able to select:
 (*Conflict* + *Attachments* to see all attachments in from the conflict deck type)
 (*Holdings* to see all holdings in the game)
 
-![recordit GIF](http://g.recordit.co/FrATLMeHLs.gif)
+![recordit GIF](http://g.recordit.co/ApanYqWr92.gif)
 
 **Cards should then appear below the colums**
 
